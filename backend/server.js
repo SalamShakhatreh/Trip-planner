@@ -8,9 +8,14 @@ connectDB();
 
 const destRoute=require("./routes/destinationRoutes");
 
+const placeRoute = require("./routes/placeRoutes");
+
+
+
 app.use(express.json());
 app.use("/api",testRoutes);
 app.use("/api/destinations",destRoute);
+app.use("/api/places",placeRoute);
 
 const PORT=5000;
 app.listen(PORT,()=>{
