@@ -10,14 +10,23 @@ const getDestination=async(req,res)=>{
     }
 };
 
-const createDestination=async(req,res)=>{
-    try{
-        const newDest=await Destination.create(req.body);
-        res.status(201).json(newDest);
-    }
-    catch(error){
-        res.status(500).json({message: error.message});
-    }
+const createDestination = async (req, res) => {
+  try {
+    const { name, country, description, image } = req.body;
+
+    const newDestination = new Destination({
+      name,
+      country,
+      description,
+      image
+    });
+
+    await newDestination.save();
+
+    res.status(201).json(newDestination);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };
 const getDestinationById = async (req, res) => {
     try {
