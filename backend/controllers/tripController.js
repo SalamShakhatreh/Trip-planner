@@ -36,13 +36,49 @@ const createTrip = async (req, res) => {
     }
 };
 
+
 const getMyTrips = async (req, res) => {
     try {
-        const trips = await Trip.find({ user: req.user.id })
-            .populate("destination");
+        const {
+            search,
+            status,
+            destination,
+            page = 1,
+            limit = 5
+        } = req.query;
+
+        const filter = {
+            user: req.user.id
+        };
+
+        if (search) {
+            filter.title = { $regex: search, $options: "i" };
+        }
+
+        if (status) {
+            filter.status = status;
+        }
+
+        if (destination) {
+            filter.destination = destination;
+        }
+
+        const currentPage = Math.max(1, Number(page));
+        const pageLimit = Math.max(1, Math.min(100, Number(limit)));
+        const skip = (currentPage - 1) * pageLimit;
+
+        const trips = await Trip.find(filter)
+            .populate("destination")
+            .skip(skip)
+            .limit(pageLimit);
+
+        const total = await Trip.countDocuments(filter);
 
         res.status(200).json({
-            trips: trips
+            trips,
+            currentPage,
+            totalPages: Math.ceil(total / pageLimit),
+            totalTrips: total
         });
     } catch (error) {
         res.status(500).json({
@@ -50,6 +86,7 @@ const getMyTrips = async (req, res) => {
         });
     }
 };
+
 
 
 

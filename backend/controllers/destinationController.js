@@ -1,15 +1,39 @@
 const Destination=require("../models/Destination");
 
-const getDestination=async(req,res)=>{
-    try{
-        const dest=await Destination.find();
-        res.status(200).json(dest);
-    }
-    catch(error){
-        res.status(500).json({message:error.message});
+const getDestination = async (req, res) => {
+    try {
+        const { search, country, page = 1, limit = 10 } = req.query;
+
+        const filter = {};
+
+        if (search) {
+            filter.name = { $regex: search, $options: "i" };
+        }
+
+        if (country) {
+            filter.country = { $regex: country, $options: "i" };
+        }
+
+        const currentPage = Math.max(1, Number(page));
+        const pageLimit = Math.max(1, Math.min(100, Number(limit)));
+        const skip = (currentPage - 1) * pageLimit;
+
+        const destinations = await Destination.find(filter)
+            .skip(skip)
+            .limit(pageLimit);
+
+        const total = await Destination.countDocuments(filter);
+
+        res.status(200).json({
+            destinations,
+            currentPage,
+            totalPages: Math.ceil(total / pageLimit),
+            totalDestinations: total
+        });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
     }
 };
-
 const createDestination = async (req, res) => {
   try {
     const { name, country, description, image } = req.body;

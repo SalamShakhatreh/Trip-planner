@@ -1,13 +1,47 @@
 
 const Place=require("../models/Place")
+
 const getPlaces = async (req, res) => {
     try {
-        const places = await Place.find().populate("destination");
-        res.status(200).json(places);
+        const {
+            search,
+            destination,
+            page = 1,
+            limit = 10
+        } = req.query;
+
+        const filter = {};
+
+        if (search) {
+            filter.name = { $regex: search, $options: "i" };
+        }
+
+        if (destination) {
+            filter.destination = destination;
+        }
+
+        const currentPage = Math.max(1, Number(page));
+        const pageLimit = Math.max(1, Math.min(100, Number(limit)));
+        const skip = (currentPage - 1) * pageLimit;
+
+        const places = await Place.find(filter)
+            .populate("destination")
+            .skip(skip)
+            .limit(pageLimit);
+
+        const total = await Place.countDocuments(filter);
+
+        res.status(200).json({
+            places,
+            currentPage,
+            totalPages: Math.ceil(total / pageLimit),
+            totalPlaces: total
+        });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 };
+
 
 
 const getPlaceById = async (req, res) => {
