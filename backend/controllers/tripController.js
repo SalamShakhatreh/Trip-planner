@@ -1,5 +1,5 @@
 const Trip = require("../models/Trip");
-
+const Destination = require("../models/Destination");
 const createTrip = async (req, res) => {
     try {
         const {
@@ -11,6 +11,14 @@ const createTrip = async (req, res) => {
             budgetType,
             numberOfPeople
         } = req.body;
+
+        const existingDestination = await Destination.findById(destination);
+
+if (!existingDestination) {
+    return res.status(404).json({
+        message: "Destination not found"
+    });
+}
 
         const newTrip = new Trip({
             user: req.user.id,
@@ -29,11 +37,18 @@ const createTrip = async (req, res) => {
             message: "Trip created successfully",
             trip: newTrip
         });
-    } catch (error) {
-        res.status(500).json({
+
+    }  catch (error) {
+    if (error.name === "ValidationError") {
+        return res.status(400).json({
             message: error.message
         });
     }
+
+    res.status(500).json({
+        message: error.message
+    });
+}
 };
 
 
@@ -114,6 +129,15 @@ const getTripById = async (req, res) => {
 
 const updateTrip = async (req, res) => {
     try {
+        if (req.body.destination) {
+    const existingDestination = await Destination.findById(req.body.destination);
+
+    if (!existingDestination) {
+        return res.status(404).json({
+            message: "Destination not found"
+        });
+    }
+}
         const trip = await Trip.findOneAndUpdate(
             {
                 _id: req.params.id,
@@ -137,11 +161,17 @@ const updateTrip = async (req, res) => {
             trip
         });
     } catch (error) {
-        res.status(500).json({
+    if (error.name === "ValidationError") {
+        return res.status(400).json({
             message: error.message
         });
     }
-};
+
+    res.status(500).json({
+        message: error.message
+    });
+}
+}
 
 const deleteTrip = async (req, res) => {
     try {
