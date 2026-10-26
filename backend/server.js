@@ -1,5 +1,6 @@
 const express= require("express");
 const app=express();
+const authRoutes = require("./routes/authRoutes");
 const testRoutes=require("./routes/testRoutes");
 
 const connectDB=require("./db");
@@ -13,6 +14,7 @@ const placeRoute = require("./routes/placeRoutes");
 
 
 app.use(express.json());
+app.use("/api/auth", authRoutes);
 app.use("/api",testRoutes);
 app.use("/api/destinations",destRoute);
 app.use("/api/places",placeRoute);
