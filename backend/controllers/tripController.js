@@ -143,7 +143,16 @@ const updateTrip = async (req, res) => {
                 _id: req.params.id,
                 user: req.user.id
             },
-            req.body,
+            {
+    destination: req.body.destination,
+    title: req.body.title,
+    startDate: req.body.startDate,
+    duration: req.body.duration,
+    budget: req.body.budget,
+    budgetType: req.body.budgetType,
+    numberOfPeople: req.body.numberOfPeople,
+    status: req.body.status
+},
             {
                 new: true,
                 runValidators: true
