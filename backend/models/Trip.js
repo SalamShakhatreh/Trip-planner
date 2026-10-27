@@ -29,6 +29,15 @@ const tripSchema = new mongoose.Schema({
         required: true,
         min: 0
     },
+
+    currency: {
+    type: String,
+    enum: ["JOD", "USD", "EUR"],
+    default: "JOD",
+    required: true
+},
+
+
     budgetType: {
         type: String,
         enum: ["perPerson", "group"],

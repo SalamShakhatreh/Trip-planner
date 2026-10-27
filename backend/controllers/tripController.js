@@ -8,6 +8,7 @@ const createTrip = async (req, res) => {
             startDate,
             duration,
             budget,
+             currency,
             budgetType,
             numberOfPeople
         } = req.body;
@@ -27,6 +28,7 @@ if (!existingDestination) {
             startDate,
             duration,
             budget,
+            currency,
             budgetType,
             numberOfPeople
         });
@@ -138,26 +140,31 @@ const updateTrip = async (req, res) => {
         });
     }
 }
-        const trip = await Trip.findOneAndUpdate(
-            {
-                _id: req.params.id,
-                user: req.user.id
-            },
-            {
-    destination: req.body.destination,
-    title: req.body.title,
-    startDate: req.body.startDate,
-    duration: req.body.duration,
-    budget: req.body.budget,
-    budgetType: req.body.budgetType,
-    numberOfPeople: req.body.numberOfPeople,
-    status: req.body.status
-},
-            {
-                new: true,
-                runValidators: true
-            }
-        ).populate("destination");
+      const allowedFields = [
+    "destination",
+    "title",
+    "startDate",
+    "duration",
+    "budget",
+    "budgetType",
+    "currency",
+    "numberOfPeople",
+    "status"
+];
+
+const updates = {};
+
+allowedFields.forEach((field) => {
+    if (req.body[field] !== undefined) {
+        updates[field] = req.body[field];
+    }
+});
+
+const trip = await Trip.findOneAndUpdate(
+    { _id: req.params.id, user: req.user.id },
+    updates,
+    { new: true, runValidators: true }
+).populate("destination");
 
         if (!trip) {
             return res.status(404).json({

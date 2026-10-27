@@ -110,7 +110,11 @@ const sendMessage = async (req, res) => {
                 message: "Conversation not found"
             });
         }
-
+        if (conversation.status === "completed") {
+    return res.status(400).json({
+        message: "This conversation is already completed"
+    });
+}
        const userMessage = message.trim();
 
 conversation.messages.push({
@@ -191,5 +195,21 @@ return res.status(200).json({
         });
     }
 };
+const getUserConversations = async (req, res) => {
+    try {
+        const conversations = await Conversation.find({
+            user: req.user.id
+        }).sort({ updatedAt: -1 });
 
-module.exports = { startConversation, sendMessage };
+        return res.status(200).json({
+            conversations
+        });
+    } catch (error) {
+        console.error("Get conversations error:", error);
+        return res.status(500).json({
+            message: "Failed to fetch conversations"
+        });
+    }
+};
+
+module.exports = { startConversation, sendMessage,getUserConversations };
