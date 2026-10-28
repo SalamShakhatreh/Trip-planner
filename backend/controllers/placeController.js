@@ -38,7 +38,9 @@ const getPlaces = async (req, res) => {
             totalPlaces: total
         });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        return res.status(500).json({
+    message: "Internal server error"
+});
     }
 };
 
@@ -54,7 +56,9 @@ const getPlaceById = async (req, res) => {
 
         res.status(200).json(place);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        return res.status(500).json({
+    message: "Internal server error"
+});
     }
 };
 
@@ -74,7 +78,9 @@ const createPlace = async (req, res) => {
 
         res.status(201).json(newPlace);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+       return res.status(500).json({
+    message: "Internal server error"
+});
     }
 };
 
@@ -92,7 +98,9 @@ const updatePlace = async (req, res) => {
 
         res.status(200).json(updatedPlace);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+       return res.status(500).json({
+    message: "Internal server error"
+});
     }
 };
 
@@ -106,7 +114,9 @@ const deletePlace = async (req, res) => {
 
         res.status(200).json({ message: "Place deleted successfully" });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        return res.status(500).json({
+    message: "Internal server error"
+});
     }
 };
 
