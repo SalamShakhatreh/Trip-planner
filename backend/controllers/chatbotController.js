@@ -86,6 +86,39 @@ const generateWithFallback = async (ai, prompt) => {
 };
 
 
+const calculateItineraryCosts = (itinerary) => {
+    let totalEstimatedCost = 0;
+
+    itinerary.days.forEach((day, index) => {
+        day.day = index + 1;
+
+        day.dailyCost = Number((
+            Number(day.morning.estimatedCost) +
+            Number(day.afternoon.estimatedCost) +
+            Number(day.evening.estimatedCost)
+        ).toFixed(2));
+
+        totalEstimatedCost += day.dailyCost;
+    });
+
+    itinerary.totalEstimatedCost = Number(totalEstimatedCost.toFixed(2));
+
+    return itinerary;
+};
+
+const validateItinerary = (itinerary, duration, budget) => {
+    if (itinerary.days.length !== Number(duration)) {
+        throw new Error("INVALID_ITINERARY_DURATION");
+    }
+
+    if (itinerary.totalEstimatedCost > Number(budget)) {
+        throw new Error("ITINERARY_EXCEEDS_BUDGET");
+    }
+
+    return itinerary;
+};
+
+
 const createItinerary = async ({
     destination,
     duration,
@@ -110,9 +143,14 @@ All costs must be numbers in ${tripCurrency}. The total estimated cost must not 
 In the disclaimer, state that activities and prices are suggestions, not guaranteed live prices.
 `;
 
-    const text = await generateWithFallback(ai, prompt);
+   const text = await generateWithFallback(ai, prompt);
+const itinerary = JSON.parse(text);
 
-    return JSON.parse(text);
+return validateItinerary(
+    calculateItineraryCosts(itinerary),
+    duration,
+    budget
+);
 };
 
 const generateItinerary = async (req, res) => {
@@ -166,7 +204,11 @@ In the disclaimer, state that activities and prices are suggestions, not guarant
 
         let itinerary;
         try {
-            itinerary = JSON.parse(text);
+            itinerary = validateItinerary(
+    calculateItineraryCosts(JSON.parse(text)),
+    duration,
+    budget
+);
         } catch (parseError) {
             console.error("Invalid JSON from model:", text);
             return res.status(502).json({
@@ -177,6 +219,18 @@ In the disclaimer, state that activities and prices are suggestions, not guarant
         res.status(200).json({ itinerary });
     } catch (error) {
         console.error("Chatbot error:", error);
+
+        if (error.message === "INVALID_ITINERARY_DURATION") {
+    return res.status(502).json({
+        message: "The AI returned an itinerary with an incorrect number of days. Please try again."
+    });
+}
+
+if (error.message === "ITINERARY_EXCEEDS_BUDGET") {
+    return res.status(502).json({
+        message: "The AI returned an itinerary that exceeds your budget. Please try again."
+    });
+}
 
         if (isOverloaded(error)) {
             return res.status(503).json({
