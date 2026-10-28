@@ -4,8 +4,7 @@ const authRoutes = require("./routes/authRoutes");
 const testRoutes=require("./routes/testRoutes");
 
 const connectDB=require("./db");
-const { connect } = require("mongoose");
-connectDB();
+
 
 const destRoute=require("./routes/destinationRoutes");
 
@@ -25,8 +24,19 @@ app.use("/api/trips", tripRoutes);
 app.use("/api/chatbot", chatbotRoutes);
 app.use("/api/conversations", conversationRoutes);
 
-const PORT=5000;
-app.listen(PORT,()=>{
-    console.log(`Server running on port ${PORT}`);
+const PORT = 5000;
 
-});
+const startServer = async () => {
+    try {
+        await connectDB();
+
+        app.listen(PORT, () => {
+            console.log(`Server running on port ${PORT}`);
+        });
+    } catch (error) {
+        console.error("Failed to start server:", error.message);
+        process.exit(1);
+    }
+};
+
+startServer();
