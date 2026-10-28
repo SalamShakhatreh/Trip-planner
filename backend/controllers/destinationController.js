@@ -31,7 +31,9 @@ const getDestination = async (req, res) => {
             totalDestinations: total
         });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+       return res.status(500).json({
+    message: "Internal server error"
+});
     }
 };
 const createDestination = async (req, res) => {
@@ -49,7 +51,9 @@ const createDestination = async (req, res) => {
 
     res.status(201).json(newDestination);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+   return res.status(500).json({
+    message: "Internal server error"
+});
   }
 };
 const getDestinationById = async (req, res) => {
@@ -62,7 +66,9 @@ const getDestinationById = async (req, res) => {
 
         res.status(200).json(dest);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        return res.status(500).json({
+    message: "Internal server error"
+});
     }
 };
 
@@ -80,7 +86,9 @@ const updateDestination = async (req, res) => {
 
         res.status(200).json(updatedDest);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        return res.status(500).json({
+    message: "Internal server error"
+});
     }
 };
 const deleteDestination = async (req, res) => {
@@ -93,7 +101,9 @@ const deleteDestination = async (req, res) => {
 
         res.status(200).json({ message: "Destination deleted successfully" });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        return res.status(500).json({
+    message: "Internal server error"
+});
     }
 };
 
