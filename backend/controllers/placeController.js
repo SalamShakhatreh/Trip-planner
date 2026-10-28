@@ -63,9 +63,16 @@ const getPlaceById = async (req, res) => {
 };
 
 
+
 const createPlace = async (req, res) => {
     try {
         const { name, description, image, destination } = req.body;
+
+        if (!name || !description || !destination) {
+            return res.status(400).json({
+                message: "Name, description, and destination are required"
+            });
+        }
 
         const newPlace = new Place({
             name,
@@ -78,11 +85,18 @@ const createPlace = async (req, res) => {
 
         res.status(201).json(newPlace);
     } catch (error) {
-       return res.status(500).json({
-    message: "Internal server error"
-});
+        if (error.name === "ValidationError" || error.name === "CastError") {
+            return res.status(400).json({
+                message: "Invalid place data"
+            });
+        }
+
+        return res.status(500).json({
+            message: "Internal server error"
+        });
     }
 };
+
 
 const updatePlace = async (req, res) => {
     try {
