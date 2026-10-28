@@ -1,7 +1,11 @@
 const { GoogleGenAI, Type } = require("@google/genai");
 
-const MODELS = ["gemini-3.5-flash", "gemini-3.8-flash", "gemini-3.5-flash-lite"];
-const MAX_RETRIES = 3;
+const MODELS = [
+    "gemini-3.8-flash",
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash"
+];
+const MAX_RETRIES = 1;
 
 const periodSchema = {
     type: Type.OBJECT,
