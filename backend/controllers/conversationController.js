@@ -1,4 +1,5 @@
 
+const mongoose = require("mongoose");
 const { GoogleGenAI, Type } = require("@google/genai");
 const Conversation = require("../models/Conversation");
 const { createItinerary } = require("./chatbotController");
@@ -295,6 +296,12 @@ const sendMessage = async (req, res) => {
     try {
         const { conversationId } = req.params;
         const { message } = req.body;
+
+        if (!mongoose.Types.ObjectId.isValid(conversationId)) {
+    return res.status(400).json({
+        message: "Invalid conversation ID"
+    });
+}
 
         if (typeof message !== "string" || !message.trim()) {
             return res.status(400).json({
