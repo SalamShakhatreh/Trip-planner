@@ -36,26 +36,40 @@ const getDestination = async (req, res) => {
 });
     }
 };
+
 const createDestination = async (req, res) => {
-  try {
-    const { name, country, description, image } = req.body;
+    try {
+        const { name, country, description, image } = req.body;
 
-    const newDestination = new Destination({
-      name,
-      country,
-      description,
-      image
-    });
+        if (!name || !country || !description) {
+            return res.status(400).json({
+                message: "Name, country, and description are required"
+            });
+        }
 
-    await newDestination.save();
+        const newDestination = new Destination({
+            name,
+            country,
+            description,
+            image
+        });
 
-    res.status(201).json(newDestination);
-  } catch (error) {
-   return res.status(500).json({
-    message: "Internal server error"
-});
-  }
+        await newDestination.save();
+
+        res.status(201).json(newDestination);
+    } catch (error) {
+        if (error.name === "ValidationError" || error.name === "CastError") {
+            return res.status(400).json({
+                message: "Invalid destination data"
+            });
+        }
+
+        return res.status(500).json({
+            message: "Internal server error"
+        });
+    }
 };
+
 const getDestinationById = async (req, res) => {
     try {
         const dest = await Destination.findById(req.params.id);
