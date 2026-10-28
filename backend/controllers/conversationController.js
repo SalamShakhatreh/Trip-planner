@@ -1,6 +1,6 @@
 
 const { GoogleGenAI, Type } = require("@google/genai");
-const Conversation = require("../models/conversation");
+const Conversation = require("../models/Conversation");
 const { createItinerary } = require("./chatbotController");
 
 const MODELS = [
