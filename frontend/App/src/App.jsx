@@ -4,6 +4,7 @@ import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Destinations from './components/Destinations'
 import Features from './components/Features'
+import CallToAction from './components/CallToAction'
 
 const App = () => {
   return (
@@ -12,26 +13,9 @@ const App = () => {
 
       <main>
         <Hero />
-
         <Destinations />
-
         <Features />
-
-        <section className="cta-section">
-          <div className="container">
-            <div className="cta-content">
-              <span className="eyebrow">YOUR NEXT CHAPTER</span>
-              <h2>Ready to plan your next adventure?</h2>
-              <p>
-                Start exploring destinations and create a trip that fits
-                your budget and travel style.
-              </p>
-              <a href="#destinations" className="btn btn-primary-custom">
-                Start Exploring <span>→</span>
-              </a>
-            </div>
-          </div>
-        </section>
+        <CallToAction />
       </main>
 
       <footer className="site-footer">
