@@ -595,6 +595,7 @@ a:focus-visible {
   color: #2563eb;
 }
 
+/*Login_Page*/
 
 .auth-background {
   min-height: 100vh;
@@ -668,6 +669,126 @@ a:focus-visible {
 }
 
 
+/*Register_Page*/
+  
+.register-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eeedff 0%, #f8f7ff 50%, #e7eaff 100%);
+  display: flex;
+  align-items: center;
+}
+
+.register-card {
+  max-width: 1050px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 20px 60px rgba(25, 30, 65, 0.14);
+}
+
+.register-image {
+  position: relative;
+  min-height: 680px;
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(15, 25, 50, 0.15),
+      rgba(15, 25, 50, 0.82)
+    ),
+    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.register-image-overlay {
+  min-height: 680px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-brand {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.register-image-text {
+  margin-top: auto;
+  margin-bottom: auto;
+  max-width: 400px;
+}
+
+.register-image-text h1 {
+  font-size: clamp(30px, 3vw, 42px);
+  line-height: 1.2;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.register-image-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.register-image-footer {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.register-form-section {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  background: linear-gradient(160deg, #ffffff 0%, #f8f7ff 100%);
+}
+
+.register-form-content {
+  width: 100%;
+  max-width: 410px;
+  margin: 0 auto;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #eeecff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(55, 48, 120, 0.07);
+}
+
+.register-form-content {
+  width: 100%;
+  max-width: 410px;
+  margin: 0 auto;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #eeecff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(55, 48, 120, 0.07);
+}
+
+.register-form-content h2 {
+  color: #222342;
+  font-size: 30px;
+}
+
+.register-form-content .form-control {
+  border-radius: 10px;
+  border-color: #dfe1eb;
+  font-size: 15px;
+}
+
+.register-form-content .form-control:focus {
+  border-color: #5655df;
+  box-shadow: 0 0 0 0.2rem rgba(86, 85, 223, 0.14);
+}
+
+
+
+
 @media (max-width: 991px) {
   .site-header .navbar {
     flex-wrap: wrap;
@@ -700,7 +821,33 @@ a:focus-visible {
   .features-section {
     padding: 75px 0;
   }
+
+
+  .register-form-content {
+    padding: 20px;
+  }
+
+  .register-image {
+    min-height: 350px;
+  }
+
+  .register-image-overlay {
+    min-height: 350px;
+    padding: 28px;
+  }
+
+  .register-image-text {
+    margin-top: 55px;
+    margin-bottom: 35px;
+  }
+
+  .register-form-section {
+    padding: 25px 18px;
+  }
 }
+
+  
+
 
 @media (max-width: 575px) {
   .site-header .navbar {
