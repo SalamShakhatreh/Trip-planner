@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import Destinations from './components/Destinations'
 import Features from './components/Features'
 import CallToAction from './components/CallToAction'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -18,19 +19,7 @@ const App = () => {
         <CallToAction />
       </main>
 
-      <footer className="site-footer">
-        <div className="container footer-content">
-          <a className="footer-logo" href="#home">
-            <span className="logo-icon">✈</span> Trip Planner
-          </a>
-
-          <p>© {new Date().getFullYear()} Trip Planner. All rights reserved.</p>
-
-          <a href="#home" className="back-to-top">
-            Back to top ↑
-          </a>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
