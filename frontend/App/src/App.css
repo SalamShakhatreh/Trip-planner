@@ -1231,6 +1231,39 @@ a:focus-visible {
   color: #5d63c3;
 }
 
+.trip-summary-budget-value {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.trip-summary-budget-input {
+  width: 85px;
+  padding: 2px 0;
+  border: none;
+  border-bottom: 1px dashed #94a3b8;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: inherit;
+}
+
+.trip-summary-budget-input:focus {
+  border-bottom: 1px solid #8b5cf6;
+}
+
+.trip-summary-budget-input::-webkit-inner-spin-button,
+.trip-summary-budget-input::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.trip-summary-budget-input {
+  appearance: textfield;
+}
+
 .trip-create-button {
   display: flex;
   justify-content: center;

@@ -7,11 +7,25 @@ const PlanTrip = () => {
   const [duration, setDuration] = useState(5);
   const [travelers, setTravelers] = useState(1);
   const [budget, setBudget] = useState(1000);
+  const [budgetInput, setBudgetInput] = useState("1000");
   const [budgetType, setBudgetType] = useState("person");
 
   const handleExplore = () => {
     setExplore(true);
     setDestination("");
+  };
+
+  const handleBudgetBlur = () => {
+    const amount = Number(budgetInput);
+
+    if (
+      budgetInput === "" ||
+      !Number.isInteger(amount) ||
+      amount < 100 ||
+      amount > 10000
+    ) {
+      setBudgetInput(String(budget));
+    }
   };
 
   return (
@@ -43,11 +57,7 @@ const PlanTrip = () => {
         </div>
 
         <div className="trip-workspace-grid">
-
-          {/* Trip Inputs */}
           <div className="trip-input-area">
-
-            {/* Destination */}
             <div className="trip-panel">
               <div className="trip-panel-heading">
                 <span className="trip-panel-icon">⌖</span>
@@ -91,7 +101,6 @@ const PlanTrip = () => {
               </button>
             </div>
 
-            {/* Duration */}
             <div className="trip-panel">
               <div className="trip-panel-heading">
                 <span className="trip-panel-icon">◷</span>
@@ -127,7 +136,6 @@ const PlanTrip = () => {
               </div>
             </div>
 
-            {/* Travelers */}
             <div className="trip-panel">
               <div className="trip-panel-heading">
                 <span className="trip-panel-icon">♙</span>
@@ -165,7 +173,6 @@ const PlanTrip = () => {
               </div>
             </div>
 
-            {/* Budget */}
             <div className="trip-panel trip-budget-panel">
               <div className="trip-panel-heading">
                 <span className="trip-panel-icon">$</span>
@@ -185,11 +192,13 @@ const PlanTrip = () => {
                 type="range"
                 min="100"
                 max="10000"
-                step="100"
+                step="1"
                 value={budget}
-                onChange={(e) =>
-                  setBudget(Number(e.target.value))
-                }
+                onChange={(e) => {
+                  const value = Number(e.target.value);
+                  setBudget(value);
+                  setBudgetInput(String(value));
+                }}
                 aria-label="Trip budget"
               />
 
@@ -220,7 +229,6 @@ const PlanTrip = () => {
               </div>
             </div>
 
-            {/* Create Trip */}
             <button
               type="button"
               className="trip-create-button"
@@ -232,10 +240,7 @@ const PlanTrip = () => {
             </button>
           </div>
 
-          {/* Right Column */}
           <div className="trip-summary-column">
-
-            {/* Trip Summary */}
             <aside className="trip-summary">
               <div className="trip-summary-top">
                 <span className="trip-summary-label">
@@ -288,9 +293,34 @@ const PlanTrip = () => {
                   <span>$</span>
                   <div>
                     <small>BUDGET</small>
-                    <strong>
-                      ${budget.toLocaleString()} /{" "}
-                      {budgetType === "person" ? "person" : "group"}
+                    <strong className="trip-summary-budget-value">
+                      $
+                      <input
+                        type="number"
+                        className="trip-summary-budget-input"
+                        min="100"
+                        max="10000"
+                        step="1"
+                        value={budgetInput}
+                        onChange={(e) => {
+                          const value = e.target.value;
+                          setBudgetInput(value);
+
+                          const amount = Number(value);
+
+                          if (
+                            value !== "" &&
+                            Number.isInteger(amount) &&
+                            amount >= 100 &&
+                            amount <= 10000
+                          ) {
+                            setBudget(amount);
+                          }
+                        }}
+                        onBlur={handleBudgetBlur}
+                        aria-label="Edit trip budget"
+                      />
+                      / {budgetType === "person" ? "person" : "group"}
                     </strong>
                   </div>
                 </div>
@@ -305,7 +335,6 @@ const PlanTrip = () => {
               </div>
             </aside>
 
-            {/* Decorative Flight Path */}
             <div
               className="trip-route-decoration"
               aria-hidden="true"
@@ -334,7 +363,6 @@ const PlanTrip = () => {
               </svg>
               <span>✈</span>
             </div>
-
           </div>
         </div>
       </section>
