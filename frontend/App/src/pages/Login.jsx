@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <div className="auth-background">
+      <Link to="/" className="back-home"
+        aria-label="Back to Home">
+        <span aria-hidden="true">←</span>
+     
+      </Link>
+
       <div className="container min-vh-100 d-flex align-items-center justify-content-center py-5">
         <div className="card auth-card border-0 shadow-lg rounded-4">
           <div className="card-body p-4 p-md-5">
@@ -84,19 +90,6 @@ const Login = () => {
               </svg>
               Sign in with Google
             </button>
-
-            <p className="text-center mt-4 mb-0">
-              Don't have an account?{" "}
-              <Link to="/register" className="auth-link">
-                Sign Up
-              </Link>
-            </p>
-
-            <div className="text-center mt-3">
-              <Link to="/" className="auth-link">
-                Back to Home
-              </Link>
-            </div>
           </div>
         </div>
       </div>
