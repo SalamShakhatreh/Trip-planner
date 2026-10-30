@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import DestinationDetails from "./pages/DestinationDetails";
+import PlanTrip from "./pages/PlanTrip";
 import "./App.css";
 
 const Home = () => {
@@ -31,6 +32,8 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/destinations/:name" element={<DestinationDetails />} />
+        <Route path="/plan-trip" element={<PlanTrip />} />
+
       </Routes>
     </BrowserRouter>
   );
