@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 const Register = () => {
   return (
     <div className="register-page">
+      <Link to="/" className="back-home">
+        &#8592;
+      </Link>
+
       <div className="container py-5">
         <div className="row justify-content-center align-items-stretch g-0 register-card">
           <div className="col-lg-6 register-image">
@@ -117,3 +121,4 @@ const Register = () => {
 };
 
 export default Register;
+
