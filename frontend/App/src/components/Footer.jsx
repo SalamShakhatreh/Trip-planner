@@ -8,10 +8,6 @@ const Footer = () => {
         </a>
 
         <p>© {new Date().getFullYear()} Trip Planner. All rights reserved.</p>
-
-        <a href="#home" className="back-to-top">
-          Back to top ↑
-        </a>
       </div>
     </footer>
   )
