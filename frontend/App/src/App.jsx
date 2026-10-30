@@ -7,6 +7,7 @@ import CallToAction from "./components/CallToAction";
 import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import DestinationDetails from "./pages/DestinationDetails";
 import "./App.css";
 
 const Home = () => {
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/destinations/:name" element={<DestinationDetails />} />
       </Routes>
     </BrowserRouter>
   );

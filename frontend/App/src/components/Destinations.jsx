@@ -1,24 +1,28 @@
+import { Link } from "react-router-dom";
 
 const destinations = [
   {
-    name: 'Santorini, Greece',
-    description: 'White houses, blue seas, and unforgettable sunsets.',
-    image: 'https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?auto=format&fit=crop&w=900&q=85',
-    budget: 'From $450',
+    name: "Santorini, Greece",
+    description: "White houses, blue seas, and unforgettable sunsets.",
+    image:
+      "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?auto=format&fit=crop&w=900&q=85",
+    budget: "From $450",
   },
   {
-    name: 'Bali, Indonesia',
-    description: 'Tropical beaches, green landscapes, and peaceful escapes.',
-    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=85',
-    budget: 'From $350',
+    name: "Bali, Indonesia",
+    description: "Tropical beaches, green landscapes, and peaceful escapes.",
+    image:
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=85",
+    budget: "From $350",
   },
   {
-    name: 'Swiss Alps, Switzerland',
-    description: 'Mountain views, fresh air, and scenic adventures.',
-    image: 'https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=900&q=85',
-    budget: 'From $600',
+    name: "Swiss Alps, Switzerland",
+    description: "Mountain views, fresh air, and scenic adventures.",
+    image:
+      "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=900&q=85",
+    budget: "From $600",
   },
-]
+];
 
 const Destinations = () => {
   return (
@@ -28,8 +32,8 @@ const Destinations = () => {
           <span className="eyebrow">FIND YOUR NEXT ESCAPE</span>
           <h2>Destinations worth discovering</h2>
           <p>
-            Explore inspiring places and find the perfect destination for
-            your next adventure.
+            Explore inspiring places and find the perfect destination for your
+            next adventure.
           </p>
         </div>
 
@@ -49,7 +53,11 @@ const Destinations = () => {
 
                   <div className="destination-footer">
                     <span>{destination.budget}</span>
-                    <a href="#features">Explore →</a>
+                    <Link
+                      to={`/destinations/${encodeURIComponent(destination.name)}`}
+                    >
+                      Explore →
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -58,7 +66,7 @@ const Destinations = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Destinations
+export default Destinations;
