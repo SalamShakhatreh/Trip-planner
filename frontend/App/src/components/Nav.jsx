@@ -1,21 +1,27 @@
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
     <header className="site-header">
       <nav className="container navbar navbar-expand-lg">
-        <a className="navbar-brand logo" href="#home">
+        <Link className="navbar-brand logo" to="/">
           <span className="logo-icon">✈</span> Trip Planner
-        </a>
+        </Link>
 
         <div className="navbar-links">
-          <a href="#home">Home</a>
-          <a href="#destinations">Destinations</a>
-          <a href="#features">Features</a>
+          <Link to="/">Home</Link>
+          <Link to="/#destinations">Destinations</Link>
+          <Link to="/#features">Features</Link>
         </div>
 
         <div className="nav-actions">
-          <button className="btn btn-login">Log In</button>
-          <button className="btn btn-primary-custom">Sign Up</button>
+          <Link to="/login" className="btn btn-login">
+            Log In
+          </Link>
+
+          <Link to="/register" className="btn btn-primary-custom">
+            Sign Up
+          </Link>
         </div>
       </nav>
     </header>
