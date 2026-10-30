@@ -9,9 +9,14 @@ const Nav = () => {
         </Link>
 
         <div className="navbar-links">
-          <Link to="/">Home</Link>
-          <Link to="/#destinations">Destinations</Link>
-          <Link to="/#features">Features</Link>
+          <Link
+            to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            Home
+          </Link>
+          <a href="#destinations">Destinations</a>
+          <a href="#features">Features</a>
         </div>
 
         <div className="nav-actions">
