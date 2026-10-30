@@ -909,6 +909,9 @@ a:focus-visible {
 
 
 /* Plan Trip*/
+.trip-planner-page .back-home {
+  top: 15px;
+}
 .trip-planner-page {
   min-height: 100vh;
   background: #f4f5fa;

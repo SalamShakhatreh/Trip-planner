@@ -1,5 +1,5 @@
-
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const PlanTrip = () => {
   const [destination, setDestination] = useState("");
@@ -31,13 +31,15 @@ const PlanTrip = () => {
   return (
     <main className="trip-planner-page">
       <section className="trip-planner-banner">
+        <Link to="/" className="back-home">
+          ←
+        </Link>
         <div className="trip-banner-overlay">
           <div className="trip-banner-content">
             <span className="trip-kicker">DESIGN YOUR ESCAPE</span>
             <h1>Every great journey starts with a plan.</h1>
             <p>
-              Your time, your budget, your adventure.
-              Let's put it all together.
+              Your time, your budget, your adventure. Let's put it all together.
             </p>
           </div>
           <div className="trip-banner-mark">✦</div>
@@ -80,10 +82,7 @@ const PlanTrip = () => {
                   disabled={explore}
                 />
                 {destination && (
-                  <button
-                    type="button"
-                    onClick={() => setDestination("")}
-                  >
+                  <button type="button" onClick={() => setDestination("")}>
                     ×
                   </button>
                 )}
@@ -118,9 +117,7 @@ const PlanTrip = () => {
                 <div className="trip-counter-buttons">
                   <button
                     type="button"
-                    onClick={() =>
-                      setDuration((v) => Math.max(1, v - 1))
-                    }
+                    onClick={() => setDuration((v) => Math.max(1, v - 1))}
                     aria-label="Decrease duration"
                   >
                     −
@@ -148,16 +145,12 @@ const PlanTrip = () => {
               <div className="trip-counter">
                 <div>
                   <strong>{travelers}</strong>
-                  <span>
-                    {travelers === 1 ? "TRAVELER" : "TRAVELERS"}
-                  </span>
+                  <span>{travelers === 1 ? "TRAVELER" : "TRAVELERS"}</span>
                 </div>
                 <div className="trip-counter-buttons">
                   <button
                     type="button"
-                    onClick={() =>
-                      setTravelers((v) => Math.max(1, v - 1))
-                    }
+                    onClick={() => setTravelers((v) => Math.max(1, v - 1))}
                     aria-label="Decrease travelers"
                   >
                     −
@@ -210,18 +203,14 @@ const PlanTrip = () => {
               <div className="trip-budget-types">
                 <button
                   type="button"
-                  className={
-                    budgetType === "person" ? "selected" : ""
-                  }
+                  className={budgetType === "person" ? "selected" : ""}
                   onClick={() => setBudgetType("person")}
                 >
                   Per person
                 </button>
                 <button
                   type="button"
-                  className={
-                    budgetType === "group" ? "selected" : ""
-                  }
+                  className={budgetType === "group" ? "selected" : ""}
                   onClick={() => setBudgetType("group")}
                 >
                   Whole group
@@ -248,12 +237,11 @@ const PlanTrip = () => {
                 </span>
                 <div className="trip-summary-decoration">✧</div>
                 <h3>
-                  The adventure<br />
+                  The adventure
+                  <br />
                   starts with you.
                 </h3>
-                <p>
-                  Your choices will shape your personalized trip plan.
-                </p>
+                <p>Your choices will shape your personalized trip plan.</p>
               </div>
 
               <div className="trip-summary-details">
@@ -329,16 +317,13 @@ const PlanTrip = () => {
               <div className="trip-summary-note">
                 <span>✦</span>
                 <p>
-                  Your budget will help shape accommodation,
-                  transport, food, and activities.
+                  Your budget will help shape accommodation, transport, food,
+                  and activities.
                 </p>
               </div>
             </aside>
 
-            <div
-              className="trip-route-decoration"
-              aria-hidden="true"
-            >
+            <div className="trip-route-decoration" aria-hidden="true">
               <svg viewBox="0 0 300 160">
                 <path
                   d="M25 125 C65 20, 180 15, 255 85"
@@ -348,18 +333,8 @@ const PlanTrip = () => {
                   strokeDasharray="4 8"
                   strokeLinecap="round"
                 />
-                <circle
-                  cx="25"
-                  cy="125"
-                  r="5"
-                  fill="#aaa8ed"
-                />
-                <circle
-                  cx="255"
-                  cy="85"
-                  r="5"
-                  fill="#aaa8ed"
-                />
+                <circle cx="25" cy="125" r="5" fill="#aaa8ed" />
+                <circle cx="255" cy="85" r="5" fill="#aaa8ed" />
               </svg>
               <span>✈</span>
             </div>
