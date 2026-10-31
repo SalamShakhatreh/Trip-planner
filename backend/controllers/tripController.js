@@ -1,5 +1,8 @@
+
 const Trip = require("../models/Trip");
 const Destination = require("../models/Destination");
+const mongoose = require("mongoose");
+
 const createTrip = async (req, res) => {
     try {
         const {
@@ -8,18 +11,24 @@ const createTrip = async (req, res) => {
             startDate,
             duration,
             budget,
-             currency,
+            currency,
             budgetType,
             numberOfPeople
         } = req.body;
 
+        if (!mongoose.isObjectIdOrHexString(destination)) {
+            return res.status(400).json({
+                message: "Invalid destination ID"
+            });
+        }
+
         const existingDestination = await Destination.findById(destination);
 
-if (!existingDestination) {
-    return res.status(404).json({
-        message: "Destination not found"
-    });
-}
+        if (!existingDestination) {
+            return res.status(404).json({
+                message: "Destination not found"
+            });
+        }
 
         const newTrip = new Trip({
             user: req.user.id,
@@ -40,17 +49,17 @@ if (!existingDestination) {
             trip: newTrip
         });
 
-    }  catch (error) {
-    if (error.name === "ValidationError") {
-        return res.status(400).json({
+    } catch (error) {
+        if (error.name === "ValidationError") {
+            return res.status(400).json({
+                message: error.message
+            });
+        }
+
+        res.status(500).json({
             message: error.message
         });
     }
-
-    res.status(500).json({
-        message: error.message
-    });
-}
 };
 
 
@@ -80,8 +89,22 @@ const getMyTrips = async (req, res) => {
             filter.destination = destination;
         }
 
-        const currentPage = Math.max(1, Number(page));
-        const pageLimit = Math.max(1, Math.min(100, Number(limit)));
+        const parsedPage = Number(page);
+        const parsedLimit = Number(limit);
+
+        if (
+            !Number.isInteger(parsedPage) ||
+            parsedPage < 1 ||
+            !Number.isInteger(parsedLimit) ||
+            parsedLimit < 1
+        ) {
+            return res.status(400).json({
+                message: "Page and limit must be positive integers"
+            });
+        }
+
+        const currentPage = parsedPage;
+        const pageLimit = Math.min(100, parsedLimit);
         const skip = (currentPage - 1) * pageLimit;
 
         const trips = await Trip.find(filter)
@@ -97,6 +120,7 @@ const getMyTrips = async (req, res) => {
             totalPages: Math.ceil(total / pageLimit),
             totalTrips: total
         });
+
     } catch (error) {
         res.status(500).json({
             message: error.message
@@ -105,10 +129,14 @@ const getMyTrips = async (req, res) => {
 };
 
 
-
-
 const getTripById = async (req, res) => {
     try {
+        if (!mongoose.isObjectIdOrHexString(req.params.id)) {
+            return res.status(400).json({
+                message: "Invalid trip ID"
+            });
+        }
+
         const trip = await Trip.findOne({
             _id: req.params.id,
             user: req.user.id
@@ -121,6 +149,7 @@ const getTripById = async (req, res) => {
         }
 
         res.status(200).json({ trip });
+
     } catch (error) {
         res.status(500).json({
             message: error.message
@@ -131,40 +160,55 @@ const getTripById = async (req, res) => {
 
 const updateTrip = async (req, res) => {
     try {
-        if (req.body.destination) {
-    const existingDestination = await Destination.findById(req.body.destination);
+        if (!mongoose.isObjectIdOrHexString(req.params.id)) {
+            return res.status(400).json({
+                message: "Invalid trip ID"
+            });
+        }
 
-    if (!existingDestination) {
-        return res.status(404).json({
-            message: "Destination not found"
+        if (req.body.destination !== undefined) {
+            if (!mongoose.isObjectIdOrHexString(req.body.destination)) {
+                return res.status(400).json({
+                    message: "Invalid destination ID"
+                });
+            }
+
+            const existingDestination = await Destination.findById(
+                req.body.destination
+            );
+
+            if (!existingDestination) {
+                return res.status(404).json({
+                    message: "Destination not found"
+                });
+            }
+        }
+
+        const allowedFields = [
+            "destination",
+            "title",
+            "startDate",
+            "duration",
+            "budget",
+            "budgetType",
+            "currency",
+            "numberOfPeople",
+            "status"
+        ];
+
+        const updates = {};
+
+        allowedFields.forEach((field) => {
+            if (req.body[field] !== undefined) {
+                updates[field] = req.body[field];
+            }
         });
-    }
-}
-      const allowedFields = [
-    "destination",
-    "title",
-    "startDate",
-    "duration",
-    "budget",
-    "budgetType",
-    "currency",
-    "numberOfPeople",
-    "status"
-];
 
-const updates = {};
-
-allowedFields.forEach((field) => {
-    if (req.body[field] !== undefined) {
-        updates[field] = req.body[field];
-    }
-});
-
-const trip = await Trip.findOneAndUpdate(
-    { _id: req.params.id, user: req.user.id },
-    updates,
-    { new: true, runValidators: true }
-).populate("destination");
+        const trip = await Trip.findOneAndUpdate(
+            { _id: req.params.id, user: req.user.id },
+            updates,
+            { new: true, runValidators: true }
+        ).populate("destination");
 
         if (!trip) {
             return res.status(404).json({
@@ -176,18 +220,20 @@ const trip = await Trip.findOneAndUpdate(
             message: "Trip updated successfully",
             trip
         });
+
     } catch (error) {
-    if (error.name === "ValidationError") {
-        return res.status(400).json({
+        if (error.name === "ValidationError") {
+            return res.status(400).json({
+                message: error.message
+            });
+        }
+
+        res.status(500).json({
             message: error.message
         });
     }
+};
 
-    res.status(500).json({
-        message: error.message
-    });
-}
-}
 
 const getAllTrips = async (req, res) => {
     try {
@@ -198,6 +244,7 @@ const getAllTrips = async (req, res) => {
         res.status(200).json({
             trips
         });
+
     } catch (error) {
         res.status(500).json({
             message: "Error fetching all trips",
@@ -206,8 +253,14 @@ const getAllTrips = async (req, res) => {
     }
 };
 
+
 const deleteTrip = async (req, res) => {
     try {
+        if (!mongoose.isObjectIdOrHexString(req.params.id)) {
+    return res.status(400).json({
+        message: "Invalid trip ID"
+    });
+}
         const trip = await Trip.findOneAndDelete({
             _id: req.params.id,
             user: req.user.id
@@ -222,6 +275,7 @@ const deleteTrip = async (req, res) => {
         res.status(200).json({
             message: "Trip deleted successfully"
         });
+
     } catch (error) {
         res.status(500).json({
             message: error.message
@@ -230,4 +284,11 @@ const deleteTrip = async (req, res) => {
 };
 
 
-module.exports = { createTrip, getMyTrips, getTripById, updateTrip, deleteTrip, getAllTrips };
+module.exports = {
+    createTrip,
+    getMyTrips,
+    getTripById,
+    updateTrip,
+    deleteTrip,
+    getAllTrips
+};

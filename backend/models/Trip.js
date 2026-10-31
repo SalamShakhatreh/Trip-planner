@@ -22,22 +22,23 @@ const tripSchema = new mongoose.Schema({
     duration: {
         type: Number,
         required: true,
-        min: 1
+        min: 1,
+        validate: {
+            validator: Number.isInteger,
+            message: "Duration must be a whole number"
+        }
     },
     budget: {
         type: Number,
         required: true,
         min: 0
     },
-
     currency: {
-    type: String,
-    enum: ["JOD", "USD", "EUR"],
-    default: "JOD",
-    required: true
-},
-
-
+        type: String,
+        enum: ["JOD", "USD", "EUR"],
+        default: "JOD",
+        required: true
+    },
     budgetType: {
         type: String,
         enum: ["perPerson", "group"],
@@ -46,7 +47,11 @@ const tripSchema = new mongoose.Schema({
     numberOfPeople: {
         type: Number,
         required: true,
-        min: 1
+        min: 1,
+        validate: {
+            validator: Number.isInteger,
+            message: "Number of people must be a whole number"
+        }
     },
     status: {
         type: String,
