@@ -189,6 +189,23 @@ const trip = await Trip.findOneAndUpdate(
 }
 }
 
+const getAllTrips = async (req, res) => {
+    try {
+        const trips = await Trip.find()
+            .populate("user", "name email")
+            .populate("destination");
+
+        res.status(200).json({
+            trips
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: "Error fetching all trips",
+            error: error.message
+        });
+    }
+};
+
 const deleteTrip = async (req, res) => {
     try {
         const trip = await Trip.findOneAndDelete({
@@ -213,4 +230,4 @@ const deleteTrip = async (req, res) => {
 };
 
 
-module.exports = { createTrip,getMyTrips,getTripById,updateTrip,deleteTrip };
+module.exports = { createTrip, getMyTrips, getTripById, updateTrip, deleteTrip, getAllTrips };
