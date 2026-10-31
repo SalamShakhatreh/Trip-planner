@@ -4,12 +4,14 @@ const getCountries = async (req, res) => {
     try {
         const countries = await Country.find();
 
-        res.status(200).json({
+        return res.status(200).json({
             countries
         });
     } catch (error) {
-        res.status(500).json({
-            message: error.message
+        console.error("Get countries error:", error);
+
+        return res.status(500).json({
+            message: "Internal server error"
         });
     }
 };
@@ -18,33 +20,49 @@ const createCountry = async (req, res) => {
     try {
         const { name, description, image } = req.body;
 
+        if (
+            typeof name !== "string" ||
+            typeof description !== "string" ||
+            typeof image !== "string" ||
+            !name.trim() ||
+            !description.trim() ||
+            !image.trim()
+        ) {
+            return res.status(400).json({
+                message: "Name, description, and image are required"
+            });
+        }
+
         const newCountry = new Country({
-            name,
-            description,
-            image
+            name: name.trim(),
+            description: description.trim(),
+            image: image.trim()
         });
 
         await newCountry.save();
 
-        res.status(201).json({
+        return res.status(201).json({
             message: "Country created successfully",
             country: newCountry
         });
+
     } catch (error) {
+        console.error("Create country error:", error);
+
         if (error.code === 11000) {
-            return res.status(400).json({
+            return res.status(409).json({
                 message: "Country already exists"
             });
         }
 
         if (error.name === "ValidationError") {
             return res.status(400).json({
-                message: error.message
+                message: "Invalid country data"
             });
         }
 
-        res.status(500).json({
-            message: error.message
+        return res.status(500).json({
+            message: "Internal server error"
         });
     }
 };

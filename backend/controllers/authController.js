@@ -1,4 +1,3 @@
-
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -7,13 +6,25 @@ const register = async (req, res) => {
     try {
         const { name, email, password } = req.body;
 
-        if (!name || !email || !password) {
+        if (
+            typeof name !== "string" ||
+            typeof email !== "string" ||
+            typeof password !== "string" ||
+            !name.trim() ||
+            !email.trim() ||
+            !password
+        ) {
             return res.status(400).json({
                 message: "Name, email, and password are required"
             });
         }
 
-        const existingUser = await User.findOne({ email });
+        const normalizedEmail = email.trim().toLowerCase();
+        const normalizedName = name.trim();
+
+        const existingUser = await User.findOne({
+            email: normalizedEmail
+        });
 
         if (existingUser) {
             return res.status(409).json({
@@ -21,23 +32,21 @@ const register = async (req, res) => {
             });
         }
 
-        
-
-
         const hashedPassword = await bcrypt.hash(password, 10);
 
-       const newUser = new User({
-        name,
-        email,
-        password: hashedPassword,
-        role:"user"
-});
+        const newUser = new User({
+            name: normalizedName,
+            email: normalizedEmail,
+            password: hashedPassword,
+            role: "user"
+        });
 
         await newUser.save();
 
-        res.status(201).json({
+        return res.status(201).json({
             message: "User registered successfully"
         });
+
     } catch (error) {
         if (error.code === 11000) {
             return res.status(409).json({
@@ -45,22 +54,34 @@ const register = async (req, res) => {
             });
         }
 
-        res.status(500).json({ message: "Internal server error" });
+        console.error("Register error:", error);
+
+        return res.status(500).json({
+            message: "Internal server error"
+        });
     }
 };
-
 
 const login = async (req, res) => {
     try {
         const { email, password } = req.body;
 
-        if (!email || !password) {
+        if (
+            typeof email !== "string" ||
+            typeof password !== "string" ||
+            !email.trim() ||
+            !password
+        ) {
             return res.status(400).json({
                 message: "Email and password are required"
             });
         }
 
-        const user = await User.findOne({ email });
+        const normalizedEmail = email.trim().toLowerCase();
+
+        const user = await User.findOne({
+            email: normalizedEmail
+        });
 
         if (!user) {
             return res.status(401).json({
@@ -82,7 +103,7 @@ const login = async (req, res) => {
             { expiresIn: "1d" }
         );
 
-        res.status(200).json({
+        return res.status(200).json({
             message: "Login successful",
             token,
             user: {
@@ -92,15 +113,14 @@ const login = async (req, res) => {
                 role: user.role
             }
         });
+
     } catch (error) {
-        res.status(500).json({ message: "Internal server error " });
+        console.error("Login error:", error);
+
+        return res.status(500).json({
+            message: "Internal server error"
+        });
     }
 };
 
-
-
-
-
-
-
-module.exports = { register,login };
+module.exports = { register, login };
