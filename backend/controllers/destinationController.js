@@ -11,7 +11,20 @@ const getDestination = async (req, res) => {
         }
 
         if (country) {
-            filter.country = { $regex: country, $options: "i" };
+            const countryDoc = await Country.findOne({
+                name: { $regex: country, $options: "i" }
+            });
+
+            if (!countryDoc) {
+                return res.status(200).json({
+                    destinations: [],
+                    currentPage: 1,
+                    totalPages: 0,
+                    totalDestinations: 0
+                });
+            }
+
+            filter.country = countryDoc._id;
         }
 
         const currentPage = Math.max(1, Number(page));
@@ -32,9 +45,9 @@ const getDestination = async (req, res) => {
             totalDestinations: total
         });
     } catch (error) {
-       return res.status(500).json({
-    message: "Internal server error"
-});
+        return res.status(500).json({
+            message: "Internal server error"
+        });
     }
 };
 
@@ -87,14 +100,16 @@ const getDestinationById = async (req, res) => {
             .populate("country");
 
         if (!dest) {
-            return res.status(404).json({ message: "Destination not found" });
+            return res.status(404).json({
+                message: "Destination not found"
+            });
         }
 
         res.status(200).json(dest);
     } catch (error) {
         return res.status(500).json({
-    message: "Internal server error"
-});
+            message: "Internal server error"
+        });
     }
 };
 
@@ -126,7 +141,9 @@ const updateDestination = async (req, res) => {
         ).populate("country");
 
         if (!updatedDest) {
-            return res.status(404).json({ message: "Destination not found" });
+            return res.status(404).json({
+                message: "Destination not found"
+            });
         }
 
         res.status(200).json(updatedDest);
@@ -138,26 +155,35 @@ const updateDestination = async (req, res) => {
         }
 
         return res.status(500).json({
-    message: "Internal server error"
-});
+            message: "Internal server error"
+        });
     }
 };
+
 const deleteDestination = async (req, res) => {
     try {
         const deletedDest = await Destination.findByIdAndDelete(req.params.id);
 
         if (!deletedDest) {
-            return res.status(404).json({ message: "Destination not found" });
+            return res.status(404).json({
+                message: "Destination not found"
+            });
         }
 
-        res.status(200).json({ message: "Destination deleted successfully" });
+        res.status(200).json({
+            message: "Destination deleted successfully"
+        });
     } catch (error) {
         return res.status(500).json({
-    message: "Internal server error"
-});
+            message: "Internal server error"
+        });
     }
 };
 
-
-
-module.exports={getDestination,createDestination, getDestinationById,updateDestination,deleteDestination};
+module.exports = {
+    getDestination,
+    createDestination,
+    getDestinationById,
+    updateDestination,
+    deleteDestination
+};
