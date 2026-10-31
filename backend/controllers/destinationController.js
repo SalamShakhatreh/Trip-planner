@@ -1,9 +1,9 @@
-const Destination=require("../models/Destination");
+const Destination = require("../models/Destination");
+const Country = require("../models/Country");
 
 const getDestination = async (req, res) => {
     try {
         const { search, country, page = 1, limit = 10 } = req.query;
-
         const filter = {};
 
         if (search) {
@@ -19,6 +19,7 @@ const getDestination = async (req, res) => {
         const skip = (currentPage - 1) * pageLimit;
 
         const destinations = await Destination.find(filter)
+            .populate("country")
             .skip(skip)
             .limit(pageLimit);
 
@@ -41,20 +42,30 @@ const createDestination = async (req, res) => {
     try {
         const { name, country, description, image } = req.body;
 
-        if (!name || !country || !description) {
+        if (!name || !country || !description || !image) {
             return res.status(400).json({
-                message: "Name, country, and description are required"
+                message: "Name, country, description, and image are required"
+            });
+        }
+
+        const countryDoc = await Country.findById(country);
+
+        if (!countryDoc) {
+            return res.status(404).json({
+                message: "Country not found"
             });
         }
 
         const newDestination = new Destination({
             name,
-            country,
+            country: countryDoc._id,
             description,
             image
         });
 
         await newDestination.save();
+
+        await newDestination.populate("country");
 
         res.status(201).json(newDestination);
     } catch (error) {
@@ -72,7 +83,8 @@ const createDestination = async (req, res) => {
 
 const getDestinationById = async (req, res) => {
     try {
-        const dest = await Destination.findById(req.params.id);
+        const dest = await Destination.findById(req.params.id)
+            .populate("country");
 
         if (!dest) {
             return res.status(404).json({ message: "Destination not found" });
@@ -88,11 +100,30 @@ const getDestinationById = async (req, res) => {
 
 const updateDestination = async (req, res) => {
     try {
+        const { name, country, description, image } = req.body;
+        const updateData = {};
+
+        if (name !== undefined) updateData.name = name;
+        if (description !== undefined) updateData.description = description;
+        if (image !== undefined) updateData.image = image;
+
+        if (country !== undefined) {
+            const countryDoc = await Country.findById(country);
+
+            if (!countryDoc) {
+                return res.status(404).json({
+                    message: "Country not found"
+                });
+            }
+
+            updateData.country = countryDoc._id;
+        }
+
         const updatedDest = await Destination.findByIdAndUpdate(
             req.params.id,
-            req.body,
+            updateData,
             { new: true, runValidators: true }
-        );
+        ).populate("country");
 
         if (!updatedDest) {
             return res.status(404).json({ message: "Destination not found" });
@@ -100,6 +131,12 @@ const updateDestination = async (req, res) => {
 
         res.status(200).json(updatedDest);
     } catch (error) {
+        if (error.name === "ValidationError" || error.name === "CastError") {
+            return res.status(400).json({
+                message: "Invalid destination data"
+            });
+        }
+
         return res.status(500).json({
     message: "Internal server error"
 });

@@ -14,6 +14,7 @@ const tripRoutes = require("./routes/tripRoutes");
 
 const chatbotRoutes = require("./routes/chatbotRoutes");
 const conversationRoutes = require("./routes/conversationRoutes");
+const countryRoutes = require("./routes/countryRoutes");
 
 app.use(express.json());
 app.use("/api/auth", authRoutes);
@@ -23,6 +24,7 @@ app.use("/api/places",placeRoute);
 app.use("/api/trips", tripRoutes);
 app.use("/api/chatbot", chatbotRoutes);
 app.use("/api/conversations", conversationRoutes);
+app.use("/api/countries", countryRoutes);
 
 const PORT = 5000;
 
