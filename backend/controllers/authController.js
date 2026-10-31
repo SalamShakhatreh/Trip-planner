@@ -1,6 +1,10 @@
+
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const { OAuth2Client } = require("google-auth-library");
+
+const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 const register = async (req, res) => {
     try {
@@ -83,7 +87,7 @@ const login = async (req, res) => {
             email: normalizedEmail
         });
 
-        if (!user) {
+        if (!user || !user.password) {
             return res.status(401).json({
                 message: "Invalid email or password"
             });
@@ -123,4 +127,82 @@ const login = async (req, res) => {
     }
 };
 
-module.exports = { register, login };
+const googleLogin = async (req, res) => {
+    try {
+        const { credential } = req.body;
+
+        if (typeof credential !== "string" || !credential) {
+            return res.status(400).json({
+                message: "Google credential is required"
+            });
+        }
+
+        const ticket = await googleClient.verifyIdToken({
+            idToken: credential,
+            audience: process.env.GOOGLE_CLIENT_ID
+        });
+
+        const payload = ticket.getPayload();
+
+        if (!payload || !payload.email || !payload.email_verified || !payload.sub) {
+            return res.status(401).json({
+                message: "Invalid Google account"
+            });
+        }
+
+        const normalizedEmail = payload.email.toLowerCase();
+        const googleId = payload.sub;
+
+        let user = await User.findOne({ googleId });
+
+        if (!user) {
+            user = await User.findOne({ email: normalizedEmail });
+
+            if (user) {
+                if (user.googleId && user.googleId !== googleId) {
+                    return res.status(409).json({
+                        message: "This email is linked to another Google account"
+                    });
+                }
+
+                user.googleId = googleId;
+                await user.save();
+            } else {
+                user = new User({
+                    name: payload.name || normalizedEmail.split("@")[0],
+                    email: normalizedEmail,
+                    googleId,
+                    role: "user"
+                });
+
+                await user.save();
+            }
+        }
+
+        const token = jwt.sign(
+            { id: user._id, role: user.role },
+            process.env.JWT_SECRET,
+            { expiresIn: "1d" }
+        );
+
+        return res.status(200).json({
+            message: "Google login successful",
+            token,
+            user: {
+                id: user._id,
+                name: user.name,
+                email: user.email,
+                role: user.role
+            }
+        });
+
+    } catch (error) {
+        console.error("Google login error:", error);
+
+        return res.status(500).json({
+            message: "Google login failed"
+        });
+    }
+};
+
+module.exports = { register, login, googleLogin };
