@@ -11,6 +11,7 @@ import Register from "./pages/Register";
 import DestinationDetails from "./pages/DestinationDetails";
 import PlanTrip from "./pages/PlanTrip";
 import Admin from "./pages/Admin";
+import ExploreCountries from "./pages/ExploreCountries";
 import "./App.css";
 
 const Home = () => {
@@ -46,6 +47,7 @@ const App = () => {
         <Route path="/destinations/:name" element={<DestinationDetails />} />
         <Route path="/plan-trip" element={<PlanTrip />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/explore-countries" element={<ExploreCountries />} />
 
       </Routes>
     </BrowserRouter>

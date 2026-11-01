@@ -168,6 +168,37 @@ a:focus-visible {
   gap: 10px;
 }
 
+.welcome-user {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 15px;
+  border: 1px solid #dbeafe;
+  border-radius: 30px;
+  background: #eff6ff;
+  color: #1e40af;
+  font-size: 0.88rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.welcome-user:hover {
+  background: #dbeafe;
+  border-color: #bfdbfe;
+}
+
+.welcome-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: #ffffff;
+  font-size: 0.95rem;
+}
+
 .btn-login {
   padding: 11px 16px;
   color: #334155;
@@ -1664,6 +1695,133 @@ a:focus-visible {
   margin: 0;
 }
 
+/* Explore Countries Page */
+.explore-countries-page {
+  min-height: 100vh;
+  padding: 55px 0 90px !important;
+  background: #f8fafc;
+}
+
+.explore-countries-page .back-home {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #263b50;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0 0 28px 0;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(30, 55, 80, 0.06);
+  transition: all 0.25s ease;
+}
+
+.explore-countries-page .back-home:hover {
+  background: #263b50;
+  color: #ffffff;
+  border-color: #263b50;
+}
+
+.explore-countries-page .section-heading {
+  position: relative;
+  clear: both;
+  margin-top: 0;
+}
+
+.explore-countries-page .section-heading .eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #b17a48;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.explore-countries-page .section-heading h1 {
+  color: #263b50;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 750;
+  margin-bottom: 18px;
+}
+
+.explore-countries-page .section-heading p {
+  color: #718096;
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.explore-countries-page .destination-card {
+  height: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #edf0f3;
+  border-radius: 18px;
+  box-shadow: 0 5px 20px rgba(38, 59, 80, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.explore-countries-page .destination-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(38, 59, 80, 0.12);
+}
+
+.explore-countries-page .destination-image {
+  display: block;
+  width: 100%;
+  height: 245px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.explore-countries-page .destination-card:hover .destination-image {
+  transform: scale(1.04);
+}
+
+.explore-countries-page .destination-content {
+  padding: 23px 24px 25px;
+}
+
+.explore-countries-page .destination-content h3 {
+  color: #263b50;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.explore-countries-page .destination-content p {
+  color: #718096;
+  font-size: 0.94rem;
+  line-height: 1.7;
+  min-height: 52px;
+  margin-bottom: 20px;
+}
+
+.explore-countries-page .destination-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 16px;
+  border-top: 1px solid #edf0f3;
+}
+
+.explore-countries-page .destination-footer a {
+  color: #b17a48;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.explore-countries-page .destination-footer a:hover {
+  color: #263b50;
+}
+
 /* Tablet */
 
 @media (max-width: 991px) {
@@ -1855,6 +2013,17 @@ a:focus-visible {
     min-height: 52px;
     padding: 11px 8px;
     font-size: 0.82rem;
+  }
+  .explore-countries-page {
+    padding-top: 35px !important;
+  }
+
+  .explore-countries-page .section-heading {
+    margin-bottom: 35px;
+  }
+
+  .explore-countries-page .destination-image {
+    height: 220px;
   }
 }
 
@@ -2083,3 +2252,81 @@ a:focus-visible {
     grid-template-columns: 1fr;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .explore-countries-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 28px 18px 55px !important;
+    overflow-x: hidden;
+  }
+
+  .explore-countries-page .back-home {
+    width: 42px;
+    height: 42px;
+    font-size: 23px;
+    margin-bottom: 35px;
+  }
+
+  .explore-countries-page .section-heading {
+    width: 100%;
+    margin: 0 auto 32px;
+    padding: 10px 5px;
+  }
+
+  .explore-countries-page .section-heading .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 1.8px;
+  }
+
+  .explore-countries-page .section-heading h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 13px;
+  }
+
+  .explore-countries-page .section-heading p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .explore-countries-page .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .explore-countries-page .row > * {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .explore-countries-page .destination-card {
+    width: 100%;
+    border-radius: 16px;
+  }
+
+  .explore-countries-page .destination-image {
+    height: 215px;
+  }
+
+  .explore-countries-page .destination-content {
+    padding: 19px;
+  }
+
+  .explore-countries-page .destination-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .explore-countries-page .destination-content p {
+    font-size: 0.9rem;
+    min-height: auto;
+    line-height: 1.65;
+  }
+
+  .explore-countries-page .destination-footer {
+    margin-top: 16px;
+    padding-top: 14px;
+  }
+}
+
+

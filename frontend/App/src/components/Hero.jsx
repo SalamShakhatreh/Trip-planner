@@ -1,4 +1,6 @@
 
+import { Link } from "react-router-dom";
+
 const Hero = () => {
   return (
     <section className="hero-section" id="home">
@@ -21,9 +23,9 @@ const Hero = () => {
             </p>
 
             <div className="hero-actions">
-              <a href="#destinations" className="btn btn-primary-custom">
+              <Link to="/explore-countries" className="btn btn-primary-custom">
                 Explore Destinations <span>→</span>
-              </a>
+              </Link>
 
               <a href="#features" className="text-link">
                 Discover how it works
@@ -60,7 +62,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
