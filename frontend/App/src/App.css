@@ -1697,26 +1697,35 @@ a:focus-visible {
 
 /* Explore Countries Page */
 .explore-countries-page {
+  position: relative;
   min-height: 100vh;
-  padding: 55px 0 90px !important;
+  min-height: 100dvh;
+  padding-top: 55px !important;
+  padding-bottom: 90px !important;
+  padding-right: 20px;
+  padding-left: 20px;
   background: #f8fafc;
+  box-shadow: 0 0 0 100vmax #f8fafc;
+  clip-path: inset(0 -100vmax);
 }
 
 .explore-countries-page .back-home {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  z-index: 1;
   width: 42px;
   height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
   border: 1px solid #e2e8f0;
   border-radius: 50%;
   background: #ffffff;
   color: #263b50;
   font-size: 24px;
   cursor: pointer;
-  margin: 0 0 28px 0;
-  position: relative;
-  z-index: 1;
   box-shadow: 0 3px 12px rgba(30, 55, 80, 0.06);
   transition: all 0.25s ease;
 }
@@ -1728,9 +1737,9 @@ a:focus-visible {
 }
 
 .explore-countries-page .section-heading {
-  position: relative;
-  clear: both;
-  margin-top: 0;
+  display: block;
+  margin: 65px auto 55px;
+  text-align: center;
 }
 
 .explore-countries-page .section-heading .eyebrow {
@@ -1743,18 +1752,18 @@ a:focus-visible {
 }
 
 .explore-countries-page .section-heading h1 {
+  margin: 0 0 18px;
   color: #263b50;
   font-size: clamp(2.2rem, 5vw, 3.2rem);
   font-weight: 750;
-  margin-bottom: 18px;
 }
 
 .explore-countries-page .section-heading p {
+  max-width: 540px;
+  margin: 0 auto;
   color: #718096;
   font-size: 1rem;
   line-height: 1.8;
-  max-width: 540px;
-  margin: 0 auto;
 }
 
 .explore-countries-page .destination-card {
@@ -1789,18 +1798,18 @@ a:focus-visible {
 }
 
 .explore-countries-page .destination-content h3 {
+  margin-bottom: 12px;
   color: #263b50;
   font-size: 1.3rem;
   font-weight: 700;
-  margin-bottom: 12px;
 }
 
 .explore-countries-page .destination-content p {
+  min-height: 52px;
+  margin-bottom: 20px;
   color: #718096;
   font-size: 0.94rem;
   line-height: 1.7;
-  min-height: 52px;
-  margin-bottom: 20px;
 }
 
 .explore-countries-page .destination-footer {
@@ -1821,6 +1830,8 @@ a:focus-visible {
 .explore-countries-page .destination-footer a:hover {
   color: #263b50;
 }
+
+
 
 /* Tablet */
 
@@ -2231,7 +2242,27 @@ a:focus-visible {
   .admin-placeholder {
     padding: 22px;
   }
+  
+  .explore-countries-page {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .explore-countries-page .back-home {
+    top: 16px;
+    left: 16px;
+  }
+
+  .explore-countries-page .section-heading {
+    margin: 50px auto 36px;
+  }
+
+  .explore-countries-page .destination-image {
+    height: 210px;
+  }
 }
+
+
 
 /* Small Mobile */
 

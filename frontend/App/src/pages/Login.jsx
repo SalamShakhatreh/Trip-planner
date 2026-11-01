@@ -1,13 +1,82 @@
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { GoogleLogin } from "@react-oauth/google";
+import { useAuth } from "../context/AuthContext";
 
-import { Link } from "react-router-dom";
+const API_URL = "http://localhost:5000/api/auth";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const { login } = useAuth();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleEmailLogin = async (e) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+
+    try {
+      const response = await fetch(`${API_URL}/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Login failed");
+      }
+
+      login(data.user, data.token);
+      navigate("/");
+    } catch (error) {
+      setError(error.message || "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleGoogleSuccess = async (response) => {
+    setError("");
+    setLoading(true);
+
+    try {
+      const result = await fetch(`${API_URL}/google`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          credential: response.credential,
+        }),
+      });
+
+      const data = await result.json();
+
+      if (!result.ok) {
+        throw new Error(data.message || "Google login failed");
+      }
+
+      login(data.user, data.token);
+      navigate("/");
+    } catch (error) {
+      setError(error.message || "Google login failed");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="auth-background">
-      <Link to="/" className="back-home"
-        aria-label="Back to Home">
+      <Link to="/" className="back-home" aria-label="Back to Home">
         <span aria-hidden="true">←</span>
-     
       </Link>
 
       <div className="container min-vh-100 d-flex align-items-center justify-content-center py-5">
@@ -21,7 +90,7 @@ const Login = () => {
               </p>
             </div>
 
-            <form>
+            <form onSubmit={handleEmailLogin}>
               <div className="mb-3">
                 <label htmlFor="email" className="form-label fw-semibold">
                   Email
@@ -31,6 +100,9 @@ const Login = () => {
                   id="email"
                   className="form-control form-control-lg"
                   placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  autoComplete="email"
                   required
                 />
               </div>
@@ -44,15 +116,25 @@ const Login = () => {
                   id="password"
                   className="form-control form-control-lg"
                   placeholder="Enter your password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  autoComplete="current-password"
                   required
                 />
               </div>
 
+              {error && (
+                <div className="alert alert-danger" role="alert">
+                  {error}
+                </div>
+              )}
+
               <button
                 type="submit"
                 className="btn btn-primary w-100 btn-lg auth-button"
+                disabled={loading}
               >
-                Log In
+                {loading ? "Logging in..." : "Log In"}
               </button>
             </form>
 
@@ -62,34 +144,22 @@ const Login = () => {
               <hr className="flex-grow-1" />
             </div>
 
-            <button
-              type="button"
-              className="btn btn-google btn-lg w-100"
-            >
-              <svg
-                className="google-icon"
-                viewBox="0 0 48 48"
-                aria-hidden="true"
-              >
-                <path
-                  fill="#4285F4"
-                  d="M43.6 24.5c0-1.4-.1-2.8-.4-4.1H24v7.8h11a9.4 9.4 0 0 1-4.1 6.2v5.1h6.6c3.9-3.6 6.1-8.8 6.1-15Z"
-                />
-                <path
-                  fill="#34A853"
-                  d="M24 44c5.5 0 10.1-1.8 13.5-4.9l-6.6-5.1c-1.8 1.2-4.1 2-6.9 2-5.3 0-9.8-3.6-11.4-8.4H5.8v5.3A20 20 0 0 0 24 44Z"
-                />
-                <path
-                  fill="#FBBC05"
-                  d="M12.6 27.6a12 12 0 0 1 0-7.2v-5.3H5.8a20 20 0 0 0 0 17.8l6.8-5.3Z"
-                />
-                <path
-                  fill="#EA4335"
-                  d="M24 12c3 0 5.7 1 7.8 3.1l5.8-5.8C34.1 6 29.5 4 24 4A20 20 0 0 0 5.8 15.1l6.8 5.3C14.2 15.6 18.7 12 24 12Z"
-                />
-              </svg>
-              Sign in with Google
-            </button>
+            {error && (
+              <div className="alert alert-danger" role="alert">
+                {error}
+              </div>
+            )}
+
+            <div className="d-flex justify-content-center">
+              <GoogleLogin
+                onSuccess={handleGoogleSuccess}
+                onError={() => setError("Google login failed")}
+                text="signin_with"
+                shape="rectangular"
+                size="large"
+                width="300"
+              />
+            </div>
           </div>
         </div>
       </div>

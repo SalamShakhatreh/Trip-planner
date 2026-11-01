@@ -18,19 +18,21 @@ const Nav = () => {
           >
             Home
           </Link>
+
           <a href="#destinations">Destinations</a>
+
           <a href="#features">Features</a>
         </div>
 
         <div className="nav-actions">
           {user ? (
             <>
-              <span className="me-3">Welcome, {user.name}</span>
-              <button
-                type="button"
-                className="btn btn-login"
-                onClick={logout}
-              >
+              <span className="welcome-user">
+                <span className="welcome-icon">👋</span>
+                Welcome, {user.name}
+              </span>
+
+              <button type="button" className="btn btn-login" onClick={logout}>
                 Log Out
               </button>
             </>
