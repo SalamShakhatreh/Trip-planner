@@ -66,7 +66,7 @@ const Chatbot = () => {
       setItinerary(null);
 
       const response = await fetch(
-        "http://localhost:5000/api/chatbot/itinerary",
+        "https://trip-planner-vyu6.onrender.com/api/chatbot/itinerary",
         {
           method: "POST",
           headers: {

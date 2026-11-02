@@ -15,7 +15,7 @@ const CountryDestinations = () => {
     const fetchDestinations = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/destinations?country=${encodeURIComponent(countryName)}`
+          `https://trip-planner-vyu6.onrender.com/api/destinations?country=${encodeURIComponent(countryName)}`
         );
 
         setDestinations(response.data.destinations);

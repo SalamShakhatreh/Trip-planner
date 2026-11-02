@@ -28,7 +28,7 @@ const CountryActivities = () => {
         setError("");
 
         const response = await axios.get(
-          `http://localhost:5000/api/activities?country=${encodeURIComponent(countryName)}`
+          `https://trip-planner-vyu6.onrender.com/api/activities?country=${encodeURIComponent(countryName)}`
         );
 
         setActivities(response.data.activities || []);

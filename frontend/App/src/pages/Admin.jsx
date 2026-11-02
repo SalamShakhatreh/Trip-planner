@@ -16,7 +16,7 @@ import {
   Legend,
 } from "recharts";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://trip-planner-vyu6.onrender.com/api";
 
 const Admin = () => {
   const [users, setUsers] = useState([]);

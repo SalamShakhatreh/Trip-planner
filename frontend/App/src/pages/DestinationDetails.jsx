@@ -22,14 +22,14 @@ const DestinationDetails = () => {
 
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/destinations/${id}`
+          `https://trip-planner-vyu6.onrender.com/api/destinations/${id}`
         );
 
         setDestination(response.data);
 
         try {
           const placesResponse = await axios.get(
-            `http://localhost:5000/api/places?destination=${id}`
+            `https://trip-planner-vyu6.onrender.com/api/places?destination=${id}`
           );
 
           setPlaces(placesResponse.data.places);
