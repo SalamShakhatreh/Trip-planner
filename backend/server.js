@@ -28,6 +28,15 @@ app.use("/api/conversations", conversationRoutes);
 app.use("/api/countries", countryRoutes);
 app.use("/api/activities", activityRouter);
 
+
+app.get("/", (req, res) => {
+    res.send(`
+        <h1>Welcome to Trip Planner!</h1>
+        <h2>Backend API is running successfully.</h2>
+        <p>Status: Online</p>
+    `);
+});
+
 const PORT = 5000;
 
 const startServer = async () => {
