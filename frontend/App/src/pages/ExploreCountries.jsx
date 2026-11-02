@@ -52,7 +52,7 @@ const ExploreCountries = () => {
         <span className="eyebrow">EXPLORE THE WORLD</span>
         <h1>Discover Countries</h1>
         <p>
-          Choose a country and discover the destinations waiting for you.
+          Choose a country and discover the activities waiting for you.
         </p>
       </div>
 
@@ -72,7 +72,7 @@ const ExploreCountries = () => {
 
                 <div className="destination-footer">
                   <Link
-                    to={`/countries/${encodeURIComponent(country.name)}/destinations`}
+                    to={`/countries/${encodeURIComponent(country.name)}/activities`}
                   >
                     Explore →
                   </Link>

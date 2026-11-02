@@ -1,7 +1,10 @@
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const PlanTrip = () => {
+  const navigate = useNavigate();
+
   const [destination, setDestination] = useState("");
   const [explore, setExplore] = useState(false);
   const [duration, setDuration] = useState(5);
@@ -28,12 +31,26 @@ const PlanTrip = () => {
     }
   };
 
+  const handleCreateTrip = () => {
+    navigate("/chatbot", {
+      state: {
+        destination: explore ? "" : destination,
+        explore,
+        duration,
+        travelers,
+        budget,
+        budgetType,
+      },
+    });
+  };
+
   return (
     <main className="trip-planner-page">
       <section className="trip-planner-banner">
         <Link to="/" className="back-home">
           ←
         </Link>
+
         <div className="trip-banner-overlay">
           <div className="trip-banner-content">
             <span className="trip-kicker">DESIGN YOUR ESCAPE</span>
@@ -42,6 +59,7 @@ const PlanTrip = () => {
               Your time, your budget, your adventure. Let's put it all together.
             </p>
           </div>
+
           <div className="trip-banner-mark">✦</div>
         </div>
       </section>
@@ -53,6 +71,7 @@ const PlanTrip = () => {
             <h2>Build your journey</h2>
             <p>Shape your trip around what matters most to you.</p>
           </div>
+
           <div className="trip-live-tag">
             <span></span> CUSTOM PLANNING
           </div>
@@ -71,6 +90,7 @@ const PlanTrip = () => {
 
               <div className="trip-destination-input">
                 <span>⌕</span>
+
                 <input
                   type="text"
                   value={destination}
@@ -81,8 +101,12 @@ const PlanTrip = () => {
                   placeholder="Search or type a destination..."
                   disabled={explore}
                 />
+
                 {destination && (
-                  <button type="button" onClick={() => setDestination("")}>
+                  <button
+                    type="button"
+                    onClick={() => setDestination("")}
+                  >
                     ×
                   </button>
                 )}
@@ -114,6 +138,7 @@ const PlanTrip = () => {
                   <strong>{duration}</strong>
                   <span>{duration === 1 ? "DAY" : "DAYS"}</span>
                 </div>
+
                 <div className="trip-counter-buttons">
                   <button
                     type="button"
@@ -122,6 +147,7 @@ const PlanTrip = () => {
                   >
                     −
                   </button>
+
                   <button
                     type="button"
                     onClick={() => setDuration((v) => v + 1)}
@@ -145,8 +171,11 @@ const PlanTrip = () => {
               <div className="trip-counter">
                 <div>
                   <strong>{travelers}</strong>
-                  <span>{travelers === 1 ? "TRAVELER" : "TRAVELERS"}</span>
+                  <span>
+                    {travelers === 1 ? "TRAVELER" : "TRAVELERS"}
+                  </span>
                 </div>
+
                 <div className="trip-counter-buttons">
                   <button
                     type="button"
@@ -155,6 +184,7 @@ const PlanTrip = () => {
                   >
                     −
                   </button>
+
                   <button
                     type="button"
                     onClick={() => setTravelers((v) => v + 1)}
@@ -208,6 +238,7 @@ const PlanTrip = () => {
                 >
                   Per person
                 </button>
+
                 <button
                   type="button"
                   className={budgetType === "group" ? "selected" : ""}
@@ -221,9 +252,7 @@ const PlanTrip = () => {
             <button
               type="button"
               className="trip-create-button"
-              onClick={() => {
-                alert("Your trip details are ready!");
-              }}
+              onClick={handleCreateTrip}
             >
               Create my trip <span>→</span>
             </button>
@@ -235,12 +264,15 @@ const PlanTrip = () => {
                 <span className="trip-summary-label">
                   YOUR TRIP AT A GLANCE
                 </span>
+
                 <div className="trip-summary-decoration">✧</div>
+
                 <h3>
                   The adventure
                   <br />
                   starts with you.
                 </h3>
+
                 <p>Your choices will shape your personalized trip plan.</p>
               </div>
 
@@ -281,6 +313,7 @@ const PlanTrip = () => {
                   <span>$</span>
                   <div>
                     <small>BUDGET</small>
+
                     <strong className="trip-summary-budget-value">
                       $
                       <input
@@ -333,9 +366,11 @@ const PlanTrip = () => {
                   strokeDasharray="4 8"
                   strokeLinecap="round"
                 />
+
                 <circle cx="25" cy="125" r="5" fill="#aaa8ed" />
                 <circle cx="255" cy="85" r="5" fill="#aaa8ed" />
               </svg>
+
               <span>✈</span>
             </div>
           </div>

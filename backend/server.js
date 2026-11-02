@@ -9,6 +9,7 @@ const tripRoutes = require("./routes/tripRoutes");
 const chatbotRoutes = require("./routes/chatbotRoutes");
 const conversationRoutes = require("./routes/conversationRoutes");
 const countryRoutes = require("./routes/countryRoutes");
+const activityRouter = require("./routes/activityRouter");
 
 app.use(cors({
     origin: "http://localhost:5173"
@@ -21,6 +22,7 @@ app.use("/api/trips", tripRoutes);
 app.use("/api/chatbot", chatbotRoutes);
 app.use("/api/conversations", conversationRoutes);
 app.use("/api/countries", countryRoutes);
+app.use("/api/activities", activityRouter);
 
 const PORT = 5000;
 

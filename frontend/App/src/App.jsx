@@ -1,4 +1,3 @@
-
 import {
   BrowserRouter,
   Routes,
@@ -18,11 +17,11 @@ import Footer from "./components/Footer";
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import DestinationDetails from "./pages/DestinationDetails";
 import PlanTrip from "./pages/PlanTrip";
 import Admin from "./pages/Admin";
 import ExploreCountries from "./pages/ExploreCountries";
-import CountryDestinations from "./pages/CountryDestinations";
+import CountryActivities from "./pages/CountryActivities";
+import Chatbot from "./pages/Chatbot";
 
 import "./App.css";
 
@@ -54,13 +53,7 @@ const ProtectedRoute = ({ children }) => {
   const location = useLocation();
 
   if (!user || !token) {
-    return (
-      <Navigate
-        to="/login"
-        state={{ from: location }}
-        replace
-      />
-    );
+    return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
   return children;
@@ -96,19 +89,10 @@ const AppRoutes = () => {
         />
 
         <Route
-          path="/countries/:countryName/destinations"
+          path="/countries/:countryName/activities"
           element={
             <ProtectedRoute>
-              <CountryDestinations />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="/destinations/:name"
-          element={
-            <ProtectedRoute>
-              <DestinationDetails />
+              <CountryActivities />
             </ProtectedRoute>
           }
         />
@@ -127,6 +111,14 @@ const AppRoutes = () => {
           element={
             <ProtectedRoute>
               <Admin />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/chatbot"
+          element={
+            <ProtectedRoute>
+              <Chatbot />
             </ProtectedRoute>
           }
         />
