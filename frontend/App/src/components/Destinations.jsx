@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 
 const destinations = [
   {
@@ -53,11 +52,7 @@ const Destinations = () => {
 
                   <div className="destination-footer">
                     <span>{destination.budget}</span>
-                    <Link
-                      to={`/destinations/${encodeURIComponent(destination.name)}`}
-                    >
-                      Explore →
-                    </Link>
+                    <span>Featured Destination</span>
                   </div>
                 </div>
               </div>

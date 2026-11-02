@@ -1,5 +1,6 @@
 const express= require("express");
 const app=express();
+const cors = require("cors");
 const authRoutes = require("./routes/authRoutes");
 const connectDB=require("./db");
 const destRoute=require("./routes/destinationRoutes");
@@ -9,7 +10,9 @@ const chatbotRoutes = require("./routes/chatbotRoutes");
 const conversationRoutes = require("./routes/conversationRoutes");
 const countryRoutes = require("./routes/countryRoutes");
 
-
+app.use(cors({
+    origin: "http://localhost:5173"
+}));
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/destinations",destRoute);

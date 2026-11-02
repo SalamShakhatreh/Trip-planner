@@ -204,5 +204,22 @@ const googleLogin = async (req, res) => {
         });
     }
 };
+const getAllUsers = async (req, res) => {
+    try {
+        const users = await User.find().select("-password -googleId");
 
-module.exports = { register, login, googleLogin };
+        return res.status(200).json({
+            users,
+            totalUsers: users.length
+        });
+
+    } catch (error) {
+        console.error("Get users error:", error);
+
+        return res.status(500).json({
+            message: "Internal server error"
+        });
+    }
+};
+
+module.exports = { register, login, googleLogin, getAllUsers };

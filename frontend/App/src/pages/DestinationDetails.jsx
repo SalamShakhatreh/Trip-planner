@@ -1,45 +1,73 @@
-import { useParams, Link } from "react-router-dom";
 
-const destinations = [
-  {
-    name: "Santorini, Greece",
-    description: "White houses, blue seas, and unforgettable sunsets.",
-    image:
-      "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?auto=format&fit=crop&w=1200&q=85",
-    places: ["Oia Village", "Fira", "Red Beach"],
-    activities: ["Watch the sunset", "Boat tours", "Explore local streets"],
-  },
-  {
-    name: "Bali, Indonesia",
-    description: "Tropical beaches, green landscapes, and peaceful escapes.",
-    image:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=85",
-    places: ["Ubud", "Uluwatu Temple", "Nusa Penida"],
-    activities: ["Visit rice terraces", "Enjoy the beaches", "Explore temples"],
-  },
-  {
-    name: "Swiss Alps, Switzerland",
-    description: "Mountain views, fresh air, and scenic adventures.",
-    image:
-      "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=1200&q=85",
-    places: ["Zermatt", "Jungfraujoch", "Lake Geneva"],
-    activities: [
-      "Mountain hiking",
-      "Cable car rides",
-      "Explore alpine villages",
-    ],
-  },
-];
+import { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import axios from "axios";
 
 const DestinationDetails = () => {
-  const { name } = useParams();
+  const { name: id } = useParams();
 
-  const destination = destinations.find(
-    (item) => item.name === decodeURIComponent(name),
-  );
+  const [destination, setDestination] = useState(null);
+  const [places, setPlaces] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [placesError, setPlacesError] = useState("");
+
+  useEffect(() => {
+    const fetchDestinationDetails = async () => {
+      setLoading(true);
+      setError("");
+      setPlacesError("");
+      setDestination(null);
+      setPlaces([]);
+
+      try {
+        const response = await axios.get(
+          `http://localhost:5000/api/destinations/${id}`
+        );
+
+        setDestination(response.data);
+
+        try {
+          const placesResponse = await axios.get(
+            `http://localhost:5000/api/places?destination=${id}`
+          );
+
+          setPlaces(placesResponse.data.places);
+        } catch (error) {
+          setPlacesError(
+            error.response?.data?.message ||
+              "Failed to load popular places"
+          );
+        }
+      } catch (error) {
+        setError(
+          error.response?.data?.message ||
+            "Failed to load destination"
+        );
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDestinationDetails();
+  }, [id]);
+
+  if (loading) {
+    return (
+      <p className="text-center">Loading destination...</p>
+    );
+  }
+
+  if (error) {
+    return (
+      <p className="text-center text-danger">{error}</p>
+    );
+  }
 
   if (!destination) {
-    return <h2>Destination not found</h2>;
+    return (
+      <h2 className="text-center">Destination not found</h2>
+    );
   }
 
   return (
@@ -49,7 +77,11 @@ const DestinationDetails = () => {
       </Link>
 
       <div className="destination-details-heading">
-        <h1>Destination Details</h1>
+        <span className="eyebrow">DISCOVER YOUR NEXT ADVENTURE</span>
+        <h1>{destination.name}</h1>
+        {destination.country && (
+          <p>{destination.country.name}</p>
+        )}
       </div>
 
       <div className="container">
@@ -59,22 +91,41 @@ const DestinationDetails = () => {
           className="destination-image"
         />
 
-        <h1>{destination.name}</h1>
-        <p>{destination.description}</p>
+        <div className="destination-about">
+          <h2>About this destination</h2>
+          <p>{destination.description}</p>
+        </div>
 
-        <h2>Popular Places</h2>
-        <ul>
-          {destination.places.map((place) => (
-            <li key={place}>{place}</li>
-          ))}
-        </ul>
+        <div className="destination-places">
+          <h2>Popular Places</h2>
 
-        <h2>Things to Do</h2>
-        <ul>
-          {destination.activities.map((activity) => (
-            <li key={activity}>{activity}</li>
-          ))}
-        </ul>
+          {placesError ? (
+            <p className="text-danger">{placesError}</p>
+          ) : places.length === 0 ? (
+            <p>
+              No popular places available for this destination yet.
+            </p>
+          ) : (
+            <div className="row g-4">
+              {places.map((place) => (
+                <div className="col-md-6 col-lg-4" key={place._id}>
+                  <div className="destination-card h-100">
+                    <img
+                      src={place.image}
+                      alt={place.name}
+                      className="destination-image"
+                    />
+
+                    <div className="destination-content">
+                      <h3>{place.name}</h3>
+                      <p>{place.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
+
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import { useAuth } from "../context/AuthContext";
 
@@ -7,7 +8,10 @@ const API_URL = "http://localhost:5000/api/auth";
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { login } = useAuth();
+
+  const redirectTo = location.state?.from?.pathname || "/";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -35,7 +39,7 @@ const Login = () => {
       }
 
       login(data.user, data.token);
-      navigate("/");
+      navigate(redirectTo, { replace: true });
     } catch (error) {
       setError(error.message || "Something went wrong");
     } finally {
@@ -65,7 +69,7 @@ const Login = () => {
       }
 
       login(data.user, data.token);
-      navigate("/");
+      navigate(redirectTo, { replace: true });
     } catch (error) {
       setError(error.message || "Google login failed");
     } finally {
@@ -144,12 +148,6 @@ const Login = () => {
               <hr className="flex-grow-1" />
             </div>
 
-            {error && (
-              <div className="alert alert-danger" role="alert">
-                {error}
-              </div>
-            )}
-
             <div className="d-flex justify-content-center">
               <GoogleLogin
                 onSuccess={handleGoogleSuccess}
@@ -160,6 +158,10 @@ const Login = () => {
                 width="300"
               />
             </div>
+
+            <p className="text-center mt-4 mb-0">
+              Don't have an account? <Link to="/register">Sign Up</Link>
+            </p>
           </div>
         </div>
       </div>

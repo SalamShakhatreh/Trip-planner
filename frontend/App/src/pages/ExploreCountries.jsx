@@ -30,11 +30,11 @@ const ExploreCountries = () => {
   }, []);
 
   if (loading) {
-    return <p className="text-center py-5">Loading countries...</p>;
+    return <p className="text-center">Loading countries...</p>;
   }
 
   if (error) {
-    return <p className="text-center text-danger py-5">{error}</p>;
+    return <p className="text-center text-danger">{error}</p>;
   }
 
   return (
@@ -71,7 +71,9 @@ const ExploreCountries = () => {
                 <p>{country.description}</p>
 
                 <div className="destination-footer">
-                  <Link to={`/countries/${country._id}/destinations`}>
+                  <Link
+                    to={`/countries/${encodeURIComponent(country.name)}/destinations`}
+                  >
                     Explore →
                   </Link>
                 </div>

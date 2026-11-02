@@ -1,8 +1,15 @@
-import { Link } from "react-router-dom";
+
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const Nav = () => {
   const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/", { replace: true });
+  };
 
   return (
     <header className="site-header">
@@ -20,7 +27,6 @@ const Nav = () => {
           </Link>
 
           <a href="#destinations">Destinations</a>
-
           <a href="#features">Features</a>
         </div>
 
@@ -32,7 +38,11 @@ const Nav = () => {
                 Welcome, {user.name}
               </span>
 
-              <button type="button" className="btn btn-login" onClick={logout}>
+              <button
+                type="button"
+                className="btn btn-login"
+                onClick={handleLogout}
+              >
                 Log Out
               </button>
             </>
