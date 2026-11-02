@@ -1,30 +1,52 @@
-# Trip Planner
+# ✈️ DOT Trip Planner
 
-A full-stack web application that helps users plan personalized trips based on their destination, budget, travel duration, and interests.
+### Your Journey. Your Budget. Your Adventure.
 
-## Features
+Discover destinations, explore experiences, and create personalized travel plans based on your budget and vacation duration.
 
-- **User Authentication:** Register and log in securely.
-- **Explore Countries:** Browse different countries and discover activities.
-- **Country Activities:** View activities and experiences available in each country.
-- **Trip Planning:** Customize your trip based on destination, duration, number of travelers, and budget.
-- **AI-Powered Itinerary:** Generate a personalized day-by-day travel itinerary based on your interests and trip details.
+🌍 **Live Website:** [DOT Trip Planner](https://bright-sundae-76bad1.netlify.app)
 
-## Technologies Used
+🔗 **Backend API:** [Trip Planner API](https://trip-planner-vyu6.onrender.com)
 
-### Frontend
-- React
-- React Router
-- CSS
+---
 
-### Backend
+## 📌 About The Project
+
+DOT Trip Planner is a full-stack web application designed to make travel planning easier and more organized.
+
+Users can explore countries and destinations, discover activities, and plan trips according to their travel preferences, budget, and duration.
+
+## ✨ Features
+
+- 🔐 User Registration and Login
+- 🌍 Explore Countries and Destinations
+- 📍 Discover Places and Activities
+- 🧳 Create and Manage Trips
+- 💰 Plan Trips Based on Budget
+- 🤖 AI-Powered Travel Chatbot
+- 👤 User and Admin Features
+
+## 🛠️ Technologies Used
+
+**Frontend**
+- React.js
+- JavaScript
+- HTML5
+- CSS3
+- Axios
+
+**Backend**
 - Node.js
 - Express.js
 - MongoDB
 - Mongoose
-- Google Gemini API
 
-## Project Structure
+**Deployment**
+- Netlify – Frontend
+- Render – Backend
+- MongoDB Atlas – Database
+
+## 📂 Project Structure
 
 ```text
 Trip-planner/
@@ -33,55 +55,61 @@ Trip-planner/
 │   ├── controllers/
 │   ├── models/
 │   ├── routes/
-│   ├── middleware/
 │   ├── server.js
 │   └── package.json
 │
-└── frontend/
-    └── App/
-        ├── src/
-        ├── public/
-        └── package.json
+├── frontend/
+│   └── App/
+│       ├── public/
+│       ├── src/
+│       └── package.json
+│
+└── README.md
 ```
 
-## Installation and Setup
+## 🚀 Getting Started
 
 ### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/SalamShakhatreh/Trip-planner.git
-cd Trip-planner
 ```
 
 ### 2. Backend Setup
 
 ```bash
-cd backend
+cd Trip-planner/backend
 npm install
 npm run dev
 ```
 
 ### 3. Frontend Setup
 
-Open a new terminal:
+Open another terminal:
 
 ```bash
-cd frontend/App
+cd Trip-planner/frontend/App
 npm install
 npm run dev
 ```
 
 ### 4. Environment Variables
 
-Configure the required environment variables in a `.env` file inside the backend directory before running the application.
+Configure your environment variables in a `.env` file according to the backend and frontend configuration.
 
-Do not upload your `.env` file or expose API keys and secrets.
+## 🌐 Live Demo
 
-## Project Status
+Explore the deployed application:
 
-**In Development**
+[https://bright-sundae-76bad1.netlify.app](https://bright-sundae-76bad1.netlify.app)
 
-## Future Improvements
+## 👩‍💻 Author
 
-- Complete deployment and cloud configuration.
-- Further improvements to trip planning and user experience.
+**Salam Shakhatreh**
+
+Computer Engineering Graduate  
+Full Stack MERN Developer
+
+---
+
+⭐ If you like this project, feel free to explore the repository!
