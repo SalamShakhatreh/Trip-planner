@@ -13,9 +13,10 @@ const activityRouter = require("./routes/activityRouter");
 
 app.use(cors({
     origin: [
-        "http://localhost:5173",
-        "https://6ae89941331a48cab57d04f3--bright-sundae-76bad1.netlify.app"
-    ]
+    "http://localhost:5173",
+    "https://6ae89941331a48cab57d04f3--bright-sundae-76bad1.netlify.app",
+    "https://bright-sundae-76bad1.netlify.app"
+]
 }));
 app.use(express.json());
 app.use("/api/auth", authRoutes);
