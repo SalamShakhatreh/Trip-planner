@@ -4,7 +4,7 @@
 
 Discover destinations, explore experiences, and create personalized travel plans based on your budget and vacation duration.
 
-🌍 **Live Website:** [DOT Trip Planner](https://bright-sundae-76bad1.netlify.app)
+🌍 **Live Website:** [Trip Planner](https://bright-sundae-76bad1.netlify.app)
 
 🔗 **Backend API:** [Trip Planner API](https://trip-planner-vyu6.onrender.com)
 
