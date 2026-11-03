@@ -1,4 +1,4 @@
-# ✈️ DOT Trip Planner
+# ✈️ Trip Planner
 
 ### Your Journey. Your Budget. Your Adventure.
 
