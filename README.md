@@ -101,7 +101,7 @@ Configure your environment variables in a `.env` file according to the backend a
 
 Explore the deployed application:
 
-[https://bright-sundae-76bad1.netlify.app](https://bright-sundae-76bad1.netlify.app)
+[Wanderly Trips](https://wanderly-trips.netlify.app/)
 
 ## 👩‍💻 Author
 
