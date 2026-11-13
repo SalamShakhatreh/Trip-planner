@@ -1,3 +1,4 @@
+
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
@@ -25,6 +26,20 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: ["user", "admin"],
         default: "user"
+    },
+    profileImage: {
+        type: String,
+        default: ""
+    },
+    bio: {
+        type: String,
+        default: "",
+        maxlength: 160
+    },
+    location: {
+        type: String,
+        default: "",
+        trim: true
     }
 });
 

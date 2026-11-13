@@ -10,6 +10,7 @@ const chatbotRoutes = require("./routes/chatbotRoutes");
 const conversationRoutes = require("./routes/conversationRoutes");
 const countryRoutes = require("./routes/countryRoutes");
 const activityRouter = require("./routes/activityRouter");
+const profileRoutes = require("./routes/profileRoutes");
 
 app.use(cors({
     origin: [
@@ -19,6 +20,7 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use("/api/auth", authRoutes);
+app.use("/api/profile", profileRoutes);
 app.use("/api/destinations",destRoute);
 app.use("/api/places",placeRoute);
 app.use("/api/trips", tripRoutes);
