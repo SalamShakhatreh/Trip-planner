@@ -1,4 +1,4 @@
-# ✈️ Trip Planner
+# ✈️ Wanderly Trips
 
 ### Your Journey. Your Budget. Your Adventure.
 
@@ -12,7 +12,7 @@ Discover destinations, explore experiences, and create personalized travel plans
 
 ## 📌 About The Project
 
-DOT Trip Planner is a full-stack web application designed to make travel planning easier and more organized.
+Wanderly Trips is a full-stack web application designed to make travel planning easier and more organized.
 
 Users can explore countries and destinations, discover activities, and plan trips according to their travel preferences, budget, and duration.
 
