@@ -2312,6 +2312,69 @@ a:focus-visible {
   color: #78877e;
 }
 
+/*Profile*/
+
+
+.profile-page {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.profile-card {
+  border-radius: 18px;
+}
+
+.profile-image-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e5e7eb;
+}
+
+.profile-image-edit {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  border: none;
+  background: transparent;
+  color: #333;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.2s ease;
+}
+
+.profile-image-edit:hover {
+  transform: scale(1.15);
+  background: transparent;
+}
+
+.profile-image-edit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.profile-upload-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: profile-spin 0.7s linear infinite;
+}
+
+
 
 
 
@@ -2925,5 +2988,9 @@ a:focus-visible {
     padding-top: 14px;
   }
 }
-
+@keyframes profile-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 

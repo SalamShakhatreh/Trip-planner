@@ -1,4 +1,3 @@
-
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
@@ -37,6 +36,10 @@ const Nav = () => {
                 <span className="welcome-icon">👋</span>
                 Welcome, {user.name}
               </span>
+
+              <Link to="/profile" className="btn btn-login">
+                My Profile
+              </Link>
 
               <button
                 type="button"

@@ -22,6 +22,7 @@ import Admin from "./pages/Admin";
 import ExploreCountries from "./pages/ExploreCountries";
 import CountryActivities from "./pages/CountryActivities";
 import Chatbot from "./pages/Chatbot";
+import Profile from "./pages/Profile";
 
 import "./App.css";
 
@@ -119,6 +120,14 @@ const AppRoutes = () => {
           element={
             <ProtectedRoute>
               <Chatbot />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
             </ProtectedRoute>
           }
         />

@@ -1,5 +1,6 @@
 
 const User = require("../models/User");
+const cloudinary = require("../config/cloudinary");
 
 const getMyProfile = async (req, res) => {
     try {
@@ -12,9 +13,7 @@ const getMyProfile = async (req, res) => {
             });
         }
 
-        return res.status(200).json({
-            user
-        });
+        return res.status(200).json({ user });
 
     } catch (error) {
         console.error("Get profile error:", error);
@@ -28,7 +27,6 @@ const getMyProfile = async (req, res) => {
 const updateMyProfile = async (req, res) => {
     try {
         const { name, bio, location } = req.body;
-
         const updates = {};
 
         if (name !== undefined) {
@@ -87,7 +85,50 @@ const updateMyProfile = async (req, res) => {
     }
 };
 
+const uploadProfileImage = async (req, res) => {
+    try {
+        if (!req.file) {
+            return res.status(400).json({
+                message: "Please select an image"
+            });
+        }
+
+        const result = await cloudinary.uploader.upload(
+            `data:${req.file.mimetype};base64,${req.file.buffer.toString("base64")}`,
+            {
+                folder: "trip-planner/profiles",
+                resource_type: "image"
+            }
+        );
+
+        const user = await User.findByIdAndUpdate(
+            req.user.id,
+            { profileImage: result.secure_url },
+            { new: true, runValidators: true }
+        ).select("-password -googleId");
+
+        if (!user) {
+            return res.status(404).json({
+                message: "User not found"
+            });
+        }
+
+        return res.status(200).json({
+            message: "Profile image uploaded successfully",
+            user
+        });
+
+    } catch (error) {
+        console.error("Upload profile image error:", error);
+
+        return res.status(500).json({
+            message: "Image upload failed"
+        });
+    }
+};
+
 module.exports = {
     getMyProfile,
-    updateMyProfile
+    updateMyProfile,
+    uploadProfileImage
 };
