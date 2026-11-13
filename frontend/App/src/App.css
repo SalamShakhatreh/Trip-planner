@@ -2700,10 +2700,27 @@ a:focus-visible {
     border-radius: 18px;
   }
 
-  .footer-content {
+   .footer-content {
+    display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 28px 0;
+    gap: 12px;
+    min-height: auto;
+    padding: 24px 16px;
+    text-align: center;
+  }
+  .footer-logo {
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-content p {
+    width: 100%;
+    margin: 0;
+    line-height: 1.6;
   }
 
   .auth-card {
