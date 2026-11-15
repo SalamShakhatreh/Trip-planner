@@ -1,11 +1,14 @@
+
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-const PROFILE_API = "http://localhost:5000/api/profile";
-const TRIPS_API = "http://localhost:5000/api/trips";
-const PHOTOS_API = "http://localhost:5000/api/travel-photos";
+const API_URL = import.meta.env.VITE_API_URL;
+
+const PROFILE_API = `${API_URL}/api/profile`;
+const TRIPS_API = `${API_URL}/api/trips`;
+const PHOTOS_API = `${API_URL}/api/travel-photos`;
 
 const Profile = () => {
   const { token } = useAuth();

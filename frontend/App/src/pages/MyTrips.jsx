@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const MyTrips = () => {
   const navigate = useNavigate();
   const { token } = useAuth();
@@ -17,7 +19,7 @@ const MyTrips = () => {
         setLoading(true);
         setError("");
 
-        const response = await fetch("http://localhost:5000/api/trips", {
+        const response = await fetch(`${API_URL}/api/trips`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

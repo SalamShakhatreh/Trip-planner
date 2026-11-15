@@ -1,6 +1,9 @@
+
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 const interestOptions = [
   "Adventure",
@@ -70,7 +73,7 @@ const Chatbot = () => {
       setSaveMessage("");
 
       const response = await fetch(
-        "http://localhost:5000/api/chatbot/itinerary",
+        `${API_URL}/api/chatbot/itinerary`,
         {
           method: "POST",
           headers: {
@@ -127,7 +130,7 @@ const Chatbot = () => {
       setSaveMessage("");
 
       const countryResponse = await fetch(
-        "http://localhost:5000/api/countries",
+        `${API_URL}/api/countries`,
       );
 
       const countryData = await countryResponse.json();
@@ -145,7 +148,7 @@ const Chatbot = () => {
         throw new Error("This country was not found in our database.");
       }
 
-      const response = await fetch("http://localhost:5000/api/trips", {
+      const response = await fetch(`${API_URL}/api/trips`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -213,29 +216,29 @@ const Chatbot = () => {
           margin: 0 auto;
         }
 
-.chatbot-back {
-  position: absolute;
-  top: 25px;
-  left: 30px;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: #fff;
-  color: #333;
-  border: 1px solid #e5e5e5;
-  text-decoration: none;
-  font-size: 24px;
-  transition: all 0.2s ease;
-}
+        .chatbot-back {
+          position: absolute;
+          top: 25px;
+          left: 30px;
+          width: 44px;
+          height: 44px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          background: #fff;
+          color: #333;
+          border: 1px solid #e5e5e5;
+          text-decoration: none;
+          font-size: 24px;
+          transition: all 0.2s ease;
+        }
 
-.chatbot-back:hover {
-  background: #263b50;
-  color: #fff;
-  transform: translateX(-3px);
-}
+        .chatbot-back:hover {
+          background: #263b50;
+          color: #fff;
+          transform: translateX(-3px);
+        }
 
         .chatbot-heading {
           text-align: center;
