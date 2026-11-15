@@ -2334,281 +2334,437 @@ a:focus-visible {
 
 /*Profile*/
 
-.profile-back-wrapper {
-  margin-bottom:20px;
-  position: relative;
-  top: -15px;
-}
-
 
 .profile-page {
-  padding-top: 40px;
-  padding-bottom: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
-.profile-header {
-  background: #fff;
-  border-radius: 18px;
-  padding: 35px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-}
-
-.profile-header-top {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
-
-.profile-card {
-  border-radius: 18px;
-}
-
-
-
-.profile-image-wrapper {
-  position: relative;
-  width: 140px;
-  height: 140px;
-  flex-shrink: 0;
-}
-
-.profile-image {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #f0e8ff;
-}
-
-
-.profile-image-edit {
-  position: absolute;
-  bottom: 10px;
-  right: 5px;
-  width: 35px;
-  height: 35px;
-  border: none;
-  border-radius: 50%;
-  background: #aa3bff;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.profile-image-edit:hover {
-  transform: scale(1.15);
-  background: transparent;
-}
-
-.profile-image-edit:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-.profile-upload-spinner {
-  width: 16px;
-  height: 16px;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  border-top-color: white;
-  border-radius: 50%;
-  animation: profile-spin 0.7s linear infinite;
+.profile-back-wrapper {
+    margin-bottom: 20px;
+    position: relative;
+    top: -15px;
 }
 
 .profile-page .back-home {
-  position: static;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: #fff;
-  color: #333;
-  border: 1px solid #e5e5e5;
-  text-decoration: none;
-  font-size: 24px;
-  transition: all 0.2s ease;
+    position: static;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff;
+    color: #333;
+    border: 1px solid #e5e5e5;
+    text-decoration: none;
+    font-size: 24px;
+    transition: all 0.2s ease;
 }
+
 .profile-page .back-home:hover {
-  background: #263b50;
-  color: #fff;
-  transform: translateX(-3px);
-}
-.profile-stats {
-  display: flex;
-  justify-content: center;
-  gap: 70px;
-  border-top: 1px solid #eee;
-  margin-top: 30px;
-  padding-top: 25px;
+    background: #263b50;
+    color: #fff;
+    transform: translateX(-3px);
 }
 
-.profile-stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
+.profile-header {
+    background: #fff;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
-.profile-stat strong {
-  font-size: 24px;
-  color: #263b50;
+.profile-header-top {
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
-.profile-stat span {
-  font-size: 14px;
-  color: #777;
+.profile-card {
+    border-radius: 18px;
 }
 
-.profile-trips-section {
-  margin-top: 35px;
-  padding: 30px;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+.profile-image-wrapper {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    flex-shrink: 0;
+}
+
+.profile-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #f0e8ff;
+}
+
+.profile-image-edit {
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    background: #aa3bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.profile-image-edit:hover {
+    transform: scale(1.1);
+    background: #263b50;
+}
+
+.profile-image-edit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.profile-upload-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: profile-spin 0.7s linear infinite;
+}
+
+.profile-trips-section,
+.profile-photos-section {
+    margin-top: 35px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 .profile-section-heading {
-  margin-bottom: 25px;
+    margin-bottom: 25px;
 }
 
 .profile-section-heading h3 {
-  color: #263b50;
-  font-size: 23px;
-  font-weight: 700;
-  margin-bottom: 6px;
+    color: #263b50;
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 6px;
 }
 
 .profile-section-heading p {
-  color: #888;
-  font-size: 14px;
-  margin: 0;
+    color: #888;
+    font-size: 14px;
+    margin: 0;
 }
 
+/* Trips */
+
 .profile-trips-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
 }
 
 .profile-trip-card {
-  overflow: hidden;
-  border: 1px solid #eee;
-  border-radius: 15px;
-  background: #fff;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    background: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .profile-trip-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.09);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.09);
 }
 
 .profile-trip-image {
-  position: relative;
-  height: 180px;
+    position: relative;
+    height: 180px;
 }
 
 .profile-trip-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .profile-trip-status {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  padding: 6px 12px;
-  border-radius: 20px;
-  background: #fff;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: capitalize;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
 }
 
 .profile-trip-status.planned {
-  color: #8a55c5;
+    color: #8a55c5;
 }
 
 .profile-trip-status.ongoing {
-  color: #16845b;
+    color: #16845b;
 }
 
 .profile-trip-status.completed {
-  color: #64748b;
+    color: #64748b;
 }
 
 .profile-trip-info {
-  padding: 18px;
+    padding: 18px;
 }
 
 .profile-trip-info h4 {
-  color: #263b50;
-  font-size: 17px;
-  font-weight: 700;
-  margin-bottom: 10px;
+    color: #263b50;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .profile-trip-destination {
-  color: #777;
-  font-size: 14px;
-  margin-bottom: 15px;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 15px;
 }
 
 .profile-trip-details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  color: #777;
-  font-size: 12px;
-  margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    color: #777;
+    font-size: 12px;
+    margin-bottom: 15px;
 }
 
 .profile-trip-budget {
-  color: #aa3bff;
-  font-weight: 700;
-  font-size: 14px;
-  padding-top: 12px;
-  border-top: 1px solid #eee;
+    color: #aa3bff;
+    font-weight: 700;
+    font-size: 14px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
 }
 
+/* Empty State */
+
 .profile-empty-state {
-  text-align: center;
-  padding: 40px 15px;
+    text-align: center;
+    padding: 40px 15px;
 }
 
 .profile-empty-state > span {
-  font-size: 40px;
+    font-size: 40px;
 }
 
 .profile-empty-state h4 {
-  color: #263b50;
-  margin: 12px 0 8px;
-  font-weight: 700;
+    color: #263b50;
+    margin: 12px 0 8px;
+    font-weight: 700;
 }
 
 .profile-empty-state p {
-  color: #888;
-  margin-bottom: 20px;
+    color: #888;
+    margin-bottom: 20px;
 }
 
 .profile-plan-button {
-  display: inline-block;
-  background: #aa3bff;
-  color: #fff;
-  padding: 10px 22px;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: background 0.2s ease;
+    display: inline-block;
+    background: #aa3bff;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.2s ease;
 }
 
 .profile-plan-button:hover {
-  background: #263b50;
-  color: #fff;
+    background: #263b50;
+    color: #fff;
+}
+
+/* Travel Photos */
+
+.profile-photos-section .profile-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.profile-add-photo-button {
+    border: none;
+    background: #aa3bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.profile-add-photo-button:hover {
+    background: #263b50;
+}
+
+.profile-photo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 22px;
+    margin-bottom: 25px;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    background: #faf8ff;
+}
+
+.profile-photo-form h4 {
+    color: #263b50;
+    font-weight: 700;
+}
+
+.profile-photo-form input,
+.profile-photo-form textarea,
+.profile-photo-edit-form input,
+.profile-photo-edit-form textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+}
+
+.profile-photo-form input:focus,
+.profile-photo-form textarea:focus,
+.profile-photo-edit-form input:focus,
+.profile-photo-edit-form textarea:focus {
+    border-color: #aa3bff;
+    box-shadow: 0 0 0 0.15rem rgba(170, 59, 255, 0.1);
+}
+
+.profile-photos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.profile-photo-card {
+    overflow: hidden;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    background: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-photo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.09);
+}
+
+.profile-photo-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.profile-photo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-photo-card:hover .profile-photo-image img {
+    transform: scale(1.04);
+}
+
+.profile-photo-info {
+    padding: 18px;
+}
+
+.profile-photo-info h4 {
+    color: #263b50;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.profile-photo-location {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.profile-photo-description {
+    color: #888;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.profile-photo-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.profile-photo-actions button {
+    flex: 1;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.profile-photo-edit-button {
+    background: #f0e8ff;
+    color: #8a55c5;
+}
+
+.profile-photo-edit-button:hover {
+    background: #aa3bff;
+    color: #fff;
+}
+
+.profile-photo-delete-button {
+    background: #fff0f0;
+    color: #d9534f;
+}
+
+.profile-photo-delete-button:hover {
+    background: #d9534f;
+    color: #fff;
+}
+
+.profile-photo-edit-form {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.profile-photo-edit-form .form-label {
+    color: #263b50;
+    font-weight: 600;
+}
+
+.profile-cancel-button {
+    background: #eee !important;
+    color: #555 !important;
+}
+
+.profile-cancel-button:hover {
+    background: #ddd !important;
 }
 
 
@@ -2706,6 +2862,15 @@ a:focus-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
   }
+    .profile-trips-grid,
+    .profile-photos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .profile-stats {
+        gap: 15px;
+    }
+
 }
 
 @media (min-width: 992px) and (max-width: 1100px) {
@@ -3158,37 +3323,120 @@ a:focus-visible {
     padding: 15px;
   }
 
-  .profile-trips-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-  }
+      .profile-page {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
 
-  .profile-trip-image {
-    height: auto;
-    aspect-ratio: 1 / 1;
-  }
+    .profile-header {
+        padding: 22px 16px;
+    }
 
-  .profile-trip-info {
-    padding: 10px;
-  }
+    .profile-header-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 18px;
+    }
 
-  .profile-trip-info h4 {
-    font-size: 14px;
-    margin-bottom: 6px;
-  }
+    .profile-header-info h2 {
+        font-size: 23px;
+    }
 
-  .profile-trip-destination,
-  .profile-trip-details {
-    font-size: 11px;
-  }
+    .profile-edit-button {
+        align-self: center;
+    }
 
-  .profile-trip-details {
-    gap: 5px;
-  }
+    .profile-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 10px;
+        margin-top: 25px;
+        padding-top: 20px;
+    }
 
-  .profile-trip-budget {
-    font-size: 12px;
-  }
+    .profile-stat {
+        min-width: 0;
+    }
+
+    .profile-stat strong {
+        font-size: 21px;
+    }
+
+    .profile-stat span {
+        font-size: 12px;
+    }
+
+    .profile-trips-section,
+    .profile-photos-section {
+        padding: 20px 15px;
+        margin-top: 25px;
+    }
+
+    .profile-section-heading h3 {
+        font-size: 20px;
+    }
+
+    .profile-section-heading p {
+        font-size: 12px;
+    }
+
+    .profile-photos-section .profile-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .profile-trips-grid,
+    .profile-photos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .profile-trip-image {
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .profile-trip-info,
+    .profile-photo-info {
+        padding: 10px;
+    }
+
+    .profile-trip-info h4,
+    .profile-photo-info h4 {
+        font-size: 14px;
+    }
+
+    .profile-trip-destination,
+    .profile-photo-location,
+    .profile-photo-description {
+        font-size: 11px;
+    }
+
+    .profile-trip-details {
+        font-size: 10px;
+        gap: 7px;
+    }
+
+    .profile-trip-budget {
+        font-size: 12px;
+    }
+
+    .profile-photo-actions {
+        gap: 6px;
+    }
+
+    .profile-photo-actions button {
+        padding: 7px 5px;
+        font-size: 11px;
+    }
+
+    .profile-photo-form {
+        padding: 15px;
+    }
+
+    .profile-edit-form {
+        padding: 18px 14px;
+    }
 }
 
 
@@ -3289,59 +3537,154 @@ a:focus-visible {
   }
 }
 @keyframes profile-spin {
-  to {
-    transform: rotate(360deg);
-  }
+     to {
+        transform: rotate(360deg);
+    }
 }
-  .profile-header-info {
-  flex: 1;
+
+.profile-header-info {
+    flex: 1;
+    min-width: 0;
 }
+
 .profile-header-info h2 {
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #25202b;
+    color: #263b50;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .profile-location {
-  color: #777;
-  margin-bottom: 10px;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 
 .profile-bio {
-  color: #555;
-  margin-bottom: 0;
-  line-height: 1.6;
+    color: #777;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
 }
 
-.profile-edit-button,
-.profile-save-button {
-  border: none;
-  border-radius: 9px;
-  padding: 10px 20px;
-  background: #aa3bff;
-  color: white;
-  font-weight: 600;
-  transition: 0.2s ease;
+.profile-edit-button {
+    border: 1px solid #aa3bff;
+    background: #fff;
+    color: #aa3bff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-.profile-edit-button:hover,
-.profile-save-button:hover {
-  background: #8d25dc;
+.profile-edit-button:hover {
+    background: #aa3bff;
+    color: #fff;
+}
+
+.profile-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+    border-top: 1px solid #eee;
+    margin-top: 30px;
+    padding-top: 25px;
+}
+
+.profile-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-width: 100px;
+    text-align: center;
+}
+
+.profile-stat strong {
+    font-size: 24px;
+    color: #263b50;
+    font-weight: 700;
+}
+
+.profile-stat span {
+    font-size: 14px;
+    color: #777;
+}
+
+.profile-stat-button {
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    box-shadow: none;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 0 0 8px;
+    transition: all 0.2s ease;
+}
+
+.profile-stat-button.active {
+    border-bottom-color: #aa3bff;
+}
+
+.profile-stat-button.active strong,
+.profile-stat-button.active span,
+.profile-stat-button:hover strong,
+.profile-stat-button:hover span {
+    color: #aa3bff;
+}
+
+.profile-stat-button:focus-visible {
+    outline: 2px solid #aa3bff;
+    outline-offset: 5px;
 }
 
 .profile-edit-form {
-  border-top: 1px solid #eee;
-  margin-top: 30px;
-  padding-top: 25px;
+    margin-top: 30px;
+    padding: 25px;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    background: #faf8ff;
+}
+
+.profile-edit-form .form-label {
+    color: #263b50;
+    font-weight: 600;
 }
 
 .profile-edit-form .form-control {
-  border-radius: 9px;
+    border-radius: 10px;
+    padding: 11px 14px;
+}
+
+.profile-edit-form .form-control:focus {
+    border-color: #aa3bff;
+    box-shadow: 0 0 0 0.15rem rgba(170, 59, 255, 0.12);
+}
+
+.profile-save-button {
+    border: none;
+    background: #aa3bff;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.profile-save-button:hover {
+    background: #263b50;
 }
 
 .profile-save-button:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
 

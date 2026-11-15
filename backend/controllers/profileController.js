@@ -62,7 +62,7 @@ const updateMyProfile = async (req, res) => {
         const user = await User.findByIdAndUpdate(
             req.user.id,
             { $set: updates },
-            { new: true, runValidators: true }
+            { returnDocument: "after", runValidators: true }
         ).select("-password -googleId");
 
         if (!user) {
@@ -104,7 +104,7 @@ const uploadProfileImage = async (req, res) => {
         const user = await User.findByIdAndUpdate(
             req.user.id,
             { profileImage: result.secure_url },
-            { new: true, runValidators: true }
+            { returnDocument: "after", runValidators: true }
         ).select("-password -googleId");
 
         if (!user) {
