@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
@@ -23,9 +22,8 @@ const Chatbot = () => {
 
   const tripData = location.state || {};
 
-  const [destination, setDestination] = useState(
-    tripData.destination || ""
-  );
+  const [destination, setDestination] = useState(tripData.destination || "");
+  const [startDate] = useState(tripData.startDate || "");
   const [duration] = useState(tripData.duration || 5);
   const [budget] = useState(tripData.budget || 1000);
   const [travelers] = useState(tripData.travelers || 1);
@@ -36,11 +34,15 @@ const Chatbot = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  const [saving, setSaving] = useState(false);
+  const [saved, setSaved] = useState(false);
+  const [saveMessage, setSaveMessage] = useState("");
+
   const handleInterestChange = (interest) => {
     setInterests((previous) =>
       previous.includes(interest)
         ? previous.filter((item) => item !== interest)
-        : [...previous, interest]
+        : [...previous, interest],
     );
   };
 
@@ -64,9 +66,11 @@ const Chatbot = () => {
       setLoading(true);
       setError("");
       setItinerary(null);
+      setSaved(false);
+      setSaveMessage("");
 
       const response = await fetch(
-        "https://trip-planner-vyu6.onrender.com/api/chatbot/itinerary",
+        "http://localhost:5000/api/chatbot/itinerary",
         {
           method: "POST",
           headers: {
@@ -82,14 +86,14 @@ const Chatbot = () => {
             travelers,
             budgetType,
           }),
-        }
+        },
       );
 
       const data = await response.json();
 
       if (!response.ok) {
         throw new Error(
-          data.message || data.error || "Failed to generate your itinerary."
+          data.message || data.error || "Failed to generate your itinerary.",
         );
       }
 
@@ -98,6 +102,80 @@ const Chatbot = () => {
       setError(err.message || "Something went wrong. Please try again.");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleSaveTrip = async () => {
+    if (!token) {
+      setError("Your session has expired. Please log in again.");
+      return;
+    }
+
+    if (!startDate) {
+      setError("Please select a start date before saving your trip.");
+      return;
+    }
+
+    if (!itinerary) {
+      setError("Please generate your itinerary first.");
+      return;
+    }
+
+    try {
+      setSaving(true);
+      setError("");
+      setSaveMessage("");
+
+      const countryResponse = await fetch(
+        "http://localhost:5000/api/countries",
+      );
+
+      const countryData = await countryResponse.json();
+
+      if (!countryResponse.ok) {
+        throw new Error(countryData.message || "Failed to find country.");
+      }
+
+      const matchedCountry = countryData.countries?.find(
+        (item) =>
+          item.name.trim().toLowerCase() === destination.trim().toLowerCase(),
+      );
+
+      if (!matchedCountry) {
+        throw new Error("This country was not found in our database.");
+      }
+
+      const response = await fetch("http://localhost:5000/api/trips", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          country: matchedCountry._id,
+          title: itinerary.title || `${destination} Trip`,
+          startDate,
+          duration,
+          budget,
+          currency: "USD",
+          budgetType: budgetType === "person" ? "perPerson" : "group",
+          numberOfPeople: travelers,
+          itinerary,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to save your trip.");
+      }
+
+      setSaved(true);
+      setSaveMessage("Your trip has been saved successfully!");
+    } catch (err) {
+      setError(err.message || "Something went wrong while saving your trip.");
+    } finally {
+      setSaving(false);
     }
   };
 
@@ -135,14 +213,29 @@ const Chatbot = () => {
           margin: 0 auto;
         }
 
-        .chatbot-back {
-          border: none;
-          background: transparent;
-          color: #6258a8;
-          font-size: 15px;
-          cursor: pointer;
-          margin-bottom: 28px;
-        }
+.chatbot-back {
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  color: #333;
+  border: 1px solid #e5e5e5;
+  text-decoration: none;
+  font-size: 24px;
+  transition: all 0.2s ease;
+}
+
+.chatbot-back:hover {
+  background: #263b50;
+  color: #fff;
+  transform: translateX(-3px);
+}
 
         .chatbot-heading {
           text-align: center;
@@ -384,15 +477,15 @@ const Chatbot = () => {
           className="chatbot-back"
           onClick={() => navigate("/plan-trip")}
         >
-          ← Back to trip planner
+          ←
         </button>
 
         <header className="chatbot-heading">
           <span>YOUR PERSONAL TRIP ASSISTANT</span>
           <h1>Let's plan your adventure.</h1>
           <p>
-            Tell us what you enjoy, and we'll create a day-by-day itinerary
-            for your trip.
+            Tell us what you enjoy, and we'll create a day-by-day itinerary for
+            your trip.
           </p>
         </header>
 
@@ -406,6 +499,15 @@ const Chatbot = () => {
             <div className="chatbot-info-item">
               <span>DESTINATION</span>
               <strong>{destination || "Not selected"}</strong>
+            </div>
+
+            <div className="chatbot-info-item">
+              <span>START DATE</span>
+              <strong>
+                {startDate
+                  ? new Date(`${startDate}T00:00:00`).toLocaleDateString()
+                  : "Not selected"}
+              </strong>
             </div>
 
             <div className="chatbot-info-item">
@@ -516,28 +618,42 @@ const Chatbot = () => {
               <div className="chatbot-total">
                 <span>Total estimated trip cost</span>
                 <strong>
-                  {itinerary.currency || "USD"}{" "}
-                  {itinerary.totalEstimatedCost}
+                  {itinerary.currency || "USD"} {itinerary.totalEstimatedCost}
                 </strong>
               </div>
             )}
 
-            {Array.isArray(itinerary.tips) &&
-              itinerary.tips.length > 0 && (
-                <div style={{ marginTop: 25 }}>
-                  <h3>Travel tips</h3>
-                  <ul className="chatbot-tips">
-                    {itinerary.tips.map((tip, index) => (
-                      <li key={index}>{tip}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+            {Array.isArray(itinerary.tips) && itinerary.tips.length > 0 && (
+              <div style={{ marginTop: 25 }}>
+                <h3>Travel tips</h3>
+                <ul className="chatbot-tips">
+                  {itinerary.tips.map((tip, index) => (
+                    <li key={index}>{tip}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {itinerary.disclaimer && (
-              <p className="chatbot-disclaimer">
-                {itinerary.disclaimer}
-              </p>
+              <p className="chatbot-disclaimer">{itinerary.disclaimer}</p>
+            )}
+
+            <button
+              type="button"
+              className="chatbot-generate"
+              onClick={handleSaveTrip}
+              disabled={saving || saved}
+              style={{ marginTop: 24 }}
+            >
+              {saving
+                ? "Saving your trip..."
+                : saved
+                  ? "Trip saved ✓"
+                  : "Save Trip"}
+            </button>
+
+            {saveMessage && (
+              <p style={{ color: "#39804b", marginTop: 15 }}>{saveMessage}</p>
             )}
           </section>
         )}

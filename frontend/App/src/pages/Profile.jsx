@@ -20,6 +20,7 @@ const Profile = () => {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
+  const [editing, setEditing] = useState(false);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
@@ -27,9 +28,7 @@ const Profile = () => {
     const fetchProfile = async () => {
       try {
         const response = await axios.get(`${API_URL}/me`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+          headers: { Authorization: `Bearer ${token}` },
         });
 
         setProfile({
@@ -68,11 +67,15 @@ const Profile = () => {
       const formData = new FormData();
       formData.append("profileImage", file);
 
-      const response = await axios.post(`${API_URL}/me/image`, formData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await axios.post(
+        `${API_URL}/me/image`,
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       setProfile((prev) => ({
         ...prev,
@@ -109,7 +112,7 @@ const Profile = () => {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        },
+        }
       );
 
       setProfile((prev) => ({
@@ -117,6 +120,7 @@ const Profile = () => {
         ...response.data.user,
       }));
 
+      setEditing(false);
       setMessage("Profile updated successfully!");
     } catch (err) {
       setError(err.response?.data?.message || "Failed to update profile");
@@ -130,72 +134,85 @@ const Profile = () => {
   }
 
   return (
-    <section className="container py-5 profile-page">
+    <section className="container profile-page">
       <div className="mb-4">
         <Link to="/" className="back-home">
           ←
         </Link>
       </div>
 
-      <div
-        className="card shadow-sm border-0 mx-auto profile-card"
-        style={{ maxWidth: "650px" }}
-      >
-        <div className="card-body p-4 p-md-5">
-          <h2 className="fw-bold mb-2">My Profile</h2>
+      {message && <div className="alert alert-success">{message}</div>}
+      {error && <div className="alert alert-danger">{error}</div>}
 
-          <p className="text-muted mb-4">
-            Manage your personal information.
-          </p>
+      <div className="profile-header">
+        <div className="profile-header-top">
+          <div className="profile-image-wrapper">
+            <img
+              src={
+                profile.profileImage ||
+                "https://placehold.co/150x150?text=Profile"
+              }
+              alt="Profile"
+              className="profile-image"
+            />
 
-          <div className="text-center mb-4">
-            <div className="profile-image-wrapper">
-              <img
-                src={
-                  profile.profileImage ||
-                  "https://placehold.co/120x120?text=Profile"
-                }
-                alt="Profile"
-                className="rounded-circle profile-image"
-              />
+            <button
+              type="button"
+              className="profile-image-edit"
+              onClick={() => fileInputRef.current?.click()}
+              disabled={uploading}
+              aria-label="Change profile photo"
+              title="Change profile photo"
+            >
+              {uploading ? (
+                <span className="profile-upload-spinner"></span>
+              ) : (
+                "📷"
+              )}
+            </button>
 
-              <button
-                type="button"
-                className="profile-image-edit"
-                onClick={() => fileInputRef.current?.click()}
-                disabled={uploading}
-                aria-label="Change profile photo"
-                title="Change profile photo"
-              >
-                {uploading ? (
-                  <span className="profile-upload-spinner"></span>
-                ) : (
-                  <span>📷</span>
-                )}
-              </button>
-
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept="image/*"
-                hidden
-                onChange={(e) => {
-                  handleImageUpload(e.target.files?.[0]);
-                }}
-              />
-            </div>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*"
+              hidden
+              onChange={(e) => handleImageUpload(e.target.files?.[0])}
+            />
           </div>
 
-          {message && <div className="alert alert-success">{message}</div>}
+          <div className="profile-header-info">
+            <h2>{profile.name || "Your Name"}</h2>
 
-          {error && <div className="alert alert-danger">{error}</div>}
+            {profile.location && (
+              <p className="profile-location">
+                <span>📍</span> {profile.location}
+              </p>
+            )}
 
-          <form onSubmit={handleSave}>
+            <p className="profile-bio">
+              {profile.bio || "Tell us a little about yourself..."}
+            </p>
+          </div>
+
+          <button
+            type="button"
+            className="profile-edit-button"
+            onClick={() => {
+              setEditing((prev) => !prev);
+              setMessage("");
+              setError("");
+            }}
+          >
+            {editing ? "Cancel" : "✏️ Edit Profile"}
+          </button>
+        </div>
+
+        {editing && (
+          <form className="profile-edit-form" onSubmit={handleSave}>
             <div className="mb-3">
               <label htmlFor="profile-name" className="form-label">
                 Full Name
               </label>
-
               <input
                 id="profile-name"
                 type="text"
@@ -211,7 +228,6 @@ const Profile = () => {
               <label htmlFor="profile-bio" className="form-label">
                 Bio
               </label>
-
               <textarea
                 id="profile-bio"
                 name="bio"
@@ -222,17 +238,15 @@ const Profile = () => {
                 onChange={handleChange}
                 placeholder="Tell us a little about yourself..."
               />
-
               <small className="text-muted">
                 {profile.bio.length}/160 characters
               </small>
             </div>
 
-            <div className="mb-4">
+            <div className="mb-3">
               <label htmlFor="profile-location" className="form-label">
                 Location
               </label>
-
               <input
                 id="profile-location"
                 type="text"
@@ -246,13 +260,13 @@ const Profile = () => {
 
             <button
               type="submit"
-              className="btn btn-primary w-100"
+              className="profile-save-button"
               disabled={saving}
             >
               {saving ? "Saving..." : "Save Changes"}
             </button>
           </form>
-        </div>
+        )}
       </div>
     </section>
   );

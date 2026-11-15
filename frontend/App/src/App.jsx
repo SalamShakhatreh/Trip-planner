@@ -1,3 +1,4 @@
+
 import {
   BrowserRouter,
   Routes,
@@ -23,6 +24,7 @@ import ExploreCountries from "./pages/ExploreCountries";
 import CountryActivities from "./pages/CountryActivities";
 import Chatbot from "./pages/Chatbot";
 import Profile from "./pages/Profile";
+import MyTrips from "./pages/MyTrips";
 
 import "./App.css";
 
@@ -115,6 +117,7 @@ const AppRoutes = () => {
             </ProtectedRoute>
           }
         />
+
         <Route
           path="/chatbot"
           element={
@@ -123,11 +126,21 @@ const AppRoutes = () => {
             </ProtectedRoute>
           }
         />
+
         <Route
           path="/profile"
           element={
             <ProtectedRoute>
               <Profile />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/my-trips"
+          element={
+            <ProtectedRoute>
+              <MyTrips />
             </ProtectedRoute>
           }
         />

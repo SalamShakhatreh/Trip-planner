@@ -7,6 +7,7 @@ const PlanTrip = () => {
 
   const [destination, setDestination] = useState("");
   const [explore, setExplore] = useState(false);
+  const [startDate, setStartDate] = useState("");
   const [duration, setDuration] = useState(5);
   const [travelers, setTravelers] = useState(1);
   const [budget, setBudget] = useState(1000);
@@ -32,10 +33,16 @@ const PlanTrip = () => {
   };
 
   const handleCreateTrip = () => {
+    if (!startDate) {
+      alert("Please select your trip start date.");
+      return;
+    }
+
     navigate("/chatbot", {
       state: {
         destination: explore ? "" : destination,
         explore,
+        startDate,
         duration,
         travelers,
         budget,
@@ -122,6 +129,24 @@ const PlanTrip = () => {
                   ? "Exploring destinations"
                   : "I haven't decided yet — help me explore"}
               </button>
+            </div>
+
+            <div className="trip-panel">
+              <div className="trip-panel-heading">
+                <span className="trip-panel-icon">📅</span>
+                <div>
+                  <h3>When are you going?</h3>
+                  <p>Choose your trip start date.</p>
+                </div>
+              </div>
+
+              <input
+                type="date"
+                value={startDate}
+                min={new Date().toLocaleDateString("en-CA")}
+                onChange={(e) => setStartDate(e.target.value)}
+                required
+              />
             </div>
 
             <div className="trip-panel">

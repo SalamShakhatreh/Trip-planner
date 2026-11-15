@@ -9,7 +9,12 @@ const tripSchema = new mongoose.Schema({
     destination: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Destination",
-        required: true
+        default: null
+    },
+    country: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Country",
+        default: null
     },
     title: {
         type: String,
@@ -57,6 +62,10 @@ const tripSchema = new mongoose.Schema({
         type: String,
         enum: ["planned", "ongoing", "completed"],
         default: "planned"
+    },
+    itinerary: {
+        type: mongoose.Schema.Types.Mixed,
+        default: null
     }
 });
 

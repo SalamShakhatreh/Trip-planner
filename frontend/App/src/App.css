@@ -942,6 +942,26 @@ a:focus-visible {
 /* Plan Trip*/
 .trip-planner-page .back-home {
   top: 15px;
+  left: 20px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  color: #263b50;
+  border: 1px solid #e2e8f0;
+  text-decoration: none;
+  font-size: 24px;
+  box-shadow: 0 3px 12px rgba(30, 55, 80, 0.06);
+  z-index: 10;
+}
+
+.trip-planner-page .back-home:hover {
+  background: #263b50;
+  color: #fff;
+  border-color: #263b50;
 }
 .trip-planner-page {
   min-height: 100vh;
@@ -2320,39 +2340,56 @@ a:focus-visible {
   padding-bottom: 40px;
 }
 
+.profile-header {
+  background: #fff;
+  border-radius: 18px;
+  padding: 35px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.profile-header-top {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
 .profile-card {
   border-radius: 18px;
 }
 
+
+
 .profile-image-wrapper {
   position: relative;
-  width: 120px;
-  height: 120px;
-  margin: 0 auto;
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
 }
 
 .profile-image {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #e5e7eb;
+  border: 4px solid #f0e8ff;
 }
+
 
 .profile-image-edit {
   position: absolute;
-  bottom: 3px;
-  right: 3px;
+  bottom: 5px;
+  right: 5px;
+  width: 35px;
+  height: 35px;
   border: none;
-  background: transparent;
-  color: #333;
-  padding: 4px;
+  border-radius: 50%;
+  background: #aa3bff;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 20px;
-  transition: 0.2s ease;
+  font-size: 16px;
 }
 
 .profile-image-edit:hover {
@@ -2374,6 +2411,9 @@ a:focus-visible {
   animation: profile-spin 0.7s linear infinite;
 }
 
+.profile-page .back-home {
+  top: 12px;
+}
 
 
 
@@ -2590,6 +2630,22 @@ a:focus-visible {
 
   .explore-countries-page .destination-image {
     height: 220px;
+  }
+   .profile-header {
+    padding: 25px 20px;
+  }
+
+  .profile-header-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-edit-button {
+    width: 100%;
+  }
+
+  .profile-header-info {
+    width: 100%;
   }
 }
 
@@ -2993,4 +3049,55 @@ a:focus-visible {
     transform: rotate(360deg);
   }
 }
+  .profile-header-info {
+  flex: 1;
+}
+.profile-header-info h2 {
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #25202b;
+}
+
+.profile-location {
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.profile-bio {
+  color: #555;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.profile-edit-button,
+.profile-save-button {
+  border: none;
+  border-radius: 9px;
+  padding: 10px 20px;
+  background: #aa3bff;
+  color: white;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.profile-edit-button:hover,
+.profile-save-button:hover {
+  background: #8d25dc;
+}
+
+.profile-edit-form {
+  border-top: 1px solid #eee;
+  margin-top: 30px;
+  padding-top: 25px;
+}
+
+.profile-edit-form .form-control {
+  border-radius: 9px;
+}
+
+.profile-save-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 

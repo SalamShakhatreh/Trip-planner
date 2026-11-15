@@ -1,45 +1,85 @@
 
 const Trip = require("../models/Trip");
 const Destination = require("../models/Destination");
+const Country = require("../models/Country");
 const mongoose = require("mongoose");
 
 const createTrip = async (req, res) => {
     try {
         const {
             destination,
+            country,
             title,
             startDate,
             duration,
             budget,
             currency,
             budgetType,
-            numberOfPeople
+            numberOfPeople,
+            itinerary
         } = req.body;
 
-        if (!mongoose.isObjectIdOrHexString(destination)) {
+        if (!destination && !country) {
             return res.status(400).json({
-                message: "Invalid destination ID"
+                message: "Destination or country is required"
             });
         }
 
-        const existingDestination = await Destination.findById(destination);
-
-        if (!existingDestination) {
-            return res.status(404).json({
-                message: "Destination not found"
+        if (destination && country) {
+            return res.status(400).json({
+                message: "Provide either destination or country, not both"
             });
         }
+
+        let existingDestination = null;
+        let existingCountry = null;
+
+        if (destination) {
+            if (!mongoose.isObjectIdOrHexString(destination)) {
+                return res.status(400).json({
+                    message: "Invalid destination ID"
+                });
+            }
+
+            existingDestination = await Destination.findById(destination);
+
+            if (!existingDestination) {
+                return res.status(404).json({
+                    message: "Destination not found"
+                });
+            }
+        }
+
+        if (country) {
+            if (!mongoose.isObjectIdOrHexString(country)) {
+                return res.status(400).json({
+                    message: "Invalid country ID"
+                });
+            }
+
+            existingCountry = await Country.findById(country);
+
+            if (!existingCountry) {
+                return res.status(404).json({
+                    message: "Country not found"
+                });
+            }
+        }
+
+        const tripName = existingDestination?.name || existingCountry?.name;
 
         const newTrip = new Trip({
             user: req.user.id,
-            destination,
-            title,
+            destination: destination || null,
+            country: country || null,
+            title: title || `${tripName} Trip`,
             startDate,
             duration,
             budget,
             currency,
             budgetType,
-            numberOfPeople
+            numberOfPeople,
+            itinerary
         });
 
         await newTrip.save();
@@ -69,6 +109,7 @@ const getMyTrips = async (req, res) => {
             search,
             status,
             destination,
+            country,
             page = 1,
             limit = 5
         } = req.query;
@@ -87,6 +128,10 @@ const getMyTrips = async (req, res) => {
 
         if (destination) {
             filter.destination = destination;
+        }
+
+        if (country) {
+            filter.country = country;
         }
 
         const parsedPage = Number(page);
@@ -109,6 +154,7 @@ const getMyTrips = async (req, res) => {
 
         const trips = await Trip.find(filter)
             .populate("destination")
+            .populate("country")
             .skip(skip)
             .limit(pageLimit);
 
@@ -140,7 +186,9 @@ const getTripById = async (req, res) => {
         const trip = await Trip.findOne({
             _id: req.params.id,
             user: req.user.id
-        }).populate("destination");
+        })
+            .populate("destination")
+            .populate("country");
 
         if (!trip) {
             return res.status(404).json({
@@ -184,8 +232,27 @@ const updateTrip = async (req, res) => {
             }
         }
 
+        if (req.body.country !== undefined) {
+            if (!mongoose.isObjectIdOrHexString(req.body.country)) {
+                return res.status(400).json({
+                    message: "Invalid country ID"
+                });
+            }
+
+            const existingCountry = await Country.findById(
+                req.body.country
+            );
+
+            if (!existingCountry) {
+                return res.status(404).json({
+                    message: "Country not found"
+                });
+            }
+        }
+
         const allowedFields = [
             "destination",
+            "country",
             "title",
             "startDate",
             "duration",
@@ -193,7 +260,8 @@ const updateTrip = async (req, res) => {
             "budgetType",
             "currency",
             "numberOfPeople",
-            "status"
+            "status",
+            "itinerary"
         ];
 
         const updates = {};
@@ -208,7 +276,9 @@ const updateTrip = async (req, res) => {
             { _id: req.params.id, user: req.user.id },
             updates,
             { new: true, runValidators: true }
-        ).populate("destination");
+        )
+            .populate("destination")
+            .populate("country");
 
         if (!trip) {
             return res.status(404).json({
@@ -239,7 +309,8 @@ const getAllTrips = async (req, res) => {
     try {
         const trips = await Trip.find()
             .populate("user", "name email")
-            .populate("destination");
+            .populate("destination")
+            .populate("country");
 
         res.status(200).json({
             trips
@@ -257,10 +328,11 @@ const getAllTrips = async (req, res) => {
 const deleteTrip = async (req, res) => {
     try {
         if (!mongoose.isObjectIdOrHexString(req.params.id)) {
-    return res.status(400).json({
-        message: "Invalid trip ID"
-    });
-}
+            return res.status(400).json({
+                message: "Invalid trip ID"
+            });
+        }
+
         const trip = await Trip.findOneAndDelete({
             _id: req.params.id,
             user: req.user.id
