@@ -2334,6 +2334,12 @@ a:focus-visible {
 
 /*Profile*/
 
+.profile-back-wrapper {
+  margin-bottom:20px;
+  position: relative;
+  top: -15px;
+}
+
 
 .profile-page {
   padding-top: 40px;
@@ -2377,7 +2383,7 @@ a:focus-visible {
 
 .profile-image-edit {
   position: absolute;
-  bottom: 5px;
+  bottom: 10px;
   right: 5px;
   width: 35px;
   height: 35px;
@@ -2412,9 +2418,198 @@ a:focus-visible {
 }
 
 .profile-page .back-home {
-  top: 12px;
+  position: static;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  color: #333;
+  border: 1px solid #e5e5e5;
+  text-decoration: none;
+  font-size: 24px;
+  transition: all 0.2s ease;
+}
+.profile-page .back-home:hover {
+  background: #263b50;
+  color: #fff;
+  transform: translateX(-3px);
+}
+.profile-stats {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  border-top: 1px solid #eee;
+  margin-top: 30px;
+  padding-top: 25px;
 }
 
+.profile-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.profile-stat strong {
+  font-size: 24px;
+  color: #263b50;
+}
+
+.profile-stat span {
+  font-size: 14px;
+  color: #777;
+}
+
+.profile-trips-section {
+  margin-top: 35px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.profile-section-heading {
+  margin-bottom: 25px;
+}
+
+.profile-section-heading h3 {
+  color: #263b50;
+  font-size: 23px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.profile-section-heading p {
+  color: #888;
+  font-size: 14px;
+  margin: 0;
+}
+
+.profile-trips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.profile-trip-card {
+  overflow: hidden;
+  border: 1px solid #eee;
+  border-radius: 15px;
+  background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-trip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.09);
+}
+
+.profile-trip-image {
+  position: relative;
+  height: 180px;
+}
+
+.profile-trip-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-trip-status {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.profile-trip-status.planned {
+  color: #8a55c5;
+}
+
+.profile-trip-status.ongoing {
+  color: #16845b;
+}
+
+.profile-trip-status.completed {
+  color: #64748b;
+}
+
+.profile-trip-info {
+  padding: 18px;
+}
+
+.profile-trip-info h4 {
+  color: #263b50;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.profile-trip-destination {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.profile-trip-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: #777;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.profile-trip-budget {
+  color: #aa3bff;
+  font-weight: 700;
+  font-size: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+
+.profile-empty-state {
+  text-align: center;
+  padding: 40px 15px;
+}
+
+.profile-empty-state > span {
+  font-size: 40px;
+}
+
+.profile-empty-state h4 {
+  color: #263b50;
+  margin: 12px 0 8px;
+  font-weight: 700;
+}
+
+.profile-empty-state p {
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.profile-plan-button {
+  display: inline-block;
+  background: #aa3bff;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.profile-plan-button:hover {
+  background: #263b50;
+  color: #fff;
+}
 
 
 
@@ -2422,6 +2617,9 @@ a:focus-visible {
 @media (max-width: 992px) {
   .admin-analytics-grid {
     grid-template-columns: 1fr;
+  }
+   .profile-trips-section {
+    padding: 20px;
   }
 }
 
@@ -2431,6 +2629,7 @@ a:focus-visible {
     flex-wrap: wrap;
     gap: 18px;
   }
+
 
   .navbar-links {
     order: 3;
@@ -2646,6 +2845,16 @@ a:focus-visible {
 
   .profile-header-info {
     width: 100%;
+  }
+
+    .profile-header-top {
+    flex-direction: column;
+    text-align: center;
+  }
+   .profile-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
 }
 
@@ -2944,6 +3153,41 @@ a:focus-visible {
 
   .admin-form-actions {
     flex-wrap: wrap;
+  }
+  .profile-trips-section {
+    padding: 15px;
+  }
+
+  .profile-trips-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .profile-trip-image {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .profile-trip-info {
+    padding: 10px;
+  }
+
+  .profile-trip-info h4 {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .profile-trip-destination,
+  .profile-trip-details {
+    font-size: 11px;
+  }
+
+  .profile-trip-details {
+    gap: 5px;
+  }
+
+  .profile-trip-budget {
+    font-size: 12px;
   }
 }
 

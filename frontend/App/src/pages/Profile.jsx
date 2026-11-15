@@ -4,7 +4,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-const API_URL = "http://localhost:5000/api/profile";
+const PROFILE_API = "http://localhost:5000/api/profile";
+const TRIPS_API = "http://localhost:5000/api/trips";
 
 const Profile = () => {
   const { token } = useAuth();
@@ -17,6 +18,15 @@ const Profile = () => {
     profileImage: "",
   });
 
+  const [trips, setTrips] = useState([]);
+
+  const [stats, setStats] = useState({
+    trips: 0,
+    photos: null,
+    savedPlaces: null,
+    reviews: null,
+  });
+
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
@@ -25,18 +35,38 @@ const Profile = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const fetchProfile = async () => {
+    const fetchProfileData = async () => {
       try {
-        const response = await axios.get(`${API_URL}/me`, {
-          headers: { Authorization: `Bearer ${token}` },
+        const headers = {
+          Authorization: `Bearer ${token}`,
+        };
+
+        const profileResponse = await axios.get(`${PROFILE_API}/me`, {
+          headers,
         });
 
+        const user = profileResponse.data.user;
+
         setProfile({
-          name: response.data.user.name || "",
-          bio: response.data.user.bio || "",
-          location: response.data.user.location || "",
-          profileImage: response.data.user.profileImage || "",
+          name: user.name || "",
+          bio: user.bio || "",
+          location: user.location || "",
+          profileImage: user.profileImage || "",
         });
+
+        const tripsResponse = await axios.get(TRIPS_API, {
+          headers,
+          params: { limit: 100 },
+        });
+
+        const userTrips = tripsResponse.data.trips || [];
+
+        setTrips(userTrips);
+
+        setStats((prev) => ({
+          ...prev,
+          trips: tripsResponse.data.totalTrips ?? userTrips.length,
+        }));
       } catch (err) {
         setError(err.response?.data?.message || "Failed to load profile");
       } finally {
@@ -44,7 +74,9 @@ const Profile = () => {
       }
     };
 
-    fetchProfile();
+    if (token) {
+      fetchProfileData();
+    }
   }, [token]);
 
   const handleChange = (e) => {
@@ -68,7 +100,7 @@ const Profile = () => {
       formData.append("profileImage", file);
 
       const response = await axios.post(
-        `${API_URL}/me/image`,
+        `${PROFILE_API}/me/image`,
         formData,
         {
           headers: {
@@ -102,7 +134,7 @@ const Profile = () => {
 
     try {
       const response = await axios.put(
-        `${API_URL}/me`,
+        `${PROFILE_API}/me`,
         {
           name: profile.name,
           bio: profile.bio,
@@ -133,10 +165,27 @@ const Profile = () => {
     return <p className="text-center py-5">Loading profile...</p>;
   }
 
+  const profileStats = [
+    { label: "Trips", value: stats.trips },
+    { label: "Photos", value: stats.photos ?? "—" },
+    { label: "Saved Places", value: stats.savedPlaces ?? "—" },
+    { label: "Reviews", value: stats.reviews ?? "—" },
+  ];
+
+  const formatDate = (date) => {
+    if (!date) return "Date not available";
+
+    return new Date(date).toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+  };
+
   return (
     <section className="container profile-page">
-      <div className="mb-4">
-        <Link to="/" className="back-home">
+      <div className="profile-back-wrapper">
+        <Link to="/" className="back-home" aria-label="Back to home">
           ←
         </Link>
       </div>
@@ -207,6 +256,15 @@ const Profile = () => {
           </button>
         </div>
 
+        <div className="profile-stats">
+          {profileStats.map((stat) => (
+            <div className="profile-stat" key={stat.label}>
+              <strong>{stat.value}</strong>
+              <span>{stat.label}</span>
+            </div>
+          ))}
+        </div>
+
         {editing && (
           <form className="profile-edit-form" onSubmit={handleSave}>
             <div className="mb-3">
@@ -266,6 +324,68 @@ const Profile = () => {
               {saving ? "Saving..." : "Save Changes"}
             </button>
           </form>
+        )}
+      </div>
+
+      <div className="profile-trips-section">
+        <div className="profile-section-heading">
+          <div>
+            <h3>My Planned Trips</h3>
+            <p>Your travel plans and upcoming adventures</p>
+          </div>
+        </div>
+
+        {trips.length === 0 ? (
+          <div className="profile-empty-state">
+            <span>✈️</span>
+            <h4>No trips yet</h4>
+            <p>Start planning your next adventure!</p>
+            <Link to="/" className="profile-plan-button">
+              Plan a Trip
+            </Link>
+          </div>
+        ) : (
+          <div className="profile-trips-grid">
+            {trips.map((trip) => {
+              const place = trip.destination || trip.country;
+              const image = place?.image;
+
+              return (
+                <div className="profile-trip-card" key={trip._id}>
+                  <div className="profile-trip-image">
+                    <img
+                      src={
+                        image ||
+                        "https://placehold.co/600x400?text=Travel"
+                      }
+                      alt={place?.name || trip.title}
+                    />
+
+                    <span className={`profile-trip-status ${trip.status}`}>
+                      {trip.status}
+                    </span>
+                  </div>
+
+                  <div className="profile-trip-info">
+                    <h4>{trip.title}</h4>
+
+                    <p className="profile-trip-destination">
+                      📍 {place?.name || "Destination not available"}
+                    </p>
+
+                    <div className="profile-trip-details">
+                      <span>📅 {formatDate(trip.startDate)}</span>
+                      <span>⏱️ {trip.duration} days</span>
+                    </div>
+
+                    <div className="profile-trip-budget">
+                      {trip.budget} {trip.currency}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         )}
       </div>
     </section>
