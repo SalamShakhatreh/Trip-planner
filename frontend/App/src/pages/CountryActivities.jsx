@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const categoryStyles = {
   Adventure: { icon: "⛰️", color: "adventure" },
   Culture: { icon: "🏛️", color: "culture" },
@@ -28,7 +30,7 @@ const CountryActivities = () => {
         setError("");
 
         const response = await axios.get(
-          `https://trip-planner-vyu6.onrender.com/api/activities?country=${encodeURIComponent(countryName)}`
+          `${API_URL}/api/activities?country=${encodeURIComponent(countryName)}`
         );
 
         setActivities(response.data.activities || []);

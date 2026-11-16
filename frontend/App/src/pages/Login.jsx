@@ -4,7 +4,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import { useAuth } from "../context/AuthContext";
 
-const API_URL = "https://trip-planner-vyu6.onrender.com/api/auth";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/auth`;
 
 const Login = () => {
   const navigate = useNavigate();

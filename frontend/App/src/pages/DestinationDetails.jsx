@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const DestinationDetails = () => {
   const { name: id } = useParams();
 
@@ -22,14 +24,14 @@ const DestinationDetails = () => {
 
       try {
         const response = await axios.get(
-          `https://trip-planner-vyu6.onrender.com/api/destinations/${id}`
+          `${API_URL}/api/destinations/${id}`
         );
 
         setDestination(response.data);
 
         try {
           const placesResponse = await axios.get(
-            `https://trip-planner-vyu6.onrender.com/api/places?destination=${id}`
+            `${API_URL}/api/places?destination=${id}`
           );
 
           setPlaces(placesResponse.data.places);
