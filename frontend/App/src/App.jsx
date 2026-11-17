@@ -1,4 +1,3 @@
-
 import {
   BrowserRouter,
   Routes,
@@ -22,9 +21,12 @@ import PlanTrip from "./pages/PlanTrip";
 import Admin from "./pages/Admin";
 import ExploreCountries from "./pages/ExploreCountries";
 import CountryActivities from "./pages/CountryActivities";
+import CountryDestinations from "./pages/CountryDestinations";
+import DestinationDetails from "./pages/DestinationDetails";
 import Chatbot from "./pages/Chatbot";
 import Profile from "./pages/Profile";
 import MyTrips from "./pages/MyTrips";
+import PlaceDetails from "./pages/PlaceDetails";
 
 import "./App.css";
 
@@ -92,10 +94,28 @@ const AppRoutes = () => {
         />
 
         <Route
+          path="/countries/:countryName"
+          element={
+            <ProtectedRoute>
+              <CountryDestinations />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
           path="/countries/:countryName/activities"
           element={
             <ProtectedRoute>
               <CountryActivities />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/destinations/:name"
+          element={
+            <ProtectedRoute>
+              <DestinationDetails />
             </ProtectedRoute>
           }
         />
@@ -141,6 +161,14 @@ const AppRoutes = () => {
           element={
             <ProtectedRoute>
               <MyTrips />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/places/:id"
+          element={
+            <ProtectedRoute>
+              <PlaceDetails />
             </ProtectedRoute>
           }
         />

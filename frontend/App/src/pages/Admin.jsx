@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -21,21 +22,29 @@ const API_URL = `${import.meta.env.VITE_API_URL}/api`;
 const Admin = () => {
   const [users, setUsers] = useState([]);
   const [trips, setTrips] = useState([]);
+  const [destinations, setDestinations] = useState([]);
+  const [countries, setCountries] = useState([]);
+  const [places, setPlaces] = useState([]);
+
   const [activeSection, setActiveSection] = useState("Dashboard");
 
   const { token } = useAuth();
   const navigate = useNavigate();
 
-  const [destinations, setDestinations] = useState([]);
-  const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [placesLoading, setPlacesLoading] = useState(false);
 
   const [totalUsers, setTotalUsers] = useState(0);
   const [totalTrips, setTotalTrips] = useState(0);
   const [totalDestinations, setTotalDestinations] = useState(0);
+
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [editingId, setEditingId] = useState(null);
+
+  const [placeError, setPlaceError] = useState("");
+  const [placeSuccess, setPlaceSuccess] = useState("");
+  const [editingPlaceId, setEditingPlaceId] = useState(null);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -44,11 +53,19 @@ const Admin = () => {
     image: "",
   });
 
+  const [placeFormData, setPlaceFormData] = useState({
+    name: "",
+    description: "",
+    image: "",
+    destination: "",
+  });
+
   const menuItems = [
     { name: "Dashboard", icon: "▦" },
     { name: "Manage Users", icon: "♙" },
     { name: "Manage Trips", icon: "✈" },
     { name: "Manage Destinations", icon: "⌖" },
+    { name: "Manage Places", icon: "📍" },
     { name: "Analytics", icon: "▥" },
   ];
 
@@ -63,11 +80,16 @@ const Admin = () => {
       setLoading(true);
       setError("");
 
-      const response = await axios.get(`${API_URL}/destinations?limit=100`);
+      const response = await axios.get(
+        `${API_URL}/destinations?limit=100`
+      );
 
-      setDestinations(response.data.destinations);
+      setDestinations(response.data.destinations || []);
     } catch (error) {
-      setError(error.response?.data?.message || "Failed to load destinations");
+      setError(
+        error.response?.data?.message ||
+          "Failed to load destinations"
+      );
     } finally {
       setLoading(false);
     }
@@ -76,49 +98,83 @@ const Admin = () => {
   const fetchCountries = async () => {
     try {
       const response = await axios.get(`${API_URL}/countries`);
-      setCountries(response.data.countries);
+      setCountries(response.data.countries || []);
     } catch (error) {
-      setError(error.response?.data?.message || "Failed to load countries");
+      setError(
+        error.response?.data?.message ||
+          "Failed to load countries"
+      );
     }
   };
+
+  const fetchPlaces = async () => {
+    try {
+      setPlacesLoading(true);
+      setPlaceError("");
+
+      const response = await axios.get(
+        `${API_URL}/places?limit=100`
+      );
+
+      setPlaces(response.data.places || []);
+    } catch (error) {
+      setPlaceError(
+        error.response?.data?.message ||
+          "Failed to load places"
+      );
+    } finally {
+      setPlacesLoading(false);
+    }
+  };
+
   const fetchUsers = async () => {
     try {
       const response = await axios.get(
         `${API_URL}/auth/admin/all`,
-        authHeaders,
+        authHeaders
       );
 
-      setUsers(response.data.users);
+      setUsers(response.data.users || []);
     } catch (error) {
       console.error("Failed to load users:", error);
     }
   };
+
   const fetchTrips = async () => {
     try {
       const response = await axios.get(
         `${API_URL}/trips/admin/all`,
-        authHeaders,
+        authHeaders
       );
 
-      setTrips(response.data.trips);
+      setTrips(response.data.trips || []);
     } catch (error) {
       console.error("Failed to load trips:", error);
     }
   };
+
   const fetchDashboardStats = async () => {
     try {
-      const [usersResponse, tripsResponse, destinationsResponse] =
-        await Promise.all([
-          axios.get(`${API_URL}/auth/admin/all`, authHeaders),
-          axios.get(`${API_URL}/trips/admin/all`, authHeaders),
-          axios.get(`${API_URL}/destinations?limit=100`),
-        ]);
+      const [
+        usersResponse,
+        tripsResponse,
+        destinationsResponse,
+      ] = await Promise.all([
+        axios.get(`${API_URL}/auth/admin/all`, authHeaders),
+        axios.get(`${API_URL}/trips/admin/all`, authHeaders),
+        axios.get(`${API_URL}/destinations?limit=100`),
+      ]);
 
       setTotalUsers(usersResponse.data.totalUsers);
       setTotalTrips(tripsResponse.data.trips.length);
-      setTotalDestinations(destinationsResponse.data.destinations.length);
+      setTotalDestinations(
+        destinationsResponse.data.destinations.length
+      );
     } catch (error) {
-      console.error("Failed to load dashboard statistics:", error);
+      console.error(
+        "Failed to load dashboard statistics:",
+        error
+      );
     }
   };
 
@@ -139,39 +195,60 @@ const Admin = () => {
       fetchDestinations();
       fetchCountries();
     }
+
+    if (activeSection === "Manage Places") {
+      fetchPlaces();
+      fetchDestinations();
+    }
+
     if (activeSection === "Analytics") {
-  fetchDashboardStats();
-  fetchTrips();
-}
+      fetchDashboardStats();
+      fetchTrips();
+    }
   }, [activeSection]);
 
   const tripStatusData = [
-  {
-    name: "Planned",
-    value: trips.filter((trip) => trip.status === "planned").length,
-  },
-  {
-    name: "Ongoing",
-    value: trips.filter((trip) => trip.status === "ongoing").length,
-  },
-  {
-    name: "Completed",
-    value: trips.filter((trip) => trip.status === "completed").length,
-  },
-];
+    {
+      name: "Planned",
+      value: trips.filter(
+        (trip) => trip.status === "planned"
+      ).length,
+    },
+    {
+      name: "Ongoing",
+      value: trips.filter(
+        (trip) => trip.status === "ongoing"
+      ).length,
+    },
+    {
+      name: "Completed",
+      value: trips.filter(
+        (trip) => trip.status === "completed"
+      ).length,
+    },
+  ];
 
-const platformStatsData = [
-  { name: "Users", total: totalUsers },
-  { name: "Trips", total: totalTrips },
-  { name: "Destinations", total: totalDestinations },
-];
+  const platformStatsData = [
+    { name: "Users", total: totalUsers },
+    { name: "Trips", total: totalTrips },
+    { name: "Destinations", total: totalDestinations },
+  ];
 
-const chartColors = ["#8884d8", "#82ca9d", "#ffc658"];
+  const chartColors = ["#8884d8", "#82ca9d", "#ffc658"];
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
 
     setFormData((previousData) => ({
+      ...previousData,
+      [name]: value,
+    }));
+  };
+
+  const handlePlaceInputChange = (event) => {
+    const { name, value } = event.target;
+
+    setPlaceFormData((previousData) => ({
       ...previousData,
       [name]: value,
     }));
@@ -186,6 +263,17 @@ const chartColors = ["#8884d8", "#82ca9d", "#ffc658"];
     });
 
     setEditingId(null);
+  };
+
+  const resetPlaceForm = () => {
+    setPlaceFormData({
+      name: "",
+      description: "",
+      image: "",
+      destination: "",
+    });
+
+    setEditingPlaceId(null);
   };
 
   const handleEdit = (destination) => {
@@ -214,12 +302,16 @@ const chartColors = ["#8884d8", "#82ca9d", "#ffc658"];
         await axios.put(
           `${API_URL}/destinations/${editingId}`,
           formData,
-          authHeaders,
+          authHeaders
         );
 
         setSuccess("Destination updated successfully.");
       } else {
-        await axios.post(`${API_URL}/destinations`, formData, authHeaders);
+        await axios.post(
+          `${API_URL}/destinations`,
+          formData,
+          authHeaders
+        );
 
         setSuccess("Destination added successfully.");
       }
@@ -227,7 +319,91 @@ const chartColors = ["#8884d8", "#82ca9d", "#ffc658"];
       resetForm();
       await fetchDestinations();
     } catch (error) {
-      setError(error.response?.data?.message || "Something went wrong");
+      setError(
+        error.response?.data?.message ||
+          "Something went wrong"
+      );
+    }
+  };
+
+  const handleEditPlace = (place) => {
+    setPlaceFormData({
+      name: place.name || "",
+      description: place.description || "",
+      image: place.image || "",
+      destination: place.destination?._id || "",
+    });
+
+    setEditingPlaceId(place._id);
+    setPlaceError("");
+    setPlaceSuccess("");
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handlePlaceSubmit = async (event) => {
+    event.preventDefault();
+
+    setPlaceError("");
+    setPlaceSuccess("");
+
+    try {
+      if (editingPlaceId) {
+        await axios.put(
+          `${API_URL}/places/${editingPlaceId}`,
+          placeFormData,
+          authHeaders
+        );
+
+        setPlaceSuccess("Place updated successfully.");
+      } else {
+        await axios.post(
+          `${API_URL}/places`,
+          placeFormData,
+          authHeaders
+        );
+
+        setPlaceSuccess("Place added successfully.");
+      }
+
+      resetPlaceForm();
+      await fetchPlaces();
+    } catch (error) {
+      setPlaceError(
+        error.response?.data?.message ||
+          "Failed to save place"
+      );
+    }
+  };
+
+  const handleDeletePlace = async (placeId) => {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this place?"
+    );
+
+    if (!confirmed) return;
+
+    try {
+      setPlaceError("");
+      setPlaceSuccess("");
+
+      await axios.delete(
+        `${API_URL}/places/${placeId}`,
+        authHeaders
+      );
+
+      setPlaceSuccess("Place deleted successfully.");
+
+      if (editingPlaceId === placeId) {
+        resetPlaceForm();
+      }
+
+      await fetchPlaces();
+    } catch (error) {
+      setPlaceError(
+        error.response?.data?.message ||
+          "Failed to delete place"
+      );
     }
   };
 
@@ -259,8 +435,9 @@ const chartColors = ["#8884d8", "#82ca9d", "#ffc658"];
             <div className="admin-placeholder">
               <h3>Welcome to Trip Planner</h3>
               <p>
-                Your platform statistics and recent activity will appear here
-                once the dashboard is connected to the backend.
+                Your platform statistics and recent activity
+                will appear here once the dashboard is connected
+                to the backend.
               </p>
             </div>
           </>
@@ -321,8 +498,14 @@ const chartColors = ["#8884d8", "#82ca9d", "#ffc658"];
                     <tr key={trip._id}>
                       <td>{trip.user?.name || "Unknown"}</td>
                       <td>{trip.title}</td>
-                      <td>{trip.destination?.name || "Unknown"}</td>
-                      <td>{new Date(trip.startDate).toLocaleDateString()}</td>
+                      <td>
+                        {trip.destination?.name || "Unknown"}
+                      </td>
+                      <td>
+                        {new Date(
+                          trip.startDate
+                        ).toLocaleDateString()}
+                      </td>
                       <td>{trip.duration} days</td>
                       <td>
                         {trip.budget} {trip.currency}
@@ -343,12 +526,18 @@ const chartColors = ["#8884d8", "#82ca9d", "#ffc658"];
             <p>Add new destinations or update existing ones.</p>
 
             <div className="admin-destination-form">
-              <h3>{editingId ? "Edit Destination" : "Add New Destination"}</h3>
+              <h3>
+                {editingId
+                  ? "Edit Destination"
+                  : "Add New Destination"}
+              </h3>
 
               <form onSubmit={handleSubmit}>
                 <div className="admin-form-grid">
                   <div>
-                    <label htmlFor="destination-name">Destination Name</label>
+                    <label htmlFor="destination-name">
+                      Destination Name
+                    </label>
 
                     <input
                       id="destination-name"
@@ -362,7 +551,9 @@ const chartColors = ["#8884d8", "#82ca9d", "#ffc658"];
                   </div>
 
                   <div>
-                    <label htmlFor="destination-country">Country</label>
+                    <label htmlFor="destination-country">
+                      Country
+                    </label>
 
                     <select
                       id="destination-country"
@@ -374,7 +565,10 @@ const chartColors = ["#8884d8", "#82ca9d", "#ffc658"];
                       <option value="">Select a country</option>
 
                       {countries.map((country) => (
-                        <option key={country._id} value={country._id}>
+                        <option
+                          key={country._id}
+                          value={country._id}
+                        >
                           {country.name}
                         </option>
                       ))}
@@ -382,7 +576,9 @@ const chartColors = ["#8884d8", "#82ca9d", "#ffc658"];
                   </div>
 
                   <div className="admin-form-full">
-                    <label htmlFor="destination-description">Description</label>
+                    <label htmlFor="destination-description">
+                      Description
+                    </label>
 
                     <textarea
                       id="destination-description"
@@ -396,7 +592,9 @@ const chartColors = ["#8884d8", "#82ca9d", "#ffc658"];
                   </div>
 
                   <div className="admin-form-full">
-                    <label htmlFor="destination-image">Image URL</label>
+                    <label htmlFor="destination-image">
+                      Image URL
+                    </label>
 
                     <input
                       id="destination-image"
@@ -411,8 +609,13 @@ const chartColors = ["#8884d8", "#82ca9d", "#ffc658"];
                 </div>
 
                 <div className="admin-form-actions">
-                  <button type="submit" className="admin-submit-button">
-                    {editingId ? "Save Changes" : "Add Destination"}
+                  <button
+                    type="submit"
+                    className="admin-submit-button"
+                  >
+                    {editingId
+                      ? "Save Changes"
+                      : "Add Destination"}
                   </button>
 
                   {editingId && (
@@ -428,8 +631,13 @@ const chartColors = ["#8884d8", "#82ca9d", "#ffc658"];
               </form>
             </div>
 
-            {error && <p className="admin-message error">{error}</p>}
-            {success && <p className="admin-message success">{success}</p>}
+            {error && (
+              <p className="admin-message error">{error}</p>
+            )}
+
+            {success && (
+              <p className="admin-message success">{success}</p>
+            )}
 
             <div className="admin-destinations-list">
               <h3>Existing Destinations</h3>
@@ -462,13 +670,17 @@ const chartColors = ["#8884d8", "#82ca9d", "#ffc658"];
 
                           <td>{destination.name}</td>
 
-                          <td>{destination.country?.name || "Unknown"}</td>
+                          <td>
+                            {destination.country?.name || "Unknown"}
+                          </td>
 
                           <td>
                             <button
                               type="button"
                               className="admin-edit-button"
-                              onClick={() => handleEdit(destination)}
+                              onClick={() =>
+                                handleEdit(destination)
+                              }
                             >
                               Edit
                             </button>
@@ -483,74 +695,275 @@ const chartColors = ["#8884d8", "#82ca9d", "#ffc658"];
           </>
         );
 
+      case "Manage Places":
+        return (
+          <>
+            <h2>Manage Places</h2>
+            <p>
+              Add tourist places and connect each place to its
+              destination.
+            </p>
+
+            <div className="admin-destination-form">
+              <h3>
+                {editingPlaceId
+                  ? "Edit Place"
+                  : "Add New Place"}
+              </h3>
+
+              <form onSubmit={handlePlaceSubmit}>
+                <div className="admin-form-grid">
+                  <div>
+                    <label htmlFor="place-name">Place Name</label>
+
+                    <input
+                      id="place-name"
+                      type="text"
+                      name="name"
+                      value={placeFormData.name}
+                      onChange={handlePlaceInputChange}
+                      placeholder="Enter place name"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="place-destination">
+                      Destination
+                    </label>
+
+                    <select
+                      id="place-destination"
+                      name="destination"
+                      value={placeFormData.destination}
+                      onChange={handlePlaceInputChange}
+                      required
+                    >
+                      <option value="">
+                        Select a destination
+                      </option>
+
+                      {destinations.map((destination) => (
+                        <option
+                          key={destination._id}
+                          value={destination._id}
+                        >
+                          {destination.name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="admin-form-full">
+                    <label htmlFor="place-description">
+                      Description
+                    </label>
+
+                    <textarea
+                      id="place-description"
+                      name="description"
+                      value={placeFormData.description}
+                      onChange={handlePlaceInputChange}
+                      placeholder="Enter place description"
+                      rows="4"
+                      required
+                    />
+                  </div>
+
+                  <div className="admin-form-full">
+                    <label htmlFor="place-image">
+                      Image URL
+                    </label>
+
+                    <input
+                      id="place-image"
+                      type="url"
+                      name="image"
+                      value={placeFormData.image}
+                      onChange={handlePlaceInputChange}
+                      placeholder="Enter image URL"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="admin-form-actions">
+                  <button
+                    type="submit"
+                    className="admin-submit-button"
+                  >
+                    {editingPlaceId
+                      ? "Save Changes"
+                      : "Add Place"}
+                  </button>
+
+                  {editingPlaceId && (
+                    <button
+                      type="button"
+                      className="admin-cancel-button"
+                      onClick={resetPlaceForm}
+                    >
+                      Cancel
+                    </button>
+                  )}
+                </div>
+              </form>
+            </div>
+
+            {placeError && (
+              <p className="admin-message error">
+                {placeError}
+              </p>
+            )}
+
+            {placeSuccess && (
+              <p className="admin-message success">
+                {placeSuccess}
+              </p>
+            )}
+
+            <div className="admin-destinations-list">
+              <h3>Existing Places</h3>
+
+              {placesLoading ? (
+                <p>Loading places...</p>
+              ) : places.length === 0 ? (
+                <p>No places found. Add your first place above.</p>
+              ) : (
+                <div className="admin-table-wrapper">
+                  <table className="admin-destinations-table">
+                    <thead>
+                      <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Destination</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      {places.map((place) => (
+                        <tr key={place._id}>
+                          <td>
+                            <img
+                              src={place.image}
+                              alt={place.name}
+                            />
+                          </td>
+
+                          <td>{place.name}</td>
+
+                          <td>
+                            {place.destination?.name || "Unknown"}
+                          </td>
+
+                          <td>
+                            <button
+                              type="button"
+                              className="admin-edit-button"
+                              onClick={() =>
+                                handleEditPlace(place)
+                              }
+                            >
+                              Edit
+                            </button>
+
+                            <button
+                              type="button"
+                              className="admin-cancel-button"
+                              onClick={() =>
+                                handleDeletePlace(place._id)
+                              }
+                            >
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </div>
+          </>
+        );
+
       case "Analytics":
-  return (
-    <>
-      <h2>Analytics</h2>
-      <p>Explore statistics and platform performance.</p>
+        return (
+          <>
+            <h2>Analytics</h2>
+            <p>
+              Explore statistics and platform performance.
+            </p>
 
-      <div className="admin-stats">
-        <div className="admin-stat-card">
-          <span>Total Users</span>
-          <strong>{totalUsers}</strong>
-        </div>
+            <div className="admin-stats">
+              <div className="admin-stat-card">
+                <span>Total Users</span>
+                <strong>{totalUsers}</strong>
+              </div>
 
-        <div className="admin-stat-card">
-          <span>Total Trips</span>
-          <strong>{totalTrips}</strong>
-        </div>
+              <div className="admin-stat-card">
+                <span>Total Trips</span>
+                <strong>{totalTrips}</strong>
+              </div>
 
-        <div className="admin-stat-card">
-          <span>Destinations</span>
-          <strong>{totalDestinations}</strong>
-        </div>
-      </div>
+              <div className="admin-stat-card">
+                <span>Destinations</span>
+                <strong>{totalDestinations}</strong>
+              </div>
+            </div>
 
-      <div className="admin-analytics-grid">
-        <div className="admin-chart-card">
-          <h3>Platform Statistics</h3>
+            <div className="admin-analytics-grid">
+              <div className="admin-chart-card">
+                <h3>Platform Statistics</h3>
 
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={platformStatsData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis allowDecimals={false} />
-              <Tooltip />
-              <Bar dataKey="total" fill="#8884d8" />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
+                <ResponsiveContainer
+                  width="100%"
+                  height={300}
+                >
+                  <BarChart data={platformStatsData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis allowDecimals={false} />
+                    <Tooltip />
+                    <Bar dataKey="total" fill="#8884d8" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
 
-        <div className="admin-chart-card">
-          <h3>Trips by Status</h3>
+              <div className="admin-chart-card">
+                <h3>Trips by Status</h3>
 
-          <ResponsiveContainer width="100%" height={300}>
-            <PieChart>
-              <Pie
-                data={tripStatusData}
-                dataKey="value"
-                nameKey="name"
-                cx="50%"
-                cy="50%"
-                outerRadius={100}
-                label
-              >
-                {tripStatusData.map((entry, index) => (
-                  <Cell
-                    key={entry.name}
-                    fill={chartColors[index]}
-                  />
-                ))}
-              </Pie>
+                <ResponsiveContainer
+                  width="100%"
+                  height={300}
+                >
+                  <PieChart>
+                    <Pie
+                      data={tripStatusData}
+                      dataKey="value"
+                      nameKey="name"
+                      cx="50%"
+                      cy="50%"
+                      outerRadius={100}
+                      label
+                    >
+                      {tripStatusData.map((entry, index) => (
+                        <Cell
+                          key={entry.name}
+                          fill={chartColors[index]}
+                        />
+                      ))}
+                    </Pie>
 
-              <Tooltip />
-              <Legend />
-            </PieChart>
-          </ResponsiveContainer>
-        </div>
-      </div>
-    </>
-  );
+                    <Tooltip />
+                    <Legend />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+          </>
+        );
 
       default:
         return null;
@@ -571,7 +984,9 @@ const chartColors = ["#8884d8", "#82ca9d", "#ffc658"];
             <button
               key={item.name}
               type="button"
-              className={activeSection === item.name ? "active" : ""}
+              className={
+                activeSection === item.name ? "active" : ""
+              }
               onClick={() => setActiveSection(item.name)}
             >
               <span>{item.icon}</span>
@@ -602,7 +1017,9 @@ const chartColors = ["#8884d8", "#82ca9d", "#ffc658"];
           </div>
         </header>
 
-        <section className="admin-content">{renderContent()}</section>
+        <section className="admin-content">
+          {renderContent()}
+        </section>
       </main>
     </div>
   );

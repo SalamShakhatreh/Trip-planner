@@ -40,7 +40,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: "",
         trim: true
-    }
+    },
+    savedPlaces: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Place"
+    }]
 });
 
 const User = mongoose.model("User", userSchema);

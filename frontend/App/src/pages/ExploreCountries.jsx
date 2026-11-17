@@ -74,7 +74,7 @@ const ExploreCountries = () => {
 
                 <div className="destination-footer">
                   <Link
-                    to={`/countries/${encodeURIComponent(country.name)}/activities`}
+                    to={`/countries/${encodeURIComponent(country.name)}`}
                   >
                     Explore →
                   </Link>

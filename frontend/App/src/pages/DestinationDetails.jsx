@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
@@ -23,29 +22,23 @@ const DestinationDetails = () => {
       setPlaces([]);
 
       try {
-        const response = await axios.get(
-          `${API_URL}/api/destinations/${id}`
-        );
+        const response = await axios.get(`${API_URL}/api/destinations/${id}`);
 
         setDestination(response.data);
 
         try {
           const placesResponse = await axios.get(
-            `${API_URL}/api/places?destination=${id}`
+            `${API_URL}/api/places?destination=${id}`,
           );
 
           setPlaces(placesResponse.data.places);
         } catch (error) {
           setPlacesError(
-            error.response?.data?.message ||
-              "Failed to load popular places"
+            error.response?.data?.message || "Failed to load popular places",
           );
         }
       } catch (error) {
-        setError(
-          error.response?.data?.message ||
-            "Failed to load destination"
-        );
+        setError(error.response?.data?.message || "Failed to load destination");
       } finally {
         setLoading(false);
       }
@@ -55,21 +48,15 @@ const DestinationDetails = () => {
   }, [id]);
 
   if (loading) {
-    return (
-      <p className="text-center">Loading destination...</p>
-    );
+    return <p className="text-center">Loading destination...</p>;
   }
 
   if (error) {
-    return (
-      <p className="text-center text-danger">{error}</p>
-    );
+    return <p className="text-center text-danger">{error}</p>;
   }
 
   if (!destination) {
-    return (
-      <h2 className="text-center">Destination not found</h2>
-    );
+    return <h2 className="text-center">Destination not found</h2>;
   }
 
   return (
@@ -81,9 +68,7 @@ const DestinationDetails = () => {
       <div className="destination-details-heading">
         <span className="eyebrow">DISCOVER YOUR NEXT ADVENTURE</span>
         <h1>{destination.name}</h1>
-        {destination.country && (
-          <p>{destination.country.name}</p>
-        )}
+        {destination.country && <p>{destination.country.name}</p>}
       </div>
 
       <div className="container">
@@ -104,14 +89,15 @@ const DestinationDetails = () => {
           {placesError ? (
             <p className="text-danger">{placesError}</p>
           ) : places.length === 0 ? (
-            <p>
-              No popular places available for this destination yet.
-            </p>
+            <p>No popular places available for this destination yet.</p>
           ) : (
             <div className="row g-4">
               {places.map((place) => (
                 <div className="col-md-6 col-lg-4" key={place._id}>
-                  <div className="destination-card h-100">
+                  <Link
+                    to={`/places/${place._id}`}
+                    className="destination-card h-100 text-decoration-none"
+                  >
                     <img
                       src={place.image}
                       alt={place.name}
@@ -122,7 +108,7 @@ const DestinationDetails = () => {
                       <h3>{place.name}</h3>
                       <p>{place.description}</p>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               ))}
             </div>

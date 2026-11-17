@@ -1,5 +1,6 @@
 
 const User = require("../models/User");
+const Place = require("../models/Place");
 const cloudinary = require("../config/cloudinary");
 
 const getMyProfile = async (req, res) => {
@@ -127,8 +128,121 @@ const uploadProfileImage = async (req, res) => {
     }
 };
 
+const getSavedPlaces = async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id)
+            .populate({
+                path: "savedPlaces",
+                populate: {
+                    path: "destination"
+                }
+            })
+            .select("savedPlaces");
+
+        if (!user) {
+            return res.status(404).json({
+                message: "User not found"
+            });
+        }
+
+        return res.status(200).json({
+            savedPlaces: user.savedPlaces
+        });
+
+    } catch (error) {
+        console.error("Get saved places error:", error);
+
+        return res.status(500).json({
+            message: "Internal server error"
+        });
+    }
+};
+
+const savePlace = async (req, res) => {
+    try {
+        const { placeId } = req.body;
+
+        if (!placeId || !/^[0-9a-fA-F]{24}$/.test(placeId)) {
+            return res.status(400).json({
+                message: "Valid place ID is required"
+            });
+        }
+
+        const place = await Place.findById(placeId);
+
+        if (!place) {
+            return res.status(404).json({
+                message: "Place not found"
+            });
+        }
+
+        const user = await User.findByIdAndUpdate(
+            req.user.id,
+            { $addToSet: { savedPlaces: placeId } },
+            { returnDocument: "after" }
+        ).select("savedPlaces");
+
+        if (!user) {
+            return res.status(404).json({
+                message: "User not found"
+            });
+        }
+
+        return res.status(200).json({
+            message: "Place saved successfully",
+            savedPlaces: user.savedPlaces
+        });
+
+    } catch (error) {
+        console.error("Save place error:", error);
+
+        return res.status(500).json({
+            message: "Internal server error"
+        });
+    }
+};
+
+const removeSavedPlace = async (req, res) => {
+    try {
+        const { placeId } = req.params;
+
+        if (!/^[0-9a-fA-F]{24}$/.test(placeId)) {
+            return res.status(400).json({
+                message: "Valid place ID is required"
+            });
+        }
+
+        const user = await User.findByIdAndUpdate(
+            req.user.id,
+            { $pull: { savedPlaces: placeId } },
+            { returnDocument: "after" }
+        ).select("savedPlaces");
+
+        if (!user) {
+            return res.status(404).json({
+                message: "User not found"
+            });
+        }
+
+        return res.status(200).json({
+            message: "Place removed from saved places",
+            savedPlaces: user.savedPlaces
+        });
+
+    } catch (error) {
+        console.error("Remove saved place error:", error);
+
+        return res.status(500).json({
+            message: "Internal server error"
+        });
+    }
+};
+
 module.exports = {
     getMyProfile,
     updateMyProfile,
-    uploadProfileImage
+    uploadProfileImage,
+    getSavedPlaces,
+    savePlace,
+    removeSavedPlace
 };

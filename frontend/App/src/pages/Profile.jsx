@@ -9,6 +9,8 @@ const API_URL = import.meta.env.VITE_API_URL;
 const PROFILE_API = `${API_URL}/api/profile`;
 const TRIPS_API = `${API_URL}/api/trips`;
 const PHOTOS_API = `${API_URL}/api/travel-photos`;
+const REVIEWS_API = `${API_URL}/api/reviews`;
+const SAVED_PLACES_API = `${PROFILE_API}/me/saved-places`;
 
 const Profile = () => {
   const { token } = useAuth();
@@ -24,12 +26,14 @@ const Profile = () => {
 
   const [trips, setTrips] = useState([]);
   const [photos, setPhotos] = useState([]);
+  const [savedPlaces, setSavedPlaces] = useState([]);
+  const [reviews, setReviews] = useState([]);
 
   const [stats, setStats] = useState({
     trips: 0,
     photos: 0,
-    savedPlaces: null,
-    reviews: null,
+    savedPlaces: 0,
+    reviews: 0,
   });
 
   const [photoForm, setPhotoForm] = useState({
@@ -46,6 +50,12 @@ const Profile = () => {
     description: "",
     country: "",
     city: "",
+  });
+
+  const [editingReviewId, setEditingReviewId] = useState(null);
+  const [editingReview, setEditingReview] = useState({
+    rating: 5,
+    comment: "",
   });
 
   const [showPhotoForm, setShowPhotoForm] = useState(false);
@@ -83,7 +93,6 @@ const Profile = () => {
         });
 
         const userTrips = tripsResponse.data.trips || [];
-
         setTrips(userTrips);
 
         const photosResponse = await axios.get(PHOTOS_API, {
@@ -91,16 +100,36 @@ const Profile = () => {
         });
 
         const userPhotos = photosResponse.data.travelPhotos || [];
-
         setPhotos(userPhotos);
 
-        setStats((prev) => ({
-          ...prev,
+        const savedPlacesResponse = await axios.get(SAVED_PLACES_API, {
+          headers,
+        });
+
+        const userSavedPlaces =
+          savedPlacesResponse.data.savedPlaces || [];
+
+        setSavedPlaces(userSavedPlaces);
+
+        const reviewsResponse = await axios.get(
+          `${REVIEWS_API}/my`,
+          { headers }
+        );
+
+        const userReviews = reviewsResponse.data.reviews || [];
+        setReviews(userReviews);
+
+        setStats({
           trips: tripsResponse.data.totalTrips ?? userTrips.length,
           photos: userPhotos.length,
-        }));
+          savedPlaces: userSavedPlaces.length,
+          reviews:
+            reviewsResponse.data.totalReviews ?? userReviews.length,
+        });
       } catch (err) {
-        setError(err.response?.data?.message || "Failed to load profile");
+        setError(
+          err.response?.data?.message || "Failed to load profile"
+        );
       } finally {
         setLoading(false);
       }
@@ -148,7 +177,9 @@ const Profile = () => {
 
       setMessage("Profile image updated successfully!");
     } catch (err) {
-      setError(err.response?.data?.message || "Failed to upload image");
+      setError(
+        err.response?.data?.message || "Failed to upload image"
+      );
     } finally {
       setUploading(false);
 
@@ -160,6 +191,7 @@ const Profile = () => {
 
   const handleSave = async (e) => {
     e.preventDefault();
+
     setMessage("");
     setError("");
     setSaving(true);
@@ -187,7 +219,9 @@ const Profile = () => {
       setEditing(false);
       setMessage("Profile updated successfully!");
     } catch (err) {
-      setError(err.response?.data?.message || "Failed to update profile");
+      setError(
+        err.response?.data?.message || "Failed to update profile"
+      );
     } finally {
       setSaving(false);
     }
@@ -253,7 +287,9 @@ const Profile = () => {
       setShowPhotoForm(false);
       setMessage("Travel photo uploaded successfully!");
     } catch (err) {
-      setError(err.response?.data?.message || "Failed to upload travel photo");
+      setError(
+        err.response?.data?.message || "Failed to upload travel photo"
+      );
     } finally {
       setUploading(false);
     }
@@ -309,7 +345,9 @@ const Profile = () => {
       setEditingPhotoId(null);
       setMessage("Travel photo updated successfully!");
     } catch (err) {
-      setError(err.response?.data?.message || "Failed to update travel photo");
+      setError(
+        err.response?.data?.message || "Failed to update travel photo"
+      );
     } finally {
       setSaving(false);
     }
@@ -332,7 +370,9 @@ const Profile = () => {
         },
       });
 
-      setPhotos((prev) => prev.filter((photo) => photo._id !== photoId));
+      setPhotos((prev) =>
+        prev.filter((photo) => photo._id !== photoId)
+      );
 
       setStats((prev) => ({
         ...prev,
@@ -341,7 +381,135 @@ const Profile = () => {
 
       setMessage("Travel photo deleted successfully!");
     } catch (err) {
-      setError(err.response?.data?.message || "Failed to delete travel photo");
+      setError(
+        err.response?.data?.message || "Failed to delete travel photo"
+      );
+    }
+  };
+
+  const handleRemoveSavedPlace = async (placeId) => {
+    const confirmed = window.confirm(
+      "Are you sure you want to remove this place from your saved places?"
+    );
+
+    if (!confirmed) return;
+
+    setMessage("");
+    setError("");
+
+    try {
+      await axios.delete(`${SAVED_PLACES_API}/${placeId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      setSavedPlaces((prev) =>
+        prev.filter((place) => place._id !== placeId)
+      );
+
+      setStats((prev) => ({
+        ...prev,
+        savedPlaces: Math.max(0, (prev.savedPlaces || 0) - 1),
+      }));
+
+      setMessage("Place removed from saved places!");
+    } catch (err) {
+      setError(
+        err.response?.data?.message || "Failed to remove saved place"
+      );
+    }
+  };
+
+  const startEditingReview = (review) => {
+    setEditingReviewId(review._id);
+
+    setEditingReview({
+      rating: review.rating,
+      comment: review.comment || "",
+    });
+
+    setMessage("");
+    setError("");
+  };
+
+  const handleEditingReviewChange = (e) => {
+    const { name, value } = e.target;
+
+    setEditingReview((prev) => ({
+      ...prev,
+      [name]: name === "rating" ? Number(value) : value,
+    }));
+  };
+
+  const handleUpdateReview = async (e, reviewId) => {
+    e.preventDefault();
+
+    setMessage("");
+    setError("");
+    setSaving(true);
+
+    try {
+      const response = await axios.put(
+        `${REVIEWS_API}/${reviewId}`,
+        editingReview,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      setReviews((prev) =>
+        prev.map((review) =>
+          review._id === reviewId
+            ? { ...review, ...response.data.review }
+            : review
+        )
+      );
+
+      setEditingReviewId(null);
+      setMessage("Review updated successfully!");
+    } catch (err) {
+      setError(
+        err.response?.data?.message || "Failed to update review"
+      );
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleDeleteReview = async (reviewId) => {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this review?"
+    );
+
+    if (!confirmed) return;
+
+    setMessage("");
+    setError("");
+
+    try {
+      await axios.delete(`${REVIEWS_API}/${reviewId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      setReviews((prev) =>
+        prev.filter((review) => review._id !== reviewId)
+      );
+
+      setStats((prev) => ({
+        ...prev,
+        reviews: Math.max(0, prev.reviews - 1),
+      }));
+
+      setMessage("Review deleted successfully!");
+    } catch (err) {
+      setError(
+        err.response?.data?.message || "Failed to delete review"
+      );
     }
   };
 
@@ -352,8 +520,8 @@ const Profile = () => {
   const profileStats = [
     { label: "Trips", value: stats.trips },
     { label: "Photos", value: stats.photos },
-    { label: "Saved Places", value: stats.savedPlaces ?? "—" },
-    { label: "Reviews", value: stats.reviews ?? "—" },
+    { label: "Saved Places", value: stats.savedPlaces },
+    { label: "Reviews", value: stats.reviews },
   ];
 
   const formatDate = (date) => {
@@ -441,26 +609,26 @@ const Profile = () => {
         </div>
 
         <div className="profile-stats">
-          {profileStats.map((stat) =>
-            stat.label === "Trips" || stat.label === "Photos" ? (
+          {profileStats.map((stat) => {
+            const section =
+              stat.label === "Saved Places"
+                ? "savedPlaces"
+                : stat.label.toLowerCase();
+
+            return (
               <button
                 type="button"
                 className={`profile-stat profile-stat-button ${
-                  activeSection === stat.label.toLowerCase() ? "active" : ""
+                  activeSection === section ? "active" : ""
                 }`}
                 key={stat.label}
-                onClick={() => setActiveSection(stat.label.toLowerCase())}
+                onClick={() => setActiveSection(section)}
               >
                 <strong>{stat.value}</strong>
                 <span>{stat.label}</span>
               </button>
-            ) : (
-              <div className="profile-stat" key={stat.label}>
-                <strong>{stat.value}</strong>
-                <span>{stat.label}</span>
-              </div>
-            )
-          )}
+            );
+          })}
         </div>
 
         {editing && (
@@ -837,6 +1005,222 @@ const Profile = () => {
                     </div>
                   )}
                 </div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
+      {activeSection === "savedPlaces" && (
+        <div className="profile-saved-section">
+          <div className="profile-section-heading">
+            <div>
+              <h3>Saved Places</h3>
+              <p>Places you want to visit and explore</p>
+            </div>
+          </div>
+
+          {savedPlaces.length === 0 ? (
+            <div className="profile-empty-state">
+              <span>♡</span>
+              <h4>No saved places yet</h4>
+              <p>Save places you love while exploring destinations.</p>
+              <Link to="/explore-countries" className="profile-plan-button">
+                Explore Countries
+              </Link>
+            </div>
+          ) : (
+            <div className="profile-saved-grid">
+              {savedPlaces.map((place) => (
+                <article className="profile-saved-card" key={place._id}>
+                  <div className="profile-saved-image">
+                    <img
+                      src={
+                        place.image ||
+                        "https://placehold.co/600x400?text=Travel+Place"
+                      }
+                      alt={place.name || "Saved place"}
+                    />
+                  </div>
+
+                  <div className="profile-saved-info">
+                    <h4>{place.name || "Untitled place"}</h4>
+
+                    {place.destination && (
+                      <p className="profile-saved-destination">
+                        <span>📍</span>{" "}
+                        {place.destination.name || "Destination"}
+                        {place.destination.country
+                          ? `, ${
+                              typeof place.destination.country === "object"
+                                ? place.destination.country.name || ""
+                                : place.destination.country
+                            }`
+                          : ""}
+                      </p>
+                    )}
+
+                    {place.description && (
+                      <p className="profile-saved-description">
+                        {place.description}
+                      </p>
+                    )}
+
+                    <div className="profile-saved-actions">
+                      {place.destination?._id && (
+                        <Link
+                          to={`/destinations/${place.destination._id}`}
+                          className="profile-view-place-button"
+                        >
+                          View Destination
+                        </Link>
+                      )}
+
+                      <button
+                        type="button"
+                        className="profile-remove-place-button"
+                        onClick={() => handleRemoveSavedPlace(place._id)}
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
+      {activeSection === "reviews" && (
+        <div className="profile-reviews-section">
+          <div className="profile-section-heading">
+            <div>
+              <h3>My Reviews</h3>
+              <p>Places you have rated and reviewed</p>
+            </div>
+          </div>
+
+          {reviews.length === 0 ? (
+            <div className="profile-empty-state">
+              <span>⭐</span>
+              <h4>No reviews yet</h4>
+              <p>Your reviews will appear here after you rate a place.</p>
+              <Link to="/explore-countries" className="profile-plan-button">
+                Explore Places
+              </Link>
+            </div>
+          ) : (
+            <div className="profile-reviews-list">
+              {reviews.map((review) => (
+                <article className="profile-review-card" key={review._id}>
+                  <div className="profile-review-info">
+                    {review.place && (
+                      <>
+                        {review.place.image && (
+                          <img
+                            src={review.place.image}
+                            alt={review.place.name || "Place"}
+                            className="profile-review-image"
+                          />
+                        )}
+
+                        <h4>{review.place.name || "Place"}</h4>
+                      </>
+                    )}
+
+                    <p className="profile-review-date">
+                      {formatDate(review.createdAt)}
+                    </p>
+                  </div>
+
+                  {editingReviewId === review._id ? (
+                    <form
+                      className="profile-review-edit-form"
+                      onSubmit={(e) =>
+                        handleUpdateReview(e, review._id)
+                      }
+                    >
+                      <div className="mb-3">
+                        <label className="form-label">Rating</label>
+                        <select
+                          name="rating"
+                          className="form-select"
+                          value={editingReview.rating}
+                          onChange={handleEditingReviewChange}
+                          required
+                        >
+                          {[5, 4, 3, 2, 1].map((rating) => (
+                            <option key={rating} value={rating}>
+                              {rating} / 5
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+
+                      <div className="mb-3">
+                        <label className="form-label">Comment</label>
+                        <textarea
+                          name="comment"
+                          className="form-control"
+                          rows="3"
+                          maxLength="1000"
+                          value={editingReview.comment}
+                          onChange={handleEditingReviewChange}
+                          required
+                        />
+                      </div>
+
+                      <div className="profile-review-actions">
+                        <button
+                          type="submit"
+                          className="profile-save-button"
+                          disabled={saving}
+                        >
+                          {saving ? "Saving..." : "Save"}
+                        </button>
+
+                        <button
+                          type="button"
+                          className="profile-cancel-button"
+                          onClick={() => setEditingReviewId(null)}
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </form>
+                  ) : (
+                    <>
+                      <div className="profile-review-rating">
+                        {"★".repeat(review.rating)}
+                        {"☆".repeat(5 - review.rating)}
+                        <span>{review.rating}/5</span>
+                      </div>
+
+                      <p className="profile-review-comment">
+                        {review.comment}
+                      </p>
+
+                      <div className="profile-review-actions">
+                        <button
+                          type="button"
+                          className="profile-photo-edit-button"
+                          onClick={() => startEditingReview(review)}
+                        >
+                          Edit
+                        </button>
+
+                        <button
+                          type="button"
+                          className="profile-photo-delete-button"
+                          onClick={() => handleDeleteReview(review._id)}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </>
+                  )}
+                </article>
               ))}
             </div>
           )}

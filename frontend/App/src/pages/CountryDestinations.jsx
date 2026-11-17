@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL;
-
 const CountryDestinations = () => {
   const { countryName } = useParams();
   const navigate = useNavigate();
@@ -17,7 +15,7 @@ const CountryDestinations = () => {
     const fetchDestinations = async () => {
       try {
         const response = await axios.get(
-          `${API_URL}/api/destinations?country=${encodeURIComponent(countryName)}`
+          `https://trip-planner-vyu6.onrender.com/api/destinations?country=${encodeURIComponent(countryName)}`
         );
 
         setDestinations(response.data.destinations);

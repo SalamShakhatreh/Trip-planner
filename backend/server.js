@@ -14,6 +14,7 @@ const countryRoutes = require("./routes/countryRoutes");
 const activityRouter = require("./routes/activityRouter");
 const profileRoutes = require("./routes/profileRoutes");
 const travelPhotoRoutes = require("./routes/travelPhotoRoutes");
+const reviewRoutes = require("./routes/reviewRoutes");
 
 app.use(cors({
     origin: [
@@ -32,6 +33,7 @@ app.use("/api/conversations", conversationRoutes);
 app.use("/api/countries", countryRoutes);
 app.use("/api/activities", activityRouter);
 app.use("/api/travel-photos", travelPhotoRoutes);
+app.use("/api/reviews", reviewRoutes);
 
 
 app.get("/", (req, res) => {

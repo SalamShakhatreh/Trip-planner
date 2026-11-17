@@ -8,7 +8,10 @@ const upload = require("../middleware/uploadMiddleware");
 const {
     getMyProfile,
     updateMyProfile,
-    uploadProfileImage
+    uploadProfileImage,
+    getSavedPlaces,
+    savePlace,
+    removeSavedPlace
 } = require("../controllers/profileController");
 
 router.get("/me", authMiddleware, getMyProfile);
@@ -20,6 +23,16 @@ router.post(
     authMiddleware,
     upload.single("profileImage"),
     uploadProfileImage
+);
+
+router.get("/me/saved-places", authMiddleware, getSavedPlaces);
+
+router.post("/me/saved-places", authMiddleware, savePlace);
+
+router.delete(
+    "/me/saved-places/:placeId",
+    authMiddleware,
+    removeSavedPlace
 );
 
 module.exports = router;
