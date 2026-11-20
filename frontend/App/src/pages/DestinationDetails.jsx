@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./DestinationDetails.css";
 
 const API_URL =
   import.meta.env.VITE_API_URL || "https://trip-planner-vyu6.onrender.com";
