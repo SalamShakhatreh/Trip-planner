@@ -1,0 +1,374 @@
+/*Review*/
+
+.place-details-section {
+  min-height: 100vh;
+  padding: 55px 0 80px;
+  background: #f8f7fb;
+  color: #292333;
+}
+
+.place-details-section .container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.place-details-section .back-home {
+  position: absolute;
+  top: 11px;
+  left: 35px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  color: #7135a8;
+  font-size: 25px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.place-details-section .back-home:hover {
+  background: #7135a8;
+  color: #fff;
+  transform: translateX(-4px);
+}
+
+.place-details-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.place-details-heading h1 {
+  color: #30213e;
+  font-size: 42px;
+  font-weight: 750;
+  margin-bottom: 8px;
+}
+
+.place-details-heading p {
+  color: #8b62aa;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.place-details-section > .container > img.destination-image {
+  display: block;
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 12px 35px rgba(40, 25, 55, 0.13);
+}
+
+.place-about {
+  margin-top: 38px;
+  padding: 28px 32px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 5px 22px rgba(40, 25, 55, 0.06);
+}
+
+.place-about h2,
+.place-reviews-section > h2 {
+  color: #39254b;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.place-about p {
+  color: #706b78;
+  font-size: 16px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.place-reviews-section {
+  margin-top: 38px;
+  padding: 32px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 5px 22px rgba(40, 25, 55, 0.06);
+}
+
+.reviews-summary {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 24px;
+  margin: 22px 0 28px;
+  background: #f7f1fc;
+  border-radius: 15px;
+}
+
+.reviews-summary h3 {
+  color: #7135a8;
+  font-size: 34px;
+  font-weight: 750;
+  margin: 0;
+}
+
+.reviews-summary p {
+  color: #777080;
+  margin: 0;
+  font-size: 15px;
+}
+
+.place-reviews-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.place-review-card {
+  padding: 22px;
+  border: 1px solid #eee8f3;
+  border-radius: 16px;
+  background: #fff;
+  transition: 0.25s ease;
+}
+
+.place-review-card:hover {
+  border-color: #d9c3eb;
+  box-shadow: 0 6px 20px rgba(65, 35, 90, 0.07);
+}
+
+.review-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.review-user img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-user h4 {
+  color: #39254b;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.review-rating {
+  color: #f2ad35;
+  font-size: 19px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.place-review-card > p {
+  color: #625c69;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.place-review-card small {
+  color: #99919f;
+  font-size: 12px;
+}
+
+.add-review-section {
+  margin-top: 35px;
+  padding: 28px;
+  background: #faf8fc;
+  border: 1px solid #eee7f4;
+  border-radius: 17px;
+}
+
+.add-review-section h3 {
+  color: #39254b;
+  font-size: 21px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.add-review-section label {
+  display: block;
+  color: #494052;
+  font-size: 14px;
+  font-weight: 650;
+  margin-bottom: 10px;
+}
+
+.review-rating-input {
+  display: flex;
+  gap: 7px;
+  margin-bottom: 22px;
+}
+
+.review-rating-input button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #d5cedb;
+  font-size: 32px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.review-rating-input button.selected {
+  color: #f2ad35;
+}
+
+.review-rating-input button:hover {
+  transform: scale(1.15);
+  color: #f2ad35;
+}
+
+.add-review-section textarea {
+  display: block;
+  width: 100%;
+  min-height: 125px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  border: 1px solid #e2d9e9;
+  border-radius: 12px;
+  outline: none;
+  resize: vertical;
+  background: #fff;
+  color: #39313f;
+  font-size: 14px;
+  line-height: 1.7;
+  transition: 0.2s ease;
+}
+
+.add-review-section textarea:focus {
+  border-color: #9560bd;
+  box-shadow: 0 0 0 3px rgba(113, 53, 168, 0.1);
+}
+
+.add-review-section button[type="submit"],
+.add-review-section > div button {
+  padding: 11px 23px;
+  border: none;
+  border-radius: 9px;
+  background: #7135a8;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.add-review-section button[type="submit"]:hover,
+.add-review-section > div button:hover {
+  background: #572780;
+  transform: translateY(-2px);
+}
+
+.add-review-section button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.add-review-section button[type="button"] {
+  margin-right: 10px;
+}
+
+.add-review-section a {
+  color: #7135a8;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.add-review-section a:hover {
+  text-decoration: underline;
+}
+
+.add-review-section .text-danger {
+  color: #d04455;
+  font-size: 14px;
+  margin: 12px 0;
+}
+
+.add-review-section .text-success {
+  color: #238653;
+  font-size: 14px;
+  margin: 12px 0;
+}
+
+.place-reviews-section > p {
+  color: #89818f;
+  font-size: 14px;
+  padding: 15px 0;
+}
+
+@media (max-width: 767px) {
+.place-details-section {
+    padding: 85px 15px 50px;
+  }
+
+.place-details-section .back-home {
+    top: 22px;
+    left: 18px;
+  }
+
+.place-details-heading h1 {
+    font-size: 30px;
+  }
+
+.place-details-section > .container > img.destination-image {
+    height: 280px;
+    border-radius: 15px;
+  }
+
+.place-about,
+  .place-reviews-section {
+    padding: 22px 18px;
+  }
+
+.place-about h2,
+  .place-reviews-section > h2 {
+    font-size: 21px;
+  }
+
+.reviews-summary {
+    padding: 17px;
+    gap: 12px;
+  }
+
+.reviews-summary h3 {
+    font-size: 28px;
+  }
+
+.add-review-section {
+    padding: 20px 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+.place-details-heading h1 {
+    font-size: 26px;
+  }
+
+.place-details-section > .container > img.destination-image {
+    height: 220px;
+  }
+
+.reviews-summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+.review-rating-input button {
+    font-size: 28px;
+  }
+
+.add-review-section button[type="submit"],
+  .add-review-section > div button {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+}
+

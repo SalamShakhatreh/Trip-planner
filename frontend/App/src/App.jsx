@@ -29,6 +29,7 @@ import MyTrips from "./pages/MyTrips";
 import PlaceDetails from "./pages/PlaceDetails";
 
 import "./App.css";
+import "./Home.css";
 
 const Home = () => {
   return (
