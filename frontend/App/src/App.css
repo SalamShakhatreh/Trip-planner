@@ -9,13 +9,9 @@
   scroll-behavior: smooth;
 }
 
-
-
 * {
   box-sizing: border-box;
 }
-
-
 
 body {
   margin: 0;
@@ -24,26 +20,18 @@ body {
   color: #172b4d;
 }
 
-
-
 img {
   max-width: 100%;
 }
-
-
 
 button,
 a {
   -webkit-tap-highlight-color: transparent;
 }
 
-
-
 a {
   text-decoration: none;
 }
-
-
 
 .app {
   min-height: 100vh;
@@ -51,13 +39,9 @@ a {
   overflow-x: clip;
 }
 
-
-
 .container {
   max-width: 1180px;
 }
-
-
 
 .eyebrow {
   display: inline-block;
@@ -67,8 +51,6 @@ a {
   font-weight: 800;
   letter-spacing: 2px;
 }
-
-
 
 .logo {
   display: inline-flex;
@@ -80,13 +62,9 @@ a {
   white-space: nowrap;
 }
 
-
-
 .logo:hover {
   color: #2563eb;
 }
-
-
 
 .logo-icon {
   display: inline-flex;
@@ -100,8 +78,6 @@ a {
   font-size: 1.25rem;
 }
 
-
-
 .btn {
   border-radius: 9px;
   font-size: 0.92rem;
@@ -113,15 +89,11 @@ a {
     box-shadow 0.2s ease;
 }
 
-
-
 .btn:focus-visible,
 a:focus-visible {
   outline: 3px solid #93c5fd;
   outline-offset: 3px;
 }
-
-
 
 .btn-primary-custom {
   display: inline-flex;
@@ -135,8 +107,6 @@ a:focus-visible {
   box-shadow: 0 6px 16px rgba(37, 99, 235, 0.16);
 }
 
-
-
 .btn-primary-custom:hover {
   transform: translateY(-2px);
   border-color: #1d4ed8;
@@ -145,42 +115,15 @@ a:focus-visible {
   box-shadow: 0 10px 22px rgba(37, 99, 235, 0.23);
 }
 
-
-
 .text-link {
   color: #2563eb;
   font-size: 0.92rem;
   font-weight: 700;
 }
 
-
-
 .text-link:hover {
   color: #1d4ed8;
 }
-
-
-
-.welcome-user:hover {
-  background: #dbeafe;
-  border-color: #bfdbfe;
-}
-
-
-
-.btn-login:hover {
-  background: #f1f5f9;
-  color: #2563eb;
-}
-
-
-
-.destinations-section,
-.features-section {
-  padding: 95px 0;
-}
-
-
 
 .section-heading {
   display: flex;
@@ -189,8 +132,6 @@ a:focus-visible {
   gap: 24px;
   margin-bottom: 38px;
 }
-
-
 
 .section-heading h2,
 .cta-content h2 {
@@ -201,8 +142,6 @@ a:focus-visible {
   letter-spacing: -1.2px;
 }
 
-
-
 .section-heading p {
   margin: 13px 0 0;
   color: #64748b;
@@ -210,14 +149,10 @@ a:focus-visible {
   line-height: 1.7;
 }
 
-
-
 .section-heading > .text-link {
   flex-shrink: 0;
   margin-bottom: 5px;
 }
-
-
 
 .destination-card {
   position: relative;
@@ -232,14 +167,10 @@ a:focus-visible {
     box-shadow 0.25s ease;
 }
 
-
-
 .destination-card:hover {
   transform: translateY(-7px);
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.11);
 }
-
-
 
 .destination-image {
   display: block;
@@ -250,19 +181,13 @@ a:focus-visible {
   transition: transform 0.5s ease;
 }
 
-
-
 .destination-card:hover .destination-image {
   transform: scale(1.06);
 }
 
-
-
 .destination-content {
   padding: 20px;
 }
-
-
 
 .destination-content h3 {
   position: relative;
@@ -270,8 +195,6 @@ a:focus-visible {
   margin-top: 0;
   margin-bottom: 10px;
 }
-
-
 
 .destination-footer {
   display: flex;
@@ -285,15 +208,6 @@ a:focus-visible {
   font-size: 0.92rem;
   font-weight: 800;
 }
-
-
-
-.feature-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.09);
-}
-
-
 
 .cta-content {
   position: relative;
@@ -310,27 +224,19 @@ a:focus-visible {
   text-align: center;
 }
 
-
-
 .cta-content .eyebrow {
   color: #bfdbfe;
 }
 
-
-
 .cta-content h2 {
   color: #ffffff;
 }
-
-
 
 .cta-content p {
   margin: 16px 0 26px;
   color: #dbeafe;
   line-height: 1.8;
 }
-
-
 
 .back-home {
   position: absolute;
@@ -350,77 +256,23 @@ a:focus-visible {
   transition: all 0.2s ease;
 }
 
-
-
 .back-home:hover {
   background: #0d6efd;
   color: #fff;
   transform: translateX(-3px);
 }
 
-
-
 /* Tablet */
 /* Page-specific responsive rules moved to page stylesheets */
 
 
-@media (max-width: 991px) {
-.site-header .navbar {
-    flex-wrap: wrap;
-    gap: 18px;
-  }
-
-.navbar-links {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    gap: 28px;
-    padding-top: 12px;
-    border-top: 1px solid #edf1f7;
-  }
-
-.hero-section {
-    padding: 65px 0 80px;
-  }
-
-.hero-image-wrapper {
-    max-width: 650px;
-    margin: 0 auto;
-  }
-
-.hero-image {
-    height: 400px;
-  }
-
-.destinations-section,
-  .features-section {
-    padding: 75px 0;
-  }
-}
-
-
-
-
 /* Page-specific responsive rules moved to page stylesheets */
-
 /* Mobile */
-
 /* Page-specific responsive rules moved to page stylesheets */
-
-
 /* Page-specific responsive rules moved to page stylesheets */
-
 /* Page-specific responsive rules moved to page stylesheets */
-
-
 /* Page-specific responsive rules moved to page stylesheets */
-
 @media (max-width: 575px) {
-.site-header .navbar {
-    justify-content: space-between;
-    gap: 12px;
-  }
-
 .logo {
     gap: 7px;
     font-size: 1.12rem;
@@ -430,85 +282,6 @@ a:focus-visible {
     width: 33px;
     height: 33px;
     font-size: 1.05rem;
-  }
-
-.nav-actions {
-    gap: 4px;
-  }
-
-.nav-actions .btn {
-    padding: 9px 10px;
-    font-size: 0.78rem;
-  }
-
-.navbar-links {
-    gap: 19px;
-  }
-
-.navbar-links a {
-    font-size: 0.8rem;
-  }
-
-.hero-section {
-    padding: 55px 0 65px;
-  }
-
-.hero-content h1 {
-    font-size: 2.2rem;
-    letter-spacing: -1.2px;
-    overflow-wrap: anywhere;
-  }
-
-.hero-description {
-    margin: 20px 0 25px;
-    font-size: 0.98rem;
-  }
-
-.hero-actions {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 17px;
-  }
-
-.hero-image-wrapper {
-    padding-left: 10px;
-  }
-
-.hero-image-wrapper::before {
-    right: -5px;
-    width: 85px;
-    height: 85px;
-  }
-
-.hero-image {
-    height: 310px;
-    border-radius: 18px;
-  }
-
-.floating-card {
-    right: -5px;
-    bottom: 42px;
-    gap: 9px;
-    padding: 12px;
-  }
-
-.floating-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 1.2rem;
-  }
-
-.floating-card strong {
-    font-size: 0.78rem;
-  }
-
-.floating-card p {
-    font-size: 0.72rem;
-  }
-
-.image-label {
-    left: 20px;
-    font-size: 0.68rem;
   }
 
 .section-heading {
@@ -522,46 +295,9 @@ a:focus-visible {
     font-size: 2rem;
   }
 
-.destinations-section,
-  .features-section {
-    padding: 60px 0;
-  }
-
-.feature-card {
-    padding: 26px 23px;
-  }
-
-.cta-section {
-    padding: 20px 0 60px;
-  }
-
 .cta-content {
     padding: 48px 20px;
     border-radius: 18px;
-  }
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    min-height: auto;
-    padding: 24px 16px;
-    text-align: center;
-  }
-
-.footer-logo {
-    position: static;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-.footer-content p {
-    width: 100%;
-    margin: 0;
-    line-height: 1.6;
   }
 
 .back-home {
@@ -570,9 +306,4 @@ a:focus-visible {
   }
 }
 
-
-
-
 /* Page-specific responsive rules moved to page stylesheets */
-
-
