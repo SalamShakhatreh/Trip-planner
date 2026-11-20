@@ -1,3 +1,4 @@
+
 require("dotenv").config();
 
 const mongoose = require("mongoose");
@@ -10,31 +11,31 @@ const destinations = [
     name: "Amman",
     country: "Jordan",
     description: "Modern capital with ancient citadel and Roman theater.",
-    image: "https://images.unsplash.com/photo-1548786811-dd6e453ccca7?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Amman.jpg"
   },
   {
     name: "Petra",
     country: "Jordan",
     description: "World-famous ancient city carved into rose-red cliffs.",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Petra.jpg"
   },
   {
     name: "Aqaba",
     country: "Jordan",
     description: "Red Sea resort city with beaches and diving.",
-    image: "https://images.unsplash.com/photo-1601581875034-4b6b0f0b0b0b?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Aqaba.jpg"
   },
   {
     name: "Salt",
     country: "Jordan",
     description: "Historic town with traditional architecture.",
-    image: "https://images.unsplash.com/photo-1548786811-dd6e453ccca7?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Salt.jpg"
   },
   {
     name: "Jerash",
     country: "Jordan",
     description: "Well-preserved Roman city with colonnaded streets.",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Jerash.jpg"
   },
 
   // United Arab Emirates
@@ -42,25 +43,25 @@ const destinations = [
     name: "Dubai",
     country: "United Arab Emirates",
     description: "Futuristic city of skyscrapers and luxury.",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Dubai.jpg"
   },
   {
     name: "Abu Dhabi",
     country: "United Arab Emirates",
     description: "Capital known for the Sheikh Zayed Grand Mosque.",
-    image: "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Abu Dhabi.jpg"
   },
   {
     name: "Sharjah",
     country: "United Arab Emirates",
     description: "Cultural emirate with museums and heritage areas.",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Sharqa.jpg"
   },
   {
     name: "Al Ain",
     country: "United Arab Emirates",
     description: "Garden city with oases and archaeological sites.",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Al Ain.jpg"
   },
 
   // Egypt
@@ -68,25 +69,25 @@ const destinations = [
     name: "Cairo",
     country: "Egypt",
     description: "Bustling capital home to the Pyramids of Giza.",
-    image: "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Cairo.jpg"
   },
   {
     name: "Alexandria",
     country: "Egypt",
     description: "Mediterranean city with Greco-Roman history.",
-    image: "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Alexandria.jpg"
   },
   {
     name: "Sharm El Sheikh",
     country: "Egypt",
     description: "Red Sea resort famous for diving and beaches.",
-    image: "https://images.unsplash.com/photo-1548786811-dd6e453ccca7?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Sharm El Sheikh.jpg"
   },
   {
     name: "Luxor",
     country: "Egypt",
     description: "Open-air museum of ancient temples and the Valley of the Kings.",
-    image: "https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Luxor.jpg"
   },
 
   // Turkey
@@ -94,31 +95,31 @@ const destinations = [
     name: "Antalya",
     country: "Turkey",
     description: "Mediterranean resort city with beaches and old town.",
-    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Antalya.jpg"
   },
   {
     name: "Bursa",
     country: "Turkey",
     description: "Historic city at the foot of Mount Uludağ.",
-    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Bursa.jpg"
   },
   {
     name: "Trabzon",
     country: "Turkey",
     description: "Black Sea city with mountains and Sumela Monastery.",
-    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Trabzon.jpg"
   },
   {
     name: "Istanbul",
     country: "Turkey",
     description: "City spanning two continents with historic mosques.",
-    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Istanbul.jpg"
   },
   {
     name: "Cappadocia",
     country: "Turkey",
     description: "Unique landscape of fairy chimneys and hot-air balloons.",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Cappadocia.jpg"
   },
 
   // Morocco
@@ -126,19 +127,19 @@ const destinations = [
     name: "Marrakech",
     country: "Morocco",
     description: "Vibrant city of souks and Jemaa el-Fnaa.",
-    image: "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Marrakech.jpg"
   },
   {
     name: "Casablanca",
     country: "Morocco",
     description: "Modern economic capital with the Hassan II Mosque.",
-    image: "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Casablanca.jpg"
   },
   {
     name: "Chefchaouen",
     country: "Morocco",
     description: "Famous blue-painted mountain town.",
-    image: "https://images.unsplash.com/photo-1539020140153-e4951137da68?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Chefchaouen.jpg"
   },
 
   // Italy
@@ -146,31 +147,31 @@ const destinations = [
     name: "Rome",
     country: "Italy",
     description: "Eternal city with the Colosseum and ancient ruins.",
-    image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Rome.jpg"
   },
   {
     name: "Venice",
     country: "Italy",
     description: "City of canals, gondolas, and historic squares.",
-    image: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Venice.jpg"
   },
   {
     name: "Florence",
     country: "Italy",
     description: "Renaissance city of the Duomo and art.",
-    image: "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Florence.jpg"
   },
   {
     name: "Milan",
     country: "Italy",
     description: "Fashion capital with the Duomo.",
-    image: "https://images.unsplash.com/photo-1513581166391-887a96ddeafd?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Milan.jpg"
   },
   {
     name: "Naples",
     country: "Italy",
     description: "Vibrant southern city near Pompeii and the Amalfi Coast.",
-    image: "https://images.unsplash.com/photo-1531572753322-ad063cecc140?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Naples.jpg"
   },
 
   // France
@@ -178,31 +179,31 @@ const destinations = [
     name: "Paris",
     country: "France",
     description: "City of Light with the Eiffel Tower and Louvre.",
-    image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Paris.jpg"
   },
   {
     name: "Nice",
     country: "France",
     description: "Sunny Riviera city with the Promenade des Anglais.",
-    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Nice.jpg"
   },
   {
     name: "Lyon",
     country: "France",
     description: "Gastronomic capital with historic architecture.",
-    image: "https://images.unsplash.com/photo-1524396309943-e03f5249f002?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Lyon.jpg"
   },
   {
     name: "Marseille",
     country: "France",
     description: "Port city with Mediterranean charm.",
-    image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Marseille.jpg"
   },
   {
     name: "Bordeaux",
     country: "France",
     description: "Elegant wine capital.",
-    image: "https://images.unsplash.com/photo-1549144511-f099e773c147?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Bordeaux.jpg"
   },
 
   // Switzerland
@@ -210,31 +211,31 @@ const destinations = [
     name: "Zurich",
     country: "Switzerland",
     description: "Cosmopolitan city on Lake Zurich.",
-    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Zurich.jpg"
   },
   {
     name: "Geneva",
     country: "Switzerland",
     description: "International city on Lake Geneva.",
-    image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Geneva.jpg"
   },
   {
     name: "Lucerne",
     country: "Switzerland",
     description: "Lakeside city famous for the Chapel Bridge.",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Lucerne.jpg"
   },
   {
     name: "Interlaken",
     country: "Switzerland",
     description: "Adventure town between two lakes.",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Interlaken.jpg"
   },
   {
     name: "Bern",
     country: "Switzerland",
     description: "UNESCO medieval capital.",
-    image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Bern.jpg"
   },
 
   // Spain
@@ -242,19 +243,19 @@ const destinations = [
     name: "Madrid",
     country: "Spain",
     description: "Dynamic capital with world-class museums.",
-    image: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Madrid.jpg"
   },
   {
     name: "Seville",
     country: "Spain",
     description: "Andalusian gem with the Alcázar.",
-    image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Seville.jpg"
   },
   {
     name: "Granada",
     country: "Spain",
     description: "Home to the Alhambra palace.",
-    image: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Granada.jpg"
   },
 
   // Greece
@@ -262,25 +263,25 @@ const destinations = [
     name: "Athens",
     country: "Greece",
     description: "Ancient capital home to the Acropolis.",
-    image: "https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Athens.jpg"
   },
   {
     name: "Santorini",
     country: "Greece",
     description: "Iconic white-washed villages on volcanic cliffs.",
-    image: "https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Santorini.jpg"
   },
   {
     name: "Thessaloniki",
     country: "Greece",
     description: "Cultural capital with Byzantine churches.",
-    image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Thessaloniki.jpg"
   },
   {
     name: "Crete",
     country: "Greece",
     description: "Largest Greek island with mountains and beaches.",
-    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=85"
+    image: "/photos/Crete.jpg"
   }
 ];
 
@@ -292,36 +293,80 @@ const seedDestinations = async () => {
 
     await mongoose.connect(process.env.MONGO_URL);
 
-    for (const dest of destinations) {
-      const country = await Country.findOne({ name: dest.country });
+    console.log("MongoDB connected.");
+
+    const countryNames = [
+      ...new Set(destinations.map(dest => dest.country))
+    ];
+
+    let totalDeleted = 0;
+
+    for (const countryName of countryNames) {
+      const country = await Country.findOne({ name: countryName });
 
       if (!country) {
-        console.log(`Country not found: ${dest.country}`);
+        console.log(`Country not found: ${countryName}`);
         continue;
       }
 
-      await Destination.updateOne(
-        { name: dest.name, country: country._id },
-        {
-          $set: {
-            name: dest.name,
-            country: country._id,
-            description: dest.description,
-            image: dest.image
-          }
-        },
-        { upsert: true }
+      const countryDestinations = destinations.filter(
+        dest => dest.country === countryName
       );
 
-      console.log(`OK  ${dest.country} - ${dest.name}`);
+      const allowedNames = countryDestinations.map(
+        dest => dest.name
+      );
+
+      for (const dest of countryDestinations) {
+        await Destination.updateOne(
+          {
+            name: dest.name,
+            country: country._id
+          },
+          {
+            $set: {
+              name: dest.name,
+              country: country._id,
+              description: dest.description,
+              image: dest.image
+            }
+          },
+          { upsert: true }
+        );
+
+        console.log(`Updated: ${countryName} - ${dest.name}`);
+      }
+
+      const result = await Destination.deleteMany({
+        country: country._id,
+        name: { $nin: allowedNames }
+      });
+
+      totalDeleted += result.deletedCount;
+
+      console.log(
+        `${countryName}: ${result.deletedCount} extra destinations deleted.`
+      );
     }
 
-    console.log("Destinations seeded successfully");
+    const finalCount = await Destination.countDocuments({
+      country: {
+        $in: await Country.find({
+          name: { $in: countryNames }
+        }).distinct("_id")
+      }
+    });
+
+    console.log("\nDestinations cleanup completed.");
+    console.log(`Expected destinations: ${destinations.length}`);
+    console.log(`Extra destinations deleted: ${totalDeleted}`);
+    console.log(`Final destinations count: ${finalCount}`);
   } catch (error) {
     console.error("Seeding failed:", error.message);
   } finally {
     if (mongoose.connection.readyState !== 0) {
       await mongoose.disconnect();
+      console.log("MongoDB disconnected.");
     }
   }
 };
