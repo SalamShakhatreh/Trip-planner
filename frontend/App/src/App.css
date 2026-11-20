@@ -559,8 +559,6 @@ a:focus-visible {
   left: 20px;
 }
 
-/* Login page */
-
 .back-home {
   position: absolute;
   top: 25px;
@@ -583,172 +581,6 @@ a:focus-visible {
   background: #0d6efd;
   color: #fff;
   transform: translateX(-3px);
-}
-
-.auth-background {
-  position: relative;
-  min-height: 100vh;
-  min-height: 100dvh;
-  background-image:
-    linear-gradient(rgba(15, 30, 55, 0.35), rgba(15, 30, 55, 0.35)),
-    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=90");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.auth-card {
-  width: 100%;
-  max-width: 480px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-}
-
-.auth-logo {
-  color: #5b5ce2;
-  font-size: 42px;
-}
-
-.auth-button {
-  padding: 12px;
-  border: none;
-  background: #5655df;
-}
-
-.auth-button:hover {
-  background: #4443c5;
-}
-
-.auth-link {
-  color: #5655df;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.auth-link:hover {
-  text-decoration: underline;
-}
-
-/* Register page */
-
-.register-page .back-home {
-  z-index: 10;
-  top: 7px;
-  left: 3px;
-}
-
-.register-page {
-  min-height: 100vh;
-  min-height: 100dvh;
-  width: 100%;
-  background: linear-gradient(135deg, #eeedff 0%, #f8f7ff 50%, #e7eaff 100%);
-}
-
-.register-page .container {
-  max-width: 100%;
-  width: 100%;
-  padding: 0 !important;
-}
-
-.register-card {
-  width: 100%;
-  max-width: 100%;
-  min-height: 100vh;
-  min-height: 100dvh;
-  margin: 0;
-  overflow: hidden;
-  border-radius: 0;
-  background: #fff;
-  box-shadow: none;
-}
-
-.register-image {
-  position: relative;
-  min-height: 680px;
-  background-image:
-    linear-gradient(
-      180deg,
-      rgba(15, 25, 50, 0.15),
-      rgba(15, 25, 50, 0.82)
-    ),
-    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85");
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-}
-
-.register-image-overlay {
-  min-height: 680px;
-  padding: 36px;
-  display: flex;
-  flex-direction: column;
-}
-
-.register-brand {
-  color: #fff;
-  font-size: 22px;
-  font-weight: 700;
-  text-decoration: none;
-  margin-top: 22px;
-}
-
-.register-image-text {
-  margin-top: auto;
-  margin-bottom: auto;
-  max-width: 400px;
-}
-
-.register-image-text h1 {
-  font-size: clamp(30px, 3vw, 42px);
-  line-height: 1.2;
-  font-weight: 800;
-  margin-bottom: 18px;
-}
-
-.register-image-text p {
-  font-size: 16px;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.register-image-footer {
-  margin: 0;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.register-form-section {
-  display: flex;
-  align-items: center;
-  padding: 40px;
-  background: linear-gradient(160deg, #ffffff 0%, #f8f7ff 100%);
-}
-
-.register-form-content {
-  width: 100%;
-  max-width: 410px;
-  margin: 0 auto;
-  padding: 28px;
-  background: #ffffff;
-  border: 1px solid #eeecff;
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(55, 48, 120, 0.07);
-}
-
-.register-form-content h2 {
-  color: #222342;
-  font-size: 30px;
-}
-
-.register-form-content .form-control {
-  border-radius: 10px;
-  border-color: #dfe1eb;
-  font-size: 15px;
-}
-
-.register-form-content .form-control:focus {
-  border-color: #5655df;
-  box-shadow: 0 0 0 0.2rem rgba(86, 85, 223, 0.14);
 }
 
 /* Destination Details */
@@ -4144,28 +3976,6 @@ a:focus-visible {
     padding: 75px 0;
   }
 
-  .register-form-content {
-    padding: 20px;
-  }
-
-  .register-image {
-    min-height: 350px;
-    background-position: center center;
-    background-size: cover;
-  }
-
-  .register-image-overlay {
-    min-height: 350px;
-  }
-
-  .register-image-text {
-    margin-top: 55px;
-    margin-bottom: 35px;
-  }
-
-  .register-form-section {
-    padding: 25px 18px;
-  }
   .activities-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
@@ -4200,34 +4010,6 @@ a:focus-visible {
 
 }
 
-
-@media (min-width: 992px) and (max-width: 1100px) {
-  .register-form-content {
-    max-width: 460px;
-  }
-
-  .register-card {
-    min-height: 100vh;
-    min-height: 100dvh;
-  }
-
-  .register-image,
-  .register-image-overlay {
-    min-height: 600px;
-  }
-
-  .register-form-section {
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .register-image {
-    background-position: center center;
-    background-size: cover;
-  }
-}
 
 @media (max-width: 900px) {
   .destination-hero {
@@ -4820,31 +4602,11 @@ a:focus-visible {
     line-height: 1.6;
   }
 
-  .auth-card {
-    margin-top: 70px;
-  }
-
   .back-home {
     top: 30px;
     left: 19px;
   }
 
-  .register-page .back-home {
-    top: 15px;
-    left: 15px;
-  }
-
-  .register-page .register-brand {
-    margin-top: 55px;
-  }
-
-  .register-image-overlay {
-    padding: 24px;
-  }
-
-  .register-form-section {
-    padding: 20px 14px;
-  }
   .admin-sidebar {
     position: relative;
     width: 100%;
