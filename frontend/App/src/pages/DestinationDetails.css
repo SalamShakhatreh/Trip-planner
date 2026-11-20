@@ -1134,3 +1134,163 @@
     border-radius: 20px 6px 20px 6px;
   }
 }
+
+/* Salt city theme */
+.destination-theme-salt {
+  background: #f1f0e9;
+  color: #303a35;
+}
+
+.destination-theme-salt .destination-back-button {
+  border-color: #d4d8cc;
+  background: #fbfcf7;
+  color: #52634e;
+}
+
+.destination-theme-salt .destination-back-button:hover {
+  border-color: #465b49;
+  background: #465b49;
+  color: #fff;
+}
+
+.destination-theme-salt .destination-hero {
+  min-height: 560px;
+  border-radius: 12px 55px 12px 55px;
+  background: #45564b;
+}
+
+.destination-theme-salt .destination-hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(35, 48, 40, 0.9) 0%,
+    rgba(54, 69, 56, 0.65) 50%,
+    rgba(54, 69, 56, 0.1) 100%
+  );
+}
+
+.destination-theme-salt .destination-hero-label,
+.destination-theme-salt .destination-hero-country span {
+  color: #d8c99e;
+}
+
+.destination-theme-salt .destination-hero-button {
+  border-color: #d8c99e;
+  border-radius: 5px 22px 5px 22px;
+  color: #fffdf5;
+}
+
+.destination-theme-salt .destination-hero-button:hover {
+  border-color: #d8c99e;
+  background: #d8c99e;
+  color: #394638;
+}
+
+.destination-theme-salt .destination-hero-count {
+  border-color: rgba(238, 230, 201, 0.38);
+  border-radius: 8px 24px 8px 24px;
+  background: rgba(42, 57, 44, 0.48);
+}
+
+.destination-theme-salt .destination-section-eyebrow,
+.destination-theme-salt .destination-place-category,
+.destination-theme-salt .destination-bottom-note > span {
+  color: #78835e;
+}
+
+.destination-theme-salt .destination-about-heading h2,
+.destination-theme-salt .destination-places-heading h2 {
+  color: #394638;
+}
+
+.destination-theme-salt .destination-about-content {
+  border-left: 0;
+  border-top: 3px solid #8d9870;
+  border-radius: 8px 28px 8px 28px;
+  background: #fbfcf7;
+  box-shadow: 0 12px 32px rgba(53, 68, 52, 0.07);
+}
+
+.destination-theme-salt .destination-about-mark {
+  color: #b5b994;
+}
+
+.destination-theme-salt .destination-about-content p,
+.destination-theme-salt .destination-places-heading p {
+  color: #70796a;
+}
+
+.destination-theme-salt .destination-places-section {
+  border-top-color: #d9ddcf;
+}
+
+.destination-theme-salt .destination-places-count {
+  border-color: #d0d6c5;
+  background: #fbfcf7;
+  color: #52634e;
+}
+
+.destination-theme-salt .destination-place-card {
+  border-color: #dce0d4;
+  border-radius: 8px 25px 8px 25px;
+  background: #fbfcf7;
+  box-shadow: 0 8px 24px rgba(53, 68, 52, 0.06);
+}
+
+.destination-theme-salt .destination-place-number {
+  border-radius: 5px 15px 5px 15px;
+  background: #fbfcf7;
+  color: #52634e;
+}
+
+.destination-theme-salt .destination-place-arrow {
+  border-radius: 5px 16px 5px 16px;
+  background: #fbfcf7;
+  color: #52634e;
+}
+
+.destination-theme-salt .destination-place-card:hover .destination-place-arrow {
+  background: #52634e;
+  color: #fff;
+}
+
+.destination-theme-salt .destination-place-content h3 {
+  color: #394638;
+}
+
+.destination-theme-salt .destination-place-content p {
+  color: #70796a;
+}
+
+.destination-theme-salt .destination-place-explore {
+  border-top-color: #e4e7dd;
+  color: #52634e;
+}
+
+.destination-theme-salt .destination-place-explore:hover {
+  color: #a17e4c;
+}
+
+.destination-theme-salt .destination-bottom-note {
+  border: 1px solid #d6d9c9;
+  border-radius: 12px 38px 12px 38px;
+  background: linear-gradient(120deg, #e5e5d7, #eee5d3);
+}
+
+.destination-theme-salt .destination-bottom-note h2 {
+  color: #394638;
+}
+
+.destination-theme-salt .destination-bottom-note p {
+  color: #70796a;
+}
+
+@media (max-width: 576px) {
+  .destination-theme-salt .destination-hero {
+    min-height: 495px;
+    border-radius: 8px 32px 8px 32px;
+  }
+
+  .destination-theme-salt .destination-about-content {
+    border-radius: 6px 20px 6px 20px;
+  }
+}
