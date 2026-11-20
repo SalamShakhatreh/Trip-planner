@@ -2985,645 +2985,6 @@ a:focus-visible {
   color: #78877e;
 }
 
-/* Profile Page */
-
-.profile-page {
-    --p-primary: #8b4bc4;
-    --p-primary-dark: #7136a8;
-    --p-dark: #30263b;
-    --p-muted: #81788a;
-    --p-border: #eee8f3;
-    --p-bg: #faf8fc;
-    --p-danger: #d94f60;
-    padding-top: 35px;
-    padding-bottom: 70px;
-    color: var(--p-dark);
-}
-
-/* Back Button */
-
-.profile-back-wrapper {
-    margin-bottom: 22px;
-}
-
-.profile-page .back-home {
-    width: 40px;
-    height: 40px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    background: #fff;
-    border: 1px solid var(--p-border);
-    color: var(--p-dark);
-    text-decoration: none;
-    font-size: 21px;
-    transition: .2s ease;
-}
-
-.profile-page .back-home:hover {
-    background: var(--p-primary);
-    color: #fff;
-    border-color: var(--p-primary);
-    transform: translateX(-3px);
-}
-
-/* Profile Header */
-
-.profile-header {
-    padding: 30px;
-    background: #fff;
-    border: 1px solid var(--p-border);
-    border-radius: 20px;
-    box-shadow: 0 5px 25px rgba(48, 38, 59, .045);
-}
-
-.profile-header-top {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-.profile-image-wrapper {
-    position: relative;
-    width: 112px;
-    height: 112px;
-    flex-shrink: 0;
-}
-
-.profile-image {
-    width: 112px;
-    height: 112px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #f1e7fa;
-}
-
-.profile-image-edit {
-    position: absolute;
-    right: 0;
-    bottom: 2px;
-    width: 34px;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid #fff;
-    border-radius: 50%;
-    background: var(--p-primary);
-    color: #fff;
-    cursor: pointer;
-    transition: .2s ease;
-}
-
-.profile-image-edit:hover {
-    background: var(--p-primary-dark);
-    transform: scale(1.08);
-}
-
-.profile-image-edit:disabled {
-    opacity: .6;
-    cursor: not-allowed;
-}
-
-.profile-upload-spinner {
-    width: 16px;
-    height: 16px;
-    border: 2px solid rgba(255,255,255,.4);
-    border-top-color: #fff;
-    border-radius: 50%;
-    animation: profile-spin .7s linear infinite;
-}
-
-@keyframes profile-spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.profile-header-info {
-    flex: 1;
-    min-width: 0;
-}
-
-.profile-header-info h2 {
-    color: var(--p-dark);
-    font-size: 26px;
-    font-weight: 750;
-    margin: 0 0 9px;
-}
-
-.profile-location {
-    color: var(--p-muted);
-    font-size: 13px;
-    margin: 0 0 8px;
-}
-
-.profile-bio {
-    color: #756c7e;
-    font-size: 14px;
-    line-height: 1.7;
-    margin: 0;
-}
-
-/* Main Buttons */
-
-.profile-page .profile-edit-button,
-.profile-page .profile-save-button,
-.profile-page .profile-add-trip-button,
-.profile-page .profile-add-photo-button,
-.profile-page .profile-plan-button,
-.profile-page .profile-view-place-button {
-    min-height: 39px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 9px 16px;
-    border: 1px solid var(--p-primary);
-    border-radius: 9px;
-    background: var(--p-primary);
-    color: #fff;
-    font-size: 13px;
-    font-weight: 650;
-    text-decoration: none;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: .2s ease;
-}
-
-.profile-page .profile-edit-button:hover,
-.profile-page .profile-save-button:hover,
-.profile-page .profile-add-trip-button:hover,
-.profile-page .profile-add-photo-button:hover,
-.profile-page .profile-plan-button:hover,
-.profile-page .profile-view-place-button:hover {
-    background: var(--p-primary-dark);
-    border-color: var(--p-primary-dark);
-    color: #fff;
-    transform: translateY(-2px);
-}
-
-.profile-page .profile-edit-button {
-    align-self: flex-start;
-    background: #f5eefb;
-    color: var(--p-primary-dark);
-    border-color: #eadcf6;
-}
-
-.profile-page .profile-edit-button:hover {
-    background: var(--p-primary);
-    color: #fff;
-}
-
-.profile-page .profile-save-button:disabled {
-    opacity: .6;
-    cursor: not-allowed;
-    transform: none;
-}
-
-/* Profile Statistics and Navigation */
-
-.profile-stats {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 1px solid var(--p-border);
-}
-
-.profile-stat {
-    min-width: auto;
-    min-height: 38px;
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 7px;
-    padding: 8px 13px;
-    border: 1px solid transparent;
-    border-radius: 9px;
-    background: transparent;
-    text-align: center;
-}
-
-.profile-stat strong {
-    color: var(--p-dark);
-    font-size: 13px;
-    font-weight: 750;
-}
-
-.profile-stat span {
-    color: var(--p-muted);
-    font-size: 13px;
-}
-
-.profile-page .profile-stat-button {
-    width: auto;
-    min-width: auto;
-    flex: 0 0 auto;
-    font-family: inherit;
-    cursor: pointer;
-    transition: .2s ease;
-}
-
-.profile-page .profile-stat-button:hover {
-    background: #f7f1fb;
-    border-color: #eadcf6;
-}
-
-
-.profile-page .profile-stat-button.active {
-    background: #f1e6fa;
-    border-color: #dfc7f0;
-    box-shadow: none;
-}
-
-.profile-page .profile-stat-button.active strong,
-.profile-page .profile-stat-button.active span {
-  color: var(--p-primary-dark);
-}
-
-/* Forms */
-
-.profile-edit-form,
-.profile-photo-form {
-    margin-top: 24px;
-    padding: 23px;
-    border: 1px solid var(--p-border);
-    border-radius: 14px;
-    background: #faf8fc;
-}
-
-.profile-photo-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 24px;
-}
-
-.profile-photo-form h4 {
-    color: var(--p-dark);
-    font-size: 17px;
-    font-weight: 750;
-}
-
-.profile-page .form-label {
-    color: var(--p-dark);
-    font-size: 13px;
-    font-weight: 650;
-    margin-bottom: 7px;
-}
-
-.profile-page .form-control {
-    min-height: 43px;
-    padding: 10px 13px;
-    border: 1px solid #e7dfed;
-    border-radius: 9px;
-    background: #fff;
-    color: var(--p-dark);
-    font-size: 14px;
-    box-shadow: none;
-}
-
-.profile-page textarea.form-control {
-    min-height: 95px;
-    resize: vertical;
-}
-
-.profile-page .form-control:focus {
-    border-color: var(--p-primary);
-    box-shadow: 0 0 0 3px rgba(139,75,196,.1);
-}
-
-.profile-page .text-muted {
-    color: var(--p-muted) !important;
-    font-size: 12px;
-}
-
-/* Content Sections */
-
-.profile-trips-section,
-.profile-photos-section,
-.profile-saved-section {
-    margin-top: 25px;
-    padding: 27px;
-    border: 1px solid var(--p-border);
-    border-radius: 18px;
-    background: #fff;
-    box-shadow: 0 5px 25px rgba(48,38,59,.04);
-}
-
-.profile-section-heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    margin-bottom: 23px;
-}
-
-.profile-section-heading h3 {
-    margin: 0 0 6px;
-    color: var(--p-dark);
-    font-size: 21px;
-    font-weight: 750;
-}
-
-.profile-section-heading p {
-    margin: 0;
-    color: var(--p-muted);
-    font-size: 13px;
-}
-
-/* Cards Grid */
-
-.profile-trips-grid,
-.profile-photos-grid,
-.profile-saved-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-}
-
-.profile-trip-card,
-.profile-photo-card,
-.profile-saved-card {
-    min-width: 0;
-    overflow: hidden;
-    border: 1px solid var(--p-border);
-    border-radius: 14px;
-    background: #fff;
-    transition: .25s ease;
-}
-
-.profile-trip-card:hover,
-.profile-photo-card:hover,
-.profile-saved-card:hover {
-    transform: translateY(-4px);
-    border-color: #d9c0ed;
-    box-shadow: 0 10px 25px rgba(48,38,59,.09);
-}
-
-/* Trip Cards */
-
-.profile-trip-image {
-    position: relative;
-    height: 185px;
-    overflow: hidden;
-    background: #f2edf6;
-}
-
-.profile-trip-image img,
-.profile-photo-image img,
-.profile-saved-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.profile-trip-image img {
-    transition: transform .35s ease;
-}
-
-.profile-trip-card:hover .profile-trip-image img {
-    transform: scale(1.04);
-}
-
-.profile-trip-status {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    padding: 6px 11px;
-    border-radius: 7px;
-    background: #fff;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: capitalize;
-    box-shadow: 0 2px 8px rgba(0,0,0,.08);
-}
-
-.profile-trip-status.planned {
-    color: #8850c5;
-}
-
-.profile-trip-status.ongoing {
-    color: #16845b;
-}
-
-.profile-trip-status.completed {
-    color: #64748b;
-}
-
-.profile-trip-info,
-.profile-photo-info,
-.profile-saved-info {
-    padding: 16px;
-}
-
-.profile-trip-info h4,
-.profile-photo-info h4,
-.profile-saved-info h4 {
-    margin: 0 0 9px;
-    color: var(--p-dark);
-    font-size: 16px;
-    font-weight: 750;
-    overflow-wrap: anywhere;
-}
-
-.profile-trip-destination,
-.profile-photo-location,
-.profile-saved-destination {
-    margin-bottom: 11px;
-    color: var(--p-muted);
-    font-size: 13px;
-}
-
-.profile-trip-details {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 13px;
-    color: var(--p-muted);
-    font-size: 12px;
-}
-
-.profile-trip-budget {
-    padding-top: 12px;
-    border-top: 1px solid var(--p-border);
-    color: var(--p-primary-dark);
-    font-size: 14px;
-    font-weight: 750;
-}
-
-/* Photos */
-
-.profile-photo-image {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    background: #f2edf6;
-}
-
-.profile-photo-image img {
-    transition: transform .35s ease;
-}
-
-.profile-photo-card:hover .profile-photo-image img {
-    transform: scale(1.05);
-}
-
-.profile-photo-description,
-.profile-saved-description {
-    margin-bottom: 13px;
-    color: var(--p-muted);
-    font-size: 13px;
-    line-height: 1.65;
-    overflow-wrap: anywhere;
-}
-
-.profile-photo-actions,
-.profile-saved-actions {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    margin-top: 14px;
-}
-
-.profile-photo-actions > button {
-    flex: 1;
-}
-
-.profile-photo-edit-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 16px;
-}
-
-.profile-photo-edit-form .profile-photo-actions {
-    margin-top: 5px;
-}
-
-/* Secondary Buttons */
-
-.profile-page .profile-cancel-button,
-.profile-page .profile-photo-edit-button,
-.profile-page .profile-photo-delete-button,
-.profile-page .profile-remove-place-button {
-    min-height: 38px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 13px;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 650;
-    cursor: pointer;
-    text-decoration: none;
-    transition: .2s ease;
-}
-
-.profile-page .profile-cancel-button {
-    background: #f0edf3;
-    color: #62576d;
-}
-
-.profile-page .profile-cancel-button:hover {
-    background: #ded8e5;
-}
-
-.profile-page .profile-photo-edit-button {
-    background: #f2e8fa;
-    color: var(--p-primary-dark);
-}
-
-.profile-page .profile-photo-edit-button:hover {
-    background: var(--p-primary);
-    color: #fff;
-}
-
-.profile-page .profile-photo-delete-button,
-.profile-page .profile-remove-place-button {
-    background: #fff0f1;
-    color: var(--p-danger);
-}
-
-.profile-page .profile-photo-delete-button:hover,
-.profile-page .profile-remove-place-button:hover {
-    background: var(--p-danger);
-    color: #fff;
-}
-
-/* Saved Places */
-
-.profile-saved-image {
-    width: 100%;
-    height: 185px;
-    overflow: hidden;
-    background: #f2edf6;
-}
-
-.profile-saved-image img {
-    transition: transform .35s ease;
-}
-
-.profile-saved-card:hover .profile-saved-image img {
-    transform: scale(1.05);
-}
-
-.profile-view-place-button {
-    flex: 1;
-    min-width: 0;
-    text-align: center;
-}
-
-.profile-saved-actions {
-    align-items: stretch;
-}
-
-.profile-remove-place-button {
-    flex-shrink: 0;
-}
-
-/* Empty States */
-
-.profile-empty-state {
-    padding: 42px 15px;
-    border: 1px dashed #d9c6e8;
-    border-radius: 14px;
-    background: #fcfaff;
-    text-align: center;
-}
-
-.profile-empty-state > span {
-    display: inline-block;
-    margin-bottom: 10px;
-    font-size: 38px;
-}
-
-.profile-empty-state h4 {
-    margin: 0 0 8px;
-    color: var(--p-dark);
-    font-size: 18px;
-    font-weight: 750;
-}
-
-.profile-empty-state p {
-    margin-bottom: 18px;
-    color: var(--p-muted);
-    font-size: 13px;
-}
-
-/* Alerts */
-
-.profile-page .alert {
-    border: 0;
-    border-radius: 10px;
-    font-size: 13px;
-}
-
 /*Review*/
 
 .place-details-section {
@@ -3933,23 +3294,19 @@ a:focus-visible {
 
 /* Tablet */
 @media (max-width: 992px) {
-  .admin-analytics-grid {
+.admin-analytics-grid {
     grid-template-columns: 1fr;
-  }
-   .profile-trips-section {
-    padding: 20px;
   }
 }
 
 
 @media (max-width: 991px) {
-  .site-header .navbar {
+.site-header .navbar {
     flex-wrap: wrap;
     gap: 18px;
   }
 
-
-  .navbar-links {
+.navbar-links {
     order: 3;
     width: 100%;
     justify-content: center;
@@ -3958,79 +3315,64 @@ a:focus-visible {
     border-top: 1px solid #edf1f7;
   }
 
-  .hero-section {
+.hero-section {
     padding: 65px 0 80px;
   }
 
-  .hero-image-wrapper {
+.hero-image-wrapper {
     max-width: 650px;
     margin: 0 auto;
   }
 
-  .hero-image {
+.hero-image {
     height: 400px;
   }
 
-  .destinations-section,
+.destinations-section,
   .features-section {
     padding: 75px 0;
   }
 
-  .activities-grid {
+.activities-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
   }
-     .profile-trips-grid,
-    .profile-photos-grid,
-    .profile-saved-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
 
-    .profile-header {
-        padding: 25px;
-    }
-
-    .profile-trips-section,
-    .profile-photos-section,
-    .profile-saved-section {
-        padding: 22px;
-    }
-      .country-hero {
+.country-hero {
     min-height: 420px;
   }
 
-  .country-hero-content {
+.country-hero-content {
     padding: 55px 45px;
   }
 
-  .country-cities-grid {
+.country-cities-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px;
   }
-
 }
 
 
 @media (max-width: 900px) {
-  .destination-hero {
+.destination-hero {
     min-height: 450px;
   }
 
-  .destination-hero-content {
+.destination-hero-content {
     padding: 50px 45px;
   }
 
-  .destination-about-section {
+.destination-about-section {
     grid-template-columns: 1fr;
     gap: 25px;
     padding: 70px 20px;
   }
 
-  .destination-places-grid {
+.destination-places-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .destination-places-section {
+.destination-places-section {
     padding-right: 20px;
     padding-left: 20px;
   }
@@ -4039,191 +3381,173 @@ a:focus-visible {
 /* Mobile */
 
 @media (max-width: 800px) {
-  .trip-workspace-grid {
+.trip-workspace-grid {
     display: flex;
     flex-direction: column;
   }
 
-  .trip-input-area {
+.trip-input-area {
     width: 100%;
     order: 1;
   }
 
-  .trip-summary {
+.trip-summary {
     width: 100%;
     order: 2;
     position: relative;
   }
-   .trip-route-decoration {
+
+.trip-route-decoration {
     display: none;
   }
-  .admin-sidebar {
+
+.admin-sidebar {
     width: 210px;
     padding: 25px 13px;
   }
 
-  .admin-main {
+.admin-main {
     width: calc(100% - 210px);
     margin-left: 210px;
   }
 
-  .admin-header {
+.admin-header {
     padding: 22px;
   }
 
-  .admin-content {
+.admin-content {
     padding: 25px 20px;
   }
 
-  .admin-stats {
+.admin-stats {
     grid-template-columns: 1fr;
   }
 }
 
 
 @media (max-width: 767px) {
-  .explore-countries-page {
+.explore-countries-page {
     padding-top: 35px !important;
   }
 
-  .explore-countries-page .section-heading {
+.explore-countries-page .section-heading {
     margin-bottom: 35px;
   }
 
-  .explore-countries-page .destination-image {
+.explore-countries-page .destination-image {
     height: 220px;
   }
-   .profile-header {
-    padding: 25px 20px;
-  }
 
-  .profile-header-top {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .profile-edit-button {
-    width: 100%;
-  }
-
-  .profile-header-info {
-    width: 100%;
-  }
-
-   .profile-stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-  }
-  .place-details-section {
+.place-details-section {
     padding: 85px 15px 50px;
   }
 
-  .place-details-section .back-home {
+.place-details-section .back-home {
     top: 22px;
     left: 18px;
   }
 
-  .place-details-heading h1 {
+.place-details-heading h1 {
     font-size: 30px;
   }
 
-  .place-details-section > .container > img.destination-image {
+.place-details-section > .container > img.destination-image {
     height: 280px;
     border-radius: 15px;
   }
 
-  .place-about,
+.place-about,
   .place-reviews-section {
     padding: 22px 18px;
   }
 
-  .place-about h2,
+.place-about h2,
   .place-reviews-section > h2 {
     font-size: 21px;
   }
 
-  .reviews-summary {
+.reviews-summary {
     padding: 17px;
     gap: 12px;
   }
 
-  .reviews-summary h3 {
+.reviews-summary h3 {
     font-size: 28px;
   }
 
-  .add-review-section {
+.add-review-section {
     padding: 20px 15px;
   }
-  .explore-countries-page {
+
+.explore-countries-page {
     padding: 65px 20px 70px !important;
   }
 
-  .explore-countries-page .section-heading {
+.explore-countries-page .section-heading {
     margin: 35px auto;
   }
 
-  .explore-countries-page .destination-card {
+.explore-countries-page .destination-card {
     height: 310px !important;
     border-radius: 17px;
   }
 
-  .explore-countries-page .destination-content {
+.explore-countries-page .destination-content {
     padding: 55px 15px 17px;
   }
 
-  .explore-countries-page .destination-content h3 {
+.explore-countries-page .destination-content h3 {
     font-size: 1.25rem;
   }
 
-  .explore-countries-page .destination-content p {
+.explore-countries-page .destination-content p {
     min-height: 0;
     font-size: 0.82rem;
   }
-
 }
 
 @media (max-width: 600px) {
-  .country-activities-page {
+.country-activities-page {
     padding: 35px 0 60px;
   }
 
-  .activities-heading {
+.activities-heading {
     margin: 30px auto 40px;
   }
 
-  .activities-grid {
+.activities-grid {
     grid-template-columns: 1fr;
   }
 
-  .activity-card-content {
+.activity-card-content {
     padding: 20px;
   }
 
-  .activity-card-header {
+.activity-card-header {
     padding: 20px 20px 0;
   }
 
-  .activity-card-content h2 {
+.activity-card-content h2 {
     font-size: 21px;
   }
-    .country-destinations-page {
+
+.country-destinations-page {
     padding: 22px 15px 55px;
   }
 
-  .country-page-back {
+.country-page-back {
     width: 40px;
     height: 40px;
     margin-bottom: 17px;
   }
 
-  .country-hero {
+.country-hero {
     min-height: 470px;
     align-items: flex-end;
     border-radius: 16px;
   }
 
-  .country-hero-overlay {
+.country-hero-overlay {
     background: linear-gradient(
       0deg,
       rgba(20, 38, 31, 0.9) 0%,
@@ -4232,30 +3556,30 @@ a:focus-visible {
     );
   }
 
-  .country-hero-content {
+.country-hero-content {
     width: 100%;
     padding: 45px 25px 115px;
   }
 
-  .country-hero-label {
+.country-hero-label {
     font-size: 0.62rem;
     letter-spacing: 2px;
   }
 
-  .country-hero-content h1 {
+.country-hero-content h1 {
     font-size: clamp(2.8rem, 12vw, 4rem);
   }
 
-  .country-hero-content p {
+.country-hero-content p {
     font-size: 0.9rem;
     line-height: 1.75;
   }
 
-  .country-hero-button {
+.country-hero-button {
     margin-top: 22px;
   }
 
-  .country-hero-count {
+.country-hero-count {
     right: 20px;
     bottom: 18px;
     flex-direction: row;
@@ -4263,55 +3587,55 @@ a:focus-visible {
     padding: 10px 14px;
   }
 
-  .country-hero-count strong {
+.country-hero-count strong {
     font-size: 1.2rem;
   }
 
-  .country-hero-count span {
+.country-hero-count span {
     font-size: 0.68rem;
   }
 
-  .country-cities-section {
+.country-cities-section {
     padding-top: 65px;
   }
 
-  .country-cities-heading {
+.country-cities-heading {
     align-items: flex-start;
     gap: 12px;
   }
 
-  .country-cities-heading h2 {
+.country-cities-heading h2 {
     font-size: 2rem;
   }
 
-  .country-cities-heading p {
+.country-cities-heading p {
     font-size: 0.88rem;
   }
 
-  .country-cities-toolbar {
+.country-cities-toolbar {
     align-items: flex-start;
     flex-direction: column;
     gap: 12px;
   }
 
-  .country-search-box {
+.country-search-box {
     width: 100%;
   }
 
-  .country-cities-grid {
+.country-cities-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .country-city-image-link {
+.country-city-image-link {
     height: 245px;
   }
 
-  .country-city-content {
+.country-city-content {
     padding: 20px;
   }
 
-  .country-bottom-note {
+.country-bottom-note {
     margin-top: 60px;
     padding: 42px 18px;
   }
@@ -4319,28 +3643,28 @@ a:focus-visible {
 
 
 @media (max-width: 576px) {
-  .admin-content {
+.admin-content {
     padding: 25px 18px;
   }
 
-  .admin-chart-card {
+.admin-chart-card {
     padding: 15px;
   }
 
-   .destination-details-page {
+.destination-details-page {
     padding: 25px 15px 55px;
   }
 
-  .destination-back-button {
+.destination-back-button {
     margin-bottom: 16px;
   }
 
-  .destination-hero {
+.destination-hero {
     min-height: 480px;
     border-radius: 19px;
   }
 
-  .destination-hero-overlay {
+.destination-hero-overlay {
     background: linear-gradient(
       0deg,
       rgba(13, 24, 38, 0.88) 0%,
@@ -4349,237 +3673,237 @@ a:focus-visible {
     );
   }
 
-  .destination-hero-content {
+.destination-hero-content {
     align-self: end;
     padding: 35px 25px 115px;
   }
 
-  .destination-hero-label {
+.destination-hero-label {
     font-size: 0.65rem;
     letter-spacing: 1.6px;
   }
 
-  .destination-hero-content h1 {
+.destination-hero-content h1 {
     font-size: clamp(2.3rem, 10vw, 3.5rem);
     letter-spacing: -1px;
   }
 
-  .destination-hero-country {
+.destination-hero-country {
     font-size: 0.9rem;
   }
 
-  .destination-hero-button {
+.destination-hero-button {
     margin-top: 23px;
   }
 
-  .destination-hero-count {
+.destination-hero-count {
     right: 20px;
     bottom: 20px;
     min-width: 120px;
     padding: 12px 16px;
   }
 
-  .destination-hero-count strong {
+.destination-hero-count strong {
     font-size: 1.6rem;
   }
 
-  .destination-hero-count span {
+.destination-hero-count span {
     font-size: 0.68rem;
   }
 
-  .destination-about-section {
+.destination-about-section {
     gap: 20px;
     padding: 60px 5px;
   }
 
-  .destination-about-heading h2,
+.destination-about-heading h2,
   .destination-places-heading h2 {
     font-size: 2rem;
   }
 
-  .destination-about-content {
+.destination-about-content {
     padding: 23px 22px;
   }
 
-  .destination-about-content p {
+.destination-about-content p {
     font-size: 0.92rem;
   }
 
-  .destination-places-section {
+.destination-places-section {
     padding: 45px 5px 55px;
   }
 
-  .destination-places-heading {
+.destination-places-heading {
     align-items: flex-start;
     gap: 18px;
   }
 
-  .destination-places-heading p {
+.destination-places-heading p {
     font-size: 0.87rem;
   }
 
-  .destination-places-count {
+.destination-places-count {
     width: 68px;
     height: 68px;
   }
 
-  .destination-places-count span:first-child {
+.destination-places-count span:first-child {
     font-size: 1.3rem;
   }
 
-  .destination-places-count span:last-child {
+.destination-places-count span:last-child {
     font-size: 0.62rem;
   }
 
-  .destination-places-grid {
+.destination-places-grid {
     grid-template-columns: 1fr;
     gap: 19px;
   }
 
-  .destination-place-image-link {
+.destination-place-image-link {
     height: 230px;
   }
 
-  .destination-place-content {
+.destination-place-content {
     padding: 20px;
   }
 
-  .destination-bottom-note {
+.destination-bottom-note {
     margin: 10px 0 0;
     padding: 42px 18px;
   }
 
-  .destination-bottom-note h2 {
+.destination-bottom-note h2 {
     font-size: 1.55rem;
   }
 }
 
 @media (max-width: 575px) {
-  .site-header .navbar {
+.site-header .navbar {
     justify-content: space-between;
     gap: 12px;
   }
 
-  .logo {
+.logo {
     gap: 7px;
     font-size: 1.12rem;
   }
 
-  .logo-icon {
+.logo-icon {
     width: 33px;
     height: 33px;
     font-size: 1.05rem;
   }
 
-  .nav-actions {
+.nav-actions {
     gap: 4px;
   }
 
-  .nav-actions .btn {
+.nav-actions .btn {
     padding: 9px 10px;
     font-size: 0.78rem;
   }
 
-  .navbar-links {
+.navbar-links {
     gap: 19px;
   }
 
-  .navbar-links a {
+.navbar-links a {
     font-size: 0.8rem;
   }
 
-  .hero-section {
+.hero-section {
     padding: 55px 0 65px;
   }
 
-  .hero-content h1 {
+.hero-content h1 {
     font-size: 2.2rem;
     letter-spacing: -1.2px;
     overflow-wrap: anywhere;
   }
 
-  .hero-description {
+.hero-description {
     margin: 20px 0 25px;
     font-size: 0.98rem;
   }
 
-  .hero-actions {
+.hero-actions {
     align-items: flex-start;
     flex-direction: column;
     gap: 17px;
   }
 
-  .hero-image-wrapper {
+.hero-image-wrapper {
     padding-left: 10px;
   }
 
-  .hero-image-wrapper::before {
+.hero-image-wrapper::before {
     right: -5px;
     width: 85px;
     height: 85px;
   }
 
-  .hero-image {
+.hero-image {
     height: 310px;
     border-radius: 18px;
   }
 
-  .floating-card {
+.floating-card {
     right: -5px;
     bottom: 42px;
     gap: 9px;
     padding: 12px;
   }
 
-  .floating-icon {
+.floating-icon {
     width: 36px;
     height: 36px;
     font-size: 1.2rem;
   }
 
-  .floating-card strong {
+.floating-card strong {
     font-size: 0.78rem;
   }
 
-  .floating-card p {
+.floating-card p {
     font-size: 0.72rem;
   }
 
-  .image-label {
+.image-label {
     left: 20px;
     font-size: 0.68rem;
   }
 
-  .section-heading {
+.section-heading {
     align-items: flex-start;
     flex-direction: column;
     gap: 15px;
   }
 
-  .section-heading h2,
+.section-heading h2,
   .cta-content h2 {
     font-size: 2rem;
   }
 
-  .destinations-section,
+.destinations-section,
   .features-section {
     padding: 60px 0;
   }
 
-  .feature-card {
+.feature-card {
     padding: 26px 23px;
   }
 
-  .cta-section {
+.cta-section {
     padding: 20px 0 60px;
   }
 
-  .cta-content {
+.cta-content {
     padding: 48px 20px;
     border-radius: 18px;
   }
 
-   .footer-content {
+.footer-content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -4589,315 +3913,219 @@ a:focus-visible {
     padding: 24px 16px;
     text-align: center;
   }
-  .footer-logo {
+
+.footer-logo {
     position: static;
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
 
-  .footer-content p {
+.footer-content p {
     width: 100%;
     margin: 0;
     line-height: 1.6;
   }
 
-  .back-home {
+.back-home {
     top: 30px;
     left: 19px;
   }
 
-  .admin-sidebar {
+.admin-sidebar {
     position: relative;
     width: 100%;
     height: auto;
     padding: 18px;
   }
 
-  .admin-logo {
+.admin-logo {
     margin-bottom: 20px;
   }
 
-  .admin-nav {
+.admin-nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
-  .admin-logout {
+.admin-logout {
     margin-top: 18px;
   }
 
-  .admin-page {
+.admin-page {
     flex-direction: column;
   }
 
-  .admin-main {
+.admin-main {
     width: 100%;
     margin-left: 0;
   }
 
-  .admin-header {
+.admin-header {
     min-height: 90px;
   }
 
-  .admin-header h1 {
+.admin-header h1 {
     font-size: 1.35rem;
   }
 
-  .admin-content {
+.admin-content {
     padding: 25px 16px;
   }
 
-  .admin-placeholder {
+.admin-placeholder {
     padding: 22px;
   }
-  
-  .explore-countries-page {
+
+.explore-countries-page {
     padding-right: 16px;
     padding-left: 16px;
   }
 
-  .explore-countries-page .back-home {
+.explore-countries-page .back-home {
     top: 16px;
     left: 16px;
   }
 
-  .explore-countries-page .section-heading {
+.explore-countries-page .section-heading {
     margin: 50px auto 36px;
   }
 
-  .explore-countries-page .destination-image {
+.explore-countries-page .destination-image {
     height: 210px;
   }
-   .admin-form-grid {
+
+.admin-form-grid {
     grid-template-columns: 1fr;
   }
 
-  .admin-form-full {
+.admin-form-full {
     grid-column: auto;
   }
 
-  .admin-destination-form,
+.admin-destination-form,
   .admin-destinations-list {
     padding: 18px;
   }
 
-  .admin-form-actions {
+.admin-form-actions {
     flex-wrap: wrap;
   }
-     .profile-page {
-        padding-top: 20px;
-        padding-bottom: 40px;
-    }
-
-    .profile-header {
-        padding: 22px 16px;
-        border-radius: 15px;
-    }
-
-    .profile-header-top {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 14px;
-    }
-
-    .profile-image-wrapper,
-    .profile-image {
-        width: 100px;
-        height: 100px;
-    }
-
-    .profile-header-info h2 {
-        font-size: 22px;
-    }
-
-    .profile-page .profile-edit-button {
-        align-self: center;
-    }
-
-     .profile-stats {
-        justify-content: center;
-        gap: 5px;
-    }
-
-
-   .profile-stat,
-    .profile-page .profile-stat-button {
-        min-width: auto;
-        min-height: 36px;
-        padding: 7px 9px;
-        gap: 5px;
-    }
-
-    .profile-stat strong,
-    .profile-stat span {
-        font-size: 12px;
-    }
-
-    .profile-trips-section,
-    .profile-photos-section,
-    .profile-saved-section {
-        margin-top: 18px;
-        padding: 18px 14px;
-        border-radius: 14px;
-    }
-
-    .profile-section-heading {
-        align-items: flex-start;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .profile-section-heading h3 {
-        font-size: 19px;
-    }
-
-    .profile-trips-grid,
-    .profile-photos-grid,
-    .profile-saved-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .profile-trip-image,
-    .profile-saved-image {
-        height: 200px;
-    }
-
-    .profile-edit-form,
-    .profile-photo-form {
-        padding: 16px;
-    }
-
-    .profile-page .profile-edit-button,
-    .profile-page .profile-save-button,
-    .profile-page .profile-add-trip-button,
-    .profile-page .profile-add-photo-button,
-    .profile-page .profile-plan-button,
-    .profile-page .profile-view-place-button {
-        min-height: 37px;
-        padding: 8px 12px;
-        font-size: 12px;
-    }
-
-    .profile-photo-actions,
-    .profile-saved-actions {
-        gap: 7px;
-    }
 }
 
 
 @media screen and (max-width: 480px) {
-  .explore-countries-page {
+.explore-countries-page {
     width: 100%;
     min-height: 100vh;
     padding: 28px 18px 55px !important;
     overflow-x: hidden;
   }
 
-  .explore-countries-page .back-home {
+.explore-countries-page .back-home {
     width: 42px;
     height: 42px;
     font-size: 23px;
     margin-bottom: 35px;
   }
 
-  .explore-countries-page .section-heading {
+.explore-countries-page .section-heading {
     width: 100%;
     margin: 0 auto 32px;
     padding: 10px 5px;
   }
 
-  .explore-countries-page .section-heading .eyebrow {
+.explore-countries-page .section-heading .eyebrow {
     font-size: 0.68rem;
     letter-spacing: 1.8px;
   }
 
-  .explore-countries-page .section-heading h1 {
+.explore-countries-page .section-heading h1 {
     font-size: 2rem;
     line-height: 1.2;
     margin-bottom: 13px;
   }
 
-  .explore-countries-page .section-heading p {
+.explore-countries-page .section-heading p {
     font-size: 0.9rem;
     line-height: 1.65;
   }
 
-  .explore-countries-page .row {
+.explore-countries-page .row {
     margin-left: 0;
     margin-right: 0;
   }
 
-  .explore-countries-page .row > * {
+.explore-countries-page .row > * {
     padding-left: 0;
     padding-right: 0;
   }
 
-  .explore-countries-page .destination-card {
+.explore-countries-page .destination-card {
     width: 100%;
     border-radius: 16px;
   }
 
-  .explore-countries-page .destination-image {
+.explore-countries-page .destination-image {
     height: 215px;
   }
 
-  .explore-countries-page .destination-content {
+.explore-countries-page .destination-content {
     padding: 19px;
   }
 
-  .explore-countries-page .destination-content h3 {
+.explore-countries-page .destination-content h3 {
     font-size: 1.2rem;
   }
 
-  .explore-countries-page .destination-content p {
+.explore-countries-page .destination-content p {
     font-size: 0.9rem;
     min-height: auto;
     line-height: 1.65;
   }
 
-  .explore-countries-page .destination-footer {
+.explore-countries-page .destination-footer {
     margin-top: 16px;
     padding-top: 14px;
   }
-  .place-details-heading h1 {
+
+.place-details-heading h1 {
     font-size: 26px;
   }
 
-  .place-details-section > .container > img.destination-image {
+.place-details-section > .container > img.destination-image {
     height: 220px;
   }
 
-  .reviews-summary {
+.reviews-summary {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .review-rating-input button {
+.review-rating-input button {
     font-size: 28px;
   }
 
-  .add-review-section button[type="submit"],
+.add-review-section button[type="submit"],
   .add-review-section > div button {
     padding: 10px 15px;
     font-size: 13px;
   }
-   .explore-countries-page {
+
+.explore-countries-page {
     padding-right: 15px !important;
     padding-left: 15px !important;
   }
 
-  .explore-countries-page .destination-card {
+.explore-countries-page .destination-card {
     height: 340px !important;
   }
 
-  .explore-countries-page .destination-content {
+.explore-countries-page .destination-content {
     padding: 65px 22px 22px;
   }
 
-  .explore-countries-page .destination-content h3 {
+.explore-countries-page .destination-content h3 {
     font-size: 1.5rem;
   }
 }
