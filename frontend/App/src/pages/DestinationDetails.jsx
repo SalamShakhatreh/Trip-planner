@@ -96,19 +96,52 @@ const DestinationDetails = () => {
   }
 
   const cityName = destination.name?.toLowerCase();
-  const cityTheme =
-    cityName === "amman" ? "amman" :
-    cityName === "petra" ? "petra" :
-    cityName === "aqaba" ? "aqaba" :
-    cityName === "salt" ? "salt" :
-    cityName === "jerash" ? "jerash" :
-    cityName === "dubai" ? "dubai" :
-    cityName === "abu dhabi" ? "abu-dhabi" :
-    cityName === "sharjah" ? "sharjah" :
-    cityName === "al ain" ? "al-ain" :
-    cityName === "cairo" ? "cairo" :
-    cityName === "alexandria" ? "alexandria" :
-    "default";
+  const cityThemes = {
+    "amman": "amman",
+    "petra": "petra",
+    "aqaba": "aqaba",
+    "salt": "salt",
+    "jerash": "jerash",
+    "dubai": "dubai",
+    "abu dhabi": "abu-dhabi",
+    "sharjah": "sharjah",
+    "al ain": "al-ain",
+    "cairo": "cairo",
+    "alexandria": "alexandria",
+    "sharm el sheikh": "sharm-el-sheikh",
+    "luxor": "luxor",
+    "antalya": "antalya",
+    "bursa": "bursa",
+    "trabzon": "trabzon",
+    "istanbul": "istanbul",
+    "cappadocia": "cappadocia",
+    "marrakech": "marrakech",
+    "casablanca": "casablanca",
+    "chefchaouen": "chefchaouen",
+    "rome": "rome",
+    "venice": "venice",
+    "florence": "florence",
+    "milan": "milan",
+    "naples": "naples",
+    "paris": "paris",
+    "nice": "nice",
+    "lyon": "lyon",
+    "marseille": "marseille",
+    "bordeaux": "bordeaux",
+    "zurich": "zurich",
+    "geneva": "geneva",
+    "lucerne": "lucerne",
+    "interlaken": "interlaken",
+    "bern": "bern",
+    "madrid": "madrid",
+    "seville": "seville",
+    "granada": "granada",
+    "athens": "athens",
+    "santorini": "santorini",
+    "thessaloniki": "thessaloniki",
+    "crete": "crete",
+  };
+  const cityTheme = cityThemes[cityName] || "default";
 
   return (
     <main className={`destination-details-page destination-theme-${cityTheme}`}>
