@@ -818,3 +818,159 @@
     padding-bottom: 60px;
   }
 }
+
+/* Petra city theme */
+.destination-theme-petra {
+  background: #f5eee9;
+  color: #382923;
+}
+
+.destination-theme-petra .destination-back-button {
+  border-color: #e4c9bd;
+  background: #fff9f5;
+  color: #75483b;
+}
+
+.destination-theme-petra .destination-back-button:hover {
+  border-color: #713d32;
+  background: #713d32;
+  color: #fff;
+}
+
+.destination-theme-petra .destination-hero {
+  min-height: 590px;
+  border-radius: 42px 8px 42px 8px;
+  background: #542f2b;
+}
+
+.destination-theme-petra .destination-hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(48, 25, 24, 0.88) 0%,
+    rgba(75, 37, 32, 0.58) 50%,
+    rgba(75, 37, 32, 0.08) 100%
+  );
+}
+
+.destination-theme-petra .destination-hero-label,
+.destination-theme-petra .destination-hero-country span {
+  color: #f0b99d;
+}
+
+.destination-theme-petra .destination-hero-button {
+  border-color: #e8b59d;
+  border-radius: 5px 18px 5px 18px;
+  color: #fff7f2;
+}
+
+.destination-theme-petra .destination-hero-button:hover {
+  border-color: #e8b59d;
+  background: #e8b59d;
+  color: #452820;
+}
+
+.destination-theme-petra .destination-hero-count {
+  border-color: rgba(255, 220, 205, 0.35);
+  border-radius: 22px 5px 22px 5px;
+  background: rgba(66, 31, 28, 0.48);
+}
+
+.destination-theme-petra .destination-section-eyebrow,
+.destination-theme-petra .destination-place-category,
+.destination-theme-petra .destination-bottom-note > span {
+  color: #a45c48;
+}
+
+.destination-theme-petra .destination-about-heading h2,
+.destination-theme-petra .destination-places-heading h2 {
+  color: #4b3029;
+}
+
+.destination-theme-petra .destination-about-content {
+  border-left: 0;
+  border-right: 3px solid #b66d54;
+  border-radius: 18px 0 0 18px;
+  background: #fff9f5;
+  box-shadow: 0 12px 32px rgba(91, 48, 37, 0.07);
+}
+
+.destination-theme-petra .destination-about-mark {
+  color: #d39a80;
+}
+
+.destination-theme-petra .destination-about-content p,
+.destination-theme-petra .destination-places-heading p {
+  color: #80685f;
+}
+
+.destination-theme-petra .destination-places-section {
+  border-top-color: #e6d4ca;
+}
+
+.destination-theme-petra .destination-places-count {
+  border-color: #e1c3b5;
+  background: #fff9f5;
+  color: #633d32;
+}
+
+.destination-theme-petra .destination-place-card {
+  border-color: #ead7cd;
+  border-radius: 22px 5px 22px 5px;
+  background: #fff9f5;
+  box-shadow: 0 8px 24px rgba(91, 48, 37, 0.06);
+}
+
+.destination-theme-petra .destination-place-number {
+  border-radius: 5px 13px 5px 13px;
+  background: #fff9f5;
+  color: #633d32;
+}
+
+.destination-theme-petra .destination-place-arrow {
+  border-radius: 14px 4px 14px 4px;
+  background: #fff9f5;
+  color: #633d32;
+}
+
+.destination-theme-petra .destination-place-card:hover .destination-place-arrow {
+  background: #713d32;
+  color: #fff;
+}
+
+.destination-theme-petra .destination-place-content h3 {
+  color: #4b3029;
+}
+
+.destination-theme-petra .destination-place-content p {
+  color: #80685f;
+}
+
+.destination-theme-petra .destination-place-explore {
+  border-top-color: #efdfd7;
+  color: #75483b;
+}
+
+.destination-theme-petra .destination-place-explore:hover {
+  color: #b15f46;
+}
+
+.destination-theme-petra .destination-bottom-note {
+  border: 1px solid #e2c8bc;
+  border-radius: 35px 7px 35px 7px;
+  background: #ead9d0;
+}
+
+.destination-theme-petra .destination-bottom-note h2 {
+  color: #4b3029;
+}
+
+.destination-theme-petra .destination-bottom-note p {
+  color: #80685f;
+}
+
+@media (max-width: 576px) {
+  .destination-theme-petra .destination-hero {
+    min-height: 500px;
+    border-radius: 28px 6px 28px 6px;
+  }
+}
