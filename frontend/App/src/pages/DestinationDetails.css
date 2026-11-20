@@ -1619,3 +1619,165 @@
     border-radius: 8px;
   }
 }
+
+/* Abu Dhabi city theme */
+.destination-theme-abu-dhabi {
+  background: #f3f0e8;
+  color: #34352f;
+}
+
+.destination-theme-abu-dhabi .destination-back-button {
+  border-color: #d9d1bf;
+  background: #fbfaf5;
+  color: #6d7658;
+}
+
+.destination-theme-abu-dhabi .destination-back-button:hover {
+  border-color: #788365;
+  background: #788365;
+  color: #fff;
+}
+
+.destination-theme-abu-dhabi .destination-hero {
+  min-height: 590px;
+  border-radius: 26px 26px 8px 8px;
+  background: #353c35;
+  box-shadow: 0 18px 48px rgba(54, 58, 43, 0.13);
+}
+
+.destination-theme-abu-dhabi .destination-hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(31, 39, 34, 0.88) 0%,
+    rgba(44, 52, 43, 0.57) 52%,
+    rgba(44, 52, 43, 0.08) 100%
+  );
+}
+
+.destination-theme-abu-dhabi .destination-hero-label,
+.destination-theme-abu-dhabi .destination-hero-country span {
+  color: #d9c89b;
+}
+
+.destination-theme-abu-dhabi .destination-hero-button {
+  border-color: #d4c49a;
+  border-radius: 24px 24px 5px 24px;
+  color: #fffdf5;
+}
+
+.destination-theme-abu-dhabi .destination-hero-button:hover {
+  border-color: #d4c49a;
+  background: #d4c49a;
+  color: #343b32;
+}
+
+.destination-theme-abu-dhabi .destination-hero-count {
+  border-color: rgba(217, 200, 155, 0.48);
+  border-radius: 18px 18px 5px 18px;
+  background: rgba(39, 47, 40, 0.46);
+}
+
+.destination-theme-abu-dhabi .destination-section-eyebrow,
+.destination-theme-abu-dhabi .destination-place-category,
+.destination-theme-abu-dhabi .destination-bottom-note > span {
+  color: #788365;
+}
+
+.destination-theme-abu-dhabi .destination-about-heading h2,
+.destination-theme-abu-dhabi .destination-places-heading h2 {
+  color: #343b32;
+}
+
+.destination-theme-abu-dhabi .destination-about-content {
+  border: 1px solid #e2ddce;
+  border-left: 4px solid #899273;
+  border-radius: 4px 18px 18px 4px;
+  background: #fbfaf5;
+  box-shadow: 0 12px 32px rgba(58, 62, 47, 0.055);
+}
+
+.destination-theme-abu-dhabi .destination-about-mark {
+  color: #a6a27e;
+}
+
+.destination-theme-abu-dhabi .destination-about-content p,
+.destination-theme-abu-dhabi .destination-places-heading p {
+  color: #77776c;
+}
+
+.destination-theme-abu-dhabi .destination-places-section {
+  border-top-color: #dfddcf;
+}
+
+.destination-theme-abu-dhabi .destination-places-count {
+  border-color: #d9d8c6;
+  border-radius: 18px 18px 5px 18px;
+  background: #fbfaf5;
+  color: #687452;
+}
+
+.destination-theme-abu-dhabi .destination-place-card {
+  border-color: #e3dfd1;
+  border-radius: 4px 18px 18px 18px;
+  background: #fbfaf5;
+  box-shadow: 0 10px 26px rgba(58, 62, 47, 0.055);
+}
+
+.destination-theme-abu-dhabi .destination-place-number {
+  border-radius: 12px 12px 3px 12px;
+  background: #eeede3;
+  color: #687452;
+}
+
+.destination-theme-abu-dhabi .destination-place-arrow {
+  border-radius: 14px 14px 4px 14px;
+  background: #eeede3;
+  color: #687452;
+}
+
+.destination-theme-abu-dhabi .destination-place-card:hover .destination-place-arrow {
+  background: #788365;
+  color: #fff;
+}
+
+.destination-theme-abu-dhabi .destination-place-content h3 {
+  color: #343b32;
+}
+
+.destination-theme-abu-dhabi .destination-place-content p {
+  color: #77776c;
+}
+
+.destination-theme-abu-dhabi .destination-place-explore {
+  border-top-color: #eae7db;
+  color: #687452;
+}
+
+.destination-theme-abu-dhabi .destination-place-explore:hover {
+  color: #929b77;
+}
+
+.destination-theme-abu-dhabi .destination-bottom-note {
+  border: 1px solid #dedbc9;
+  border-radius: 20px 20px 5px 20px;
+  background: linear-gradient(120deg, #e7e4d5, #f2ecdd);
+}
+
+.destination-theme-abu-dhabi .destination-bottom-note h2 {
+  color: #343b32;
+}
+
+.destination-theme-abu-dhabi .destination-bottom-note p {
+  color: #77776c;
+}
+
+@media (max-width: 576px) {
+  .destination-theme-abu-dhabi .destination-hero {
+    min-height: 500px;
+    border-radius: 18px 18px 6px 6px;
+  }
+
+  .destination-theme-abu-dhabi .destination-about-content {
+    border-radius: 4px 14px 14px 4px;
+  }
+}
