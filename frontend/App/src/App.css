@@ -5034,12 +5034,6 @@ a:focus-visible {
 }
 
 
-/* Small Mobile */
-
-@media (max-width: 400px) {
- 
-}
-
 @media screen and (max-width: 480px) {
   .explore-countries-page {
     width: 100%;
