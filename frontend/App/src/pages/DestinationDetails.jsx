@@ -95,7 +95,8 @@ const DestinationDetails = () => {
     );
   }
 
-  const cityTheme = destination.name?.toLowerCase() === "amman" ? "amman" : "default";
+  const cityName = destination.name?.toLowerCase();
+  const cityTheme = cityName === "amman" ? "amman" : cityName === "petra" ? "petra" : "default";
 
   return (
     <main className={`destination-details-page destination-theme-${cityTheme}`}>
