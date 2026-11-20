@@ -1294,3 +1294,165 @@
     border-radius: 6px 20px 6px 20px;
   }
 }
+
+/* Jerash city theme */
+.destination-theme-jerash {
+  background: #f2f0e8;
+  color: #35382f;
+}
+
+.destination-theme-jerash .destination-back-button {
+  border-color: #d8d2bf;
+  background: #fcfbf6;
+  color: #665b42;
+}
+
+.destination-theme-jerash .destination-back-button:hover {
+  border-color: #66563b;
+  background: #66563b;
+  color: #fff;
+}
+
+.destination-theme-jerash .destination-hero {
+  min-height: 580px;
+  border-radius: 4px;
+  background: #514b3c;
+  box-shadow: inset 0 0 0 8px rgba(232, 222, 194, 0.18);
+}
+
+.destination-theme-jerash .destination-hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(42, 40, 33, 0.9) 0%,
+    rgba(62, 58, 45, 0.62) 50%,
+    rgba(62, 58, 45, 0.08) 100%
+  );
+}
+
+.destination-theme-jerash .destination-hero-label,
+.destination-theme-jerash .destination-hero-country span {
+  color: #d8c28f;
+}
+
+.destination-theme-jerash .destination-hero-button {
+  border-color: #d8c28f;
+  border-radius: 3px;
+  color: #fffdf5;
+}
+
+.destination-theme-jerash .destination-hero-button:hover {
+  border-color: #d8c28f;
+  background: #d8c28f;
+  color: #403a2d;
+}
+
+.destination-theme-jerash .destination-hero-count {
+  border-color: rgba(232, 220, 185, 0.4);
+  border-radius: 3px;
+  background: rgba(56, 51, 39, 0.5);
+}
+
+.destination-theme-jerash .destination-section-eyebrow,
+.destination-theme-jerash .destination-place-category,
+.destination-theme-jerash .destination-bottom-note > span {
+  color: #9a8050;
+}
+
+.destination-theme-jerash .destination-about-heading h2,
+.destination-theme-jerash .destination-places-heading h2 {
+  color: #494536;
+}
+
+.destination-theme-jerash .destination-about-content {
+  border-left: 4px double #aa9567;
+  border-radius: 2px;
+  background: #fcfbf6;
+  box-shadow: 0 10px 28px rgba(69, 62, 45, 0.07);
+}
+
+.destination-theme-jerash .destination-about-mark {
+  color: #c6b486;
+}
+
+.destination-theme-jerash .destination-about-content p,
+.destination-theme-jerash .destination-places-heading p {
+  color: #77715f;
+}
+
+.destination-theme-jerash .destination-places-section {
+  border-top-color: #ded8c7;
+}
+
+.destination-theme-jerash .destination-places-count {
+  border-color: #d4c9ad;
+  border-radius: 4px;
+  background: #fcfbf6;
+  color: #665b42;
+}
+
+.destination-theme-jerash .destination-place-card {
+  border-color: #ded8c7;
+  border-radius: 3px;
+  background: #fcfbf6;
+  box-shadow: 0 7px 22px rgba(69, 62, 45, 0.06);
+}
+
+.destination-theme-jerash .destination-place-number {
+  border-radius: 2px;
+  background: #fcfbf6;
+  color: #665b42;
+}
+
+.destination-theme-jerash .destination-place-arrow {
+  border-radius: 2px;
+  background: #fcfbf6;
+  color: #665b42;
+}
+
+.destination-theme-jerash .destination-place-card:hover .destination-place-arrow {
+  background: #66563b;
+  color: #fff;
+}
+
+.destination-theme-jerash .destination-place-content h3 {
+  color: #494536;
+}
+
+.destination-theme-jerash .destination-place-content p {
+  color: #77715f;
+}
+
+.destination-theme-jerash .destination-place-explore {
+  border-top-color: #e7e1d2;
+  color: #665b42;
+}
+
+.destination-theme-jerash .destination-place-explore:hover {
+  color: #a17d43;
+}
+
+.destination-theme-jerash .destination-bottom-note {
+  border: 1px solid #d7ceb8;
+  border-radius: 3px;
+  background: linear-gradient(120deg, #e7e1d1, #f0eadb);
+}
+
+.destination-theme-jerash .destination-bottom-note h2 {
+  color: #494536;
+}
+
+.destination-theme-jerash .destination-bottom-note p {
+  color: #77715f;
+}
+
+@media (max-width: 576px) {
+  .destination-theme-jerash .destination-hero {
+    min-height: 500px;
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 5px rgba(232, 222, 194, 0.18);
+  }
+
+  .destination-theme-jerash .destination-about-content {
+    border-left-width: 3px;
+  }
+}
