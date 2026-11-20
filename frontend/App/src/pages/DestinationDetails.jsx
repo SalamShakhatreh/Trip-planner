@@ -104,6 +104,7 @@ const DestinationDetails = () => {
     cityName === "jerash" ? "jerash" :
     cityName === "dubai" ? "dubai" :
     cityName === "abu dhabi" ? "abu-dhabi" :
+    cityName === "sharjah" ? "sharjah" :
     "default";
 
   return (
