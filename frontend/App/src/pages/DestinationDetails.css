@@ -2105,3 +2105,161 @@
     border-radius: 16px;
   }
 }
+
+
+/* Cairo city theme */
+.destination-theme-cairo {
+  background: #f3ead9;
+  color: #263f3c;
+}
+
+.destination-theme-cairo .destination-back-button {
+  border-color: #d9c5a5;
+  background: #fff9ed;
+  color: #9a5c3c;
+}
+
+.destination-theme-cairo .destination-back-button:hover {
+  border-color: #a85f3d;
+  background: #a85f3d;
+  color: #fff9ed;
+}
+
+.destination-theme-cairo .destination-hero {
+  min-height: 585px;
+  border-radius: 5px 42px 5px 42px;
+  background: #203d3a;
+  box-shadow: 0 20px 48px rgba(43, 54, 43, 0.16);
+}
+
+.destination-theme-cairo .destination-hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(25, 53, 50, 0.9) 0%,
+    rgba(35, 62, 57, 0.58) 52%,
+    rgba(35, 62, 57, 0.08) 100%
+  );
+}
+
+.destination-theme-cairo .destination-hero-label,
+.destination-theme-cairo .destination-hero-country span {
+  color: #e0b779;
+}
+
+.destination-theme-cairo .destination-hero-button {
+  border-color: #d5a66c;
+  border-radius: 4px 18px 4px 18px;
+  color: #fff9ed;
+}
+
+.destination-theme-cairo .destination-hero-button:hover {
+  border-color: #d5a66c;
+  background: #d5a66c;
+  color: #263f3c;
+}
+
+.destination-theme-cairo .destination-hero-count {
+  border-color: rgba(224, 183, 121, 0.5);
+  border-radius: 4px 16px 4px 16px;
+  background: rgba(25, 53, 50, 0.5);
+}
+
+.destination-theme-cairo .destination-section-eyebrow,
+.destination-theme-cairo .destination-place-category,
+.destination-theme-cairo .destination-bottom-note > span {
+  color: #a85f3d;
+}
+
+.destination-theme-cairo .destination-about-heading h2,
+.destination-theme-cairo .destination-places-heading h2 {
+  color: #263f3c;
+}
+
+.destination-theme-cairo .destination-about-content {
+  border: 1px solid #e3d3b9;
+  border-left: 4px solid #b8754c;
+  border-radius: 5px 20px 5px 20px;
+  background: #fff9ed;
+  box-shadow: 0 12px 30px rgba(66, 53, 36, 0.07);
+}
+
+.destination-theme-cairo .destination-about-mark {
+  color: #b8754c;
+}
+
+.destination-theme-cairo .destination-about-content p,
+.destination-theme-cairo .destination-places-heading p {
+  color: #777064;
+}
+
+.destination-theme-cairo .destination-places-section {
+  border-top-color: #dfd0b8;
+}
+
+.destination-theme-cairo .destination-places-count {
+  border-color: #dfc7a4;
+  border-radius: 4px 14px 4px 14px;
+  background: #fff9ed;
+  color: #9a5c3c;
+}
+
+.destination-theme-cairo .destination-place-card {
+  border-color: #e3d3b9;
+  border-radius: 5px 20px 5px 20px;
+  background: #fff9ed;
+  box-shadow: 0 10px 26px rgba(66, 53, 36, 0.06);
+}
+
+.destination-theme-cairo .destination-place-number,
+.destination-theme-cairo .destination-place-arrow {
+  border-radius: 4px 12px 4px 12px;
+  background: #f0e3ce;
+  color: #9a5c3c;
+}
+
+.destination-theme-cairo .destination-place-card:hover .destination-place-arrow {
+  background: #a85f3d;
+  color: #fff;
+}
+
+.destination-theme-cairo .destination-place-content h3 {
+  color: #263f3c;
+}
+
+.destination-theme-cairo .destination-place-content p {
+  color: #777064;
+}
+
+.destination-theme-cairo .destination-place-explore {
+  border-top-color: #eee2d0;
+  color: #9a5c3c;
+}
+
+.destination-theme-cairo .destination-place-explore:hover {
+  color: #c17a50;
+}
+
+.destination-theme-cairo .destination-bottom-note {
+  border: 1px solid #dfc7a4;
+  border-radius: 5px 24px 5px 24px;
+  background: linear-gradient(120deg, #ead9bd, #f8efdf);
+}
+
+.destination-theme-cairo .destination-bottom-note h2 {
+  color: #263f3c;
+}
+
+.destination-theme-cairo .destination-bottom-note p {
+  color: #777064;
+}
+
+@media (max-width: 576px) {
+  .destination-theme-cairo .destination-hero {
+    min-height: 495px;
+    border-radius: 5px 26px 5px 26px;
+  }
+
+  .destination-theme-cairo .destination-about-content {
+    border-radius: 4px 15px 4px 15px;
+  }
+}
