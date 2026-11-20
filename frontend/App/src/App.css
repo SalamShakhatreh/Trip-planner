@@ -429,38 +429,6 @@ a:focus-visible {
   transform: scale(1.06);
 }
 
-.destination-badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  padding: 7px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  border-radius: 30px;
-  background: rgba(255, 255, 255, 0.93);
-  color: #1e40af;
-  font-size: 0.76rem;
-  font-weight: 800;
-}
-
-.destination-info {
-  padding: 23px;
-}
-
-.destination-info h3 {
-  margin: 0 0 10px;
-  color: #172b4d;
-  font-size: 1.2rem;
-  font-weight: 800;
-}
-
-.destination-info p {
-  min-height: 52px;
-  margin: 0;
-  color: #64748b;
-  font-size: 0.9rem;
-  line-height: 1.7;
-}
-
 .destination-content {
   padding: 20px;
 }
@@ -485,31 +453,8 @@ a:focus-visible {
   font-weight: 800;
 }
 
-.destination-arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: #eff6ff;
-  font-size: 1.1rem;
-}
-
 .features-section {
   background: #f6f9ff;
-}
-
-.centered-heading {
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 45px;
-}
-
-.centered-heading p {
-  max-width: 600px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .feature-card {
@@ -588,18 +533,6 @@ a:focus-visible {
   line-height: 1.8;
 }
 
-.btn-light-custom {
-  padding: 13px 23px;
-  background: #ffffff;
-  color: #1d4ed8;
-}
-
-.btn-light-custom:hover {
-  transform: translateY(-2px);
-  background: #eff6ff;
-  color: #1d4ed8;
-}
-
 .site-footer {
   border-top: 1px solid #edf1f7;
   background: #ffffff;
@@ -619,16 +552,6 @@ a:focus-visible {
   color: #64748b;
   font-size: 0.83rem;
   text-align: center;
-}
-
-.footer-link {
-  color: #64748b;
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
-.footer-link:hover {
-  color: #2563eb;
 }
 
 .footer-logo {
@@ -704,34 +627,6 @@ a:focus-visible {
 
 .auth-link:hover {
   text-decoration: underline;
-}
-
-.btn-google {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  background: #ffffff;
-  color: #202124;
-  border: 1.5px solid #343434;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 16px;
-  transition: all 0.2s ease;
-}
-
-.google-icon {
-  width: 22px;
-  height: 22px;
-  flex-shrink: 0;
-}
-
-.btn-google:hover {
-  background: #f1f3f4;
-  border-color: #202124;
-  color: #202124;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
-  transform: translateY(-2px);
 }
 
 /* Register page */
@@ -2295,7 +2190,6 @@ a:focus-visible {
 }
 
 
-
 /* Explore Countries Page */
 
 .explore-countries-page {
@@ -2650,30 +2544,6 @@ a:focus-visible {
   line-height: 1.8;
 }
 
-.country-cities-count {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 76px;
-  height: 76px;
-  border: 1px solid #e8e4d9;
-  border-radius: 50%;
-  background: #fff;
-  color: #263b35;
-}
-
-.country-cities-count span:first-child {
-  font-size: 1.35rem;
-  font-weight: 800;
-}
-
-.country-cities-count span:last-child {
-  color: #858981;
-  font-size: 0.65rem;
-}
-
 .country-cities-toolbar {
   display: flex;
   align-items: center;
@@ -2962,8 +2832,6 @@ a:focus-visible {
   color: #b04444;
   text-align: center;
 }
-
-
 
 
 /*CountryActivities*/
@@ -4231,7 +4099,6 @@ a:focus-visible {
 }
 
 
-
 /* Tablet */
 @media (max-width: 992px) {
   .admin-analytics-grid {
@@ -4298,28 +4165,6 @@ a:focus-visible {
 
   .register-form-section {
     padding: 25px 18px;
-  }
-
-  .destination-details-section .container {
-    max-width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .destination-details-section .destination-image {
-    height: 310px;
-  }
-
-  .destination-details-section h1,
-  .destination-details-section p,
-  .destination-details-section h2,
-  .destination-details-section ul {
-    margin-left: 25px;
-    margin-right: 25px;
-  }
-
-  .destination-details-section ul {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .activities-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -4455,43 +4300,6 @@ a:focus-visible {
 
 
 @media (max-width: 767px) {
-  .destination-details-section {
-    padding-bottom: 40px;
-  }
-
-  .destination-details-section .destination-image {
-    height: 240px;
-    border-radius: 0;
-    margin-bottom: 22px;
-  }
-
-  .destination-details-section h1 {
-    font-size: 1.55rem;
-    margin-bottom: 8px;
-  }
-
-  .destination-details-section p {
-    font-size: 0.88rem;
-    line-height: 1.65;
-    margin-bottom: 20px;
-  }
-
-  .destination-details-section h2 {
-    font-size: 1.12rem;
-    margin-top: 24px;
-    margin-bottom: 12px;
-  }
-
-  .destination-details-section ul {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 9px;
-  }
-
-  .destination-details-section li {
-    min-height: 52px;
-    padding: 11px 8px;
-    font-size: 0.82rem;
-  }
   .explore-countries-page {
     padding-top: 35px !important;
   }
@@ -4696,11 +4504,6 @@ a:focus-visible {
 
   .country-cities-heading p {
     font-size: 0.88rem;
-  }
-
-  .country-cities-count {
-    width: 60px;
-    height: 60px;
   }
 
   .country-cities-toolbar {
@@ -4975,10 +4778,6 @@ a:focus-visible {
     gap: 15px;
   }
 
-  .centered-heading {
-    align-items: center;
-  }
-
   .section-heading h2,
   .cta-content h2 {
     font-size: 2rem;
@@ -5235,27 +5034,9 @@ a:focus-visible {
 }
 
 
-
-
-
 /* Small Mobile */
 
 @media (max-width: 400px) {
-  .destination-details-section .destination-image {
-    height: 210px;
-  }
-
-  .destination-details-section h1,
-  .destination-details-section p,
-  .destination-details-section h2,
-  .destination-details-section ul {
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-
-  .destination-details-section ul {
-    grid-template-columns: 1fr;
-  }
  
 }
 
@@ -5372,6 +5153,5 @@ a:focus-visible {
     font-size: 1.5rem;
   }
 }
-
 
 
