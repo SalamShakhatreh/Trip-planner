@@ -4541,10 +4541,6 @@ a:focus-visible {
     padding: 25px 18px;
   }
 
-  .admin-stats {
-    grid-template-columns: 1fr;
-  }
-
   .admin-chart-card {
     padding: 15px;
   }
@@ -4948,10 +4944,6 @@ a:focus-visible {
     .profile-image {
         width: 100px;
         height: 100px;
-    }
-
-    .profile-header-info {
-        width: 100%;
     }
 
     .profile-header-info h2 {
