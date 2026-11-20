@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
+import "./PlaceDetails.css";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
