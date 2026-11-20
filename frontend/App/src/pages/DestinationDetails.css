@@ -1943,3 +1943,165 @@
     border-radius: 12px 3px 12px 3px;
   }
 }
+
+/* Al Ain city theme */
+.destination-theme-al-ain {
+  background: #edf1e7;
+  color: #354235;
+}
+
+.destination-theme-al-ain .destination-back-button {
+  border-color: #d1ddc8;
+  background: #f9fcf5;
+  color: #587653;
+}
+
+.destination-theme-al-ain .destination-back-button:hover {
+  border-color: #66835e;
+  background: #66835e;
+  color: #fff;
+}
+
+.destination-theme-al-ain .destination-hero {
+  min-height: 585px;
+  border-radius: 42px 42px 12px 12px;
+  background: #35483a;
+  box-shadow: 0 18px 46px rgba(47, 72, 48, 0.12);
+}
+
+.destination-theme-al-ain .destination-hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(31, 54, 39, 0.88) 0%,
+    rgba(43, 67, 47, 0.56) 52%,
+    rgba(43, 67, 47, 0.08) 100%
+  );
+}
+
+.destination-theme-al-ain .destination-hero-label,
+.destination-theme-al-ain .destination-hero-country span {
+  color: #d6c58b;
+}
+
+.destination-theme-al-ain .destination-hero-button {
+  border-color: #c5b77c;
+  border-radius: 24px;
+  color: #f9fcf5;
+}
+
+.destination-theme-al-ain .destination-hero-button:hover {
+  border-color: #c5b77c;
+  background: #c5b77c;
+  color: #354235;
+}
+
+.destination-theme-al-ain .destination-hero-count {
+  border-color: rgba(214, 197, 139, 0.46);
+  border-radius: 24px;
+  background: rgba(31, 54, 39, 0.46);
+}
+
+.destination-theme-al-ain .destination-section-eyebrow,
+.destination-theme-al-ain .destination-place-category,
+.destination-theme-al-ain .destination-bottom-note > span {
+  color: #66835e;
+}
+
+.destination-theme-al-ain .destination-about-heading h2,
+.destination-theme-al-ain .destination-places-heading h2 {
+  color: #354235;
+}
+
+.destination-theme-al-ain .destination-about-content {
+  border: 1px solid #dce5d4;
+  border-top: 3px solid #829b70;
+  border-radius: 22px;
+  background: #f9fcf5;
+  box-shadow: 0 12px 30px rgba(47, 72, 48, 0.055);
+}
+
+.destination-theme-al-ain .destination-about-mark {
+  color: #8da77a;
+}
+
+.destination-theme-al-ain .destination-about-content p,
+.destination-theme-al-ain .destination-places-heading p {
+  color: #707b6d;
+}
+
+.destination-theme-al-ain .destination-places-section {
+  border-top-color: #dce5d4;
+}
+
+.destination-theme-al-ain .destination-places-count {
+  border-color: #d0ddc8;
+  border-radius: 22px;
+  background: #f9fcf5;
+  color: #587653;
+}
+
+.destination-theme-al-ain .destination-place-card {
+  border-color: #dce5d4;
+  border-radius: 22px;
+  background: #f9fcf5;
+  box-shadow: 0 10px 26px rgba(47, 72, 48, 0.05);
+}
+
+.destination-theme-al-ain .destination-place-number {
+  border-radius: 50%;
+  background: #e5eddf;
+  color: #587653;
+}
+
+.destination-theme-al-ain .destination-place-arrow {
+  border-radius: 50%;
+  background: #e5eddf;
+  color: #587653;
+}
+
+.destination-theme-al-ain .destination-place-card:hover .destination-place-arrow {
+  background: #66835e;
+  color: #fff;
+}
+
+.destination-theme-al-ain .destination-place-content h3 {
+  color: #354235;
+}
+
+.destination-theme-al-ain .destination-place-content p {
+  color: #707b6d;
+}
+
+.destination-theme-al-ain .destination-place-explore {
+  border-top-color: #e4ebde;
+  color: #587653;
+}
+
+.destination-theme-al-ain .destination-place-explore:hover {
+  color: #829b70;
+}
+
+.destination-theme-al-ain .destination-bottom-note {
+  border: 1px solid #d5e0cc;
+  border-radius: 28px 28px 10px 10px;
+  background: linear-gradient(120deg, #e0ead8, #f1f5e9);
+}
+
+.destination-theme-al-ain .destination-bottom-note h2 {
+  color: #354235;
+}
+
+.destination-theme-al-ain .destination-bottom-note p {
+  color: #707b6d;
+}
+
+@media (max-width: 576px) {
+  .destination-theme-al-ain .destination-hero {
+    min-height: 495px;
+    border-radius: 28px 28px 9px 9px;
+  }
+
+  .destination-theme-al-ain .destination-about-content {
+    border-radius: 16px;
+  }
+}
