@@ -100,6 +100,7 @@ const DestinationDetails = () => {
     cityName === "amman" ? "amman" :
     cityName === "petra" ? "petra" :
     cityName === "aqaba" ? "aqaba" :
+    cityName === "salt" ? "salt" :
     "default";
 
   return (
