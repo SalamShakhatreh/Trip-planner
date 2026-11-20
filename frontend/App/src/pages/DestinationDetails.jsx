@@ -95,8 +95,10 @@ const DestinationDetails = () => {
     );
   }
 
+  const cityTheme = destination.name?.toLowerCase() === "amman" ? "amman" : "default";
+
   return (
-    <main className="destination-details-page">
+    <main className={`destination-details-page destination-theme-${cityTheme}`}>
       <div className="destination-details-container">
 
         <button
