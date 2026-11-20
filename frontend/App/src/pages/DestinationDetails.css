@@ -2421,3 +2421,3845 @@
     border-radius: 16px 4px 16px 4px;
   }
 }
+
+
+/* Remaining destination themes */
+
+/* Sharm El Sheikh city theme */
+.destination-theme-sharm-el-sheikh {
+  background: #e8f3f1;
+  color: #23474c;
+}
+.destination-theme-sharm-el-sheikh .destination-back-button {
+  border-color: #cfe2dd;
+  background: #f8fcf9;
+  color: #e07855;
+}
+.destination-theme-sharm-el-sheikh .destination-back-button:hover {
+  border-color: #e07855;
+  background: #e07855;
+  color: #fff;
+}
+.destination-theme-sharm-el-sheikh .destination-hero {
+  min-height: 585px;
+  border-radius: 34px 8px 34px 8px;
+  background: #17464d;
+  box-shadow: 0 18px 46px rgba(23,70,77, 0.13);
+}
+.destination-theme-sharm-el-sheikh .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(23,70,77, 0.9) 0%, rgba(23,70,77, 0.58) 52%, rgba(23,70,77, 0.08) 100%);
+}
+.destination-theme-sharm-el-sheikh .destination-hero-label,
+.destination-theme-sharm-el-sheikh .destination-hero-country span {
+  color: #d7b875;
+}
+.destination-theme-sharm-el-sheikh .destination-hero-button {
+  border-color: #d7b875;
+  border-radius: 24px 5px 24px 5px;
+  color: #f8fcf9;
+}
+.destination-theme-sharm-el-sheikh .destination-hero-button:hover {
+  border-color: #d7b875;
+  background: #d7b875;
+  color: #23474c;
+}
+.destination-theme-sharm-el-sheikh .destination-hero-count {
+  border-color: #d7b87588;
+  border-radius: 24px 5px 24px 5px;
+  background: rgba(23,70,77, 0.5);
+}
+.destination-theme-sharm-el-sheikh .destination-section-eyebrow,
+.destination-theme-sharm-el-sheikh .destination-place-category,
+.destination-theme-sharm-el-sheikh .destination-bottom-note > span {
+  color: #e07855;
+}
+.destination-theme-sharm-el-sheikh .destination-about-heading h2,
+.destination-theme-sharm-el-sheikh .destination-places-heading h2 {
+  color: #23474c;
+}
+.destination-theme-sharm-el-sheikh .destination-about-content {
+  border: 1px solid #cfe2dd;
+  border-top: 3px solid #e07855;
+  border-radius: 28px 5px 28px 5px;
+  background: #f8fcf9;
+  box-shadow: 0 12px 30px rgba(23,70,77, 0.055);
+}
+.destination-theme-sharm-el-sheikh .destination-about-mark {
+  color: #e07855;
+}
+.destination-theme-sharm-el-sheikh .destination-about-content p,
+.destination-theme-sharm-el-sheikh .destination-places-heading p,
+.destination-theme-sharm-el-sheikh .destination-place-content p,
+.destination-theme-sharm-el-sheikh .destination-bottom-note p {
+  color: #71878a;
+}
+.destination-theme-sharm-el-sheikh .destination-places-section {
+  border-top-color: #cfe2dd;
+}
+.destination-theme-sharm-el-sheikh .destination-places-count {
+  border-color: #cfe2dd;
+  border-radius: 24px 5px 24px 5px;
+  background: #f8fcf9;
+  color: #e07855;
+}
+.destination-theme-sharm-el-sheikh .destination-place-card {
+  border-color: #cfe2dd;
+  border-radius: 24px 5px 24px 5px;
+  background: #f8fcf9;
+  box-shadow: 0 10px 26px rgba(23,70,77, 0.055);
+}
+.destination-theme-sharm-el-sheikh .destination-place-number,
+.destination-theme-sharm-el-sheikh .destination-place-arrow {
+  border-radius: 24px 5px 24px 5px;
+  background: #dceee9;
+  color: #e07855;
+}
+.destination-theme-sharm-el-sheikh .destination-place-card:hover .destination-place-arrow {
+  background: #e07855;
+  color: #fff;
+}
+.destination-theme-sharm-el-sheikh .destination-place-content h3,
+.destination-theme-sharm-el-sheikh .destination-bottom-note h2 {
+  color: #23474c;
+}
+.destination-theme-sharm-el-sheikh .destination-place-explore {
+  border-top-color: #cfe2dd;
+  color: #e07855;
+}
+.destination-theme-sharm-el-sheikh .destination-place-explore:hover {
+  color: #d7b875;
+}
+.destination-theme-sharm-el-sheikh .destination-bottom-note {
+  border: 1px solid #cfe2dd;
+  border-radius: 28px 5px 28px 5px;
+  background: linear-gradient(120deg, #dceee9, #f8fcf9);
+}
+@media (max-width: 576px) {
+  .destination-theme-sharm-el-sheikh .destination-hero {
+    min-height: 495px;
+    border-radius: 24px 5px 24px 5px;
+  }
+  .destination-theme-sharm-el-sheikh .destination-about-content {
+    border-radius: 24px 5px 24px 5px;
+  }
+}
+
+
+/* Luxor city theme */
+.destination-theme-luxor {
+  background: #f4ead6;
+  color: #493b2b;
+}
+.destination-theme-luxor .destination-back-button {
+  border-color: #e4d3b5;
+  background: #fff9ed;
+  color: #a66b3f;
+}
+.destination-theme-luxor .destination-back-button:hover {
+  border-color: #a66b3f;
+  background: #a66b3f;
+  color: #fff;
+}
+.destination-theme-luxor .destination-hero {
+  min-height: 585px;
+  border-radius: 4px 38px 4px 38px;
+  background: #493728;
+  box-shadow: 0 18px 46px rgba(73,55,37, 0.13);
+}
+.destination-theme-luxor .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(73,55,37, 0.9) 0%, rgba(73,55,37, 0.58) 52%, rgba(73,55,37, 0.08) 100%);
+}
+.destination-theme-luxor .destination-hero-label,
+.destination-theme-luxor .destination-hero-country span {
+  color: #d3ad68;
+}
+.destination-theme-luxor .destination-hero-button {
+  border-color: #d3ad68;
+  border-radius: 4px 20px 4px 20px;
+  color: #fff9ed;
+}
+.destination-theme-luxor .destination-hero-button:hover {
+  border-color: #d3ad68;
+  background: #d3ad68;
+  color: #493b2b;
+}
+.destination-theme-luxor .destination-hero-count {
+  border-color: #d3ad6888;
+  border-radius: 4px 20px 4px 20px;
+  background: rgba(73,55,37, 0.5);
+}
+.destination-theme-luxor .destination-section-eyebrow,
+.destination-theme-luxor .destination-place-category,
+.destination-theme-luxor .destination-bottom-note > span {
+  color: #a66b3f;
+}
+.destination-theme-luxor .destination-about-heading h2,
+.destination-theme-luxor .destination-places-heading h2 {
+  color: #493b2b;
+}
+.destination-theme-luxor .destination-about-content {
+  border: 1px solid #e4d3b5;
+  border-top: 3px solid #a66b3f;
+  border-radius: 4px 24px 4px 24px;
+  background: #fff9ed;
+  box-shadow: 0 12px 30px rgba(73,55,37, 0.055);
+}
+.destination-theme-luxor .destination-about-mark {
+  color: #a66b3f;
+}
+.destination-theme-luxor .destination-about-content p,
+.destination-theme-luxor .destination-places-heading p,
+.destination-theme-luxor .destination-place-content p,
+.destination-theme-luxor .destination-bottom-note p {
+  color: #817565;
+}
+.destination-theme-luxor .destination-places-section {
+  border-top-color: #e4d3b5;
+}
+.destination-theme-luxor .destination-places-count {
+  border-color: #e4d3b5;
+  border-radius: 4px 20px 4px 20px;
+  background: #fff9ed;
+  color: #a66b3f;
+}
+.destination-theme-luxor .destination-place-card {
+  border-color: #e4d3b5;
+  border-radius: 4px 20px 4px 20px;
+  background: #fff9ed;
+  box-shadow: 0 10px 26px rgba(73,55,37, 0.055);
+}
+.destination-theme-luxor .destination-place-number,
+.destination-theme-luxor .destination-place-arrow {
+  border-radius: 4px 20px 4px 20px;
+  background: #f0e1c5;
+  color: #a66b3f;
+}
+.destination-theme-luxor .destination-place-card:hover .destination-place-arrow {
+  background: #a66b3f;
+  color: #fff;
+}
+.destination-theme-luxor .destination-place-content h3,
+.destination-theme-luxor .destination-bottom-note h2 {
+  color: #493b2b;
+}
+.destination-theme-luxor .destination-place-explore {
+  border-top-color: #e4d3b5;
+  color: #a66b3f;
+}
+.destination-theme-luxor .destination-place-explore:hover {
+  color: #d3ad68;
+}
+.destination-theme-luxor .destination-bottom-note {
+  border: 1px solid #e4d3b5;
+  border-radius: 4px 24px 4px 24px;
+  background: linear-gradient(120deg, #f0e1c5, #fff9ed);
+}
+@media (max-width: 576px) {
+  .destination-theme-luxor .destination-hero {
+    min-height: 495px;
+    border-radius: 4px 20px 4px 20px;
+  }
+  .destination-theme-luxor .destination-about-content {
+    border-radius: 4px 20px 4px 20px;
+  }
+}
+
+
+/* Antalya city theme */
+.destination-theme-antalya {
+  background: #edf3ee;
+  color: #29483e;
+}
+.destination-theme-antalya .destination-back-button {
+  border-color: #d6e5da;
+  background: #fbfdf9;
+  color: #398b78;
+}
+.destination-theme-antalya .destination-back-button:hover {
+  border-color: #398b78;
+  background: #398b78;
+  color: #fff;
+}
+.destination-theme-antalya .destination-hero {
+  min-height: 585px;
+  border-radius: 42px 8px 42px 8px;
+  background: #285348;
+  box-shadow: 0 18px 46px rgba(40,83,72, 0.13);
+}
+.destination-theme-antalya .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(40,83,72, 0.9) 0%, rgba(40,83,72, 0.58) 52%, rgba(40,83,72, 0.08) 100%);
+}
+.destination-theme-antalya .destination-hero-label,
+.destination-theme-antalya .destination-hero-country span {
+  color: #d5a56c;
+}
+.destination-theme-antalya .destination-hero-button {
+  border-color: #d5a56c;
+  border-radius: 24px 6px 24px 6px;
+  color: #fbfdf9;
+}
+.destination-theme-antalya .destination-hero-button:hover {
+  border-color: #d5a56c;
+  background: #d5a56c;
+  color: #29483e;
+}
+.destination-theme-antalya .destination-hero-count {
+  border-color: #d5a56c88;
+  border-radius: 24px 6px 24px 6px;
+  background: rgba(40,83,72, 0.5);
+}
+.destination-theme-antalya .destination-section-eyebrow,
+.destination-theme-antalya .destination-place-category,
+.destination-theme-antalya .destination-bottom-note > span {
+  color: #398b78;
+}
+.destination-theme-antalya .destination-about-heading h2,
+.destination-theme-antalya .destination-places-heading h2 {
+  color: #29483e;
+}
+.destination-theme-antalya .destination-about-content {
+  border: 1px solid #d6e5da;
+  border-top: 3px solid #398b78;
+  border-radius: 28px 6px 28px 6px;
+  background: #fbfdf9;
+  box-shadow: 0 12px 30px rgba(40,83,72, 0.055);
+}
+.destination-theme-antalya .destination-about-mark {
+  color: #398b78;
+}
+.destination-theme-antalya .destination-about-content p,
+.destination-theme-antalya .destination-places-heading p,
+.destination-theme-antalya .destination-place-content p,
+.destination-theme-antalya .destination-bottom-note p {
+  color: #71827a;
+}
+.destination-theme-antalya .destination-places-section {
+  border-top-color: #d6e5da;
+}
+.destination-theme-antalya .destination-places-count {
+  border-color: #d6e5da;
+  border-radius: 24px 6px 24px 6px;
+  background: #fbfdf9;
+  color: #398b78;
+}
+.destination-theme-antalya .destination-place-card {
+  border-color: #d6e5da;
+  border-radius: 24px 6px 24px 6px;
+  background: #fbfdf9;
+  box-shadow: 0 10px 26px rgba(40,83,72, 0.055);
+}
+.destination-theme-antalya .destination-place-number,
+.destination-theme-antalya .destination-place-arrow {
+  border-radius: 24px 6px 24px 6px;
+  background: #e2eee4;
+  color: #398b78;
+}
+.destination-theme-antalya .destination-place-card:hover .destination-place-arrow {
+  background: #398b78;
+  color: #fff;
+}
+.destination-theme-antalya .destination-place-content h3,
+.destination-theme-antalya .destination-bottom-note h2 {
+  color: #29483e;
+}
+.destination-theme-antalya .destination-place-explore {
+  border-top-color: #d6e5da;
+  color: #398b78;
+}
+.destination-theme-antalya .destination-place-explore:hover {
+  color: #d5a56c;
+}
+.destination-theme-antalya .destination-bottom-note {
+  border: 1px solid #d6e5da;
+  border-radius: 28px 6px 28px 6px;
+  background: linear-gradient(120deg, #e2eee4, #fbfdf9);
+}
+@media (max-width: 576px) {
+  .destination-theme-antalya .destination-hero {
+    min-height: 495px;
+    border-radius: 24px 6px 24px 6px;
+  }
+  .destination-theme-antalya .destination-about-content {
+    border-radius: 24px 6px 24px 6px;
+  }
+}
+
+
+/* Bursa city theme */
+.destination-theme-bursa {
+  background: #edf0e8;
+  color: #35473b;
+}
+.destination-theme-bursa .destination-back-button {
+  border-color: #dce3d3;
+  background: #fbfcf7;
+  color: #6d845b;
+}
+.destination-theme-bursa .destination-back-button:hover {
+  border-color: #6d845b;
+  background: #6d845b;
+  color: #fff;
+}
+.destination-theme-bursa .destination-hero {
+  min-height: 585px;
+  border-radius: 8px 38px 8px 38px;
+  background: #34483b;
+  box-shadow: 0 18px 46px rgba(48,67,54, 0.13);
+}
+.destination-theme-bursa .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(48,67,54, 0.9) 0%, rgba(48,67,54, 0.58) 52%, rgba(48,67,54, 0.08) 100%);
+}
+.destination-theme-bursa .destination-hero-label,
+.destination-theme-bursa .destination-hero-country span {
+  color: #b58a58;
+}
+.destination-theme-bursa .destination-hero-button {
+  border-color: #b58a58;
+  border-radius: 18px 5px 18px 5px;
+  color: #fbfcf7;
+}
+.destination-theme-bursa .destination-hero-button:hover {
+  border-color: #b58a58;
+  background: #b58a58;
+  color: #35473b;
+}
+.destination-theme-bursa .destination-hero-count {
+  border-color: #b58a5888;
+  border-radius: 18px 5px 18px 5px;
+  background: rgba(48,67,54, 0.5);
+}
+.destination-theme-bursa .destination-section-eyebrow,
+.destination-theme-bursa .destination-place-category,
+.destination-theme-bursa .destination-bottom-note > span {
+  color: #6d845b;
+}
+.destination-theme-bursa .destination-about-heading h2,
+.destination-theme-bursa .destination-places-heading h2 {
+  color: #35473b;
+}
+.destination-theme-bursa .destination-about-content {
+  border: 1px solid #dce3d3;
+  border-top: 3px solid #6d845b;
+  border-radius: 20px 5px 20px 5px;
+  background: #fbfcf7;
+  box-shadow: 0 12px 30px rgba(48,67,54, 0.055);
+}
+.destination-theme-bursa .destination-about-mark {
+  color: #6d845b;
+}
+.destination-theme-bursa .destination-about-content p,
+.destination-theme-bursa .destination-places-heading p,
+.destination-theme-bursa .destination-place-content p,
+.destination-theme-bursa .destination-bottom-note p {
+  color: #788073;
+}
+.destination-theme-bursa .destination-places-section {
+  border-top-color: #dce3d3;
+}
+.destination-theme-bursa .destination-places-count {
+  border-color: #dce3d3;
+  border-radius: 18px 5px 18px 5px;
+  background: #fbfcf7;
+  color: #6d845b;
+}
+.destination-theme-bursa .destination-place-card {
+  border-color: #dce3d3;
+  border-radius: 18px 5px 18px 5px;
+  background: #fbfcf7;
+  box-shadow: 0 10px 26px rgba(48,67,54, 0.055);
+}
+.destination-theme-bursa .destination-place-number,
+.destination-theme-bursa .destination-place-arrow {
+  border-radius: 18px 5px 18px 5px;
+  background: #e7ecdf;
+  color: #6d845b;
+}
+.destination-theme-bursa .destination-place-card:hover .destination-place-arrow {
+  background: #6d845b;
+  color: #fff;
+}
+.destination-theme-bursa .destination-place-content h3,
+.destination-theme-bursa .destination-bottom-note h2 {
+  color: #35473b;
+}
+.destination-theme-bursa .destination-place-explore {
+  border-top-color: #dce3d3;
+  color: #6d845b;
+}
+.destination-theme-bursa .destination-place-explore:hover {
+  color: #b58a58;
+}
+.destination-theme-bursa .destination-bottom-note {
+  border: 1px solid #dce3d3;
+  border-radius: 20px 5px 20px 5px;
+  background: linear-gradient(120deg, #e7ecdf, #fbfcf7);
+}
+@media (max-width: 576px) {
+  .destination-theme-bursa .destination-hero {
+    min-height: 495px;
+    border-radius: 18px 5px 18px 5px;
+  }
+  .destination-theme-bursa .destination-about-content {
+    border-radius: 18px 5px 18px 5px;
+  }
+}
+
+
+/* Trabzon city theme */
+.destination-theme-trabzon {
+  background: #e9f0ed;
+  color: #29463f;
+}
+.destination-theme-trabzon .destination-back-button {
+  border-color: #d2e1d9;
+  background: #f8fcf9;
+  color: #397a68;
+}
+.destination-theme-trabzon .destination-back-button:hover {
+  border-color: #397a68;
+  background: #397a68;
+  color: #fff;
+}
+.destination-theme-trabzon .destination-hero {
+  min-height: 585px;
+  border-radius: 38px 6px 38px 6px;
+  background: #24483d;
+  box-shadow: 0 18px 46px rgba(36,72,61, 0.13);
+}
+.destination-theme-trabzon .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(36,72,61, 0.9) 0%, rgba(36,72,61, 0.58) 52%, rgba(36,72,61, 0.08) 100%);
+}
+.destination-theme-trabzon .destination-hero-label,
+.destination-theme-trabzon .destination-hero-country span {
+  color: #a7b9a0;
+}
+.destination-theme-trabzon .destination-hero-button {
+  border-color: #a7b9a0;
+  border-radius: 22px 5px 22px 5px;
+  color: #f8fcf9;
+}
+.destination-theme-trabzon .destination-hero-button:hover {
+  border-color: #a7b9a0;
+  background: #a7b9a0;
+  color: #29463f;
+}
+.destination-theme-trabzon .destination-hero-count {
+  border-color: #a7b9a088;
+  border-radius: 22px 5px 22px 5px;
+  background: rgba(36,72,61, 0.5);
+}
+.destination-theme-trabzon .destination-section-eyebrow,
+.destination-theme-trabzon .destination-place-category,
+.destination-theme-trabzon .destination-bottom-note > span {
+  color: #397a68;
+}
+.destination-theme-trabzon .destination-about-heading h2,
+.destination-theme-trabzon .destination-places-heading h2 {
+  color: #29463f;
+}
+.destination-theme-trabzon .destination-about-content {
+  border: 1px solid #d2e1d9;
+  border-top: 3px solid #397a68;
+  border-radius: 26px 5px 26px 5px;
+  background: #f8fcf9;
+  box-shadow: 0 12px 30px rgba(36,72,61, 0.055);
+}
+.destination-theme-trabzon .destination-about-mark {
+  color: #397a68;
+}
+.destination-theme-trabzon .destination-about-content p,
+.destination-theme-trabzon .destination-places-heading p,
+.destination-theme-trabzon .destination-place-content p,
+.destination-theme-trabzon .destination-bottom-note p {
+  color: #71827a;
+}
+.destination-theme-trabzon .destination-places-section {
+  border-top-color: #d2e1d9;
+}
+.destination-theme-trabzon .destination-places-count {
+  border-color: #d2e1d9;
+  border-radius: 22px 5px 22px 5px;
+  background: #f8fcf9;
+  color: #397a68;
+}
+.destination-theme-trabzon .destination-place-card {
+  border-color: #d2e1d9;
+  border-radius: 22px 5px 22px 5px;
+  background: #f8fcf9;
+  box-shadow: 0 10px 26px rgba(36,72,61, 0.055);
+}
+.destination-theme-trabzon .destination-place-number,
+.destination-theme-trabzon .destination-place-arrow {
+  border-radius: 22px 5px 22px 5px;
+  background: #dcebe3;
+  color: #397a68;
+}
+.destination-theme-trabzon .destination-place-card:hover .destination-place-arrow {
+  background: #397a68;
+  color: #fff;
+}
+.destination-theme-trabzon .destination-place-content h3,
+.destination-theme-trabzon .destination-bottom-note h2 {
+  color: #29463f;
+}
+.destination-theme-trabzon .destination-place-explore {
+  border-top-color: #d2e1d9;
+  color: #397a68;
+}
+.destination-theme-trabzon .destination-place-explore:hover {
+  color: #a7b9a0;
+}
+.destination-theme-trabzon .destination-bottom-note {
+  border: 1px solid #d2e1d9;
+  border-radius: 26px 5px 26px 5px;
+  background: linear-gradient(120deg, #dcebe3, #f8fcf9);
+}
+@media (max-width: 576px) {
+  .destination-theme-trabzon .destination-hero {
+    min-height: 495px;
+    border-radius: 22px 5px 22px 5px;
+  }
+  .destination-theme-trabzon .destination-about-content {
+    border-radius: 22px 5px 22px 5px;
+  }
+}
+
+
+/* Istanbul city theme */
+.destination-theme-istanbul {
+  background: #f1edf0;
+  color: #403345;
+}
+.destination-theme-istanbul .destination-back-button {
+  border-color: #e2d6df;
+  background: #fffafd;
+  color: #a65b70;
+}
+.destination-theme-istanbul .destination-back-button:hover {
+  border-color: #a65b70;
+  background: #a65b70;
+  color: #fff;
+}
+.destination-theme-istanbul .destination-hero {
+  min-height: 585px;
+  border-radius: 8px 42px 8px 42px;
+  background: #493449;
+  box-shadow: 0 18px 46px rgba(73,52,73, 0.13);
+}
+.destination-theme-istanbul .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(73,52,73, 0.9) 0%, rgba(73,52,73, 0.58) 52%, rgba(73,52,73, 0.08) 100%);
+}
+.destination-theme-istanbul .destination-hero-label,
+.destination-theme-istanbul .destination-hero-country span {
+  color: #c5a16b;
+}
+.destination-theme-istanbul .destination-hero-button {
+  border-color: #c5a16b;
+  border-radius: 5px 22px 5px 22px;
+  color: #fffafd;
+}
+.destination-theme-istanbul .destination-hero-button:hover {
+  border-color: #c5a16b;
+  background: #c5a16b;
+  color: #403345;
+}
+.destination-theme-istanbul .destination-hero-count {
+  border-color: #c5a16b88;
+  border-radius: 5px 22px 5px 22px;
+  background: rgba(73,52,73, 0.5);
+}
+.destination-theme-istanbul .destination-section-eyebrow,
+.destination-theme-istanbul .destination-place-category,
+.destination-theme-istanbul .destination-bottom-note > span {
+  color: #a65b70;
+}
+.destination-theme-istanbul .destination-about-heading h2,
+.destination-theme-istanbul .destination-places-heading h2 {
+  color: #403345;
+}
+.destination-theme-istanbul .destination-about-content {
+  border: 1px solid #e2d6df;
+  border-top: 3px solid #a65b70;
+  border-radius: 5px 26px 5px 26px;
+  background: #fffafd;
+  box-shadow: 0 12px 30px rgba(73,52,73, 0.055);
+}
+.destination-theme-istanbul .destination-about-mark {
+  color: #a65b70;
+}
+.destination-theme-istanbul .destination-about-content p,
+.destination-theme-istanbul .destination-places-heading p,
+.destination-theme-istanbul .destination-place-content p,
+.destination-theme-istanbul .destination-bottom-note p {
+  color: #817681;
+}
+.destination-theme-istanbul .destination-places-section {
+  border-top-color: #e2d6df;
+}
+.destination-theme-istanbul .destination-places-count {
+  border-color: #e2d6df;
+  border-radius: 5px 22px 5px 22px;
+  background: #fffafd;
+  color: #a65b70;
+}
+.destination-theme-istanbul .destination-place-card {
+  border-color: #e2d6df;
+  border-radius: 5px 22px 5px 22px;
+  background: #fffafd;
+  box-shadow: 0 10px 26px rgba(73,52,73, 0.055);
+}
+.destination-theme-istanbul .destination-place-number,
+.destination-theme-istanbul .destination-place-arrow {
+  border-radius: 5px 22px 5px 22px;
+  background: #eee3e9;
+  color: #a65b70;
+}
+.destination-theme-istanbul .destination-place-card:hover .destination-place-arrow {
+  background: #a65b70;
+  color: #fff;
+}
+.destination-theme-istanbul .destination-place-content h3,
+.destination-theme-istanbul .destination-bottom-note h2 {
+  color: #403345;
+}
+.destination-theme-istanbul .destination-place-explore {
+  border-top-color: #e2d6df;
+  color: #a65b70;
+}
+.destination-theme-istanbul .destination-place-explore:hover {
+  color: #c5a16b;
+}
+.destination-theme-istanbul .destination-bottom-note {
+  border: 1px solid #e2d6df;
+  border-radius: 5px 26px 5px 26px;
+  background: linear-gradient(120deg, #eee3e9, #fffafd);
+}
+@media (max-width: 576px) {
+  .destination-theme-istanbul .destination-hero {
+    min-height: 495px;
+    border-radius: 5px 22px 5px 22px;
+  }
+  .destination-theme-istanbul .destination-about-content {
+    border-radius: 5px 22px 5px 22px;
+  }
+}
+
+
+/* Cappadocia city theme */
+.destination-theme-cappadocia {
+  background: #f5e9df;
+  color: #554036;
+}
+.destination-theme-cappadocia .destination-back-button {
+  border-color: #e7d2c2;
+  background: #fff9f3;
+  color: #b86d4e;
+}
+.destination-theme-cappadocia .destination-back-button:hover {
+  border-color: #b86d4e;
+  background: #b86d4e;
+  color: #fff;
+}
+.destination-theme-cappadocia .destination-hero {
+  min-height: 585px;
+  border-radius: 48px 48px 8px 8px;
+  background: #674534;
+  box-shadow: 0 18px 46px rgba(103,69,52, 0.13);
+}
+.destination-theme-cappadocia .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(103,69,52, 0.9) 0%, rgba(103,69,52, 0.58) 52%, rgba(103,69,52, 0.08) 100%);
+}
+.destination-theme-cappadocia .destination-hero-label,
+.destination-theme-cappadocia .destination-hero-country span {
+  color: #d6aa78;
+}
+.destination-theme-cappadocia .destination-hero-button {
+  border-color: #d6aa78;
+  border-radius: 28px 28px 5px 5px;
+  color: #fff9f3;
+}
+.destination-theme-cappadocia .destination-hero-button:hover {
+  border-color: #d6aa78;
+  background: #d6aa78;
+  color: #554036;
+}
+.destination-theme-cappadocia .destination-hero-count {
+  border-color: #d6aa7888;
+  border-radius: 28px 28px 5px 5px;
+  background: rgba(103,69,52, 0.5);
+}
+.destination-theme-cappadocia .destination-section-eyebrow,
+.destination-theme-cappadocia .destination-place-category,
+.destination-theme-cappadocia .destination-bottom-note > span {
+  color: #b86d4e;
+}
+.destination-theme-cappadocia .destination-about-heading h2,
+.destination-theme-cappadocia .destination-places-heading h2 {
+  color: #554036;
+}
+.destination-theme-cappadocia .destination-about-content {
+  border: 1px solid #e7d2c2;
+  border-top: 3px solid #b86d4e;
+  border-radius: 34px 34px 5px 5px;
+  background: #fff9f3;
+  box-shadow: 0 12px 30px rgba(103,69,52, 0.055);
+}
+.destination-theme-cappadocia .destination-about-mark {
+  color: #b86d4e;
+}
+.destination-theme-cappadocia .destination-about-content p,
+.destination-theme-cappadocia .destination-places-heading p,
+.destination-theme-cappadocia .destination-place-content p,
+.destination-theme-cappadocia .destination-bottom-note p {
+  color: #89766a;
+}
+.destination-theme-cappadocia .destination-places-section {
+  border-top-color: #e7d2c2;
+}
+.destination-theme-cappadocia .destination-places-count {
+  border-color: #e7d2c2;
+  border-radius: 28px 28px 5px 5px;
+  background: #fff9f3;
+  color: #b86d4e;
+}
+.destination-theme-cappadocia .destination-place-card {
+  border-color: #e7d2c2;
+  border-radius: 28px 28px 5px 5px;
+  background: #fff9f3;
+  box-shadow: 0 10px 26px rgba(103,69,52, 0.055);
+}
+.destination-theme-cappadocia .destination-place-number,
+.destination-theme-cappadocia .destination-place-arrow {
+  border-radius: 28px 28px 5px 5px;
+  background: #f0dfd1;
+  color: #b86d4e;
+}
+.destination-theme-cappadocia .destination-place-card:hover .destination-place-arrow {
+  background: #b86d4e;
+  color: #fff;
+}
+.destination-theme-cappadocia .destination-place-content h3,
+.destination-theme-cappadocia .destination-bottom-note h2 {
+  color: #554036;
+}
+.destination-theme-cappadocia .destination-place-explore {
+  border-top-color: #e7d2c2;
+  color: #b86d4e;
+}
+.destination-theme-cappadocia .destination-place-explore:hover {
+  color: #d6aa78;
+}
+.destination-theme-cappadocia .destination-bottom-note {
+  border: 1px solid #e7d2c2;
+  border-radius: 34px 34px 5px 5px;
+  background: linear-gradient(120deg, #f0dfd1, #fff9f3);
+}
+@media (max-width: 576px) {
+  .destination-theme-cappadocia .destination-hero {
+    min-height: 495px;
+    border-radius: 28px 28px 5px 5px;
+  }
+  .destination-theme-cappadocia .destination-about-content {
+    border-radius: 28px 28px 5px 5px;
+  }
+}
+
+
+/* Marrakech city theme */
+.destination-theme-marrakech {
+  background: #f3e8dc;
+  color: #4a3029;
+}
+.destination-theme-marrakech .destination-back-button {
+  border-color: #e4cdb9;
+  background: #fff8ef;
+  color: #a94f37;
+}
+.destination-theme-marrakech .destination-back-button:hover {
+  border-color: #a94f37;
+  background: #a94f37;
+  color: #fff;
+}
+.destination-theme-marrakech .destination-hero {
+  min-height: 585px;
+  border-radius: 5px 38px 5px 38px;
+  background: #663b2d;
+  box-shadow: 0 18px 46px rgba(102,59,45, 0.13);
+}
+.destination-theme-marrakech .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(102,59,45, 0.9) 0%, rgba(102,59,45, 0.58) 52%, rgba(102,59,45, 0.08) 100%);
+}
+.destination-theme-marrakech .destination-hero-label,
+.destination-theme-marrakech .destination-hero-country span {
+  color: #c58b52;
+}
+.destination-theme-marrakech .destination-hero-button {
+  border-color: #c58b52;
+  border-radius: 5px 22px 5px 22px;
+  color: #fff8ef;
+}
+.destination-theme-marrakech .destination-hero-button:hover {
+  border-color: #c58b52;
+  background: #c58b52;
+  color: #4a3029;
+}
+.destination-theme-marrakech .destination-hero-count {
+  border-color: #c58b5288;
+  border-radius: 5px 22px 5px 22px;
+  background: rgba(102,59,45, 0.5);
+}
+.destination-theme-marrakech .destination-section-eyebrow,
+.destination-theme-marrakech .destination-place-category,
+.destination-theme-marrakech .destination-bottom-note > span {
+  color: #a94f37;
+}
+.destination-theme-marrakech .destination-about-heading h2,
+.destination-theme-marrakech .destination-places-heading h2 {
+  color: #4a3029;
+}
+.destination-theme-marrakech .destination-about-content {
+  border: 1px solid #e4cdb9;
+  border-top: 3px solid #a94f37;
+  border-radius: 5px 26px 5px 26px;
+  background: #fff8ef;
+  box-shadow: 0 12px 30px rgba(102,59,45, 0.055);
+}
+.destination-theme-marrakech .destination-about-mark {
+  color: #a94f37;
+}
+.destination-theme-marrakech .destination-about-content p,
+.destination-theme-marrakech .destination-places-heading p,
+.destination-theme-marrakech .destination-place-content p,
+.destination-theme-marrakech .destination-bottom-note p {
+  color: #837269;
+}
+.destination-theme-marrakech .destination-places-section {
+  border-top-color: #e4cdb9;
+}
+.destination-theme-marrakech .destination-places-count {
+  border-color: #e4cdb9;
+  border-radius: 5px 22px 5px 22px;
+  background: #fff8ef;
+  color: #a94f37;
+}
+.destination-theme-marrakech .destination-place-card {
+  border-color: #e4cdb9;
+  border-radius: 5px 22px 5px 22px;
+  background: #fff8ef;
+  box-shadow: 0 10px 26px rgba(102,59,45, 0.055);
+}
+.destination-theme-marrakech .destination-place-number,
+.destination-theme-marrakech .destination-place-arrow {
+  border-radius: 5px 22px 5px 22px;
+  background: #eedbcc;
+  color: #a94f37;
+}
+.destination-theme-marrakech .destination-place-card:hover .destination-place-arrow {
+  background: #a94f37;
+  color: #fff;
+}
+.destination-theme-marrakech .destination-place-content h3,
+.destination-theme-marrakech .destination-bottom-note h2 {
+  color: #4a3029;
+}
+.destination-theme-marrakech .destination-place-explore {
+  border-top-color: #e4cdb9;
+  color: #a94f37;
+}
+.destination-theme-marrakech .destination-place-explore:hover {
+  color: #c58b52;
+}
+.destination-theme-marrakech .destination-bottom-note {
+  border: 1px solid #e4cdb9;
+  border-radius: 5px 26px 5px 26px;
+  background: linear-gradient(120deg, #eedbcc, #fff8ef);
+}
+@media (max-width: 576px) {
+  .destination-theme-marrakech .destination-hero {
+    min-height: 495px;
+    border-radius: 5px 22px 5px 22px;
+  }
+  .destination-theme-marrakech .destination-about-content {
+    border-radius: 5px 22px 5px 22px;
+  }
+}
+
+
+/* Casablanca city theme */
+.destination-theme-casablanca {
+  background: #edf1f1;
+  color: #2e4147;
+}
+.destination-theme-casablanca .destination-back-button {
+  border-color: #d8e1e0;
+  background: #fbfdfc;
+  color: #477f89;
+}
+.destination-theme-casablanca .destination-back-button:hover {
+  border-color: #477f89;
+  background: #477f89;
+  color: #fff;
+}
+.destination-theme-casablanca .destination-hero {
+  min-height: 585px;
+  border-radius: 30px 6px 30px 6px;
+  background: #2d4b52;
+  box-shadow: 0 18px 46px rgba(45,75,82, 0.13);
+}
+.destination-theme-casablanca .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(45,75,82, 0.9) 0%, rgba(45,75,82, 0.58) 52%, rgba(45,75,82, 0.08) 100%);
+}
+.destination-theme-casablanca .destination-hero-label,
+.destination-theme-casablanca .destination-hero-country span {
+  color: #c6a77a;
+}
+.destination-theme-casablanca .destination-hero-button {
+  border-color: #c6a77a;
+  border-radius: 20px 5px 20px 5px;
+  color: #fbfdfc;
+}
+.destination-theme-casablanca .destination-hero-button:hover {
+  border-color: #c6a77a;
+  background: #c6a77a;
+  color: #2e4147;
+}
+.destination-theme-casablanca .destination-hero-count {
+  border-color: #c6a77a88;
+  border-radius: 20px 5px 20px 5px;
+  background: rgba(45,75,82, 0.5);
+}
+.destination-theme-casablanca .destination-section-eyebrow,
+.destination-theme-casablanca .destination-place-category,
+.destination-theme-casablanca .destination-bottom-note > span {
+  color: #477f89;
+}
+.destination-theme-casablanca .destination-about-heading h2,
+.destination-theme-casablanca .destination-places-heading h2 {
+  color: #2e4147;
+}
+.destination-theme-casablanca .destination-about-content {
+  border: 1px solid #d8e1e0;
+  border-top: 3px solid #477f89;
+  border-radius: 24px 5px 24px 5px;
+  background: #fbfdfc;
+  box-shadow: 0 12px 30px rgba(45,75,82, 0.055);
+}
+.destination-theme-casablanca .destination-about-mark {
+  color: #477f89;
+}
+.destination-theme-casablanca .destination-about-content p,
+.destination-theme-casablanca .destination-places-heading p,
+.destination-theme-casablanca .destination-place-content p,
+.destination-theme-casablanca .destination-bottom-note p {
+  color: #77868a;
+}
+.destination-theme-casablanca .destination-places-section {
+  border-top-color: #d8e1e0;
+}
+.destination-theme-casablanca .destination-places-count {
+  border-color: #d8e1e0;
+  border-radius: 20px 5px 20px 5px;
+  background: #fbfdfc;
+  color: #477f89;
+}
+.destination-theme-casablanca .destination-place-card {
+  border-color: #d8e1e0;
+  border-radius: 20px 5px 20px 5px;
+  background: #fbfdfc;
+  box-shadow: 0 10px 26px rgba(45,75,82, 0.055);
+}
+.destination-theme-casablanca .destination-place-number,
+.destination-theme-casablanca .destination-place-arrow {
+  border-radius: 20px 5px 20px 5px;
+  background: #e4eceb;
+  color: #477f89;
+}
+.destination-theme-casablanca .destination-place-card:hover .destination-place-arrow {
+  background: #477f89;
+  color: #fff;
+}
+.destination-theme-casablanca .destination-place-content h3,
+.destination-theme-casablanca .destination-bottom-note h2 {
+  color: #2e4147;
+}
+.destination-theme-casablanca .destination-place-explore {
+  border-top-color: #d8e1e0;
+  color: #477f89;
+}
+.destination-theme-casablanca .destination-place-explore:hover {
+  color: #c6a77a;
+}
+.destination-theme-casablanca .destination-bottom-note {
+  border: 1px solid #d8e1e0;
+  border-radius: 24px 5px 24px 5px;
+  background: linear-gradient(120deg, #e4eceb, #fbfdfc);
+}
+@media (max-width: 576px) {
+  .destination-theme-casablanca .destination-hero {
+    min-height: 495px;
+    border-radius: 20px 5px 20px 5px;
+  }
+  .destination-theme-casablanca .destination-about-content {
+    border-radius: 20px 5px 20px 5px;
+  }
+}
+
+
+/* Chefchaouen city theme */
+.destination-theme-chefchaouen {
+  background: #eaf0f5;
+  color: #29455d;
+}
+.destination-theme-chefchaouen .destination-back-button {
+  border-color: #d4e0ed;
+  background: #f8fbff;
+  color: #4d86b5;
+}
+.destination-theme-chefchaouen .destination-back-button:hover {
+  border-color: #4d86b5;
+  background: #4d86b5;
+  color: #fff;
+}
+.destination-theme-chefchaouen .destination-hero {
+  min-height: 585px;
+  border-radius: 36px 36px 8px 8px;
+  background: #284c70;
+  box-shadow: 0 18px 46px rgba(40,76,112, 0.13);
+}
+.destination-theme-chefchaouen .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(40,76,112, 0.9) 0%, rgba(40,76,112, 0.58) 52%, rgba(40,76,112, 0.08) 100%);
+}
+.destination-theme-chefchaouen .destination-hero-label,
+.destination-theme-chefchaouen .destination-hero-country span {
+  color: #d5b77e;
+}
+.destination-theme-chefchaouen .destination-hero-button {
+  border-color: #d5b77e;
+  border-radius: 22px 22px 5px 5px;
+  color: #f8fbff;
+}
+.destination-theme-chefchaouen .destination-hero-button:hover {
+  border-color: #d5b77e;
+  background: #d5b77e;
+  color: #29455d;
+}
+.destination-theme-chefchaouen .destination-hero-count {
+  border-color: #d5b77e88;
+  border-radius: 22px 22px 5px 5px;
+  background: rgba(40,76,112, 0.5);
+}
+.destination-theme-chefchaouen .destination-section-eyebrow,
+.destination-theme-chefchaouen .destination-place-category,
+.destination-theme-chefchaouen .destination-bottom-note > span {
+  color: #4d86b5;
+}
+.destination-theme-chefchaouen .destination-about-heading h2,
+.destination-theme-chefchaouen .destination-places-heading h2 {
+  color: #29455d;
+}
+.destination-theme-chefchaouen .destination-about-content {
+  border: 1px solid #d4e0ed;
+  border-top: 3px solid #4d86b5;
+  border-radius: 28px 28px 5px 5px;
+  background: #f8fbff;
+  box-shadow: 0 12px 30px rgba(40,76,112, 0.055);
+}
+.destination-theme-chefchaouen .destination-about-mark {
+  color: #4d86b5;
+}
+.destination-theme-chefchaouen .destination-about-content p,
+.destination-theme-chefchaouen .destination-places-heading p,
+.destination-theme-chefchaouen .destination-place-content p,
+.destination-theme-chefchaouen .destination-bottom-note p {
+  color: #71869a;
+}
+.destination-theme-chefchaouen .destination-places-section {
+  border-top-color: #d4e0ed;
+}
+.destination-theme-chefchaouen .destination-places-count {
+  border-color: #d4e0ed;
+  border-radius: 22px 22px 5px 5px;
+  background: #f8fbff;
+  color: #4d86b5;
+}
+.destination-theme-chefchaouen .destination-place-card {
+  border-color: #d4e0ed;
+  border-radius: 22px 22px 5px 5px;
+  background: #f8fbff;
+  box-shadow: 0 10px 26px rgba(40,76,112, 0.055);
+}
+.destination-theme-chefchaouen .destination-place-number,
+.destination-theme-chefchaouen .destination-place-arrow {
+  border-radius: 22px 22px 5px 5px;
+  background: #e1eaf3;
+  color: #4d86b5;
+}
+.destination-theme-chefchaouen .destination-place-card:hover .destination-place-arrow {
+  background: #4d86b5;
+  color: #fff;
+}
+.destination-theme-chefchaouen .destination-place-content h3,
+.destination-theme-chefchaouen .destination-bottom-note h2 {
+  color: #29455d;
+}
+.destination-theme-chefchaouen .destination-place-explore {
+  border-top-color: #d4e0ed;
+  color: #4d86b5;
+}
+.destination-theme-chefchaouen .destination-place-explore:hover {
+  color: #d5b77e;
+}
+.destination-theme-chefchaouen .destination-bottom-note {
+  border: 1px solid #d4e0ed;
+  border-radius: 28px 28px 5px 5px;
+  background: linear-gradient(120deg, #e1eaf3, #f8fbff);
+}
+@media (max-width: 576px) {
+  .destination-theme-chefchaouen .destination-hero {
+    min-height: 495px;
+    border-radius: 22px 22px 5px 5px;
+  }
+  .destination-theme-chefchaouen .destination-about-content {
+    border-radius: 22px 22px 5px 5px;
+  }
+}
+
+
+/* Rome city theme */
+.destination-theme-rome {
+  background: #f1ece3;
+  color: #453b32;
+}
+.destination-theme-rome .destination-back-button {
+  border-color: #e1d6c5;
+  background: #fffaf1;
+  color: #9a6545;
+}
+.destination-theme-rome .destination-back-button:hover {
+  border-color: #9a6545;
+  background: #9a6545;
+  color: #fff;
+}
+.destination-theme-rome .destination-hero {
+  min-height: 585px;
+  border-radius: 5px 32px 5px 32px;
+  background: #514333;
+  box-shadow: 0 18px 46px rgba(81,67,51, 0.13);
+}
+.destination-theme-rome .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(81,67,51, 0.9) 0%, rgba(81,67,51, 0.58) 52%, rgba(81,67,51, 0.08) 100%);
+}
+.destination-theme-rome .destination-hero-label,
+.destination-theme-rome .destination-hero-country span {
+  color: #c39b62;
+}
+.destination-theme-rome .destination-hero-button {
+  border-color: #c39b62;
+  border-radius: 5px 18px 5px 18px;
+  color: #fffaf1;
+}
+.destination-theme-rome .destination-hero-button:hover {
+  border-color: #c39b62;
+  background: #c39b62;
+  color: #453b32;
+}
+.destination-theme-rome .destination-hero-count {
+  border-color: #c39b6288;
+  border-radius: 5px 18px 5px 18px;
+  background: rgba(81,67,51, 0.5);
+}
+.destination-theme-rome .destination-section-eyebrow,
+.destination-theme-rome .destination-place-category,
+.destination-theme-rome .destination-bottom-note > span {
+  color: #9a6545;
+}
+.destination-theme-rome .destination-about-heading h2,
+.destination-theme-rome .destination-places-heading h2 {
+  color: #453b32;
+}
+.destination-theme-rome .destination-about-content {
+  border: 1px solid #e1d6c5;
+  border-top: 3px solid #9a6545;
+  border-radius: 5px 22px 5px 22px;
+  background: #fffaf1;
+  box-shadow: 0 12px 30px rgba(81,67,51, 0.055);
+}
+.destination-theme-rome .destination-about-mark {
+  color: #9a6545;
+}
+.destination-theme-rome .destination-about-content p,
+.destination-theme-rome .destination-places-heading p,
+.destination-theme-rome .destination-place-content p,
+.destination-theme-rome .destination-bottom-note p {
+  color: #80766b;
+}
+.destination-theme-rome .destination-places-section {
+  border-top-color: #e1d6c5;
+}
+.destination-theme-rome .destination-places-count {
+  border-color: #e1d6c5;
+  border-radius: 5px 18px 5px 18px;
+  background: #fffaf1;
+  color: #9a6545;
+}
+.destination-theme-rome .destination-place-card {
+  border-color: #e1d6c5;
+  border-radius: 5px 18px 5px 18px;
+  background: #fffaf1;
+  box-shadow: 0 10px 26px rgba(81,67,51, 0.055);
+}
+.destination-theme-rome .destination-place-number,
+.destination-theme-rome .destination-place-arrow {
+  border-radius: 5px 18px 5px 18px;
+  background: #ece1d0;
+  color: #9a6545;
+}
+.destination-theme-rome .destination-place-card:hover .destination-place-arrow {
+  background: #9a6545;
+  color: #fff;
+}
+.destination-theme-rome .destination-place-content h3,
+.destination-theme-rome .destination-bottom-note h2 {
+  color: #453b32;
+}
+.destination-theme-rome .destination-place-explore {
+  border-top-color: #e1d6c5;
+  color: #9a6545;
+}
+.destination-theme-rome .destination-place-explore:hover {
+  color: #c39b62;
+}
+.destination-theme-rome .destination-bottom-note {
+  border: 1px solid #e1d6c5;
+  border-radius: 5px 22px 5px 22px;
+  background: linear-gradient(120deg, #ece1d0, #fffaf1);
+}
+@media (max-width: 576px) {
+  .destination-theme-rome .destination-hero {
+    min-height: 495px;
+    border-radius: 5px 18px 5px 18px;
+  }
+  .destination-theme-rome .destination-about-content {
+    border-radius: 5px 18px 5px 18px;
+  }
+}
+
+
+/* Venice city theme */
+.destination-theme-venice {
+  background: #eaf0ef;
+  color: #30494a;
+}
+.destination-theme-venice .destination-back-button {
+  border-color: #d5e2df;
+  background: #f9fcfa;
+  color: #4f8582;
+}
+.destination-theme-venice .destination-back-button:hover {
+  border-color: #4f8582;
+  background: #4f8582;
+  color: #fff;
+}
+.destination-theme-venice .destination-hero {
+  min-height: 585px;
+  border-radius: 32px 5px 32px 5px;
+  background: #31585a;
+  box-shadow: 0 18px 46px rgba(49,88,90, 0.13);
+}
+.destination-theme-venice .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(49,88,90, 0.9) 0%, rgba(49,88,90, 0.58) 52%, rgba(49,88,90, 0.08) 100%);
+}
+.destination-theme-venice .destination-hero-label,
+.destination-theme-venice .destination-hero-country span {
+  color: #c7a16d;
+}
+.destination-theme-venice .destination-hero-button {
+  border-color: #c7a16d;
+  border-radius: 22px 5px 22px 5px;
+  color: #f9fcfa;
+}
+.destination-theme-venice .destination-hero-button:hover {
+  border-color: #c7a16d;
+  background: #c7a16d;
+  color: #30494a;
+}
+.destination-theme-venice .destination-hero-count {
+  border-color: #c7a16d88;
+  border-radius: 22px 5px 22px 5px;
+  background: rgba(49,88,90, 0.5);
+}
+.destination-theme-venice .destination-section-eyebrow,
+.destination-theme-venice .destination-place-category,
+.destination-theme-venice .destination-bottom-note > span {
+  color: #4f8582;
+}
+.destination-theme-venice .destination-about-heading h2,
+.destination-theme-venice .destination-places-heading h2 {
+  color: #30494a;
+}
+.destination-theme-venice .destination-about-content {
+  border: 1px solid #d5e2df;
+  border-top: 3px solid #4f8582;
+  border-radius: 26px 5px 26px 5px;
+  background: #f9fcfa;
+  box-shadow: 0 12px 30px rgba(49,88,90, 0.055);
+}
+.destination-theme-venice .destination-about-mark {
+  color: #4f8582;
+}
+.destination-theme-venice .destination-about-content p,
+.destination-theme-venice .destination-places-heading p,
+.destination-theme-venice .destination-place-content p,
+.destination-theme-venice .destination-bottom-note p {
+  color: #748585;
+}
+.destination-theme-venice .destination-places-section {
+  border-top-color: #d5e2df;
+}
+.destination-theme-venice .destination-places-count {
+  border-color: #d5e2df;
+  border-radius: 22px 5px 22px 5px;
+  background: #f9fcfa;
+  color: #4f8582;
+}
+.destination-theme-venice .destination-place-card {
+  border-color: #d5e2df;
+  border-radius: 22px 5px 22px 5px;
+  background: #f9fcfa;
+  box-shadow: 0 10px 26px rgba(49,88,90, 0.055);
+}
+.destination-theme-venice .destination-place-number,
+.destination-theme-venice .destination-place-arrow {
+  border-radius: 22px 5px 22px 5px;
+  background: #e1ece8;
+  color: #4f8582;
+}
+.destination-theme-venice .destination-place-card:hover .destination-place-arrow {
+  background: #4f8582;
+  color: #fff;
+}
+.destination-theme-venice .destination-place-content h3,
+.destination-theme-venice .destination-bottom-note h2 {
+  color: #30494a;
+}
+.destination-theme-venice .destination-place-explore {
+  border-top-color: #d5e2df;
+  color: #4f8582;
+}
+.destination-theme-venice .destination-place-explore:hover {
+  color: #c7a16d;
+}
+.destination-theme-venice .destination-bottom-note {
+  border: 1px solid #d5e2df;
+  border-radius: 26px 5px 26px 5px;
+  background: linear-gradient(120deg, #e1ece8, #f9fcfa);
+}
+@media (max-width: 576px) {
+  .destination-theme-venice .destination-hero {
+    min-height: 495px;
+    border-radius: 22px 5px 22px 5px;
+  }
+  .destination-theme-venice .destination-about-content {
+    border-radius: 22px 5px 22px 5px;
+  }
+}
+
+
+/* Florence city theme */
+.destination-theme-florence {
+  background: #f3ede4;
+  color: #4a3d38;
+}
+.destination-theme-florence .destination-back-button {
+  border-color: #e5d8c9;
+  background: #fffaf3;
+  color: #a66c55;
+}
+.destination-theme-florence .destination-back-button:hover {
+  border-color: #a66c55;
+  background: #a66c55;
+  color: #fff;
+}
+.destination-theme-florence .destination-hero {
+  min-height: 585px;
+  border-radius: 5px 36px 5px 36px;
+  background: #60483e;
+  box-shadow: 0 18px 46px rgba(96,72,62, 0.13);
+}
+.destination-theme-florence .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(96,72,62, 0.9) 0%, rgba(96,72,62, 0.58) 52%, rgba(96,72,62, 0.08) 100%);
+}
+.destination-theme-florence .destination-hero-label,
+.destination-theme-florence .destination-hero-country span {
+  color: #c6a16c;
+}
+.destination-theme-florence .destination-hero-button {
+  border-color: #c6a16c;
+  border-radius: 5px 20px 5px 20px;
+  color: #fffaf3;
+}
+.destination-theme-florence .destination-hero-button:hover {
+  border-color: #c6a16c;
+  background: #c6a16c;
+  color: #4a3d38;
+}
+.destination-theme-florence .destination-hero-count {
+  border-color: #c6a16c88;
+  border-radius: 5px 20px 5px 20px;
+  background: rgba(96,72,62, 0.5);
+}
+.destination-theme-florence .destination-section-eyebrow,
+.destination-theme-florence .destination-place-category,
+.destination-theme-florence .destination-bottom-note > span {
+  color: #a66c55;
+}
+.destination-theme-florence .destination-about-heading h2,
+.destination-theme-florence .destination-places-heading h2 {
+  color: #4a3d38;
+}
+.destination-theme-florence .destination-about-content {
+  border: 1px solid #e5d8c9;
+  border-top: 3px solid #a66c55;
+  border-radius: 5px 24px 5px 24px;
+  background: #fffaf3;
+  box-shadow: 0 12px 30px rgba(96,72,62, 0.055);
+}
+.destination-theme-florence .destination-about-mark {
+  color: #a66c55;
+}
+.destination-theme-florence .destination-about-content p,
+.destination-theme-florence .destination-places-heading p,
+.destination-theme-florence .destination-place-content p,
+.destination-theme-florence .destination-bottom-note p {
+  color: #81746c;
+}
+.destination-theme-florence .destination-places-section {
+  border-top-color: #e5d8c9;
+}
+.destination-theme-florence .destination-places-count {
+  border-color: #e5d8c9;
+  border-radius: 5px 20px 5px 20px;
+  background: #fffaf3;
+  color: #a66c55;
+}
+.destination-theme-florence .destination-place-card {
+  border-color: #e5d8c9;
+  border-radius: 5px 20px 5px 20px;
+  background: #fffaf3;
+  box-shadow: 0 10px 26px rgba(96,72,62, 0.055);
+}
+.destination-theme-florence .destination-place-number,
+.destination-theme-florence .destination-place-arrow {
+  border-radius: 5px 20px 5px 20px;
+  background: #eee2d4;
+  color: #a66c55;
+}
+.destination-theme-florence .destination-place-card:hover .destination-place-arrow {
+  background: #a66c55;
+  color: #fff;
+}
+.destination-theme-florence .destination-place-content h3,
+.destination-theme-florence .destination-bottom-note h2 {
+  color: #4a3d38;
+}
+.destination-theme-florence .destination-place-explore {
+  border-top-color: #e5d8c9;
+  color: #a66c55;
+}
+.destination-theme-florence .destination-place-explore:hover {
+  color: #c6a16c;
+}
+.destination-theme-florence .destination-bottom-note {
+  border: 1px solid #e5d8c9;
+  border-radius: 5px 24px 5px 24px;
+  background: linear-gradient(120deg, #eee2d4, #fffaf3);
+}
+@media (max-width: 576px) {
+  .destination-theme-florence .destination-hero {
+    min-height: 495px;
+    border-radius: 5px 20px 5px 20px;
+  }
+  .destination-theme-florence .destination-about-content {
+    border-radius: 5px 20px 5px 20px;
+  }
+}
+
+
+/* Milan city theme */
+.destination-theme-milan {
+  background: #ececef;
+  color: #30323b;
+}
+.destination-theme-milan .destination-back-button {
+  border-color: #d9d9e0;
+  background: #fafafd;
+  color: #77798a;
+}
+.destination-theme-milan .destination-back-button:hover {
+  border-color: #77798a;
+  background: #77798a;
+  color: #fff;
+}
+.destination-theme-milan .destination-hero {
+  min-height: 585px;
+  border-radius: 6px 6px 6px 6px;
+  background: #353947;
+  box-shadow: 0 18px 46px rgba(53,57,71, 0.13);
+}
+.destination-theme-milan .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(53,57,71, 0.9) 0%, rgba(53,57,71, 0.58) 52%, rgba(53,57,71, 0.08) 100%);
+}
+.destination-theme-milan .destination-hero-label,
+.destination-theme-milan .destination-hero-country span {
+  color: #b49b72;
+}
+.destination-theme-milan .destination-hero-button {
+  border-color: #b49b72;
+  border-radius: 4px 16px 4px 16px;
+  color: #fafafd;
+}
+.destination-theme-milan .destination-hero-button:hover {
+  border-color: #b49b72;
+  background: #b49b72;
+  color: #30323b;
+}
+.destination-theme-milan .destination-hero-count {
+  border-color: #b49b7288;
+  border-radius: 4px 16px 4px 16px;
+  background: rgba(53,57,71, 0.5);
+}
+.destination-theme-milan .destination-section-eyebrow,
+.destination-theme-milan .destination-place-category,
+.destination-theme-milan .destination-bottom-note > span {
+  color: #77798a;
+}
+.destination-theme-milan .destination-about-heading h2,
+.destination-theme-milan .destination-places-heading h2 {
+  color: #30323b;
+}
+.destination-theme-milan .destination-about-content {
+  border: 1px solid #d9d9e0;
+  border-top: 3px solid #77798a;
+  border-radius: 4px 20px 4px 20px;
+  background: #fafafd;
+  box-shadow: 0 12px 30px rgba(53,57,71, 0.055);
+}
+.destination-theme-milan .destination-about-mark {
+  color: #77798a;
+}
+.destination-theme-milan .destination-about-content p,
+.destination-theme-milan .destination-places-heading p,
+.destination-theme-milan .destination-place-content p,
+.destination-theme-milan .destination-bottom-note p {
+  color: #777984;
+}
+.destination-theme-milan .destination-places-section {
+  border-top-color: #d9d9e0;
+}
+.destination-theme-milan .destination-places-count {
+  border-color: #d9d9e0;
+  border-radius: 4px 16px 4px 16px;
+  background: #fafafd;
+  color: #77798a;
+}
+.destination-theme-milan .destination-place-card {
+  border-color: #d9d9e0;
+  border-radius: 4px 16px 4px 16px;
+  background: #fafafd;
+  box-shadow: 0 10px 26px rgba(53,57,71, 0.055);
+}
+.destination-theme-milan .destination-place-number,
+.destination-theme-milan .destination-place-arrow {
+  border-radius: 4px 16px 4px 16px;
+  background: #e5e5eb;
+  color: #77798a;
+}
+.destination-theme-milan .destination-place-card:hover .destination-place-arrow {
+  background: #77798a;
+  color: #fff;
+}
+.destination-theme-milan .destination-place-content h3,
+.destination-theme-milan .destination-bottom-note h2 {
+  color: #30323b;
+}
+.destination-theme-milan .destination-place-explore {
+  border-top-color: #d9d9e0;
+  color: #77798a;
+}
+.destination-theme-milan .destination-place-explore:hover {
+  color: #b49b72;
+}
+.destination-theme-milan .destination-bottom-note {
+  border: 1px solid #d9d9e0;
+  border-radius: 4px 20px 4px 20px;
+  background: linear-gradient(120deg, #e5e5eb, #fafafd);
+}
+@media (max-width: 576px) {
+  .destination-theme-milan .destination-hero {
+    min-height: 495px;
+    border-radius: 4px 16px 4px 16px;
+  }
+  .destination-theme-milan .destination-about-content {
+    border-radius: 4px 16px 4px 16px;
+  }
+}
+
+
+/* Naples city theme */
+.destination-theme-naples {
+  background: #f4ebe3;
+  color: #493b35;
+}
+.destination-theme-naples .destination-back-button {
+  border-color: #e7d4c6;
+  background: #fffaf5;
+  color: #b95f45;
+}
+.destination-theme-naples .destination-back-button:hover {
+  border-color: #b95f45;
+  background: #b95f45;
+  color: #fff;
+}
+.destination-theme-naples .destination-hero {
+  min-height: 585px;
+  border-radius: 38px 6px 38px 6px;
+  background: #623f35;
+  box-shadow: 0 18px 46px rgba(98,63,53, 0.13);
+}
+.destination-theme-naples .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(98,63,53, 0.9) 0%, rgba(98,63,53, 0.58) 52%, rgba(98,63,53, 0.08) 100%);
+}
+.destination-theme-naples .destination-hero-label,
+.destination-theme-naples .destination-hero-country span {
+  color: #d3a46b;
+}
+.destination-theme-naples .destination-hero-button {
+  border-color: #d3a46b;
+  border-radius: 24px 5px 24px 5px;
+  color: #fffaf5;
+}
+.destination-theme-naples .destination-hero-button:hover {
+  border-color: #d3a46b;
+  background: #d3a46b;
+  color: #493b35;
+}
+.destination-theme-naples .destination-hero-count {
+  border-color: #d3a46b88;
+  border-radius: 24px 5px 24px 5px;
+  background: rgba(98,63,53, 0.5);
+}
+.destination-theme-naples .destination-section-eyebrow,
+.destination-theme-naples .destination-place-category,
+.destination-theme-naples .destination-bottom-note > span {
+  color: #b95f45;
+}
+.destination-theme-naples .destination-about-heading h2,
+.destination-theme-naples .destination-places-heading h2 {
+  color: #493b35;
+}
+.destination-theme-naples .destination-about-content {
+  border: 1px solid #e7d4c6;
+  border-top: 3px solid #b95f45;
+  border-radius: 28px 5px 28px 5px;
+  background: #fffaf5;
+  box-shadow: 0 12px 30px rgba(98,63,53, 0.055);
+}
+.destination-theme-naples .destination-about-mark {
+  color: #b95f45;
+}
+.destination-theme-naples .destination-about-content p,
+.destination-theme-naples .destination-places-heading p,
+.destination-theme-naples .destination-place-content p,
+.destination-theme-naples .destination-bottom-note p {
+  color: #83736b;
+}
+.destination-theme-naples .destination-places-section {
+  border-top-color: #e7d4c6;
+}
+.destination-theme-naples .destination-places-count {
+  border-color: #e7d4c6;
+  border-radius: 24px 5px 24px 5px;
+  background: #fffaf5;
+  color: #b95f45;
+}
+.destination-theme-naples .destination-place-card {
+  border-color: #e7d4c6;
+  border-radius: 24px 5px 24px 5px;
+  background: #fffaf5;
+  box-shadow: 0 10px 26px rgba(98,63,53, 0.055);
+}
+.destination-theme-naples .destination-place-number,
+.destination-theme-naples .destination-place-arrow {
+  border-radius: 24px 5px 24px 5px;
+  background: #f0e1d5;
+  color: #b95f45;
+}
+.destination-theme-naples .destination-place-card:hover .destination-place-arrow {
+  background: #b95f45;
+  color: #fff;
+}
+.destination-theme-naples .destination-place-content h3,
+.destination-theme-naples .destination-bottom-note h2 {
+  color: #493b35;
+}
+.destination-theme-naples .destination-place-explore {
+  border-top-color: #e7d4c6;
+  color: #b95f45;
+}
+.destination-theme-naples .destination-place-explore:hover {
+  color: #d3a46b;
+}
+.destination-theme-naples .destination-bottom-note {
+  border: 1px solid #e7d4c6;
+  border-radius: 28px 5px 28px 5px;
+  background: linear-gradient(120deg, #f0e1d5, #fffaf5);
+}
+@media (max-width: 576px) {
+  .destination-theme-naples .destination-hero {
+    min-height: 495px;
+    border-radius: 24px 5px 24px 5px;
+  }
+  .destination-theme-naples .destination-about-content {
+    border-radius: 24px 5px 24px 5px;
+  }
+}
+
+
+/* Paris city theme */
+.destination-theme-paris {
+  background: #f0edf1;
+  color: #44394b;
+}
+.destination-theme-paris .destination-back-button {
+  border-color: #e1d9e3;
+  background: #fffaff;
+  color: #9a7189;
+}
+.destination-theme-paris .destination-back-button:hover {
+  border-color: #9a7189;
+  background: #9a7189;
+  color: #fff;
+}
+.destination-theme-paris .destination-hero {
+  min-height: 585px;
+  border-radius: 6px 34px 6px 34px;
+  background: #51435a;
+  box-shadow: 0 18px 46px rgba(81,67,90, 0.13);
+}
+.destination-theme-paris .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(81,67,90, 0.9) 0%, rgba(81,67,90, 0.58) 52%, rgba(81,67,90, 0.08) 100%);
+}
+.destination-theme-paris .destination-hero-label,
+.destination-theme-paris .destination-hero-country span {
+  color: #c5a77b;
+}
+.destination-theme-paris .destination-hero-button {
+  border-color: #c5a77b;
+  border-radius: 6px 20px 6px 20px;
+  color: #fffaff;
+}
+.destination-theme-paris .destination-hero-button:hover {
+  border-color: #c5a77b;
+  background: #c5a77b;
+  color: #44394b;
+}
+.destination-theme-paris .destination-hero-count {
+  border-color: #c5a77b88;
+  border-radius: 6px 20px 6px 20px;
+  background: rgba(81,67,90, 0.5);
+}
+.destination-theme-paris .destination-section-eyebrow,
+.destination-theme-paris .destination-place-category,
+.destination-theme-paris .destination-bottom-note > span {
+  color: #9a7189;
+}
+.destination-theme-paris .destination-about-heading h2,
+.destination-theme-paris .destination-places-heading h2 {
+  color: #44394b;
+}
+.destination-theme-paris .destination-about-content {
+  border: 1px solid #e1d9e3;
+  border-top: 3px solid #9a7189;
+  border-radius: 6px 24px 6px 24px;
+  background: #fffaff;
+  box-shadow: 0 12px 30px rgba(81,67,90, 0.055);
+}
+.destination-theme-paris .destination-about-mark {
+  color: #9a7189;
+}
+.destination-theme-paris .destination-about-content p,
+.destination-theme-paris .destination-places-heading p,
+.destination-theme-paris .destination-place-content p,
+.destination-theme-paris .destination-bottom-note p {
+  color: #817684;
+}
+.destination-theme-paris .destination-places-section {
+  border-top-color: #e1d9e3;
+}
+.destination-theme-paris .destination-places-count {
+  border-color: #e1d9e3;
+  border-radius: 6px 20px 6px 20px;
+  background: #fffaff;
+  color: #9a7189;
+}
+.destination-theme-paris .destination-place-card {
+  border-color: #e1d9e3;
+  border-radius: 6px 20px 6px 20px;
+  background: #fffaff;
+  box-shadow: 0 10px 26px rgba(81,67,90, 0.055);
+}
+.destination-theme-paris .destination-place-number,
+.destination-theme-paris .destination-place-arrow {
+  border-radius: 6px 20px 6px 20px;
+  background: #eee7ee;
+  color: #9a7189;
+}
+.destination-theme-paris .destination-place-card:hover .destination-place-arrow {
+  background: #9a7189;
+  color: #fff;
+}
+.destination-theme-paris .destination-place-content h3,
+.destination-theme-paris .destination-bottom-note h2 {
+  color: #44394b;
+}
+.destination-theme-paris .destination-place-explore {
+  border-top-color: #e1d9e3;
+  color: #9a7189;
+}
+.destination-theme-paris .destination-place-explore:hover {
+  color: #c5a77b;
+}
+.destination-theme-paris .destination-bottom-note {
+  border: 1px solid #e1d9e3;
+  border-radius: 6px 24px 6px 24px;
+  background: linear-gradient(120deg, #eee7ee, #fffaff);
+}
+@media (max-width: 576px) {
+  .destination-theme-paris .destination-hero {
+    min-height: 495px;
+    border-radius: 6px 20px 6px 20px;
+  }
+  .destination-theme-paris .destination-about-content {
+    border-radius: 6px 20px 6px 20px;
+  }
+}
+
+
+/* Nice city theme */
+.destination-theme-nice {
+  background: #eaf2f3;
+  color: #2e4d59;
+}
+.destination-theme-nice .destination-back-button {
+  border-color: #d4e4e7;
+  background: #f9fdfd;
+  color: #4d91a0;
+}
+.destination-theme-nice .destination-back-button:hover {
+  border-color: #4d91a0;
+  background: #4d91a0;
+  color: #fff;
+}
+.destination-theme-nice .destination-hero {
+  min-height: 585px;
+  border-radius: 34px 8px 34px 8px;
+  background: #2d5965;
+  box-shadow: 0 18px 46px rgba(45,89,101, 0.13);
+}
+.destination-theme-nice .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(45,89,101, 0.9) 0%, rgba(45,89,101, 0.58) 52%, rgba(45,89,101, 0.08) 100%);
+}
+.destination-theme-nice .destination-hero-label,
+.destination-theme-nice .destination-hero-country span {
+  color: #d9b77b;
+}
+.destination-theme-nice .destination-hero-button {
+  border-color: #d9b77b;
+  border-radius: 24px 5px 24px 5px;
+  color: #f9fdfd;
+}
+.destination-theme-nice .destination-hero-button:hover {
+  border-color: #d9b77b;
+  background: #d9b77b;
+  color: #2e4d59;
+}
+.destination-theme-nice .destination-hero-count {
+  border-color: #d9b77b88;
+  border-radius: 24px 5px 24px 5px;
+  background: rgba(45,89,101, 0.5);
+}
+.destination-theme-nice .destination-section-eyebrow,
+.destination-theme-nice .destination-place-category,
+.destination-theme-nice .destination-bottom-note > span {
+  color: #4d91a0;
+}
+.destination-theme-nice .destination-about-heading h2,
+.destination-theme-nice .destination-places-heading h2 {
+  color: #2e4d59;
+}
+.destination-theme-nice .destination-about-content {
+  border: 1px solid #d4e4e7;
+  border-top: 3px solid #4d91a0;
+  border-radius: 28px 5px 28px 5px;
+  background: #f9fdfd;
+  box-shadow: 0 12px 30px rgba(45,89,101, 0.055);
+}
+.destination-theme-nice .destination-about-mark {
+  color: #4d91a0;
+}
+.destination-theme-nice .destination-about-content p,
+.destination-theme-nice .destination-places-heading p,
+.destination-theme-nice .destination-place-content p,
+.destination-theme-nice .destination-bottom-note p {
+  color: #71858a;
+}
+.destination-theme-nice .destination-places-section {
+  border-top-color: #d4e4e7;
+}
+.destination-theme-nice .destination-places-count {
+  border-color: #d4e4e7;
+  border-radius: 24px 5px 24px 5px;
+  background: #f9fdfd;
+  color: #4d91a0;
+}
+.destination-theme-nice .destination-place-card {
+  border-color: #d4e4e7;
+  border-radius: 24px 5px 24px 5px;
+  background: #f9fdfd;
+  box-shadow: 0 10px 26px rgba(45,89,101, 0.055);
+}
+.destination-theme-nice .destination-place-number,
+.destination-theme-nice .destination-place-arrow {
+  border-radius: 24px 5px 24px 5px;
+  background: #e1eef0;
+  color: #4d91a0;
+}
+.destination-theme-nice .destination-place-card:hover .destination-place-arrow {
+  background: #4d91a0;
+  color: #fff;
+}
+.destination-theme-nice .destination-place-content h3,
+.destination-theme-nice .destination-bottom-note h2 {
+  color: #2e4d59;
+}
+.destination-theme-nice .destination-place-explore {
+  border-top-color: #d4e4e7;
+  color: #4d91a0;
+}
+.destination-theme-nice .destination-place-explore:hover {
+  color: #d9b77b;
+}
+.destination-theme-nice .destination-bottom-note {
+  border: 1px solid #d4e4e7;
+  border-radius: 28px 5px 28px 5px;
+  background: linear-gradient(120deg, #e1eef0, #f9fdfd);
+}
+@media (max-width: 576px) {
+  .destination-theme-nice .destination-hero {
+    min-height: 495px;
+    border-radius: 24px 5px 24px 5px;
+  }
+  .destination-theme-nice .destination-about-content {
+    border-radius: 24px 5px 24px 5px;
+  }
+}
+
+
+/* Lyon city theme */
+.destination-theme-lyon {
+  background: #efede8;
+  color: #3e4542;
+}
+.destination-theme-lyon .destination-back-button {
+  border-color: #dedfd6;
+  background: #fcfbf7;
+  color: #75816d;
+}
+.destination-theme-lyon .destination-back-button:hover {
+  border-color: #75816d;
+  background: #75816d;
+  color: #fff;
+}
+.destination-theme-lyon .destination-hero {
+  min-height: 585px;
+  border-radius: 6px 32px 6px 32px;
+  background: #414e47;
+  box-shadow: 0 18px 46px rgba(65,78,71, 0.13);
+}
+.destination-theme-lyon .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(65,78,71, 0.9) 0%, rgba(65,78,71, 0.58) 52%, rgba(65,78,71, 0.08) 100%);
+}
+.destination-theme-lyon .destination-hero-label,
+.destination-theme-lyon .destination-hero-country span {
+  color: #b78d65;
+}
+.destination-theme-lyon .destination-hero-button {
+  border-color: #b78d65;
+  border-radius: 5px 18px 5px 18px;
+  color: #fcfbf7;
+}
+.destination-theme-lyon .destination-hero-button:hover {
+  border-color: #b78d65;
+  background: #b78d65;
+  color: #3e4542;
+}
+.destination-theme-lyon .destination-hero-count {
+  border-color: #b78d6588;
+  border-radius: 5px 18px 5px 18px;
+  background: rgba(65,78,71, 0.5);
+}
+.destination-theme-lyon .destination-section-eyebrow,
+.destination-theme-lyon .destination-place-category,
+.destination-theme-lyon .destination-bottom-note > span {
+  color: #75816d;
+}
+.destination-theme-lyon .destination-about-heading h2,
+.destination-theme-lyon .destination-places-heading h2 {
+  color: #3e4542;
+}
+.destination-theme-lyon .destination-about-content {
+  border: 1px solid #dedfd6;
+  border-top: 3px solid #75816d;
+  border-radius: 5px 22px 5px 22px;
+  background: #fcfbf7;
+  box-shadow: 0 12px 30px rgba(65,78,71, 0.055);
+}
+.destination-theme-lyon .destination-about-mark {
+  color: #75816d;
+}
+.destination-theme-lyon .destination-about-content p,
+.destination-theme-lyon .destination-places-heading p,
+.destination-theme-lyon .destination-place-content p,
+.destination-theme-lyon .destination-bottom-note p {
+  color: #7b8179;
+}
+.destination-theme-lyon .destination-places-section {
+  border-top-color: #dedfd6;
+}
+.destination-theme-lyon .destination-places-count {
+  border-color: #dedfd6;
+  border-radius: 5px 18px 5px 18px;
+  background: #fcfbf7;
+  color: #75816d;
+}
+.destination-theme-lyon .destination-place-card {
+  border-color: #dedfd6;
+  border-radius: 5px 18px 5px 18px;
+  background: #fcfbf7;
+  box-shadow: 0 10px 26px rgba(65,78,71, 0.055);
+}
+.destination-theme-lyon .destination-place-number,
+.destination-theme-lyon .destination-place-arrow {
+  border-radius: 5px 18px 5px 18px;
+  background: #e9e9df;
+  color: #75816d;
+}
+.destination-theme-lyon .destination-place-card:hover .destination-place-arrow {
+  background: #75816d;
+  color: #fff;
+}
+.destination-theme-lyon .destination-place-content h3,
+.destination-theme-lyon .destination-bottom-note h2 {
+  color: #3e4542;
+}
+.destination-theme-lyon .destination-place-explore {
+  border-top-color: #dedfd6;
+  color: #75816d;
+}
+.destination-theme-lyon .destination-place-explore:hover {
+  color: #b78d65;
+}
+.destination-theme-lyon .destination-bottom-note {
+  border: 1px solid #dedfd6;
+  border-radius: 5px 22px 5px 22px;
+  background: linear-gradient(120deg, #e9e9df, #fcfbf7);
+}
+@media (max-width: 576px) {
+  .destination-theme-lyon .destination-hero {
+    min-height: 495px;
+    border-radius: 5px 18px 5px 18px;
+  }
+  .destination-theme-lyon .destination-about-content {
+    border-radius: 5px 18px 5px 18px;
+  }
+}
+
+
+/* Marseille city theme */
+.destination-theme-marseille {
+  background: #eaf0f1;
+  color: #2e4650;
+}
+.destination-theme-marseille .destination-back-button {
+  border-color: #d4e0e3;
+  background: #f9fcfc;
+  color: #477d8b;
+}
+.destination-theme-marseille .destination-back-button:hover {
+  border-color: #477d8b;
+  background: #477d8b;
+  color: #fff;
+}
+.destination-theme-marseille .destination-hero {
+  min-height: 585px;
+  border-radius: 40px 6px 40px 6px;
+  background: #2e5360;
+  box-shadow: 0 18px 46px rgba(46,83,96, 0.13);
+}
+.destination-theme-marseille .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(46,83,96, 0.9) 0%, rgba(46,83,96, 0.58) 52%, rgba(46,83,96, 0.08) 100%);
+}
+.destination-theme-marseille .destination-hero-label,
+.destination-theme-marseille .destination-hero-country span {
+  color: #d19a6d;
+}
+.destination-theme-marseille .destination-hero-button {
+  border-color: #d19a6d;
+  border-radius: 26px 5px 26px 5px;
+  color: #f9fcfc;
+}
+.destination-theme-marseille .destination-hero-button:hover {
+  border-color: #d19a6d;
+  background: #d19a6d;
+  color: #2e4650;
+}
+.destination-theme-marseille .destination-hero-count {
+  border-color: #d19a6d88;
+  border-radius: 26px 5px 26px 5px;
+  background: rgba(46,83,96, 0.5);
+}
+.destination-theme-marseille .destination-section-eyebrow,
+.destination-theme-marseille .destination-place-category,
+.destination-theme-marseille .destination-bottom-note > span {
+  color: #477d8b;
+}
+.destination-theme-marseille .destination-about-heading h2,
+.destination-theme-marseille .destination-places-heading h2 {
+  color: #2e4650;
+}
+.destination-theme-marseille .destination-about-content {
+  border: 1px solid #d4e0e3;
+  border-top: 3px solid #477d8b;
+  border-radius: 30px 5px 30px 5px;
+  background: #f9fcfc;
+  box-shadow: 0 12px 30px rgba(46,83,96, 0.055);
+}
+.destination-theme-marseille .destination-about-mark {
+  color: #477d8b;
+}
+.destination-theme-marseille .destination-about-content p,
+.destination-theme-marseille .destination-places-heading p,
+.destination-theme-marseille .destination-place-content p,
+.destination-theme-marseille .destination-bottom-note p {
+  color: #71838a;
+}
+.destination-theme-marseille .destination-places-section {
+  border-top-color: #d4e0e3;
+}
+.destination-theme-marseille .destination-places-count {
+  border-color: #d4e0e3;
+  border-radius: 26px 5px 26px 5px;
+  background: #f9fcfc;
+  color: #477d8b;
+}
+.destination-theme-marseille .destination-place-card {
+  border-color: #d4e0e3;
+  border-radius: 26px 5px 26px 5px;
+  background: #f9fcfc;
+  box-shadow: 0 10px 26px rgba(46,83,96, 0.055);
+}
+.destination-theme-marseille .destination-place-number,
+.destination-theme-marseille .destination-place-arrow {
+  border-radius: 26px 5px 26px 5px;
+  background: #e1eaec;
+  color: #477d8b;
+}
+.destination-theme-marseille .destination-place-card:hover .destination-place-arrow {
+  background: #477d8b;
+  color: #fff;
+}
+.destination-theme-marseille .destination-place-content h3,
+.destination-theme-marseille .destination-bottom-note h2 {
+  color: #2e4650;
+}
+.destination-theme-marseille .destination-place-explore {
+  border-top-color: #d4e0e3;
+  color: #477d8b;
+}
+.destination-theme-marseille .destination-place-explore:hover {
+  color: #d19a6d;
+}
+.destination-theme-marseille .destination-bottom-note {
+  border: 1px solid #d4e0e3;
+  border-radius: 30px 5px 30px 5px;
+  background: linear-gradient(120deg, #e1eaec, #f9fcfc);
+}
+@media (max-width: 576px) {
+  .destination-theme-marseille .destination-hero {
+    min-height: 495px;
+    border-radius: 26px 5px 26px 5px;
+  }
+  .destination-theme-marseille .destination-about-content {
+    border-radius: 26px 5px 26px 5px;
+  }
+}
+
+
+/* Bordeaux city theme */
+.destination-theme-bordeaux {
+  background: #f1e9e7;
+  color: #4c3438;
+}
+.destination-theme-bordeaux .destination-back-button {
+  border-color: #e3d2d2;
+  background: #fff9f7;
+  color: #945563;
+}
+.destination-theme-bordeaux .destination-back-button:hover {
+  border-color: #945563;
+  background: #945563;
+  color: #fff;
+}
+.destination-theme-bordeaux .destination-hero {
+  min-height: 585px;
+  border-radius: 5px 34px 5px 34px;
+  background: #573b43;
+  box-shadow: 0 18px 46px rgba(87,59,67, 0.13);
+}
+.destination-theme-bordeaux .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(87,59,67, 0.9) 0%, rgba(87,59,67, 0.58) 52%, rgba(87,59,67, 0.08) 100%);
+}
+.destination-theme-bordeaux .destination-hero-label,
+.destination-theme-bordeaux .destination-hero-country span {
+  color: #c29a70;
+}
+.destination-theme-bordeaux .destination-hero-button {
+  border-color: #c29a70;
+  border-radius: 5px 20px 5px 20px;
+  color: #fff9f7;
+}
+.destination-theme-bordeaux .destination-hero-button:hover {
+  border-color: #c29a70;
+  background: #c29a70;
+  color: #4c3438;
+}
+.destination-theme-bordeaux .destination-hero-count {
+  border-color: #c29a7088;
+  border-radius: 5px 20px 5px 20px;
+  background: rgba(87,59,67, 0.5);
+}
+.destination-theme-bordeaux .destination-section-eyebrow,
+.destination-theme-bordeaux .destination-place-category,
+.destination-theme-bordeaux .destination-bottom-note > span {
+  color: #945563;
+}
+.destination-theme-bordeaux .destination-about-heading h2,
+.destination-theme-bordeaux .destination-places-heading h2 {
+  color: #4c3438;
+}
+.destination-theme-bordeaux .destination-about-content {
+  border: 1px solid #e3d2d2;
+  border-top: 3px solid #945563;
+  border-radius: 5px 24px 5px 24px;
+  background: #fff9f7;
+  box-shadow: 0 12px 30px rgba(87,59,67, 0.055);
+}
+.destination-theme-bordeaux .destination-about-mark {
+  color: #945563;
+}
+.destination-theme-bordeaux .destination-about-content p,
+.destination-theme-bordeaux .destination-places-heading p,
+.destination-theme-bordeaux .destination-place-content p,
+.destination-theme-bordeaux .destination-bottom-note p {
+  color: #867478;
+}
+.destination-theme-bordeaux .destination-places-section {
+  border-top-color: #e3d2d2;
+}
+.destination-theme-bordeaux .destination-places-count {
+  border-color: #e3d2d2;
+  border-radius: 5px 20px 5px 20px;
+  background: #fff9f7;
+  color: #945563;
+}
+.destination-theme-bordeaux .destination-place-card {
+  border-color: #e3d2d2;
+  border-radius: 5px 20px 5px 20px;
+  background: #fff9f7;
+  box-shadow: 0 10px 26px rgba(87,59,67, 0.055);
+}
+.destination-theme-bordeaux .destination-place-number,
+.destination-theme-bordeaux .destination-place-arrow {
+  border-radius: 5px 20px 5px 20px;
+  background: #eddddd;
+  color: #945563;
+}
+.destination-theme-bordeaux .destination-place-card:hover .destination-place-arrow {
+  background: #945563;
+  color: #fff;
+}
+.destination-theme-bordeaux .destination-place-content h3,
+.destination-theme-bordeaux .destination-bottom-note h2 {
+  color: #4c3438;
+}
+.destination-theme-bordeaux .destination-place-explore {
+  border-top-color: #e3d2d2;
+  color: #945563;
+}
+.destination-theme-bordeaux .destination-place-explore:hover {
+  color: #c29a70;
+}
+.destination-theme-bordeaux .destination-bottom-note {
+  border: 1px solid #e3d2d2;
+  border-radius: 5px 24px 5px 24px;
+  background: linear-gradient(120deg, #eddddd, #fff9f7);
+}
+@media (max-width: 576px) {
+  .destination-theme-bordeaux .destination-hero {
+    min-height: 495px;
+    border-radius: 5px 20px 5px 20px;
+  }
+  .destination-theme-bordeaux .destination-about-content {
+    border-radius: 5px 20px 5px 20px;
+  }
+}
+
+
+/* Zurich city theme */
+.destination-theme-zurich {
+  background: #edf1f1;
+  color: #34434b;
+}
+.destination-theme-zurich .destination-back-button {
+  border-color: #d9e1e2;
+  background: #fbfdfd;
+  color: #64818c;
+}
+.destination-theme-zurich .destination-back-button:hover {
+  border-color: #64818c;
+  background: #64818c;
+  color: #fff;
+}
+.destination-theme-zurich .destination-hero {
+  min-height: 585px;
+  border-radius: 8px 30px 8px 30px;
+  background: #344e58;
+  box-shadow: 0 18px 46px rgba(52,78,88, 0.13);
+}
+.destination-theme-zurich .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(52,78,88, 0.9) 0%, rgba(52,78,88, 0.58) 52%, rgba(52,78,88, 0.08) 100%);
+}
+.destination-theme-zurich .destination-hero-label,
+.destination-theme-zurich .destination-hero-country span {
+  color: #b9a77e;
+}
+.destination-theme-zurich .destination-hero-button {
+  border-color: #b9a77e;
+  border-radius: 18px 5px 18px 5px;
+  color: #fbfdfd;
+}
+.destination-theme-zurich .destination-hero-button:hover {
+  border-color: #b9a77e;
+  background: #b9a77e;
+  color: #34434b;
+}
+.destination-theme-zurich .destination-hero-count {
+  border-color: #b9a77e88;
+  border-radius: 18px 5px 18px 5px;
+  background: rgba(52,78,88, 0.5);
+}
+.destination-theme-zurich .destination-section-eyebrow,
+.destination-theme-zurich .destination-place-category,
+.destination-theme-zurich .destination-bottom-note > span {
+  color: #64818c;
+}
+.destination-theme-zurich .destination-about-heading h2,
+.destination-theme-zurich .destination-places-heading h2 {
+  color: #34434b;
+}
+.destination-theme-zurich .destination-about-content {
+  border: 1px solid #d9e1e2;
+  border-top: 3px solid #64818c;
+  border-radius: 22px 5px 22px 5px;
+  background: #fbfdfd;
+  box-shadow: 0 12px 30px rgba(52,78,88, 0.055);
+}
+.destination-theme-zurich .destination-about-mark {
+  color: #64818c;
+}
+.destination-theme-zurich .destination-about-content p,
+.destination-theme-zurich .destination-places-heading p,
+.destination-theme-zurich .destination-place-content p,
+.destination-theme-zurich .destination-bottom-note p {
+  color: #77858a;
+}
+.destination-theme-zurich .destination-places-section {
+  border-top-color: #d9e1e2;
+}
+.destination-theme-zurich .destination-places-count {
+  border-color: #d9e1e2;
+  border-radius: 18px 5px 18px 5px;
+  background: #fbfdfd;
+  color: #64818c;
+}
+.destination-theme-zurich .destination-place-card {
+  border-color: #d9e1e2;
+  border-radius: 18px 5px 18px 5px;
+  background: #fbfdfd;
+  box-shadow: 0 10px 26px rgba(52,78,88, 0.055);
+}
+.destination-theme-zurich .destination-place-number,
+.destination-theme-zurich .destination-place-arrow {
+  border-radius: 18px 5px 18px 5px;
+  background: #e5ecec;
+  color: #64818c;
+}
+.destination-theme-zurich .destination-place-card:hover .destination-place-arrow {
+  background: #64818c;
+  color: #fff;
+}
+.destination-theme-zurich .destination-place-content h3,
+.destination-theme-zurich .destination-bottom-note h2 {
+  color: #34434b;
+}
+.destination-theme-zurich .destination-place-explore {
+  border-top-color: #d9e1e2;
+  color: #64818c;
+}
+.destination-theme-zurich .destination-place-explore:hover {
+  color: #b9a77e;
+}
+.destination-theme-zurich .destination-bottom-note {
+  border: 1px solid #d9e1e2;
+  border-radius: 22px 5px 22px 5px;
+  background: linear-gradient(120deg, #e5ecec, #fbfdfd);
+}
+@media (max-width: 576px) {
+  .destination-theme-zurich .destination-hero {
+    min-height: 495px;
+    border-radius: 18px 5px 18px 5px;
+  }
+  .destination-theme-zurich .destination-about-content {
+    border-radius: 18px 5px 18px 5px;
+  }
+}
+
+
+/* Geneva city theme */
+.destination-theme-geneva {
+  background: #eef1f3;
+  color: #344657;
+}
+.destination-theme-geneva .destination-back-button {
+  border-color: #d9e2e9;
+  background: #fbfdff;
+  color: #66889b;
+}
+.destination-theme-geneva .destination-back-button:hover {
+  border-color: #66889b;
+  background: #66889b;
+  color: #fff;
+}
+.destination-theme-geneva .destination-hero {
+  min-height: 585px;
+  border-radius: 32px 8px 32px 8px;
+  background: #354f63;
+  box-shadow: 0 18px 46px rgba(53,79,99, 0.13);
+}
+.destination-theme-geneva .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(53,79,99, 0.9) 0%, rgba(53,79,99, 0.58) 52%, rgba(53,79,99, 0.08) 100%);
+}
+.destination-theme-geneva .destination-hero-label,
+.destination-theme-geneva .destination-hero-country span {
+  color: #c1a77b;
+}
+.destination-theme-geneva .destination-hero-button {
+  border-color: #c1a77b;
+  border-radius: 20px 5px 20px 5px;
+  color: #fbfdff;
+}
+.destination-theme-geneva .destination-hero-button:hover {
+  border-color: #c1a77b;
+  background: #c1a77b;
+  color: #344657;
+}
+.destination-theme-geneva .destination-hero-count {
+  border-color: #c1a77b88;
+  border-radius: 20px 5px 20px 5px;
+  background: rgba(53,79,99, 0.5);
+}
+.destination-theme-geneva .destination-section-eyebrow,
+.destination-theme-geneva .destination-place-category,
+.destination-theme-geneva .destination-bottom-note > span {
+  color: #66889b;
+}
+.destination-theme-geneva .destination-about-heading h2,
+.destination-theme-geneva .destination-places-heading h2 {
+  color: #344657;
+}
+.destination-theme-geneva .destination-about-content {
+  border: 1px solid #d9e2e9;
+  border-top: 3px solid #66889b;
+  border-radius: 24px 5px 24px 5px;
+  background: #fbfdff;
+  box-shadow: 0 12px 30px rgba(53,79,99, 0.055);
+}
+.destination-theme-geneva .destination-about-mark {
+  color: #66889b;
+}
+.destination-theme-geneva .destination-about-content p,
+.destination-theme-geneva .destination-places-heading p,
+.destination-theme-geneva .destination-place-content p,
+.destination-theme-geneva .destination-bottom-note p {
+  color: #778795;
+}
+.destination-theme-geneva .destination-places-section {
+  border-top-color: #d9e2e9;
+}
+.destination-theme-geneva .destination-places-count {
+  border-color: #d9e2e9;
+  border-radius: 20px 5px 20px 5px;
+  background: #fbfdff;
+  color: #66889b;
+}
+.destination-theme-geneva .destination-place-card {
+  border-color: #d9e2e9;
+  border-radius: 20px 5px 20px 5px;
+  background: #fbfdff;
+  box-shadow: 0 10px 26px rgba(53,79,99, 0.055);
+}
+.destination-theme-geneva .destination-place-number,
+.destination-theme-geneva .destination-place-arrow {
+  border-radius: 20px 5px 20px 5px;
+  background: #e5edf2;
+  color: #66889b;
+}
+.destination-theme-geneva .destination-place-card:hover .destination-place-arrow {
+  background: #66889b;
+  color: #fff;
+}
+.destination-theme-geneva .destination-place-content h3,
+.destination-theme-geneva .destination-bottom-note h2 {
+  color: #344657;
+}
+.destination-theme-geneva .destination-place-explore {
+  border-top-color: #d9e2e9;
+  color: #66889b;
+}
+.destination-theme-geneva .destination-place-explore:hover {
+  color: #c1a77b;
+}
+.destination-theme-geneva .destination-bottom-note {
+  border: 1px solid #d9e2e9;
+  border-radius: 24px 5px 24px 5px;
+  background: linear-gradient(120deg, #e5edf2, #fbfdff);
+}
+@media (max-width: 576px) {
+  .destination-theme-geneva .destination-hero {
+    min-height: 495px;
+    border-radius: 20px 5px 20px 5px;
+  }
+  .destination-theme-geneva .destination-about-content {
+    border-radius: 20px 5px 20px 5px;
+  }
+}
+
+
+/* Lucerne city theme */
+.destination-theme-lucerne {
+  background: #edf0e8;
+  color: #3b4b3e;
+}
+.destination-theme-lucerne .destination-back-button {
+  border-color: #dce3d5;
+  background: #fbfcf7;
+  color: #738466;
+}
+.destination-theme-lucerne .destination-back-button:hover {
+  border-color: #738466;
+  background: #738466;
+  color: #fff;
+}
+.destination-theme-lucerne .destination-hero {
+  min-height: 585px;
+  border-radius: 34px 34px 8px 8px;
+  background: #405744;
+  box-shadow: 0 18px 46px rgba(64,87,68, 0.13);
+}
+.destination-theme-lucerne .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(64,87,68, 0.9) 0%, rgba(64,87,68, 0.58) 52%, rgba(64,87,68, 0.08) 100%);
+}
+.destination-theme-lucerne .destination-hero-label,
+.destination-theme-lucerne .destination-hero-country span {
+  color: #c3a16c;
+}
+.destination-theme-lucerne .destination-hero-button {
+  border-color: #c3a16c;
+  border-radius: 22px 22px 5px 5px;
+  color: #fbfcf7;
+}
+.destination-theme-lucerne .destination-hero-button:hover {
+  border-color: #c3a16c;
+  background: #c3a16c;
+  color: #3b4b3e;
+}
+.destination-theme-lucerne .destination-hero-count {
+  border-color: #c3a16c88;
+  border-radius: 22px 22px 5px 5px;
+  background: rgba(64,87,68, 0.5);
+}
+.destination-theme-lucerne .destination-section-eyebrow,
+.destination-theme-lucerne .destination-place-category,
+.destination-theme-lucerne .destination-bottom-note > span {
+  color: #738466;
+}
+.destination-theme-lucerne .destination-about-heading h2,
+.destination-theme-lucerne .destination-places-heading h2 {
+  color: #3b4b3e;
+}
+.destination-theme-lucerne .destination-about-content {
+  border: 1px solid #dce3d5;
+  border-top: 3px solid #738466;
+  border-radius: 28px 28px 5px 5px;
+  background: #fbfcf7;
+  box-shadow: 0 12px 30px rgba(64,87,68, 0.055);
+}
+.destination-theme-lucerne .destination-about-mark {
+  color: #738466;
+}
+.destination-theme-lucerne .destination-about-content p,
+.destination-theme-lucerne .destination-places-heading p,
+.destination-theme-lucerne .destination-place-content p,
+.destination-theme-lucerne .destination-bottom-note p {
+  color: #788174;
+}
+.destination-theme-lucerne .destination-places-section {
+  border-top-color: #dce3d5;
+}
+.destination-theme-lucerne .destination-places-count {
+  border-color: #dce3d5;
+  border-radius: 22px 22px 5px 5px;
+  background: #fbfcf7;
+  color: #738466;
+}
+.destination-theme-lucerne .destination-place-card {
+  border-color: #dce3d5;
+  border-radius: 22px 22px 5px 5px;
+  background: #fbfcf7;
+  box-shadow: 0 10px 26px rgba(64,87,68, 0.055);
+}
+.destination-theme-lucerne .destination-place-number,
+.destination-theme-lucerne .destination-place-arrow {
+  border-radius: 22px 22px 5px 5px;
+  background: #e8eddf;
+  color: #738466;
+}
+.destination-theme-lucerne .destination-place-card:hover .destination-place-arrow {
+  background: #738466;
+  color: #fff;
+}
+.destination-theme-lucerne .destination-place-content h3,
+.destination-theme-lucerne .destination-bottom-note h2 {
+  color: #3b4b3e;
+}
+.destination-theme-lucerne .destination-place-explore {
+  border-top-color: #dce3d5;
+  color: #738466;
+}
+.destination-theme-lucerne .destination-place-explore:hover {
+  color: #c3a16c;
+}
+.destination-theme-lucerne .destination-bottom-note {
+  border: 1px solid #dce3d5;
+  border-radius: 28px 28px 5px 5px;
+  background: linear-gradient(120deg, #e8eddf, #fbfcf7);
+}
+@media (max-width: 576px) {
+  .destination-theme-lucerne .destination-hero {
+    min-height: 495px;
+    border-radius: 22px 22px 5px 5px;
+  }
+  .destination-theme-lucerne .destination-about-content {
+    border-radius: 22px 22px 5px 5px;
+  }
+}
+
+
+/* Interlaken city theme */
+.destination-theme-interlaken {
+  background: #eaf1ed;
+  color: #304a42;
+}
+.destination-theme-interlaken .destination-back-button {
+  border-color: #d4e3d9;
+  background: #f9fcf9;
+  color: #5f8a72;
+}
+.destination-theme-interlaken .destination-back-button:hover {
+  border-color: #5f8a72;
+  background: #5f8a72;
+  color: #fff;
+}
+.destination-theme-interlaken .destination-hero {
+  min-height: 585px;
+  border-radius: 44px 8px 44px 8px;
+  background: #315747;
+  box-shadow: 0 18px 46px rgba(49,87,71, 0.13);
+}
+.destination-theme-interlaken .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(49,87,71, 0.9) 0%, rgba(49,87,71, 0.58) 52%, rgba(49,87,71, 0.08) 100%);
+}
+.destination-theme-interlaken .destination-hero-label,
+.destination-theme-interlaken .destination-hero-country span {
+  color: #c5b27b;
+}
+.destination-theme-interlaken .destination-hero-button {
+  border-color: #c5b27b;
+  border-radius: 26px 5px 26px 5px;
+  color: #f9fcf9;
+}
+.destination-theme-interlaken .destination-hero-button:hover {
+  border-color: #c5b27b;
+  background: #c5b27b;
+  color: #304a42;
+}
+.destination-theme-interlaken .destination-hero-count {
+  border-color: #c5b27b88;
+  border-radius: 26px 5px 26px 5px;
+  background: rgba(49,87,71, 0.5);
+}
+.destination-theme-interlaken .destination-section-eyebrow,
+.destination-theme-interlaken .destination-place-category,
+.destination-theme-interlaken .destination-bottom-note > span {
+  color: #5f8a72;
+}
+.destination-theme-interlaken .destination-about-heading h2,
+.destination-theme-interlaken .destination-places-heading h2 {
+  color: #304a42;
+}
+.destination-theme-interlaken .destination-about-content {
+  border: 1px solid #d4e3d9;
+  border-top: 3px solid #5f8a72;
+  border-radius: 30px 5px 30px 5px;
+  background: #f9fcf9;
+  box-shadow: 0 12px 30px rgba(49,87,71, 0.055);
+}
+.destination-theme-interlaken .destination-about-mark {
+  color: #5f8a72;
+}
+.destination-theme-interlaken .destination-about-content p,
+.destination-theme-interlaken .destination-places-heading p,
+.destination-theme-interlaken .destination-place-content p,
+.destination-theme-interlaken .destination-bottom-note p {
+  color: #73847a;
+}
+.destination-theme-interlaken .destination-places-section {
+  border-top-color: #d4e3d9;
+}
+.destination-theme-interlaken .destination-places-count {
+  border-color: #d4e3d9;
+  border-radius: 26px 5px 26px 5px;
+  background: #f9fcf9;
+  color: #5f8a72;
+}
+.destination-theme-interlaken .destination-place-card {
+  border-color: #d4e3d9;
+  border-radius: 26px 5px 26px 5px;
+  background: #f9fcf9;
+  box-shadow: 0 10px 26px rgba(49,87,71, 0.055);
+}
+.destination-theme-interlaken .destination-place-number,
+.destination-theme-interlaken .destination-place-arrow {
+  border-radius: 26px 5px 26px 5px;
+  background: #e0ece3;
+  color: #5f8a72;
+}
+.destination-theme-interlaken .destination-place-card:hover .destination-place-arrow {
+  background: #5f8a72;
+  color: #fff;
+}
+.destination-theme-interlaken .destination-place-content h3,
+.destination-theme-interlaken .destination-bottom-note h2 {
+  color: #304a42;
+}
+.destination-theme-interlaken .destination-place-explore {
+  border-top-color: #d4e3d9;
+  color: #5f8a72;
+}
+.destination-theme-interlaken .destination-place-explore:hover {
+  color: #c5b27b;
+}
+.destination-theme-interlaken .destination-bottom-note {
+  border: 1px solid #d4e3d9;
+  border-radius: 30px 5px 30px 5px;
+  background: linear-gradient(120deg, #e0ece3, #f9fcf9);
+}
+@media (max-width: 576px) {
+  .destination-theme-interlaken .destination-hero {
+    min-height: 495px;
+    border-radius: 26px 5px 26px 5px;
+  }
+  .destination-theme-interlaken .destination-about-content {
+    border-radius: 26px 5px 26px 5px;
+  }
+}
+
+
+/* Bern city theme */
+.destination-theme-bern {
+  background: #f0ece4;
+  color: #484037;
+}
+.destination-theme-bern .destination-back-button {
+  border-color: #e1d8c9;
+  background: #fffaf1;
+  color: #98734e;
+}
+.destination-theme-bern .destination-back-button:hover {
+  border-color: #98734e;
+  background: #98734e;
+  color: #fff;
+}
+.destination-theme-bern .destination-hero {
+  min-height: 585px;
+  border-radius: 5px 30px 5px 30px;
+  background: #554735;
+  box-shadow: 0 18px 46px rgba(85,71,53, 0.13);
+}
+.destination-theme-bern .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(85,71,53, 0.9) 0%, rgba(85,71,53, 0.58) 52%, rgba(85,71,53, 0.08) 100%);
+}
+.destination-theme-bern .destination-hero-label,
+.destination-theme-bern .destination-hero-country span {
+  color: #c4a16c;
+}
+.destination-theme-bern .destination-hero-button {
+  border-color: #c4a16c;
+  border-radius: 5px 18px 5px 18px;
+  color: #fffaf1;
+}
+.destination-theme-bern .destination-hero-button:hover {
+  border-color: #c4a16c;
+  background: #c4a16c;
+  color: #484037;
+}
+.destination-theme-bern .destination-hero-count {
+  border-color: #c4a16c88;
+  border-radius: 5px 18px 5px 18px;
+  background: rgba(85,71,53, 0.5);
+}
+.destination-theme-bern .destination-section-eyebrow,
+.destination-theme-bern .destination-place-category,
+.destination-theme-bern .destination-bottom-note > span {
+  color: #98734e;
+}
+.destination-theme-bern .destination-about-heading h2,
+.destination-theme-bern .destination-places-heading h2 {
+  color: #484037;
+}
+.destination-theme-bern .destination-about-content {
+  border: 1px solid #e1d8c9;
+  border-top: 3px solid #98734e;
+  border-radius: 5px 22px 5px 22px;
+  background: #fffaf1;
+  box-shadow: 0 12px 30px rgba(85,71,53, 0.055);
+}
+.destination-theme-bern .destination-about-mark {
+  color: #98734e;
+}
+.destination-theme-bern .destination-about-content p,
+.destination-theme-bern .destination-places-heading p,
+.destination-theme-bern .destination-place-content p,
+.destination-theme-bern .destination-bottom-note p {
+  color: #81776c;
+}
+.destination-theme-bern .destination-places-section {
+  border-top-color: #e1d8c9;
+}
+.destination-theme-bern .destination-places-count {
+  border-color: #e1d8c9;
+  border-radius: 5px 18px 5px 18px;
+  background: #fffaf1;
+  color: #98734e;
+}
+.destination-theme-bern .destination-place-card {
+  border-color: #e1d8c9;
+  border-radius: 5px 18px 5px 18px;
+  background: #fffaf1;
+  box-shadow: 0 10px 26px rgba(85,71,53, 0.055);
+}
+.destination-theme-bern .destination-place-number,
+.destination-theme-bern .destination-place-arrow {
+  border-radius: 5px 18px 5px 18px;
+  background: #ece3d5;
+  color: #98734e;
+}
+.destination-theme-bern .destination-place-card:hover .destination-place-arrow {
+  background: #98734e;
+  color: #fff;
+}
+.destination-theme-bern .destination-place-content h3,
+.destination-theme-bern .destination-bottom-note h2 {
+  color: #484037;
+}
+.destination-theme-bern .destination-place-explore {
+  border-top-color: #e1d8c9;
+  color: #98734e;
+}
+.destination-theme-bern .destination-place-explore:hover {
+  color: #c4a16c;
+}
+.destination-theme-bern .destination-bottom-note {
+  border: 1px solid #e1d8c9;
+  border-radius: 5px 22px 5px 22px;
+  background: linear-gradient(120deg, #ece3d5, #fffaf1);
+}
+@media (max-width: 576px) {
+  .destination-theme-bern .destination-hero {
+    min-height: 495px;
+    border-radius: 5px 18px 5px 18px;
+  }
+  .destination-theme-bern .destination-about-content {
+    border-radius: 5px 18px 5px 18px;
+  }
+}
+
+
+/* Madrid city theme */
+.destination-theme-madrid {
+  background: #f2e9e1;
+  color: #493a32;
+}
+.destination-theme-madrid .destination-back-button {
+  border-color: #e5d3c3;
+  background: #fff9f2;
+  color: #b36b43;
+}
+.destination-theme-madrid .destination-back-button:hover {
+  border-color: #b36b43;
+  background: #b36b43;
+  color: #fff;
+}
+.destination-theme-madrid .destination-hero {
+  min-height: 585px;
+  border-radius: 5px 36px 5px 36px;
+  background: #624433;
+  box-shadow: 0 18px 46px rgba(98,68,51, 0.13);
+}
+.destination-theme-madrid .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(98,68,51, 0.9) 0%, rgba(98,68,51, 0.58) 52%, rgba(98,68,51, 0.08) 100%);
+}
+.destination-theme-madrid .destination-hero-label,
+.destination-theme-madrid .destination-hero-country span {
+  color: #d0a16a;
+}
+.destination-theme-madrid .destination-hero-button {
+  border-color: #d0a16a;
+  border-radius: 5px 20px 5px 20px;
+  color: #fff9f2;
+}
+.destination-theme-madrid .destination-hero-button:hover {
+  border-color: #d0a16a;
+  background: #d0a16a;
+  color: #493a32;
+}
+.destination-theme-madrid .destination-hero-count {
+  border-color: #d0a16a88;
+  border-radius: 5px 20px 5px 20px;
+  background: rgba(98,68,51, 0.5);
+}
+.destination-theme-madrid .destination-section-eyebrow,
+.destination-theme-madrid .destination-place-category,
+.destination-theme-madrid .destination-bottom-note > span {
+  color: #b36b43;
+}
+.destination-theme-madrid .destination-about-heading h2,
+.destination-theme-madrid .destination-places-heading h2 {
+  color: #493a32;
+}
+.destination-theme-madrid .destination-about-content {
+  border: 1px solid #e5d3c3;
+  border-top: 3px solid #b36b43;
+  border-radius: 5px 24px 5px 24px;
+  background: #fff9f2;
+  box-shadow: 0 12px 30px rgba(98,68,51, 0.055);
+}
+.destination-theme-madrid .destination-about-mark {
+  color: #b36b43;
+}
+.destination-theme-madrid .destination-about-content p,
+.destination-theme-madrid .destination-places-heading p,
+.destination-theme-madrid .destination-place-content p,
+.destination-theme-madrid .destination-bottom-note p {
+  color: #83756a;
+}
+.destination-theme-madrid .destination-places-section {
+  border-top-color: #e5d3c3;
+}
+.destination-theme-madrid .destination-places-count {
+  border-color: #e5d3c3;
+  border-radius: 5px 20px 5px 20px;
+  background: #fff9f2;
+  color: #b36b43;
+}
+.destination-theme-madrid .destination-place-card {
+  border-color: #e5d3c3;
+  border-radius: 5px 20px 5px 20px;
+  background: #fff9f2;
+  box-shadow: 0 10px 26px rgba(98,68,51, 0.055);
+}
+.destination-theme-madrid .destination-place-number,
+.destination-theme-madrid .destination-place-arrow {
+  border-radius: 5px 20px 5px 20px;
+  background: #efdfd1;
+  color: #b36b43;
+}
+.destination-theme-madrid .destination-place-card:hover .destination-place-arrow {
+  background: #b36b43;
+  color: #fff;
+}
+.destination-theme-madrid .destination-place-content h3,
+.destination-theme-madrid .destination-bottom-note h2 {
+  color: #493a32;
+}
+.destination-theme-madrid .destination-place-explore {
+  border-top-color: #e5d3c3;
+  color: #b36b43;
+}
+.destination-theme-madrid .destination-place-explore:hover {
+  color: #d0a16a;
+}
+.destination-theme-madrid .destination-bottom-note {
+  border: 1px solid #e5d3c3;
+  border-radius: 5px 24px 5px 24px;
+  background: linear-gradient(120deg, #efdfd1, #fff9f2);
+}
+@media (max-width: 576px) {
+  .destination-theme-madrid .destination-hero {
+    min-height: 495px;
+    border-radius: 5px 20px 5px 20px;
+  }
+  .destination-theme-madrid .destination-about-content {
+    border-radius: 5px 20px 5px 20px;
+  }
+}
+
+
+/* Seville city theme */
+.destination-theme-seville {
+  background: #f4eadf;
+  color: #4a3c30;
+}
+.destination-theme-seville .destination-back-button {
+  border-color: #e7d5c0;
+  background: #fffaf2;
+  color: #b36c43;
+}
+.destination-theme-seville .destination-back-button:hover {
+  border-color: #b36c43;
+  background: #b36c43;
+  color: #fff;
+}
+.destination-theme-seville .destination-hero {
+  min-height: 585px;
+  border-radius: 38px 5px 38px 5px;
+  background: #604630;
+  box-shadow: 0 18px 46px rgba(96,70,48, 0.13);
+}
+.destination-theme-seville .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(96,70,48, 0.9) 0%, rgba(96,70,48, 0.58) 52%, rgba(96,70,48, 0.08) 100%);
+}
+.destination-theme-seville .destination-hero-label,
+.destination-theme-seville .destination-hero-country span {
+  color: #d6b16e;
+}
+.destination-theme-seville .destination-hero-button {
+  border-color: #d6b16e;
+  border-radius: 24px 5px 24px 5px;
+  color: #fffaf2;
+}
+.destination-theme-seville .destination-hero-button:hover {
+  border-color: #d6b16e;
+  background: #d6b16e;
+  color: #4a3c30;
+}
+.destination-theme-seville .destination-hero-count {
+  border-color: #d6b16e88;
+  border-radius: 24px 5px 24px 5px;
+  background: rgba(96,70,48, 0.5);
+}
+.destination-theme-seville .destination-section-eyebrow,
+.destination-theme-seville .destination-place-category,
+.destination-theme-seville .destination-bottom-note > span {
+  color: #b36c43;
+}
+.destination-theme-seville .destination-about-heading h2,
+.destination-theme-seville .destination-places-heading h2 {
+  color: #4a3c30;
+}
+.destination-theme-seville .destination-about-content {
+  border: 1px solid #e7d5c0;
+  border-top: 3px solid #b36c43;
+  border-radius: 28px 5px 28px 5px;
+  background: #fffaf2;
+  box-shadow: 0 12px 30px rgba(96,70,48, 0.055);
+}
+.destination-theme-seville .destination-about-mark {
+  color: #b36c43;
+}
+.destination-theme-seville .destination-about-content p,
+.destination-theme-seville .destination-places-heading p,
+.destination-theme-seville .destination-place-content p,
+.destination-theme-seville .destination-bottom-note p {
+  color: #817366;
+}
+.destination-theme-seville .destination-places-section {
+  border-top-color: #e7d5c0;
+}
+.destination-theme-seville .destination-places-count {
+  border-color: #e7d5c0;
+  border-radius: 24px 5px 24px 5px;
+  background: #fffaf2;
+  color: #b36c43;
+}
+.destination-theme-seville .destination-place-card {
+  border-color: #e7d5c0;
+  border-radius: 24px 5px 24px 5px;
+  background: #fffaf2;
+  box-shadow: 0 10px 26px rgba(96,70,48, 0.055);
+}
+.destination-theme-seville .destination-place-number,
+.destination-theme-seville .destination-place-arrow {
+  border-radius: 24px 5px 24px 5px;
+  background: #f0e1ce;
+  color: #b36c43;
+}
+.destination-theme-seville .destination-place-card:hover .destination-place-arrow {
+  background: #b36c43;
+  color: #fff;
+}
+.destination-theme-seville .destination-place-content h3,
+.destination-theme-seville .destination-bottom-note h2 {
+  color: #4a3c30;
+}
+.destination-theme-seville .destination-place-explore {
+  border-top-color: #e7d5c0;
+  color: #b36c43;
+}
+.destination-theme-seville .destination-place-explore:hover {
+  color: #d6b16e;
+}
+.destination-theme-seville .destination-bottom-note {
+  border: 1px solid #e7d5c0;
+  border-radius: 28px 5px 28px 5px;
+  background: linear-gradient(120deg, #f0e1ce, #fffaf2);
+}
+@media (max-width: 576px) {
+  .destination-theme-seville .destination-hero {
+    min-height: 495px;
+    border-radius: 24px 5px 24px 5px;
+  }
+  .destination-theme-seville .destination-about-content {
+    border-radius: 24px 5px 24px 5px;
+  }
+}
+
+
+/* Granada city theme */
+.destination-theme-granada {
+  background: #f0e8e2;
+  color: #493a36;
+}
+.destination-theme-granada .destination-back-button {
+  border-color: #e3d3c9;
+  background: #fff9f5;
+  color: #a45c50;
+}
+.destination-theme-granada .destination-back-button:hover {
+  border-color: #a45c50;
+  background: #a45c50;
+  color: #fff;
+}
+.destination-theme-granada .destination-hero {
+  min-height: 585px;
+  border-radius: 5px 38px 5px 38px;
+  background: #60443f;
+  box-shadow: 0 18px 46px rgba(96,68,63, 0.13);
+}
+.destination-theme-granada .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(96,68,63, 0.9) 0%, rgba(96,68,63, 0.58) 52%, rgba(96,68,63, 0.08) 100%);
+}
+.destination-theme-granada .destination-hero-label,
+.destination-theme-granada .destination-hero-country span {
+  color: #c8a16f;
+}
+.destination-theme-granada .destination-hero-button {
+  border-color: #c8a16f;
+  border-radius: 5px 22px 5px 22px;
+  color: #fff9f5;
+}
+.destination-theme-granada .destination-hero-button:hover {
+  border-color: #c8a16f;
+  background: #c8a16f;
+  color: #493a36;
+}
+.destination-theme-granada .destination-hero-count {
+  border-color: #c8a16f88;
+  border-radius: 5px 22px 5px 22px;
+  background: rgba(96,68,63, 0.5);
+}
+.destination-theme-granada .destination-section-eyebrow,
+.destination-theme-granada .destination-place-category,
+.destination-theme-granada .destination-bottom-note > span {
+  color: #a45c50;
+}
+.destination-theme-granada .destination-about-heading h2,
+.destination-theme-granada .destination-places-heading h2 {
+  color: #493a36;
+}
+.destination-theme-granada .destination-about-content {
+  border: 1px solid #e3d3c9;
+  border-top: 3px solid #a45c50;
+  border-radius: 5px 26px 5px 26px;
+  background: #fff9f5;
+  box-shadow: 0 12px 30px rgba(96,68,63, 0.055);
+}
+.destination-theme-granada .destination-about-mark {
+  color: #a45c50;
+}
+.destination-theme-granada .destination-about-content p,
+.destination-theme-granada .destination-places-heading p,
+.destination-theme-granada .destination-place-content p,
+.destination-theme-granada .destination-bottom-note p {
+  color: #82746e;
+}
+.destination-theme-granada .destination-places-section {
+  border-top-color: #e3d3c9;
+}
+.destination-theme-granada .destination-places-count {
+  border-color: #e3d3c9;
+  border-radius: 5px 22px 5px 22px;
+  background: #fff9f5;
+  color: #a45c50;
+}
+.destination-theme-granada .destination-place-card {
+  border-color: #e3d3c9;
+  border-radius: 5px 22px 5px 22px;
+  background: #fff9f5;
+  box-shadow: 0 10px 26px rgba(96,68,63, 0.055);
+}
+.destination-theme-granada .destination-place-number,
+.destination-theme-granada .destination-place-arrow {
+  border-radius: 5px 22px 5px 22px;
+  background: #ecddd3;
+  color: #a45c50;
+}
+.destination-theme-granada .destination-place-card:hover .destination-place-arrow {
+  background: #a45c50;
+  color: #fff;
+}
+.destination-theme-granada .destination-place-content h3,
+.destination-theme-granada .destination-bottom-note h2 {
+  color: #493a36;
+}
+.destination-theme-granada .destination-place-explore {
+  border-top-color: #e3d3c9;
+  color: #a45c50;
+}
+.destination-theme-granada .destination-place-explore:hover {
+  color: #c8a16f;
+}
+.destination-theme-granada .destination-bottom-note {
+  border: 1px solid #e3d3c9;
+  border-radius: 5px 26px 5px 26px;
+  background: linear-gradient(120deg, #ecddd3, #fff9f5);
+}
+@media (max-width: 576px) {
+  .destination-theme-granada .destination-hero {
+    min-height: 495px;
+    border-radius: 5px 22px 5px 22px;
+  }
+  .destination-theme-granada .destination-about-content {
+    border-radius: 5px 22px 5px 22px;
+  }
+}
+
+
+/* Athens city theme */
+.destination-theme-athens {
+  background: #f1eee5;
+  color: #3d4543;
+}
+.destination-theme-athens .destination-back-button {
+  border-color: #e2dfd2;
+  background: #fffdf7;
+  color: #7d8b82;
+}
+.destination-theme-athens .destination-back-button:hover {
+  border-color: #7d8b82;
+  background: #7d8b82;
+  color: #fff;
+}
+.destination-theme-athens .destination-hero {
+  min-height: 585px;
+  border-radius: 6px 34px 6px 34px;
+  background: #3e5551;
+  box-shadow: 0 18px 46px rgba(62,85,81, 0.13);
+}
+.destination-theme-athens .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(62,85,81, 0.9) 0%, rgba(62,85,81, 0.58) 52%, rgba(62,85,81, 0.08) 100%);
+}
+.destination-theme-athens .destination-hero-label,
+.destination-theme-athens .destination-hero-country span {
+  color: #c6a66d;
+}
+.destination-theme-athens .destination-hero-button {
+  border-color: #c6a66d;
+  border-radius: 6px 20px 6px 20px;
+  color: #fffdf7;
+}
+.destination-theme-athens .destination-hero-button:hover {
+  border-color: #c6a66d;
+  background: #c6a66d;
+  color: #3d4543;
+}
+.destination-theme-athens .destination-hero-count {
+  border-color: #c6a66d88;
+  border-radius: 6px 20px 6px 20px;
+  background: rgba(62,85,81, 0.5);
+}
+.destination-theme-athens .destination-section-eyebrow,
+.destination-theme-athens .destination-place-category,
+.destination-theme-athens .destination-bottom-note > span {
+  color: #7d8b82;
+}
+.destination-theme-athens .destination-about-heading h2,
+.destination-theme-athens .destination-places-heading h2 {
+  color: #3d4543;
+}
+.destination-theme-athens .destination-about-content {
+  border: 1px solid #e2dfd2;
+  border-top: 3px solid #7d8b82;
+  border-radius: 6px 24px 6px 24px;
+  background: #fffdf7;
+  box-shadow: 0 12px 30px rgba(62,85,81, 0.055);
+}
+.destination-theme-athens .destination-about-mark {
+  color: #7d8b82;
+}
+.destination-theme-athens .destination-about-content p,
+.destination-theme-athens .destination-places-heading p,
+.destination-theme-athens .destination-place-content p,
+.destination-theme-athens .destination-bottom-note p {
+  color: #7c8178;
+}
+.destination-theme-athens .destination-places-section {
+  border-top-color: #e2dfd2;
+}
+.destination-theme-athens .destination-places-count {
+  border-color: #e2dfd2;
+  border-radius: 6px 20px 6px 20px;
+  background: #fffdf7;
+  color: #7d8b82;
+}
+.destination-theme-athens .destination-place-card {
+  border-color: #e2dfd2;
+  border-radius: 6px 20px 6px 20px;
+  background: #fffdf7;
+  box-shadow: 0 10px 26px rgba(62,85,81, 0.055);
+}
+.destination-theme-athens .destination-place-number,
+.destination-theme-athens .destination-place-arrow {
+  border-radius: 6px 20px 6px 20px;
+  background: #eeebdf;
+  color: #7d8b82;
+}
+.destination-theme-athens .destination-place-card:hover .destination-place-arrow {
+  background: #7d8b82;
+  color: #fff;
+}
+.destination-theme-athens .destination-place-content h3,
+.destination-theme-athens .destination-bottom-note h2 {
+  color: #3d4543;
+}
+.destination-theme-athens .destination-place-explore {
+  border-top-color: #e2dfd2;
+  color: #7d8b82;
+}
+.destination-theme-athens .destination-place-explore:hover {
+  color: #c6a66d;
+}
+.destination-theme-athens .destination-bottom-note {
+  border: 1px solid #e2dfd2;
+  border-radius: 6px 24px 6px 24px;
+  background: linear-gradient(120deg, #eeebdf, #fffdf7);
+}
+@media (max-width: 576px) {
+  .destination-theme-athens .destination-hero {
+    min-height: 495px;
+    border-radius: 6px 20px 6px 20px;
+  }
+  .destination-theme-athens .destination-about-content {
+    border-radius: 6px 20px 6px 20px;
+  }
+}
+
+
+/* Santorini city theme */
+.destination-theme-santorini {
+  background: #eaf1f5;
+  color: #29465b;
+}
+.destination-theme-santorini .destination-back-button {
+  border-color: #d3e1ed;
+  background: #fbfdff;
+  color: #4e83a7;
+}
+.destination-theme-santorini .destination-back-button:hover {
+  border-color: #4e83a7;
+  background: #4e83a7;
+  color: #fff;
+}
+.destination-theme-santorini .destination-hero {
+  min-height: 585px;
+  border-radius: 42px 42px 8px 8px;
+  background: #294f70;
+  box-shadow: 0 18px 46px rgba(41,79,112, 0.13);
+}
+.destination-theme-santorini .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(41,79,112, 0.9) 0%, rgba(41,79,112, 0.58) 52%, rgba(41,79,112, 0.08) 100%);
+}
+.destination-theme-santorini .destination-hero-label,
+.destination-theme-santorini .destination-hero-country span {
+  color: #d4b77e;
+}
+.destination-theme-santorini .destination-hero-button {
+  border-color: #d4b77e;
+  border-radius: 26px 26px 5px 5px;
+  color: #fbfdff;
+}
+.destination-theme-santorini .destination-hero-button:hover {
+  border-color: #d4b77e;
+  background: #d4b77e;
+  color: #29465b;
+}
+.destination-theme-santorini .destination-hero-count {
+  border-color: #d4b77e88;
+  border-radius: 26px 26px 5px 5px;
+  background: rgba(41,79,112, 0.5);
+}
+.destination-theme-santorini .destination-section-eyebrow,
+.destination-theme-santorini .destination-place-category,
+.destination-theme-santorini .destination-bottom-note > span {
+  color: #4e83a7;
+}
+.destination-theme-santorini .destination-about-heading h2,
+.destination-theme-santorini .destination-places-heading h2 {
+  color: #29465b;
+}
+.destination-theme-santorini .destination-about-content {
+  border: 1px solid #d3e1ed;
+  border-top: 3px solid #4e83a7;
+  border-radius: 30px 30px 5px 5px;
+  background: #fbfdff;
+  box-shadow: 0 12px 30px rgba(41,79,112, 0.055);
+}
+.destination-theme-santorini .destination-about-mark {
+  color: #4e83a7;
+}
+.destination-theme-santorini .destination-about-content p,
+.destination-theme-santorini .destination-places-heading p,
+.destination-theme-santorini .destination-place-content p,
+.destination-theme-santorini .destination-bottom-note p {
+  color: #72879a;
+}
+.destination-theme-santorini .destination-places-section {
+  border-top-color: #d3e1ed;
+}
+.destination-theme-santorini .destination-places-count {
+  border-color: #d3e1ed;
+  border-radius: 26px 26px 5px 5px;
+  background: #fbfdff;
+  color: #4e83a7;
+}
+.destination-theme-santorini .destination-place-card {
+  border-color: #d3e1ed;
+  border-radius: 26px 26px 5px 5px;
+  background: #fbfdff;
+  box-shadow: 0 10px 26px rgba(41,79,112, 0.055);
+}
+.destination-theme-santorini .destination-place-number,
+.destination-theme-santorini .destination-place-arrow {
+  border-radius: 26px 26px 5px 5px;
+  background: #e0eaf3;
+  color: #4e83a7;
+}
+.destination-theme-santorini .destination-place-card:hover .destination-place-arrow {
+  background: #4e83a7;
+  color: #fff;
+}
+.destination-theme-santorini .destination-place-content h3,
+.destination-theme-santorini .destination-bottom-note h2 {
+  color: #29465b;
+}
+.destination-theme-santorini .destination-place-explore {
+  border-top-color: #d3e1ed;
+  color: #4e83a7;
+}
+.destination-theme-santorini .destination-place-explore:hover {
+  color: #d4b77e;
+}
+.destination-theme-santorini .destination-bottom-note {
+  border: 1px solid #d3e1ed;
+  border-radius: 30px 30px 5px 5px;
+  background: linear-gradient(120deg, #e0eaf3, #fbfdff);
+}
+@media (max-width: 576px) {
+  .destination-theme-santorini .destination-hero {
+    min-height: 495px;
+    border-radius: 26px 26px 5px 5px;
+  }
+  .destination-theme-santorini .destination-about-content {
+    border-radius: 26px 26px 5px 5px;
+  }
+}
+
+
+/* Thessaloniki city theme */
+.destination-theme-thessaloniki {
+  background: #edf0ef;
+  color: #34474b;
+}
+.destination-theme-thessaloniki .destination-back-button {
+  border-color: #d9e2e1;
+  background: #fbfdfc;
+  color: #66858a;
+}
+.destination-theme-thessaloniki .destination-back-button:hover {
+  border-color: #66858a;
+  background: #66858a;
+  color: #fff;
+}
+.destination-theme-thessaloniki .destination-hero {
+  min-height: 585px;
+  border-radius: 30px 6px 30px 6px;
+  background: #36565c;
+  box-shadow: 0 18px 46px rgba(54,86,92, 0.13);
+}
+.destination-theme-thessaloniki .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(54,86,92, 0.9) 0%, rgba(54,86,92, 0.58) 52%, rgba(54,86,92, 0.08) 100%);
+}
+.destination-theme-thessaloniki .destination-hero-label,
+.destination-theme-thessaloniki .destination-hero-country span {
+  color: #c3a16e;
+}
+.destination-theme-thessaloniki .destination-hero-button {
+  border-color: #c3a16e;
+  border-radius: 20px 5px 20px 5px;
+  color: #fbfdfc;
+}
+.destination-theme-thessaloniki .destination-hero-button:hover {
+  border-color: #c3a16e;
+  background: #c3a16e;
+  color: #34474b;
+}
+.destination-theme-thessaloniki .destination-hero-count {
+  border-color: #c3a16e88;
+  border-radius: 20px 5px 20px 5px;
+  background: rgba(54,86,92, 0.5);
+}
+.destination-theme-thessaloniki .destination-section-eyebrow,
+.destination-theme-thessaloniki .destination-place-category,
+.destination-theme-thessaloniki .destination-bottom-note > span {
+  color: #66858a;
+}
+.destination-theme-thessaloniki .destination-about-heading h2,
+.destination-theme-thessaloniki .destination-places-heading h2 {
+  color: #34474b;
+}
+.destination-theme-thessaloniki .destination-about-content {
+  border: 1px solid #d9e2e1;
+  border-top: 3px solid #66858a;
+  border-radius: 24px 5px 24px 5px;
+  background: #fbfdfc;
+  box-shadow: 0 12px 30px rgba(54,86,92, 0.055);
+}
+.destination-theme-thessaloniki .destination-about-mark {
+  color: #66858a;
+}
+.destination-theme-thessaloniki .destination-about-content p,
+.destination-theme-thessaloniki .destination-places-heading p,
+.destination-theme-thessaloniki .destination-place-content p,
+.destination-theme-thessaloniki .destination-bottom-note p {
+  color: #778589;
+}
+.destination-theme-thessaloniki .destination-places-section {
+  border-top-color: #d9e2e1;
+}
+.destination-theme-thessaloniki .destination-places-count {
+  border-color: #d9e2e1;
+  border-radius: 20px 5px 20px 5px;
+  background: #fbfdfc;
+  color: #66858a;
+}
+.destination-theme-thessaloniki .destination-place-card {
+  border-color: #d9e2e1;
+  border-radius: 20px 5px 20px 5px;
+  background: #fbfdfc;
+  box-shadow: 0 10px 26px rgba(54,86,92, 0.055);
+}
+.destination-theme-thessaloniki .destination-place-number,
+.destination-theme-thessaloniki .destination-place-arrow {
+  border-radius: 20px 5px 20px 5px;
+  background: #e5ecea;
+  color: #66858a;
+}
+.destination-theme-thessaloniki .destination-place-card:hover .destination-place-arrow {
+  background: #66858a;
+  color: #fff;
+}
+.destination-theme-thessaloniki .destination-place-content h3,
+.destination-theme-thessaloniki .destination-bottom-note h2 {
+  color: #34474b;
+}
+.destination-theme-thessaloniki .destination-place-explore {
+  border-top-color: #d9e2e1;
+  color: #66858a;
+}
+.destination-theme-thessaloniki .destination-place-explore:hover {
+  color: #c3a16e;
+}
+.destination-theme-thessaloniki .destination-bottom-note {
+  border: 1px solid #d9e2e1;
+  border-radius: 24px 5px 24px 5px;
+  background: linear-gradient(120deg, #e5ecea, #fbfdfc);
+}
+@media (max-width: 576px) {
+  .destination-theme-thessaloniki .destination-hero {
+    min-height: 495px;
+    border-radius: 20px 5px 20px 5px;
+  }
+  .destination-theme-thessaloniki .destination-about-content {
+    border-radius: 20px 5px 20px 5px;
+  }
+}
+
+
+/* Crete city theme */
+.destination-theme-crete {
+  background: #eaf2ed;
+  color: #2e4b45;
+}
+.destination-theme-crete .destination-back-button {
+  border-color: #d3e4d9;
+  background: #f9fdf9;
+  color: #548a78;
+}
+.destination-theme-crete .destination-back-button:hover {
+  border-color: #548a78;
+  background: #548a78;
+  color: #fff;
+}
+.destination-theme-crete .destination-hero {
+  min-height: 585px;
+  border-radius: 40px 8px 40px 8px;
+  background: #315b4f;
+  box-shadow: 0 18px 46px rgba(49,91,79, 0.13);
+}
+.destination-theme-crete .destination-hero-overlay {
+  background: linear-gradient(90deg, rgba(49,91,79, 0.9) 0%, rgba(49,91,79, 0.58) 52%, rgba(49,91,79, 0.08) 100%);
+}
+.destination-theme-crete .destination-hero-label,
+.destination-theme-crete .destination-hero-country span {
+  color: #d4b57a;
+}
+.destination-theme-crete .destination-hero-button {
+  border-color: #d4b57a;
+  border-radius: 26px 5px 26px 5px;
+  color: #f9fdf9;
+}
+.destination-theme-crete .destination-hero-button:hover {
+  border-color: #d4b57a;
+  background: #d4b57a;
+  color: #2e4b45;
+}
+.destination-theme-crete .destination-hero-count {
+  border-color: #d4b57a88;
+  border-radius: 26px 5px 26px 5px;
+  background: rgba(49,91,79, 0.5);
+}
+.destination-theme-crete .destination-section-eyebrow,
+.destination-theme-crete .destination-place-category,
+.destination-theme-crete .destination-bottom-note > span {
+  color: #548a78;
+}
+.destination-theme-crete .destination-about-heading h2,
+.destination-theme-crete .destination-places-heading h2 {
+  color: #2e4b45;
+}
+.destination-theme-crete .destination-about-content {
+  border: 1px solid #d3e4d9;
+  border-top: 3px solid #548a78;
+  border-radius: 30px 5px 30px 5px;
+  background: #f9fdf9;
+  box-shadow: 0 12px 30px rgba(49,91,79, 0.055);
+}
+.destination-theme-crete .destination-about-mark {
+  color: #548a78;
+}
+.destination-theme-crete .destination-about-content p,
+.destination-theme-crete .destination-places-heading p,
+.destination-theme-crete .destination-place-content p,
+.destination-theme-crete .destination-bottom-note p {
+  color: #71847b;
+}
+.destination-theme-crete .destination-places-section {
+  border-top-color: #d3e4d9;
+}
+.destination-theme-crete .destination-places-count {
+  border-color: #d3e4d9;
+  border-radius: 26px 5px 26px 5px;
+  background: #f9fdf9;
+  color: #548a78;
+}
+.destination-theme-crete .destination-place-card {
+  border-color: #d3e4d9;
+  border-radius: 26px 5px 26px 5px;
+  background: #f9fdf9;
+  box-shadow: 0 10px 26px rgba(49,91,79, 0.055);
+}
+.destination-theme-crete .destination-place-number,
+.destination-theme-crete .destination-place-arrow {
+  border-radius: 26px 5px 26px 5px;
+  background: #dfede2;
+  color: #548a78;
+}
+.destination-theme-crete .destination-place-card:hover .destination-place-arrow {
+  background: #548a78;
+  color: #fff;
+}
+.destination-theme-crete .destination-place-content h3,
+.destination-theme-crete .destination-bottom-note h2 {
+  color: #2e4b45;
+}
+.destination-theme-crete .destination-place-explore {
+  border-top-color: #d3e4d9;
+  color: #548a78;
+}
+.destination-theme-crete .destination-place-explore:hover {
+  color: #d4b57a;
+}
+.destination-theme-crete .destination-bottom-note {
+  border: 1px solid #d3e4d9;
+  border-radius: 30px 5px 30px 5px;
+  background: linear-gradient(120deg, #dfede2, #f9fdf9);
+}
+@media (max-width: 576px) {
+  .destination-theme-crete .destination-hero {
+    min-height: 495px;
+    border-radius: 26px 5px 26px 5px;
+  }
+  .destination-theme-crete .destination-about-content {
+    border-radius: 26px 5px 26px 5px;
+  }
+}
