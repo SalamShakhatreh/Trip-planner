@@ -652,3 +652,169 @@
   }
 }
 
+/* Amman city theme */
+.destination-theme-amman {
+  background: #f3eee5;
+  color: #30291f;
+}
+
+.destination-theme-amman .destination-back-button {
+  border-color: #d8c9b3;
+  background: #fffaf2;
+  color: #65513a;
+}
+
+.destination-theme-amman .destination-back-button:hover {
+  border-color: #51402f;
+  background: #51402f;
+  color: #fff;
+}
+
+.destination-theme-amman .destination-hero {
+  min-height: 560px;
+  border-radius: 8px 8px 70px 8px;
+  background: #5b4635;
+}
+
+.destination-theme-amman .destination-hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(43, 32, 24, 0.9) 0%,
+    rgba(62, 46, 32, 0.68) 52%,
+    rgba(62, 46, 32, 0.08) 100%
+  );
+}
+
+.destination-theme-amman .destination-hero-label,
+.destination-theme-amman .destination-hero-country span {
+  color: #e6c99d;
+}
+
+.destination-theme-amman .destination-hero-button {
+  border-radius: 6px;
+  border-color: #e6c99d;
+  color: #fff8ed;
+}
+
+.destination-theme-amman .destination-hero-button:hover {
+  background: #e6c99d;
+  border-color: #e6c99d;
+  color: #392b20;
+}
+
+.destination-theme-amman .destination-hero-count {
+  border-color: rgba(255, 239, 215, 0.35);
+  border-radius: 6px 6px 28px 6px;
+  background: rgba(54, 39, 27, 0.42);
+}
+
+.destination-theme-amman .destination-about-section {
+  gap: 48px;
+  padding-top: 105px;
+  padding-bottom: 95px;
+}
+
+.destination-theme-amman .destination-section-eyebrow,
+.destination-theme-amman .destination-place-category,
+.destination-theme-amman .destination-bottom-note > span {
+  color: #9a7045;
+}
+
+.destination-theme-amman .destination-about-heading h2,
+.destination-theme-amman .destination-places-heading h2 {
+  color: #3e3024;
+}
+
+.destination-theme-amman .destination-about-content {
+  border-left: 0;
+  border-top: 3px solid #b88b58;
+  border-radius: 0 0 24px 24px;
+  background: #fffaf2;
+  box-shadow: 0 12px 32px rgba(75, 54, 32, 0.07);
+}
+
+.destination-theme-amman .destination-about-mark {
+  color: #c8a477;
+}
+
+.destination-theme-amman .destination-about-content p,
+.destination-theme-amman .destination-places-heading p {
+  color: #756653;
+}
+
+.destination-theme-amman .destination-places-section {
+  border-top-color: #dfd3c2;
+}
+
+.destination-theme-amman .destination-places-count {
+  border-color: #d7c3a8;
+  background: #fffaf2;
+  color: #51402f;
+}
+
+.destination-theme-amman .destination-place-card {
+  border-color: #e5d8c6;
+  border-radius: 8px 8px 24px 8px;
+  background: #fffaf2;
+  box-shadow: 0 8px 24px rgba(75, 54, 32, 0.06);
+}
+
+.destination-theme-amman .destination-place-number {
+  border-radius: 4px;
+  background: #fffaf2;
+  color: #51402f;
+}
+
+.destination-theme-amman .destination-place-arrow {
+  border-radius: 5px 5px 15px 5px;
+  background: #fffaf2;
+  color: #51402f;
+}
+
+.destination-theme-amman .destination-place-card:hover .destination-place-arrow {
+  background: #51402f;
+  color: #fffaf2;
+}
+
+.destination-theme-amman .destination-place-content h3 {
+  color: #3e3024;
+}
+
+.destination-theme-amman .destination-place-content p {
+  color: #756653;
+}
+
+.destination-theme-amman .destination-place-explore {
+  border-top-color: #e9ddcc;
+  color: #65513a;
+}
+
+.destination-theme-amman .destination-place-explore:hover {
+  color: #a06e3e;
+}
+
+.destination-theme-amman .destination-bottom-note {
+  border: 1px solid #dfcfb9;
+  border-radius: 8px 8px 34px 8px;
+  background: #e9dfd0;
+}
+
+.destination-theme-amman .destination-bottom-note h2 {
+  color: #3e3024;
+}
+
+.destination-theme-amman .destination-bottom-note p {
+  color: #756653;
+}
+
+@media (max-width: 576px) {
+  .destination-theme-amman .destination-hero {
+    min-height: 490px;
+    border-radius: 7px 7px 38px 7px;
+  }
+
+  .destination-theme-amman .destination-about-section {
+    padding-top: 65px;
+    padding-bottom: 60px;
+  }
+}
