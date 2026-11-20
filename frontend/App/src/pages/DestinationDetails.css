@@ -974,3 +974,163 @@
     border-radius: 28px 6px 28px 6px;
   }
 }
+
+/* Aqaba city theme */
+.destination-theme-aqaba {
+  background: #eaf5f4;
+  color: #173b43;
+}
+
+.destination-theme-aqaba .destination-back-button {
+  border-color: #c5e2df;
+  background: #f8fffe;
+  color: #17616a;
+}
+
+.destination-theme-aqaba .destination-back-button:hover {
+  border-color: #12616b;
+  background: #12616b;
+  color: #fff;
+}
+
+.destination-theme-aqaba .destination-hero {
+  min-height: 570px;
+  border-radius: 90px 12px 90px 12px;
+  background: #075568;
+}
+
+.destination-theme-aqaba .destination-hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(3, 42, 55, 0.88) 0%,
+    rgba(5, 73, 88, 0.62) 48%,
+    rgba(5, 73, 88, 0.08) 100%
+  );
+}
+
+.destination-theme-aqaba .destination-hero-label,
+.destination-theme-aqaba .destination-hero-country span {
+  color: #7ee3d4;
+}
+
+.destination-theme-aqaba .destination-hero-button {
+  border-color: #8ce4d8;
+  border-radius: 30px 30px 7px 30px;
+  color: #f2fffd;
+}
+
+.destination-theme-aqaba .destination-hero-button:hover {
+  border-color: #8ce4d8;
+  background: #8ce4d8;
+  color: #064b57;
+}
+
+.destination-theme-aqaba .destination-hero-count {
+  border-color: rgba(188, 250, 240, 0.42);
+  border-radius: 28px 8px 28px 8px;
+  background: rgba(3, 65, 78, 0.48);
+}
+
+.destination-theme-aqaba .destination-section-eyebrow,
+.destination-theme-aqaba .destination-place-category,
+.destination-theme-aqaba .destination-bottom-note > span {
+  color: #16818a;
+}
+
+.destination-theme-aqaba .destination-about-heading h2,
+.destination-theme-aqaba .destination-places-heading h2 {
+  color: #124650;
+}
+
+.destination-theme-aqaba .destination-about-content {
+  border-left: 0;
+  border-top: 3px solid #35b9b0;
+  border-radius: 28px 8px 28px 8px;
+  background: #f8fffd;
+  box-shadow: 0 12px 32px rgba(11, 83, 91, 0.07);
+}
+
+.destination-theme-aqaba .destination-about-mark {
+  color: #7bcfc5;
+}
+
+.destination-theme-aqaba .destination-about-content p,
+.destination-theme-aqaba .destination-places-heading p {
+  color: #58777a;
+}
+
+.destination-theme-aqaba .destination-places-section {
+  border-top-color: #cfe5e2;
+}
+
+.destination-theme-aqaba .destination-places-count {
+  border-color: #b9ded9;
+  background: #f8fffd;
+  color: #12616b;
+}
+
+.destination-theme-aqaba .destination-place-card {
+  border-color: #cfe5e2;
+  border-radius: 24px 8px 24px 8px;
+  background: #fafffe;
+  box-shadow: 0 8px 24px rgba(11, 83, 91, 0.06);
+}
+
+.destination-theme-aqaba .destination-place-number {
+  border-radius: 15px 5px 15px 5px;
+  background: #f8fffd;
+  color: #12616b;
+}
+
+.destination-theme-aqaba .destination-place-arrow {
+  border-radius: 50%;
+  background: #f8fffd;
+  color: #12616b;
+}
+
+.destination-theme-aqaba .destination-place-card:hover .destination-place-arrow {
+  background: #087786;
+  color: #fff;
+}
+
+.destination-theme-aqaba .destination-place-content h3 {
+  color: #124650;
+}
+
+.destination-theme-aqaba .destination-place-content p {
+  color: #58777a;
+}
+
+.destination-theme-aqaba .destination-place-explore {
+  border-top-color: #dcece9;
+  color: #17616a;
+}
+
+.destination-theme-aqaba .destination-place-explore:hover {
+  color: #e0785b;
+}
+
+.destination-theme-aqaba .destination-bottom-note {
+  border: 1px solid #c5e2df;
+  border-radius: 55px 10px 55px 10px;
+  background: linear-gradient(120deg, #d7efeb, #f8e8d9);
+}
+
+.destination-theme-aqaba .destination-bottom-note h2 {
+  color: #124650;
+}
+
+.destination-theme-aqaba .destination-bottom-note p {
+  color: #58777a;
+}
+
+@media (max-width: 576px) {
+  .destination-theme-aqaba .destination-hero {
+    min-height: 500px;
+    border-radius: 48px 7px 48px 7px;
+  }
+
+  .destination-theme-aqaba .destination-about-content {
+    border-radius: 20px 6px 20px 6px;
+  }
+}
